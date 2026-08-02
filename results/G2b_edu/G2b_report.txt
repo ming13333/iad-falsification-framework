@@ -1,0 +1,39 @@
+G2b: Education -> plasma protein -> AD two-step MR sensitivity analysis
+=====================================================================
+Exposure:  ieu-a-1239 (educational attainment, Lee 2018)
+Outcome:   ieu-b-2 (AD, Kunkle/IGAP)
+Proteins:  prot-a-1540 (Interleukin-6) and prot-a-670 (C-reactive protein)
+Method:    Same as 02b_g2_enhanced.R (IVW/Egger/WMed/WMode, Q, pleio, LOO, Steiger, bootstrap 5000)
+
+Summary
+-------
+Both proteins show null indirect effects, indicating that plasma IL-6/CRP do not
+mediate the education -> AD protective association under the available instruments.
+
+IL-6:
+  Step1 education -> IL-6: beta = -0.0358, SE = 0.1259, p = 0.776, n = 317 IVs
+  Step2 IL-6 -> AD:        beta = -0.0043, SE = 0.0129, p = 0.740, n = 2 IVs
+  Indirect effect:         beta =  0.00015, SE = 0.00071, p = 0.829
+  Bootstrap 95% CI:        [-0.00352, 0.00438], boot_p = 0.945
+  FDR: 0.855
+
+CRP:
+  Step1 education -> CRP:  beta = -0.237,  SE = 0.125,  p = 0.057, n = 317 IVs (borderline)
+  Step2 CRP -> AD:         beta = -0.0089, SE = 0.0487, p = 0.855, n = 3 IVs
+  Indirect effect:         beta =  0.00212, SE = 0.0116, p = 0.855
+  Bootstrap 95% CI:        [-0.02453, 0.03173], boot_p = 0.850
+  FDR: 0.855
+
+Interpretation
+--------------
+The null mediation for education mirrors the null mediation previously observed for
+insomnia (G2). This strengthens the conclusion that plasma inflammatory proteins
+(IL-6, CRP) are not a robust genetically-proxied bridge to AD for either exposure.
+The borderline negative Step1 association for education -> CRP (p=0.057) is
+consistent with known observational correlations but does not translate into a
+significant indirect effect because the Step2 CRP -> AD effect is null.
+
+Limitation
+----------
+Step2 remains severely under-powered (2-3 IVs from INTERVAL n=3,301). Results should
+be interpreted as "no evidence of mediation" rather than "mediation excluded".

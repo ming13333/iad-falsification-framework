@@ -1,0 +1,3 @@
+"id.exposure","id.outcome","outcome","exposure","method","Q","Q_df","Q_pval"
+"ieu-a-1239","prot-a-1540","Interleukin_6","Years of schooling || id:ieu-a-1239","MR Egger",336.97959497181,303,0.0871204572783198
+"ieu-a-1239","prot-a-1540","Interleukin_6","Years of schooling || id:ieu-a-1239","Inverse variance weighted",340.825685356146,304,0.0716127840262378

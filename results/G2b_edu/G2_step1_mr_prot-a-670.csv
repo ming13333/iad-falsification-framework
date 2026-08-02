@@ -1,0 +1,5 @@
+"id.exposure","id.outcome","outcome","exposure","method","nsnp","b","se","pval"
+"ieu-a-1239","prot-a-670","C_reactive_protein","Years of schooling || id:ieu-a-1239","MR Egger",305,-0.925666892518936,0.492153877680051,0.0609513889246217
+"ieu-a-1239","prot-a-670","C_reactive_protein","Years of schooling || id:ieu-a-1239","Inverse variance weighted",305,-0.237135226929109,0.1247750404316,0.0573672590637005
+"ieu-a-1239","prot-a-670","C_reactive_protein","Years of schooling || id:ieu-a-1239","Weighted median",305,-0.197621854934452,0.185704024502807,0.287248760152682
+"ieu-a-1239","prot-a-670","C_reactive_protein","Years of schooling || id:ieu-a-1239","Weighted mode",305,0.145246221583246,0.51120934534403,0.776509711256906

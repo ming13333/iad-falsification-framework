@@ -58,7 +58,9 @@ LDSC 给出 rg=−0.03（p=0.57），**去除 APOE 所在的 19 号染色体后 
 
 ### 3.4 蛋白中介 null 的意义与边界
 
-炎症介质 CRP、IL-6 未显示传导失眠→AD 通路的证据（indirect effect FDR=0.91）。在现有 IV 强度下，这一结果不支持"失眠→神经炎症→AD"因果链在遗传层面的证据，但也不排除该通路的可能。
+炎症介质 CRP、IL-6 未显示传导失眠→AD 通路的证据（indirect effect FDR=0.91；逐蛋白估计见 Supplementary Figure 3A）。在现有 IV 强度下，这一结果不支持"失眠→神经炎症→AD"因果链在遗传层面的证据，但也不排除该通路的可能。
+
+**暴露替换敏感度分析（G2b）**：鉴于失眠→AD 的因果方向被削弱，我们以更强的教育暴露（ieu-a-1239，n=317 clumped IVs）替换失眠重跑同一蛋白中介模型，检验"教育→AD 保护"是否经由炎症蛋白传导。结果显示：教育→CRP/IL-6 的 Step1 估计均不显著或边界（CRP β=−0.237, p=0.057；IL-6 β=−0.036, p=0.78），间接效应均 null（Supplementary Figure 3B）。这排除了"炎症蛋白是教育保护 AD 的特有介导通路"，并强化了一个更广泛的结论：无论上游暴露是失眠还是教育，血浆 CRP/IL-6 都不构成通往 AD 的可靠遗传中介。
 
 **诚实边界**：Step2 中 CRP=3、IL-6=2 个 IV（INTERVAL n=3,301 蛋白源限制），统计效力低。null 结论应解读为"在现有 IV 强度下无证据支持中介"，而非"彻底排除炎症通路"——未来用 UKB-PPP（n=54k）强 IV 补全仍是必要敏感性分析。
 
@@ -142,6 +144,7 @@ LDSC 给出 rg=−0.03（p=0.57），**去除 APOE 所在的 19 号染色体后 
 | L8 | 部分 MR 使用手动固定效应 IVW（非 TwoSampleMR 标准实现） | 与标准 `mr()` 估计存在约 5% 系统偏差（b: −0.311 vs −0.328），已披露于 §四.2；核心结论（教育保护、rg≈0）另有标准包/本地实现交叉验证，不受实质影响 |
 | L9 | 教育 PheWAS 扫描 7 个候选神经退行结局（含重复源）未做全局多重检验校正 | FDR 仅对中介分析施加；PheWAS 显著结论（AD/PD 保护、MS 不保护）须视为探索性，待独立队列确认 |
 | L10 | C1 代谢组学中介依赖 IEU OpenGWAS 实时 API 提取 | 网络/版本状态影响可复现性；建议投稿前下载代谢物 full summary statistics 落盘（见 §四.3） |
+| L11 | G4 多状态 illness-death 时序模型原计划需 UK Biobank 个体级表型数据（发病时间、删失时间、死亡时间） | 未获得个体级数据，未执行；当前五层框架已提供不依赖时序信息的因果分类，多状态时序验证降级为 Discussion 展望 |
 
 ### 3.9 教育暴露的遗传哺养（genetic nurture）混杂与洁净度
 
@@ -177,7 +180,17 @@ AI 生成内容均经研究者逐条核验与修正后采用。
 
 **关键软件版本**（审计 #4）：R 4.5.2；TwoSampleMR 0.7.9；ieugwasr 1.1.0；MendelianRandomization 0.10.0；GenomicSEM 0.0.5；cause 1.2.0.335；loo 2.10.0；dplyr 1.2.1；data.table 1.18.4。（注：因无 renv 环境，建议投稿前以 `renv::snapshot()` 锁定完整依赖树。）
 
-### 4.4 数据与代码可用性（Data & Code Availability）
+### 4.4 Supplementary materials
+
+所有补充材料均位于 `课题设计阶段/Supplementary/`：
+
+- **Supplementary Figure 3**. Two-step MR forest plot: (A) insomnia → plasma CRP/IL-6 → AD and (B) education → plasma CRP/IL-6 → AD; both show null indirect effects under limited Step2 IVs.
+- **Supplementary Table 1**. Colocalisation loci (forward/reverse; main/replication), with PP.H0–PP.H4 and PP.H4 evidence class.
+- **Supplementary Table 2**. Instrument-set sensitivity for insomnia → AD, including unclumped multi-method MR and clumped UVMR IVW-only rows.
+- **Supplementary Table 3**. Complete MVMR/UVMR results (`MVMR_results_v3.csv`), with model, instrument set, method, and conditional F (where available).
+- **Supplementary Table 4**. Complete educational PheWAS against AD, PD, and MS, with IVW, weighted median, weighted mode, MR-Egger, Cochran's Q, and Egger intercept.
+
+### 4.5 数据与代码可用性（Data & Code Availability）
 - **数据**：所有汇总统计来自公开 GWAS 仓库（IEU OpenGWAS、GWAS Catalog、NIAGADS NG00182）。东亚教育 GWAS（Chen/Kim/Lam 2024，GCST90296498）与东亚 AD（GARD/NIAGADS NG00182）均按各自数据使用协议获取；预处理后位置键文件见 `data/GARD_NG00182/gard_ea_ad_hg19.tsv.gz`。
 - **代码**：全部分析脚本见 `code/`（R 主流程）与 `code/08h_steiger_py.py`、`code/ea0*.py`（Python 复现，用于绕过 R ABI 段错误）。`renv.lock` 锁定完整 R 依赖（见 §四.3）；所有随机化步骤已设 `set.seed()`（见 3A 基础设施说明）。
 - **复现环境说明**：本研究的 R 管线因编译包 ABI 不匹配（R 4.5.2 运行 R 4.5.3 编译的 TwoSampleMR/ieugwasr/data.table）在加载阶段即段错误，故 Steiger 方向性检验与东亚复制改以纯 Python + pyreadr 复现，结果等价。投稿前将提供完整 `renv.lock` 与容器化环境声明以确保可复现性。

@@ -1,0 +1,3 @@
+"id.exposure","id.outcome","outcome","exposure","method","Q","Q_df","Q_pval"
+"ieu-a-1239","prot-a-670","C_reactive_protein","Years of schooling || id:ieu-a-1239","MR Egger",332.384600195927,303,0.118206511251606
+"ieu-a-1239","prot-a-670","C_reactive_protein","Years of schooling || id:ieu-a-1239","Inverse variance weighted",334.678582976362,304,0.109076919452951

@@ -1,0 +1,5 @@
+"id.exposure","id.outcome","outcome","exposure","method","nsnp","b","se","pval"
+"ieu-a-1239","prot-a-1540","Interleukin_6","Years of schooling || id:ieu-a-1239","MR Egger",305,0.855723623278825,0.495514240013057,0.0851974904622418
+"ieu-a-1239","prot-a-1540","Interleukin_6","Years of schooling || id:ieu-a-1239","Inverse variance weighted",305,-0.0357589914305077,0.125906354803663,0.776400723180959
+"ieu-a-1239","prot-a-1540","Interleukin_6","Years of schooling || id:ieu-a-1239","Weighted median",305,-0.193625679480691,0.183197897973163,0.290547708333876
+"ieu-a-1239","prot-a-1540","Interleukin_6","Years of schooling || id:ieu-a-1239","Weighted mode",305,-0.341077055386616,0.522775119804114,0.514613287367531
