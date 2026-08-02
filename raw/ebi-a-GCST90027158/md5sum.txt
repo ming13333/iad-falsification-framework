@@ -1,0 +1,2 @@
+9d23b9ba23532da38ab83fb061bab18f GCST90027158_buildGRCh38.tsv.gz
+512621c79fa73b9dfa9f18c8aba47649 GCST90027158_buildGRCh38.tsv.gz-meta.yaml

@@ -1,0 +1,13 @@
+Tue Jul 21 10:44:23     2026 === git clone MRlap (depth 1) ===
+Cloning into 'MRlap_src'...
+--- src/ check (need Rtools?) ---
+NO src/ (pure R, OK)
+--- install_local ---
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+Error : Could not copy `C:\D\workbuddy\科研\共病分析\课题设计阶段\code\MRlap_src` to `C:\Users\lm962\AppData\Local\Temp\RtmpcXmgfd\file43102ffd698d`
+requireNamespace MRlap: FALSE 
+Tue Jul 21 10:47:17     2026 === done ===

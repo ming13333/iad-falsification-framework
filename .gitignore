@@ -1,0 +1,27 @@
+# 大型二进制 / 原始数据（不入库，避免仓库膨胀）
+data/
+# 预处理 / 原始 GWAS 大文件
+*.rds
+*.tsv.gz
+*.csv.gz
+*.gz
+*.vcf.gz
+
+# 日志
+*.log
+G1_run.log
+
+# 环境 / 缓存
+.venv/
+__pycache__/
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# WorkBuddy 内部
+.workbuddy/
+
+# 临时
+tmp/
+*.tmp

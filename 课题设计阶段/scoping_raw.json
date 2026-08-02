@@ -1,0 +1,908 @@
+{
+ "query_counts": {
+  "Q1_insomnia_to_cognition": [
+   27,
+   27
+  ],
+  "Q2_sleep_to_cognition": [
+   53,
+   53
+  ],
+  "Q3_reverse_cognition_to_sleep": [
+   91,
+   80
+  ]
+ },
+ "records": [
+  {
+   "pmid": "38350061",
+   "first_author": "Guo C",
+   "last_author": "Markus HS",
+   "title": "Sleep Characteristics and Risk of Stroke and Dementia: An Observational and Mendelian Randomization Study.",
+   "journal": "Neurology",
+   "year": "2024",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "41647032",
+   "first_author": "Hou X",
+   "last_author": "Wang L",
+   "title": "Mendelian randomization studies on the causal relationship between insomnia and disease.",
+   "journal": "Front Med (Lausanne)",
+   "year": "2025",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "38262521",
+   "first_author": "Sambou ML",
+   "last_author": "Dai J",
+   "title": "Associations between sleep-behavioral traits and healthspan: A one-sample Mendelian randomization study based on 388,909 participants of the UK-Biobank.",
+   "journal": "J Affect Disord",
+   "year": "2024",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "35585838",
+   "first_author": "Grover S",
+   "last_author": "International Age-related Macular Degeneration Genomics Consortium (IAMDGC)",
+   "title": "Sleep, Pain, and Neurodegeneration: A Mendelian Randomization Study.",
+   "journal": "Front Neurol",
+   "year": "2022",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "42298291",
+   "first_author": "Guo Y",
+   "last_author": "Kivipelto M",
+   "title": "Sleep and dementia: Assessing established dementia-related factors using multivariable Mendelian randomization.",
+   "journal": "Alzheimers Dement",
+   "year": "2026",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "40994718",
+   "first_author": "Li X",
+   "last_author": "Ji J",
+   "title": "Causal factors for migraine in Mendelian randomization studies: a systematic review and meta-analysis.",
+   "journal": "Front Neurol",
+   "year": "2025",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "40696659",
+   "first_author": "Wang Z",
+   "last_author": "Zhang H",
+   "title": "The causal association between insomnia and cognitive decline: A 2-sample, 2-step multivariable Mendelian randomization study.",
+   "journal": "Medicine (Baltimore)",
+   "year": "2025",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "38108111",
+   "first_author": "Wang Q",
+   "last_author": "Liu Y",
+   "title": "Causal relationship between sleep traits and cognitive impairment: A Mendelian randomization study.",
+   "journal": "J Evid Based Med",
+   "year": "2023",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "40332115",
+   "first_author": "Zhu H",
+   "last_author": "Peng F",
+   "title": "Evaluating the Bidirectional Causal Effects of Alzheimer's Disease Across Multiple Conditions: A Systematic Review and Meta-Analysis of Mendelian Randomization Studies.",
+   "journal": "Int J Mol Sci",
+   "year": "2025",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "32817390",
+   "first_author": "Huang J",
+   "last_author": "Dehghan A",
+   "title": "Sleep, major depressive disorder, and Alzheimer disease: A Mendelian randomization study.",
+   "journal": "Neurology",
+   "year": "2020",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "40834019",
+   "first_author": "Guo Y",
+   "last_author": "",
+   "title": "Mendelian randomization study of self-reported long sleep duration, short sleep duration, and insomnia and cognitive function.",
+   "journal": "PLoS One",
+   "year": "2025",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "35719152",
+   "first_author": "Li C",
+   "last_author": "Shang H",
+   "title": "Green Tea Intake and Parkinson's Disease Progression: A Mendelian Randomization Study.",
+   "journal": "Front Nutr",
+   "year": "2022",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "40180049",
+   "first_author": "Gu SC",
+   "last_author": "Ye Q",
+   "title": "The human cerebral cortex morphology in neuropsychiatric disorders: A causal inference based on Mendelian Randomization.",
+   "journal": "J Affect Disord",
+   "year": "2025",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "37764718",
+   "first_author": "Luo S",
+   "last_author": "Li L",
+   "title": "Causal Link between Gut Microbiota, Neurophysiological States, and Bone Diseases: A Comprehensive Mendelian Randomization Study.",
+   "journal": "Nutrients",
+   "year": "2023",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "41351985",
+   "first_author": "Shu Y",
+   "last_author": "Zhao Q",
+   "title": "Compound Chaijin Jieyu Fang alleviates insomnia complicated with depression by reshaping actinobacteria to inhibit neuronal apoptosis.",
+   "journal": "Phytomedicine",
+   "year": "2026",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "41517697",
+   "first_author": "Wang Z",
+   "last_author": "Tu M",
+   "title": "Evaluating the causal connections between sleep duration and disease prevalence: A comprehensive systematic review and meta-analysis of Mendelian randomization studies.",
+   "journal": "Medicine (Baltimore)",
+   "year": "2026",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "42277229",
+   "first_author": "Chen H",
+   "last_author": "Cao Z",
+   "title": "Plasma proteomics of sleep traits reveals systemic immune-metabolic pathways and genetically prioritized proteins.",
+   "journal": "Mol Psychiatry",
+   "year": "2026",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "38566068",
+   "first_author": "Zhang Z",
+   "last_author": "Luo Q",
+   "title": "Associations between breakfast skipping and outcomes in neuropsychiatric disorders, cognitive performance, and frailty: a Mendelian randomization study.",
+   "journal": "BMC Psychiatry",
+   "year": "2024",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "35656316",
+   "first_author": "Chen D",
+   "last_author": "Jia J",
+   "title": "Sleep and Late-Onset Alzheimer's Disease: Shared Genetic Risk Factors, Drug Targets, Molecular Mechanisms, and Causal Effects.",
+   "journal": "Front Genet",
+   "year": "2022",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "36285785",
+   "first_author": "Bell AS",
+   "last_author": "Lohoff FW",
+   "title": "Comparing the Relationships of Genetically Proxied PCSK9 Inhibition With Mood Disorders, Cognition, and Dementia Between Men and Women: A Drug-Target Mendelian Randomization Study.",
+   "journal": "J Am Heart Assoc",
+   "year": "2022",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "39586242",
+   "first_author": "Guo T",
+   "last_author": "Xie H",
+   "title": "The Lung-Brain Axis: Genetic Evidence for Causal Effects of Asthma, Allergic Rhinitis, and Chronic Rhinosinusitis on Brain Structure.",
+   "journal": "Int Arch Allergy Immunol",
+   "year": "2025",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "39547276",
+   "first_author": "Li M",
+   "last_author": "Sun L",
+   "title": "Associations between post-traumatic stress disorder and neurological disorders: A genetic correlation and Mendelian randomization study.",
+   "journal": "J Affect Disord",
+   "year": "2025",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "33150399",
+   "first_author": "Anderson EL",
+   "last_author": "Davey Smith G",
+   "title": "Is disrupted sleep a risk factor for Alzheimer's disease? Evidence from a two-sample Mendelian randomization analysis.",
+   "journal": "Int J Epidemiol",
+   "year": "2021",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "33481009",
+   "first_author": "Korologou-Linden R",
+   "last_author": "Richardson TG",
+   "title": "Multi-omics analyses of cognitive traits and psychiatric disorders highlights brain-dependent mechanisms.",
+   "journal": "Hum Mol Genet",
+   "year": "2021",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "38412787",
+   "first_author": "Zhan ZQ",
+   "last_author": "Sun B",
+   "title": "Gastroesophageal reflux disease with 6 neurodegenerative and psychiatric disorders: Genetic correlations, causality, and potential molecular mechanisms.",
+   "journal": "J Psychiatr Res",
+   "year": "2024",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "39834620",
+   "first_author": "Liu C",
+   "last_author": "Qin S",
+   "title": "Role of metabolic characteristics in the co-occurrence of insomnia, Alzheimer's disease, and Parkinson's disease: a Mendelian randomization study.",
+   "journal": "Front Aging Neurosci",
+   "year": "2024",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "32413284",
+   "first_author": "Kibinge NK",
+   "last_author": "Richardson TG",
+   "title": "Characterizing the Causal Pathway for Genetic Variants Associated with Neurological Phenotypes Using Human Brain-Derived Proteome Data.",
+   "journal": "Am J Hum Genet",
+   "year": "2020",
+   "query": "Q1_insomnia_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "40806142",
+   "first_author": "Emadi RC",
+   "last_author": "Kamangar F",
+   "title": "Coffee's Impact on Health and Well-Being.",
+   "journal": "Nutrients",
+   "year": "2025",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "40543840",
+   "first_author": "Gao PY",
+   "last_author": "Yu JT",
+   "title": "Genetic mechanisms, brain structures, and peripheral biomarkers mediate the relationship between physical frailty and neuropsychiatric disorders.",
+   "journal": "J Adv Res",
+   "year": "2026",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "38942983",
+   "first_author": "Wen J",
+   "last_author": "Davatzikos C",
+   "title": "The genetic architecture of biological age in nine human organ systems.",
+   "journal": "Nat Aging",
+   "year": "2024",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "37344293",
+   "first_author": "Paz V",
+   "last_author": "Garfield V",
+   "title": "Is there an association between daytime napping, cognitive function, and brain volume? A Mendelian randomization study in the UK Biobank.",
+   "journal": "Sleep Health",
+   "year": "2023",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "40499039",
+   "first_author": "Sha T",
+   "last_author": "Wang Y",
+   "title": "Sarcopenia and Risk of Cognitive Impairment: Cohort Study and Mendelian Randomization Analysis.",
+   "journal": "JMIR Aging",
+   "year": "2025",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "35863541",
+   "first_author": "Zhang YR",
+   "last_author": "Yu JT",
+   "title": "Modifiable risk factors for incident dementia and cognitive impairment: An umbrella review of evidence.",
+   "journal": "J Affect Disord",
+   "year": "2022",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "30241358",
+   "first_author": "Cornelis MC",
+   "last_author": "Munafo MR",
+   "title": "Mendelian Randomization Studies of Coffee and Caffeine Consumption.",
+   "journal": "Nutrients",
+   "year": "2018",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "31062029",
+   "first_author": "Henry A",
+   "last_author": "Dale CE",
+   "title": "The relationship between sleep duration, cognition and dementia: a Mendelian randomization study.",
+   "journal": "Int J Epidemiol",
+   "year": "2019",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "39258525",
+   "first_author": "Cavaillès C",
+   "last_author": "Yaffe K",
+   "title": "Causal Associations of Sleep Apnea With Alzheimer Disease and Cardiovascular Disease: A Bidirectional Mendelian Randomization Analysis.",
+   "journal": "J Am Heart Assoc",
+   "year": "2024",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "41912985",
+   "first_author": "Li T",
+   "last_author": "Alzheimer's Disease Neuroimaging Initiative",
+   "title": "Associations between sleep disturbance and cerebrospinal fluid Aβ, and shared proteomic signatures in Alzheimer's disease.",
+   "journal": "Alzheimers Dement",
+   "year": "2026",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "35918656",
+   "first_author": "Yuan S",
+   "last_author": "Lyu J",
+   "title": "Sleep duration, genetic susceptibility, and Alzheimer's disease: a longitudinal UK Biobank-based study.",
+   "journal": "BMC Geriatr",
+   "year": "2022",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "42168223",
+   "first_author": "Ghamgosar Shahkhali M",
+   "last_author": "Gan-Or Z",
+   "title": "Genetic associations between post-traumatic stress disorder and REM-sleep behavior disorder.",
+   "journal": "NPJ Parkinsons Dis",
+   "year": "2026",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "37873444",
+   "first_author": "Gao Y",
+   "last_author": "Leng Y",
+   "title": "Snoring and risk of dementia: a prospective cohort and Mendelian randomization study.",
+   "journal": "medRxiv",
+   "year": "2023",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "41016270",
+   "first_author": "Liu H",
+   "last_author": "Fan H",
+   "title": "The interactive effects of low testosterone and sleep insufficiency on cognitive impairment: Evidence from the NHANES 2011-2014.",
+   "journal": "Psychiatry Res",
+   "year": "2025",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "37798367",
+   "first_author": "Fjell AM",
+   "last_author": "Walhovd KB",
+   "title": "No phenotypic or genotypic evidence for a link between sleep duration and brain atrophy.",
+   "journal": "Nat Hum Behav",
+   "year": "2023",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "41054101",
+   "first_author": "Hu W",
+   "last_author": "Zhang P",
+   "title": "Rapid eye movement sleep behavior disorder (RBD) and neurodegenerative diseases: A bidirectional 2-sample Mendelian randomization study.",
+   "journal": "Medicine (Baltimore)",
+   "year": "2025",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "36031898",
+   "first_author": "Li S",
+   "last_author": "Wang K",
+   "title": "Evaluating the Bidirectional Causal Association Between Daytime Napping and Alzheimer's Disease Using Mendelian Randomization.",
+   "journal": "J Alzheimers Dis",
+   "year": "2022",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "42049746",
+   "first_author": "Zhao YL",
+   "last_author": "Yu JT",
+   "title": "Associations of social isolation and loneliness with neurological disorders, psychiatric disorders, brain structures and behavioural phenotypes among UK Biobank participants.",
+   "journal": "Nat Commun",
+   "year": "2026",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "39672473",
+   "first_author": "Dong Y",
+   "last_author": "Sun W",
+   "title": "Modifiable lifestyle factors influencing neurological and psychiatric disorders mediated by structural brain reserve: An observational and Mendelian randomization study.",
+   "journal": "J Affect Disord",
+   "year": "2025",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "37437505",
+   "first_author": "Sun Y",
+   "last_author": "Li S",
+   "title": "Bidirectional relationship between 56 peripheral inflammatory regulators and sleep apnea syndrome: A Mendelian randomization study.",
+   "journal": "Heart Lung",
+   "year": "2023",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "37488110",
+   "first_author": "Huang LY",
+   "last_author": "Yu JT",
+   "title": "Associations of cardiovascular risk factors and lifestyle behaviors with neurodegenerative disease: a Mendelian randomization study.",
+   "journal": "Transl Psychiatry",
+   "year": "2023",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "38865787",
+   "first_author": "Xiang W",
+   "last_author": "Xu L",
+   "title": "Causal relationship between sleep disorders and the risk of Alzheimer's disease: A Mendelian randomization study.",
+   "journal": "Sleep Med",
+   "year": "2024",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "38943476",
+   "first_author": "Gao Y",
+   "last_author": "Leng Y",
+   "title": "Snoring and risk of dementia: a prospective cohort and Mendelian randomization study.",
+   "journal": "Sleep",
+   "year": "2025",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "34130902",
+   "first_author": "Cullell N",
+   "last_author": "Fernández-Cadenas I",
+   "title": "Sleep/wake cycle alterations as a cause of neurodegenerative diseases: A Mendelian randomization study.",
+   "journal": "Neurobiol Aging",
+   "year": "2021",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "41821113",
+   "first_author": "Zhang Z",
+   "last_author": "Yang G",
+   "title": "Distinct roles of chronotype, daytime napping, and sleep duration in biological and functional aging: a univariable and multivariable Mendelian randomization study.",
+   "journal": "Clin Epigenetics",
+   "year": "2026",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "41296471",
+   "first_author": "Du Y",
+   "last_author": "Xu X",
+   "title": "Genetic Evidence Prioritizes Neurocognitive Decline as a Causal Driver of Sleep Disturbances: A Multi-Omics Analysis Identifying Causal Genes and Therapeutic Targets.",
+   "journal": "Curr Issues Mol Biol",
+   "year": "2025",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "32996171",
+   "first_author": "Andrews SJ",
+   "last_author": "collaborators of the Alzheimer's Disease Genetics Consortium",
+   "title": "Causal Associations Between Modifiable Risk Factors and the Alzheimer's Phenome.",
+   "journal": "Ann Neurol",
+   "year": "2021",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "38301285",
+   "first_author": "Xiong Y",
+   "last_author": "Wang HX",
+   "title": "Impact of sleep duration and sleep disturbances on the incidence of dementia and Alzheimer's disease: A 10-year follow-up study.",
+   "journal": "Psychiatry Res",
+   "year": "2024",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "39559883",
+   "first_author": "Xu Y",
+   "last_author": "Jia Y",
+   "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology.",
+   "journal": "J Prev Alzheimers Dis",
+   "year": "2024",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "42213732",
+   "first_author": "Peng C",
+   "last_author": "Xu S",
+   "title": "Sleep Traits and Cognitive Function: A Prospective Cohort Study With Exploration of Inflammatory Biomarkers.",
+   "journal": "Brain Behav",
+   "year": "2026",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "38045267",
+   "first_author": "Cavaillès C",
+   "last_author": "Yaffe K",
+   "title": "Causal Associations of Sleep Apnea with Alzheimer's Disease and Cardiovascular Disease: a Bidirectional Mendelian Randomization Analysis.",
+   "journal": "medRxiv",
+   "year": "2023",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "42305347",
+   "first_author": "Zhao L",
+   "last_author": "Zhang Y",
+   "title": "Causal associations between sleep apnea and dementia: a two-sample Mendelian randomization study.",
+   "journal": "Arch Med Sci",
+   "year": "2026",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "41650091",
+   "first_author": "Chen ZH",
+   "last_author": "Jia BH",
+   "title": "Causality between noise pollution and Alzheimer disease: A Mendelian randomization analysis.",
+   "journal": "Medicine (Baltimore)",
+   "year": "2026",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "37325708",
+   "first_author": "Pan L",
+   "last_author": "Shen X",
+   "title": "Hidden Genetic Regulation of Human Complex Traits via Brain Isoforms.",
+   "journal": "Phenomics",
+   "year": "2023",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "35724440",
+   "first_author": "Li J",
+   "last_author": "Chen Y",
+   "title": "Obstructive sleep apnea and the risk of Alzheimer's disease and Parkinson disease: A Mendelian randomization study OSA, Alzheimer's disease and Parkinson disease.",
+   "journal": "Sleep Med",
+   "year": "2022",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "42395345",
+   "first_author": "Zhao B",
+   "last_author": "Qu Q",
+   "title": "FLOT1 and EEF1D: ac4C-related genes bridging Alzheimer's disease and sleep deprivation.",
+   "journal": "Front Aging Neurosci",
+   "year": "2026",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "42396368",
+   "first_author": "Hu F",
+   "last_author": "Shi H",
+   "title": "Relationship between mental disorders and non-traumatic cerebral hemorrhage: cross-sectional analysis and mendelian randomization.",
+   "journal": "PeerJ",
+   "year": "2026",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "41646756",
+   "first_author": "Yu H",
+   "last_author": "Gan-Or Z",
+   "title": "Lack of genetic evidence for a role of SLC25A46 in alpha-synucleinopathies.",
+   "journal": "medRxiv",
+   "year": "2026",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "40797480",
+   "first_author": "He K",
+   "last_author": "Zhang T",
+   "title": "The rise of Mendelian randomization for exploring disease causality: A bibliometric analysis based on CiteSpace.",
+   "journal": "Medicine (Baltimore)",
+   "year": "2025",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "42432887",
+   "first_author": "Ye H",
+   "last_author": "Gao YL",
+   "title": "Refining the link between REM sleep behavior disorder and neurodegeneration: Genetic correlation, Mendelian randomization, and colocalization evidence.",
+   "journal": "Medicine (Baltimore)",
+   "year": "2026",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "40187156",
+   "first_author": "Xu QH",
+   "last_author": "Wang C",
+   "title": "Reassessing the role of amyloid in isolated REM sleep behavior disorder.",
+   "journal": "Parkinsonism Relat Disord",
+   "year": "2025",
+   "query": "Q2_sleep_to_cognition",
+   "abstract": ""
+  },
+  {
+   "pmid": "36907247",
+   "first_author": "Yuan S",
+   "last_author": "Larsson SC",
+   "title": "Epidemiology of sarcopenia: Prevalence, risk factors, and consequences.",
+   "journal": "Metabolism",
+   "year": "2023",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "30846698",
+   "first_author": "Dashti HS",
+   "last_author": "Saxena R",
+   "title": "Genome-wide association study identifies genetic loci for self-reported habitual sleep duration supported by accelerometer-derived estimates.",
+   "journal": "Nat Commun",
+   "year": "2019",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "40738335",
+   "first_author": "Zhang Z",
+   "last_author": "Jiang C",
+   "title": "Sleep disorders and aging: Mendelian randomization analysis of epigenetic and frailty markers.",
+   "journal": "J Affect Disord",
+   "year": "2025",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "37334291",
+   "first_author": "Sun Z",
+   "last_author": "Cheng F",
+   "title": "Causal relationship between nonalcoholic fatty liver disease and different sleep traits: a bidirectional Mendelian randomized study.",
+   "journal": "Front Endocrinol (Lausanne)",
+   "year": "2023",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "34791088",
+   "first_author": "Julian TH",
+   "last_author": "Shaw PJ",
+   "title": "A review of Mendelian randomization in amyotrophic lateral sclerosis.",
+   "journal": "Brain",
+   "year": "2022",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "40743770",
+   "first_author": "Ma L",
+   "last_author": "Zhang L",
+   "title": "Chronic financial stress and cardiovascular disease risk: A prospective cohort study and Mendelian randomization analysis.",
+   "journal": "Atherosclerosis",
+   "year": "2025",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "36467458",
+   "first_author": "Wang J",
+   "last_author": "Xu L",
+   "title": "Chronotype and cognitive function: Observational study and bidirectional Mendelian randomization.",
+   "journal": "EClinicalMedicine",
+   "year": "2022",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "41656501",
+   "first_author": "Pengo MF",
+   "last_author": "Lombardi C",
+   "title": "Insomnia and Cardiovascular Disease: Untangling a Complex Relationship.",
+   "journal": "J Sleep Res",
+   "year": "2026",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "40409599",
+   "first_author": "Guo H",
+   "last_author": "Wang Y",
+   "title": "Mapping the lung-brain axis: Causal relationships between brain network connectivity and respiratory disorders.",
+   "journal": "Brain Res Bull",
+   "year": "2025",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "39600790",
+   "first_author": "Ma X",
+   "last_author": "Li Y",
+   "title": "Depression and the risk of fibromyalgia syndrome: a two-sample Mendelian randomization study.",
+   "journal": "Front Psychiatry",
+   "year": "2024",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "41804490",
+   "first_author": "Han D",
+   "last_author": "Huang D",
+   "title": "Insomnia-Driven Hippocampal Atrophy: Evidence From Bidirectional Mendelian Randomization.",
+   "journal": "Health Sci Rep",
+   "year": "2026",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "38711061",
+   "first_author": "Bao J",
+   "last_author": "Yu H",
+   "title": "Elucidating the association of obstructive sleep apnea with brain structure and cognitive performance.",
+   "journal": "BMC Psychiatry",
+   "year": "2024",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "40204511",
+   "first_author": "Li C",
+   "last_author": "Wu J",
+   "title": "Causal associations between environmental factors and risk of IgA nephropathy and membranous nephropathy: a bidirectional Mendelian randomization and mediation analysis.",
+   "journal": "Ren Fail",
+   "year": "2025",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "39533213",
+   "first_author": "Qiu P",
+   "last_author": "Wu J",
+   "title": "Exploring the relationship of sleep duration on cognitive function among the elderly: a combined NHANES 2011-2014 and mendelian randomization analysis.",
+   "journal": "BMC Geriatr",
+   "year": "2024",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "38302190",
+   "first_author": "Yu M",
+   "last_author": "Gao X",
+   "title": "Relationship Between Sleep Duration and Cognitive Function in Older Adults: Analysis of NHANES and UK Biobank GWAS Data.",
+   "journal": "Biol Res Nurs",
+   "year": "2024",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "34290290",
+   "first_author": "Barkhuizen W",
+   "last_author": "Ronald A",
+   "title": "Genetic overlap and causal associations between smoking behaviours and mental health.",
+   "journal": "Sci Rep",
+   "year": "2021",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "39566744",
+   "first_author": "Ma Z",
+   "last_author": "Qu N",
+   "title": "Gut microbiotas, inflammatory factors, and mental-behavioral disorders: A mendelian randomization study.",
+   "journal": "J Affect Disord",
+   "year": "2025",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "38211375",
+   "first_author": "Yang L",
+   "last_author": "Liu J",
+   "title": "Altered orientation dispersion index of white matter in individuals with insomnia during the COVID-19 pandemic: A study combining neuroimaging technique and Mendelian randomization.",
+   "journal": "Sleep Med",
+   "year": "2024",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "39372647",
+   "first_author": "Li Y",
+   "last_author": "Liu T",
+   "title": "Prolonged moderate to vigorous physical activity may lead to a decline in cognitive performance: a Mendelian randomization study.",
+   "journal": "Front Aging Neurosci",
+   "year": "2024",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "39314956",
+   "first_author": "Burns AC",
+   "last_author": "Lane JM",
+   "title": "Sleep inertia drives the association of evening chronotype with psychiatric disorders: epidemiological and genetic evidence.",
+   "journal": "medRxiv",
+   "year": "2024",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  },
+  {
+   "pmid": "40592745",
+   "first_author": "Peng T Sr",
+   "last_author": "Xu K",
+   "title": "Rationale and protocol for a longitudinal cohort study of children with cerebral palsy in China assessing functional developmental trends, genetic aetiology and imaging.",
+   "journal": "BMJ Open",
+   "year": "2025",
+   "query": "Q3_reverse_cognition_to_sleep",
+   "abstract": ""
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+{
+  "insomnia": "ukb-b-3957",
+  "ad": "ieu-b-2",
+  "ad_alt": "ebi-a-GCST90027158",
+  "verified_on": "2026-07-20",
+  "note": "ad/ad_alt 若为 PENDING_VERIFY，表示需在联网环境人工指派后重跑本脚本。"
+}

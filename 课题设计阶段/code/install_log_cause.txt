@@ -1,0 +1,117 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+=== removing broken CAUSE ===
+=== installing CAUSE from GitHub source (compile) ===
+Downloading GitHub repo jean997/cause@HEAD
+-- R CMD build -----------------------------------------------------------------
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+* checking for file 'C:\Users\lm962\AppData\Local\Temp\RtmpYDjbQT\remotes48141da775c0\jean997-cause-6257e6c/DESCRIPTION' ... OK
+* preparing 'cause':
+* checking DESCRIPTION meta-information ... OK
+* cleaning src
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+Omitted 'LazyData' from DESCRIPTION
+* building 'cause_1.2.0.0335.tar.gz'
+
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+* installing *source* package 'cause' ...
+** this is package 'cause' version '1.2.0.0335'
+** using staged installation
+** libs
+using C++ compiler: 'G__~1.EXE (GCC) 14.3.0'
+using C++11
+g++  -std=gnu++11 -I"C:/PROGRA~1/R/R-45~1.2/include" -DNDEBUG  -I'C:/Users/lm962/AppData/Local/R/win-library/4.5/Rcpp/include' -I'C:/Users/lm962/AppData/Local/R/win-library/4.5/RcppParallel/include'   -I"c:/rtools45/x86_64-w64-mingw32.static.posix/include"   -DRCPP_PARALLEL_USE_TBB=1   -O2 -Wall  -mfpmath=sse -msse2 -mstackrealign    -c RcppExports.cpp -o RcppExports.o
+g++  -std=gnu++11 -I"C:/PROGRA~1/R/R-45~1.2/include" -DNDEBUG  -I'C:/Users/lm962/AppData/Local/R/win-library/4.5/Rcpp/include' -I'C:/Users/lm962/AppData/Local/R/win-library/4.5/RcppParallel/include'   -I"c:/rtools45/x86_64-w64-mingw32.static.posix/include"   -DRCPP_PARALLEL_USE_TBB=1   -O2 -Wall  -mfpmath=sse -msse2 -mstackrealign    -c log_likelihood_functions.cpp -o log_likelihood_functions.o
+log_likelihood_functions.cpp: In function 'double loglik_i(double, double, double, double, RcppParallel::RVector<double>, RcppParallel::RVector<double>, RcppParallel::RVector<double>, double, double, double, double)':
+log_likelihood_functions.cpp:64:23: warning: comparison of integer expressions of different signedness: 'size_t' {aka 'long long unsigned int'} and 'int' [-Wsign-compare]
+   64 |   for(size_t j = 0; j < k; j ++){
+      |                     ~~^~~
+log_likelihood_functions.cpp: In lambda function:
+log_likelihood_functions.cpp:104:37: warning: comparison of integer expressions of different signedness: 'size_t' {aka 'long long unsigned int'} and 'int' [-Wsign-compare]
+  104 |                    for(size_t j=0; j<K; j++){
+      |                                    ~^~
+log_likelihood_functions.cpp: In lambda function:
+log_likelihood_functions.cpp:193:37: warning: comparison of integer expressions of different signedness: 'size_t' {aka 'long long unsigned int'} and 'int' [-Wsign-compare]
+  193 |                    for(size_t j=0; j<L; j++){
+      |                                    ~^~
+log_likelihood_functions.cpp: In function 'double loglik_i_Z1(double, double, double, double, RcppParallel::RVector<double>, RcppParallel::RVector<double>, RcppParallel::RVector<double>, double, double, double, double)':
+log_likelihood_functions.cpp:262:23: warning: comparison of integer expressions of different signedness: 'size_t' {aka 'long long unsigned int'} and 'int' [-Wsign-compare]
+  262 |   for(size_t i = 0; i < k; i ++){
+      |                     ~~^~~
+log_likelihood_functions.cpp: In function 'double loglik_i_Z0(double, double, double, double, RcppParallel::RVector<double>, RcppParallel::RVector<double>, RcppParallel::RVector<double>, double, double, double, double)':
+log_likelihood_functions.cpp:283:23: warning: comparison of integer expressions of different signedness: 'size_t' {aka 'long long unsigned int'} and 'int' [-Wsign-compare]
+  283 |   for(size_t i = 0; i < k; i ++){
+      |                     ~~^~~
+log_likelihood_functions.cpp: In lambda function:
+log_likelihood_functions.cpp:331:37: warning: comparison of integer expressions of different signedness: 'size_t' {aka 'long long unsigned int'} and 'int' [-Wsign-compare]
+  331 |                    for(size_t j=0; j<L; j++){
+      |                                    ~^~
+log_likelihood_functions.cpp: In lambda function:
+log_likelihood_functions.cpp:380:37: warning: comparison of integer expressions of different signedness: 'size_t' {aka 'long long unsigned int'} and 'int' [-Wsign-compare]
+  380 |                    for(size_t j=0; j<L; j++){
+      |                                    ~^~
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+g++ -shared -s -static-libgcc -o cause.dll tmp.def RcppExports.o log_likelihood_functions.o -LC:/Users/lm962/AppData/Local/R/win-library/4.5/RcppParallel/libs/x64 -lRcppParallel -LC:/Users/lm962/AppData/Local/R/win-library/4.5/RcppParallel/lib/x64 -ltbb -ltbbmalloc -Lc:/rtools45/x86_64-w64-mingw32.static.posix/lib/x64 -Lc:/rtools45/x86_64-w64-mingw32.static.posix/lib -LC:/PROGRA~1/R/R-45~1.2/bin/x64 -lR
+installing to C:/Users/lm962/AppData/Local/R/win-library/4.5/00LOCK-cause/00new/cause/libs/x64
+** R
+** byte-compile and prepare package for lazy loading
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+Note: possible error in 'write_tsv(X, path = output_file)': unused argument (path = output_file) 
+** help
+*** installing help indices
+** building package indices
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** testing if installed package can be loaded from temporary location
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** testing if installed package can be loaded from final location
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** testing if installed package keeps a record of temporary installation path
+* DONE (cause)
+=== CAUSE requireNamespace: FALSE ===

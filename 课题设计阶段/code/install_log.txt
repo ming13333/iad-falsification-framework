@@ -1,0 +1,28 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+1784599616 === start ===
+1784599616 === MRlap (n-mounier/MRlap) ===
+Downloading GitHub repo n-mounier/MRlap@HEAD
+Error in utils::download.file(url, path, method = method, quiet = quiet,  : 
+  download from 'https://api.github.com/repos/n-mounier/MRlap/tarball/HEAD' failed
+1784600311 MRlap OK
+1784600311 === cause (mrcieu r-universe binary) ===
+Installing package into 'C:/Users/lm962/AppData/Local/R/win-library/4.5'
+(as 'lib' is unspecified)
+Warning: dependencies 'RcppParallel', 'numDeriv', 'ashr', 'loo', 'intervals', 'testthat' are not available
+trying URL 'https://mrcieu.r-universe.dev/bin/windows/contrib/4.5/cause_1.2.0.0335.zip?sha256=c11f7ebc17a880e270c9d0f22f147804f759256d49a18537159cb3ade4369bdf&file=/cause_1.2.0.0335.zip'
+Content type 'application/zip' length 582144 bytes (568 KB)
+==================================================
+downloaded 568 KB
+
+package 'cause' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\lm962\AppData\Local\Temp\RtmpqsMsna\downloaded_packages
+1784600320 cause OK
+1784600320 === verify ===
+MRlap: FALSE  cause: FALSE 
+1784600320 === ALL DONE ===

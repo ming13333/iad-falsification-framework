@@ -1,0 +1,2 @@
+1. Bellenguez, C. et al. New insights into the genetic etiology of Alzheimer’s disease and related dementias. MedRxiv, 2020.10.01.20200659 (2020)
+2. n_cases : Total number of cases included in the meta-analysis; n_controls : Total number of controls included in the meta-analysis; het_isq : I^2 statistic which measures heterogeneity on scale of 0-100%; het_pvalue : P-value for heterogeneity statistic; variant_alternate_id : Marker ID with format chromosome:position:reference_allele:alternate_allele (according to GRCh38)

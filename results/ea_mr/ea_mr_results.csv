@@ -1,0 +1,8 @@
+method,beta,se,z,p,note
+IVW (fixed effects),-0.0285,0.1523,-0.187,0.8516,
+IVW (multiplicative RE),-0.0285,0.1523,-0.187,0.8516,
+MR-Egger,0.0135,0.1552,0.087,0.9307,
+Weighted median,-0.1665,0.1523,-1.094,0.2742,
+Cochran_Q,,,,0.4381,"Q=4.90,df=8"
+MR-Egger_intercept,,,,0.1646,intercept=0.0190(se=0.0137)
+Steiger,,,,0.2768,"direction=education→AD,R_exp=0.0440,R_out=0.0303"

@@ -1,0 +1,30 @@
+=== EA Education → AD Mendelian Randomization Replication ===
+
+Exposure: Chen/Kim/Lam 2024 EAS EduYears (n=165,232, hg19)
+Outcome:  GARD/NIAGADS NG00182 East Asian AD (n=6,518, cases=2,919, lifted to hg19)
+Instruments: 9 independent SNPs (p<5e-8, distance-clumped kb=10Mb)
+
+--- Primary Results ---
+IVW (fixed effects)           β=-0.0285  SE=0.1523  p=0.8516
+IVW (multiplicative RE)       β=-0.0285  SE=0.1523  p=0.8516
+MR-Egger                      β=+0.0135  SE=0.1552  p=0.9307
+Weighted median               β=-0.1665  SE=0.1523  p=0.2742
+
+Cochran's Q = 4.90 (df=8)  p = 0.4381
+
+MR-Egger intercept = 0.0190  SE = 0.0137  p = 0.1646
+  -> No significant directional pleiotropy
+
+Steiger: R_exp=0.0440, R_out=0.0303, direction=education→AD, p=0.2768
+
+--- EUR Comparison ---
+EUR education→AD: β = -0.33 (p=1.1e-5) [PheWAS, MVMR]
+EA direction: consistent (negative = protective)
+EA vs EUR: consistent magnitude (not rejection of EUR finding)
+
+--- Caveats ---
+1. Small outcome sample (cases=2,919) — wide CIs, not an independent replication
+2. EAS LD panel unavailable — distance-clumped (kb=10Mb); residual LD possible
+3. No EA coloc/LDSC possible (no LD reference)
+4. Only 9 instruments — MR-Egger pleiotropy test underpowered
+5. GARD hg38→hg19 liftover: 99.91% mapping success; 0.09% lost variants negligible

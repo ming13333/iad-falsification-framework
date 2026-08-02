@@ -1,0 +1,10 @@
+2026-07-21 10:30:00 === start v4 === 
+2026-07-21 10:30:00 === MRlap (github zip -> install_local) === 
+2026-07-21 10:33:42 MRlap ERR:  download from 'https://github.com/n-mounier/MRlap/archive/refs/heads/master.zip' failed 
+2026-07-21 10:33:42 === cause deps (CRAN) === 
+2026-07-21 10:33:43 cause deps installed 
+2026-07-21 10:33:43 === cause (r-universe binary) === 
+2026-07-21 10:33:50 cause ERR: installed but requireNamespace FALSE 
+2026-07-21 10:33:50 === SUMMARY === 
+2026-07-21 10:33:50 MRlap: FALSE | cause: FALSE 
+2026-07-21 10:33:50 final load check: MRlap FALSE cause FALSE 
