@@ -245,19 +245,6 @@ AN  - 24830394
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Progress of the synthesis of condensed pyrazole derivatives (from 2010 to
-AU  - Li M
-AU  - Zhao BX
-PY  - 2014
-JF  - Eur J Med Chem
-VL  - 85
-SP  - 311-40
-AB  - Condensed pyrazole derivatives are important heterocyclic compounds due to their
-DO  - 10.1016/j.ejmech.2014.07.102
-AN  - 25104650
-DB  - PubMed
-ER  - 
-TY  - JOUR
 TI  - Multivariable Mendelian randomization: the use of pleiotropic genetic variants to
 AU  - Burgess S
 AU  - Thompson SG
@@ -1460,26 +1447,6 @@ AN  - 31701892
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Author Correction: Biological parameters, life table and thermal requirements of
-AU  - Barbosa LR
-AU  - Santos F
-AU  - Soliman EP
-AU  - Rodrigues AP
-AU  - Wilcken CF
-AU  - Campos JM
-AU  - Zanuncio AJV
-AU  - Zanuncio JC
-PY  - 2020
-JF  - Sci Rep
-VL  - 10
-IS  - 1
-SP  - 903
-AB  - An amendment to this paper has been published and can be accessed via a link at
-DO  - 10.1038/s41598-020-57955-2
-AN  - 31942035
-DB  - PubMed
-ER  - 
-TY  - JOUR
 TI  - Power calculation for the general two-sample Mendelian randomization analysis.
 AU  - Deng L
 AU  - Zhang H
@@ -2575,24 +2542,6 @@ IS  - 9
 AB  - Blood biomarkers have been considered tools for the diagnosis, prognosis, and
 DO  - 10.3390/cells12091309
 AN  - 37174709
-DB  - PubMed
-ER  - 
-TY  - JOUR
-TI  - Multiscale characterization and contact performance analysis of machining
-AU  - Li L
-AU  - Zhang W
-AU  - Wang J
-AU  - Ruan X
-AU  - Li L
-AU  - Xie M
-PY  - 2023
-JF  - Sci Rep
-VL  - 13
-IS  - 1
-SP  - 9710
-AB  - Accurately characterizing the surface topography of parts is crucial to improve
-DO  - 10.1038/s41598-023-36907-6
-AN  - 37322105
 DB  - PubMed
 ER  - 
 TY  - JOUR
