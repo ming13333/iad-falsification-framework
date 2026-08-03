@@ -1,12 +1,12 @@
-# A Five-Layer Causal Verification Framework for Genetic Comorbidity: Recalibrating Insomnia–Alzheimer's Disease
+# A Triangulation Framework for Causal Verification of Genetic Comorbidity: Recalibrating Insomnia–Alzheimer's Disease
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
 
 ## Overview
 
-This repository contains the complete analysis pipeline for the paper **"A five-layer causal verification framework for genetic comorbidity: recalibrating insomnia–Alzheimer's disease from a presumed causal upstream to APOE-locus-specific shared liability with cross-ancestry educational protection."**
+This repository contains the complete analysis pipeline for the paper **"A triangulation framework for causal verification of genetic comorbidity: recalibrating insomnia–Alzheimer's disease from a presumed causal upstream to APOE-locus-specific shared liability with cross-ancestry educational protection."**
 
-We propose and validate a **five-layer framework** for genetic comorbidity verification, using insomnia–AD as a proof-of-concept:
+We propose and validate a **triangulation framework** for genetic comorbidity verification, using insomnia–AD as a proof-of-concept:
 1. **Phenomenological**: Bidirectional MR with LD-clump sensitivity
 2. **Genome-wide**: LDSC genetic correlation ± chromosome-19/APOE removal
 3. **Locus-level**: Colocalization (forward + reverse)
@@ -95,7 +95,7 @@ If you use this code or data, please cite:
 
 ```bibtex
 @article{insomniaAD2025,
-  title={A five-layer causal verification framework for genetic comorbidity: 
+  title={A triangulation framework for causal verification of genetic comorbidity: 
          recalibrating insomnia–Alzheimer's disease from a presumed causal 
          upstream to APOE-locus-specific shared liability},
   author={[Authors]},

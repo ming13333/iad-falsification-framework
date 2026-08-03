@@ -17,7 +17,7 @@ plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10,
                      "axes.spines.top": False, "axes.spines.right": False})
 
 # ---------------------------------------------------------------------------
-# FIG 1: Five-layer framework pipeline + comorbidity quadrant
+# FIG 1: Triangulation framework pipeline + comorbidity quadrant
 # ---------------------------------------------------------------------------
 def fig1():
     fig = plt.figure(figsize=(11, 5.2))
@@ -53,7 +53,7 @@ def fig1():
                                   arrowstyle="-|>", mutation_scale=11, color="#777", lw=1.3)
             axL.add_patch(arr)
         y -= 0.190
-    axL.text(0.28, 0.975, "Five-layer causal verification framework", ha="center",
+    axL.text(0.28, 0.975, "Triangulation framework for causal verification", ha="center",
              fontsize=11.5, fontweight="bold")
     axL.text(0.28, 0.935, "Each layer narrows the space of plausible causal interpretations",
              ha="center", fontsize=8, style="italic", color="#666")
@@ -161,7 +161,7 @@ def fig5():
                                 facecolor="#ffe0e0", edgecolor="#c00", lw=2))
     ax.text(0.50, 0.09, "SYNTHESIS:  insomnia-AD = Quadrant III  (shared APOE-locus liability, no independent causal upstream)",
             ha="center", va="center", fontsize=10, fontweight="bold", color="#900")
-    ax.set_title("Triangulation synthesis across the five layers", fontsize=11, fontweight="bold", loc="left")
+    ax.set_title("Triangulation synthesis across the five analytical dimensions", fontsize=11, fontweight="bold", loc="left")
     fig.savefig(os.path.join(OUT, "Fig5_triangulation.png"), dpi=300, bbox_inches="tight")
     plt.close(fig)
 

@@ -2,21 +2,21 @@
 
 > 生成日期：2026-08-02（框架升维版） | 配套数据：`Phase1_comprehensive_results.md`
 > 中央假设（修订）：失眠与 AD 共享以 APOE 为核心的**位点特异性**遗传负债（全基因组 rg≈0，可排除|rg|>~0.13）；失眠非 AD 独立因果上游；教育年限是 AD/PD 的稳健保护因子，其效应通过多路径传导。
-> 叙事定位（框架升维）：本研究以 insomnia-AD 为**示范案例**，提出并验证一套可推广的**五层共病因果验证框架**；论文核心贡献是方法学框架本身，失眠-AD 结论与方法学教训为辅。
+> 叙事定位（框架升维）：本研究以 insomnia-AD 为**示范案例**，提出并验证一套可推广的**多方法三角因果验证框架**；论文核心贡献是方法学框架本身，失眠-AD 结论与方法学教训为辅。
 
 ---
 
 ## 一、Revised Abstract（框架升维版，Nature 风格六拍）
 
-**标题建议**: A five-layer causal verification framework for genetic comorbidity: recalibrating insomnia–Alzheimer's disease from a presumed causal upstream to APOE-locus-specific shared liability with cross-ancestry educational protection
+**标题建议**: A triangulation framework for causal verification of genetic comorbidity: recalibrating insomnia–Alzheimer's disease from a presumed causal upstream to APOE-locus-specific shared liability with cross-ancestry educational protection
 
-**Background**: Comorbidity Mendelian randomization (MR) studies routinely report causal effects between co-occurring traits, yet most omit LD-clumping sensitivity analysis — the standard gatekeeper for instrument independence — so that inferred causality may be an artifact of correlated instruments rather than true biology. We present a five-layer causal verification framework for genetic comorbidity and apply it to the insomnia–Alzheimer's disease (AD) pair as a proof-of-concept.
+**Background**: Comorbidity Mendelian randomization (MR) studies routinely report causal effects between co-occurring traits, yet most omit LD-clumping sensitivity analysis — the standard gatekeeper for instrument independence — so that inferred causality may be an artifact of correlated instruments rather than true biology. We present a triangulation framework for causal verification of genetic comorbidity and apply it to the insomnia–Alzheimer's disease (AD) pair as a proof-of-concept.
 
-**Methods**: The framework proceeds in five escalating layers — (1) phenomenological: bidirectional MR with LD-clump sensitivity; (2) genome-wide: LDSC genetic correlation ± chromosome-19/APOE removal; (3) locus-level: colocalization; (4) mechanistic: two-step protein- and metabolite-mediation MR; (5) protective-factor: MVMR plus an educational-attainment PheWAS. We applied it to insomnia (UKB; n=462,341) and AD (IGAP Kunkle; n=63,926), and performed an East Asian cross-ancestry replication of the education→AD signal (exposure: Chen/Kim/Lam 2024 EAS-only EduYears, GCST90296498, n=165,232; outcome: GARD/NIAGADS NG00182 East Asian AD, n=6,518, 2,919 cases; coordinates lifted to GRCh37).
+**Methods**: The framework triangulates evidence across complementary analytical dimensions — (1) phenomenological: bidirectional MR with LD-clump sensitivity; (2) genome-wide: LDSC genetic correlation ± chromosome-19/APOE removal; (3) locus-level: colocalization; (4) mechanistic: two-step protein- and metabolite-mediation MR; (5) protective-factor: MVMR plus an educational-attainment PheWAS. We applied it to insomnia (UKB; n=462,341) and AD (IGAP Kunkle; n=63,926), and performed an East Asian cross-ancestry replication of the education→AD signal (exposure: Chen/Kim/Lam 2024 EAS-only EduYears, GCST90296498, n=165,232; outcome: GARD/NIAGADS NG00182 East Asian AD, n=6,518, 2,919 cases; coordinates lifted to GRCh37).
 
-**Results**: Layer 1 — unclumped MR yielded a positive insomnia→AD effect (+0.10, p=0.0009) that reversed to null/negative after LD-clumping and disappeared under MVMR, demonstrating the framework's gatekeeper value. Layer 2 — genome-wide rg=−0.03 (p=0.57), unchanged after removing chr19/APOE (−0.03, p=0.53), restricting shared architecture to locus-specific signal. Layer 3 — colocalization was strong only in the reverse direction (18/32 loci PP.H4>0.8), indicating shared liability rather than directed causality. Layer 4 — no protein mediation in a targeted 36-plasma-protein screen (25 evaluable after instrument exclusion, FDR<0.05 hits=0; the two pro-inflammatory anchors CRP and IL-6R also null); a metabolite screen identified triglycerides as a genetically proxied mediator of education's protection (indirect=−0.031, q=0.0006; bootstrap-validated 95% CI [−0.047, −0.017], p<0.001), accounting for ~9% of education's total effect. Layer 5 — educational attainment robustly protected against AD (β=−0.33, p=1.1×10⁻⁵) and PD (β=−0.39, p=7.2×10⁻⁶) but not MS; this direction was corroborated in East Asian replication (IVW β=−0.03, 95% CI [−0.33, 0.27]). Synthesizing all five layers, insomnia–AD is classified into quadrant III — shared liability, no independent causal upstream.
+**Results**: Dimension 1 — unclumped MR yielded a positive insomnia→AD effect (+0.10, p=0.0009) that reversed to null/negative after LD-clumping and disappeared under MVMR, demonstrating the framework's gatekeeper value. Dimension 2 — genome-wide rg=−0.03 (p=0.57), unchanged after removing chr19/APOE (−0.03, p=0.53), restricting shared architecture to locus-specific signal. Dimension 3 — colocalization was strong only in the reverse direction (18/32 loci PP.H4>0.8), indicating shared liability rather than directed causality. Dimension 4 — no protein mediation in a targeted 36-plasma-protein screen (25 evaluable after instrument exclusion, FDR<0.05 hits=0; the two pro-inflammatory anchors CRP and IL-6R also null); a metabolite screen identified triglycerides as a genetically proxied mediator of education's protection (indirect=−0.031, q=0.0006; bootstrap-validated 95% CI [−0.047, −0.017], p<0.001), accounting for ~9% of education's total effect. Dimension 5 — educational attainment robustly protected against AD (β=−0.33, p=1.1×10⁻⁵) and PD (β=−0.39, p=7.2×10⁻⁶) but not MS; this direction was corroborated in East Asian replication (IVW β=−0.03, 95% CI [−0.33, 0.27]). Synthesizing all five dimensions, insomnia–AD is classified into quadrant III — shared liability, no independent causal upstream.
 
-**Conclusions**: The five-layer framework recalibrates the insomnia–AD literature: genome-wide evidence does not support insomnia as an independent causal upstream of AD; the apparent comorbidity is driven by APOE-centered locus-specific shared liability; and educational attainment is a cross-ancestry protective factor with lipid metabolism as a partly modifiable mediator. The framework is generalizable to other comorbidity pairs where MR-based causal claims warrant re-evaluation.
+**Conclusions**: The triangulation framework recalibrates the insomnia–AD literature: genome-wide evidence does not support insomnia as an independent causal upstream of AD; the apparent comorbidity is driven by APOE-centered locus-specific shared liability; and educational attainment is a cross-ancestry protective factor with lipid metabolism as a partly modifiable mediator. The framework is generalizable to other comorbidity pairs where MR-based causal claims warrant re-evaluation.
 
 ---
 
@@ -24,11 +24,11 @@
 
 共病在复杂疾病中司空见惯，但针对共病对的孟德尔随机化（MR）研究结论往往彼此矛盾、且常过度主张因果。一个反复出现的薄弱点是**缺失 LD-clumping 敏感性分析**：基于连锁（LD）相关的工具 SNP 得到的 MR 效应估计，在真实信号由单一基因组区域或水平多效性驱动时，可能被误判为因果。失眠与阿尔茨海默病（AD）即是典型——大量 MR 研究报告"失眠→AD 因果"，却极少检验工具独立性。
 
-我们认为，共病 MR 需要一套标准化的**分层验证框架**，而非临时拼凑的单方法主张。本文提出**五层共病因果验证框架**（图 1），每一层回答一个逐步收紧的问题：(1) 现象层——原始 MR 信号是否经得起工具独立性（LD-clump）敏感性？(2) 全基因组层——共病由全基因组共享架构（LDSC rg）还是位点特异性信号驱动？(3) 位点层——共享信号是否指向同一因果变异（共定位）？(4) 机制层——已知生物学中介是否传导共病？(5) 保护因子层——在排除共病上游后，可识别什么独立的保护因子？每一后续层都收窄了因果解释的可能空间。
+我们认为，共病 MR 需要一套标准化的**三角验证框架（triangulation framework）**，以多种独立方法交叉逼近因果问题，而非临时拼凑的单方法主张。本文提出一个**共病因果三角验证框架**（图 1），每种方法回答一个逐步收紧的问题：(1) 现象学——原始 MR 信号是否经得起工具独立性（LD-clump）敏感性？(2) 全基因组——共病由全基因组共享架构（LDSC rg）还是位点特异性信号驱动？(3) 位点——共享信号是否指向同一因果变异（共定位）？(4) 机制——已知生物学中介是否传导共病？(5) 保护因子——在排除共病上游后，可识别什么独立的保护因子？每种方法从不同角度收窄因果解释的可能空间。
 
-我们以失眠-AD 对作为该框架的**概念验证（proof-of-concept）**应用。分析前我们对因果方向不做先验承诺；预注册（OSF）原假设将失眠设为 AD 的因果上游，但分层证据最终导向一个经过修订的结论——这恰好透明地展示了框架如何防止过度主张。我们进一步通过东亚跨祖先复制框架最稳健的正向信号（教育对 AD 的保护），验证了框架的可移植性。
+我们以失眠-AD 对作为该框架的**概念验证（proof-of-concept）**应用。分析前我们对因果方向不做先验承诺；预注册（OSF）原假设将失眠设为 AD 的因果上游，但多角度证据最终导向一个经过修订的结论——这恰好透明地展示了框架如何防止过度主张。我们进一步通过东亚跨祖先复制框架最稳健的正向信号（教育对 AD 的保护），验证了框架的可移植性。
 
-（与 STROBE-MR 等报告指南的关系：本框架是补充而非替代——它把"该做的全套验证"系统化为可推广的层级标准，尤其强调 LD-clump 敏感性作为因果主张的准入门槛。）
+（与 STROBE-MR 等报告指南的关系：本框架是补充而非替代——它把"该做的全套验证"系统化为可推广的三角验证标准，尤其强调 LD-clump 敏感性作为因果主张的准入门槛。）
 
 ---
 
@@ -36,7 +36,7 @@
 
 ### 3.1 主要发现一句话总结
 
-> 我们用五层独立证据（双向 MR + 共定位 + LDSC + MVMR + 蛋白/代谢物中介 + 教育 PheWAS）重新评估了失眠与 AD 的因果叙事，结论是：**全基因组水平无显著遗传相关（可排除|rg|>~0.13）；共享信号局限于 APOE 位点；教育年限是跨 AD/PD 的保护因子，其效应部分经由血脂（TG）等可遗传介质传导。** 这些发现提示，现有基因组水平证据不足以支持失眠作为 AD 的独立因果上游，失眠-AD 共病应被归类为"共享负债、缺乏独立因果证据"象限（象限 III），而非"因果共病"。
+> 我们用五种独立方法（双向 MR + 共定位 + LDSC + MVMR + 蛋白/代谢物中介 + 教育 PheWAS）重新评估了失眠与 AD 的因果叙事，结论是：**全基因组水平无显著遗传相关（可排除|rg|>~0.13）；共享信号局限于 APOE 位点；教育年限是跨 AD/PD 的保护因子，其效应部分经由血脂（TG）等可遗传介质传导。** 这些发现提示，现有基因组水平证据不足以支持失眠作为 AD 的独立因果上游，失眠-AD 共病应被归类为"共享负债、缺乏独立因果证据"象限（象限 III），而非"因果共病"。
 
 ### 3.2 与领域文献对照（重新校准因果主张）
 
@@ -114,7 +114,7 @@ LDSC 给出 rg=−0.03（p=0.57），**去除 APOE 所在的 19 号染色体后 
 
 **审慎边界**：东亚 AD 病例数仅 2,919，置信区间极宽，该分析应定位为"方向性复制"而非效力充分的独立验证；且距离近似 clump 无法完全排除残差 LD（正规东亚 LD 面板/plink clump 与 coloc/LDSC 因缺少 LD 参考面板仍不可行）。然而，跨祖先方向一致性增强了"教育→AD 保护"作为稳健发现的信心，降低了该效应纯由欧洲人群结构造成的可疑度，使"认知储备"假说的外部效度得到初步支撑。需指出：失眠→AD 的东亚复制因缺乏大样本东亚失眠 GWAS 仍降级为探索（见 L5）。
 
-### 3.6 推广性：共病因果验证 5 层框架（核心方法学贡献）
+### 3.6 推广性：共病因果三角验证框架（核心方法学贡献）
 
 尽管本文以 insomnia-AD 为实证案例，但其方法学架构本身具备跨疾病推广性。我们提出一个通用的"共病因果验证"框架，将任意一对共病疾病按两维分类：
 
@@ -135,17 +135,17 @@ LDSC 给出 rg=−0.03（p=0.57），**去除 APOE 所在的 19 号染色体后 
 
 本研究 insomnia-AD 被定位于**象限 III**（共享负债，无独立因果）——APOE 位点驱动共享，但全基因组无相关、方向性因果证据为负。
 
-此框架的方法论核心是**5 层验证标准**，每层逐步收窄不确定性：
+此框架的方法论核心是**五维三角验证**，每个维度以不同方法独立逼近因果问题：
 
-| 层 | 分析 | 解决的问题 |
+| 维度 | 分析 | 解决的问题 |
 |---|------|-----------|
-| 1. 现象层 | 双向 MR + LD-clump 敏感性 | 工具独立性准入：原始 MR 信号是否经得起 clump？ |
-| 2. 全局遗传层 | LDSC rg（全基因组 + 去候选位点） | 共病由全基因组共享架构驱动还是位点特异性？ |
-| 3. 位点层 | coloc 共定位（正向+反向） | 共享信号是同一个因果变异还是 linkage？ |
-| 4. 机制层 | 两步 MR 蛋白中介 | 已知生物学中介是否传导共病？ |
-| 5. 保护因子层 | MVMR + PheWAS | 排除共病上游后可识别的独立保护因子是什么？ |
+| 1. 现象学 | 双向 MR + LD-clump 敏感性 | 工具独立性准入：原始 MR 信号是否经得起 clump？ |
+| 2. 全局遗传 | LDSC rg（全基因组 + 去候选位点） | 共病由全基因组共享架构驱动还是位点特异性？ |
+| 3. 位点 | coloc 共定位（正向+反向） | 共享信号是同一个因果变异还是 linkage？ |
+| 4. 机制 | 两步 MR 蛋白中介 | 已知生物学中介是否传导共病？ |
+| 5. 保护因子 | MVMR + PheWAS | 排除共病上游后可识别的独立保护因子是什么？ |
 
-5 层均完成后，研究结论从"失眠→AD 吗？"升级为"在共病因果验证框架下，insomnia-AD 属于象限 III，教育是独立保护因子"。该框架已被设计为可移植——只需替换暴露/结局 GWAS ID 即可复制到抑郁-CVD、失眠-代谢等其他高频共病对（见 §3.10）。
+5 个维度完成后，研究结论从"失眠→AD 吗？"升级为"在三角验证框架下，insomnia-AD 属于象限 III，教育是独立保护因子"。该框架已被设计为可移植——只需替换暴露/结局 GWAS ID 即可复制到抑郁-CVD、失眠-代谢等其他高频共病对（见 §3.10）。
 
 ### 3.7 临床与公共卫生意义
 
@@ -167,7 +167,7 @@ LDSC 给出 rg=−0.03（p=0.57），**去除 APOE 所在的 19 号染色体后 
 | L8 | 部分 MR 使用手动固定效应 IVW（非 TwoSampleMR 标准实现） | 与标准 `mr()` 估计存在约 5% 系统偏差（b: −0.311 vs −0.328），已披露于 §四.2；核心结论（教育保护、rg≈0）另有标准包/本地实现交叉验证，不受实质影响 |
 | L9 | 教育 PheWAS 扫描 7 个候选神经退行结局（含重复源）未做全局多重检验校正 | FDR 仅对中介分析施加；PheWAS 显著结论（AD/PD 保护、MS 不保护）须视为探索性，待独立队列确认 |
 | L10 | C1 代谢组学中介依赖 IEU OpenGWAS 实时 API 提取 | 网络/版本状态影响可复现性；建议投稿前下载代谢物 full summary statistics 落盘（见 §四.3） |
-| L11 | G4 多状态 illness-death 时序模型原计划需 UK Biobank 个体级表型数据（发病时间、删失时间、死亡时间） | 未获得个体级数据，未执行；当前五层框架已提供不依赖时序信息的因果分类，多状态时序验证降级为 Discussion 展望 |
+| L11 | G4 多状态 illness-death 时序模型原计划需 UK Biobank 个体级表型数据（发病时间、删失时间、死亡时间） | 未获得个体级数据，未执行；当前三角验证框架已提供不依赖时序信息的因果分类，多状态时序验证降级为 Discussion 展望 |
 
 ### 3.9 教育暴露的遗传哺养（genetic nurture）混杂与洁净度
 
@@ -177,12 +177,12 @@ LDSC 给出 rg=−0.03（p=0.57），**去除 APOE 所在的 19 号染色体后 
 
 ### 3.10 框架在其他共病对的推广前景
 
-五层框架刻意与失眠-AD 对解耦，仅需替换暴露/结局 GWAS ID 即可重应用。两个高频共病对可示范其可移植性：
+三角验证框架刻意与失眠-AD 对解耦，仅需替换暴露/结局 GWAS ID 即可重应用。两个高频共病对可示范其可移植性：
 
-- **抑郁 → 心血管疾病（CVD）**：与失眠-AD 类似，多个 MR 研究报告抑郁→CVD 因果却未做 LD-clump 敏感性；应用第 1 层即可检验信号是否经得起工具独立性，第 2 层（LDSC rg）可区分全基因组共享架构与位点特异性信号。
+- **抑郁 → 心血管疾病（CVD）**：与失眠-AD 类似，多个 MR 研究报告抑郁→CVD 因果却未做 LD-clump 敏感性；应用维度 1 即可检验信号是否经得起工具独立性，维度 2（LDSC rg）可区分全基因组共享架构与位点特异性信号。
 - **焦虑 → 代谢综合征**：是象限 II（无全基因组 rg 的独立因果链）还是象限 III（共享负债）的候选——框架的象限分类可直接裁定。
 
-本文不重分析这两对（超出本研究的 data scope），提出意在表明**可复用的贡献是框架本身，而非特定疾病对**。未来工作应以同一五层流程应用于一组高流量共病因果主张，量化"已发表的因果方向"中有多少在层 1 准入门槛处失败。
+本文不重分析这两对（超出本研究的 data scope），提出意在表明**可复用的贡献是框架本身，而非特定疾病对**。未来工作应以同一三角验证流程应用于一组高流量共病因果主张，量化"已发表的因果方向"中有多少在维度 1（工具独立性）准入门槛处失败。
 
 ---
 
@@ -225,4 +225,4 @@ AI 生成内容均经研究者逐条核验与修正后采用。
 
 本改写稿直接承接 `G1_conclusion_revision_2026-08-01.md` 的§11 修订，并将证据链从"G1 MR+MVMR"扩展到"LDSC + G2 + 教育 PheWAS"三重补强。所有数值均来自 `Phase1_comprehensive_results.md` §2 的已验证结果表。
 
-**下一步（Phase 2B）**：将本稿嵌入原论文全文结构（Introduction 重写立题依据、Methods 补 LDSC/MVMR/PheWAS 小节、Results 按"现象→全基因组→位点→保护因子"五层重组、Figures 重排），并对接 `论文图表骨架_Fig1-5_Table1.md`。
+**下一步（Phase 2B）**：将本稿嵌入原论文全文结构（Introduction 重写立题依据、Methods 补 LDSC/MVMR/PheWAS 小节、Results 按"现象→全基因组→位点→保护因子"五个三角验证维度重组、Figures 重排），并对接 `论文图表骨架_Fig1-5_Table1.md`。

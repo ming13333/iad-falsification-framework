@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software or the associated analysis pipeline, please cite it as below."
-title: "A five-layer causal verification framework for genetic comorbidity: recalibrating insomnia–Alzheimer's disease"
-abstract: "Analysis pipeline for five-layer Mendelian randomization framework applied to insomnia-AD comorbidity, including bidirectional MR, LDSC rg, coloc, two-step protein/metabolite mediation MR, MVMR, education PheWAS, and East Asian cross-ancestry replication."
+title: "A triangulation framework for causal verification of genetic comorbidity: recalibrating insomnia–Alzheimer's disease"
+abstract: "Analysis pipeline for triangulation-based Mendelian randomization framework applied to insomnia-AD comorbidity, including bidirectional MR, LDSC rg, coloc, two-step protein/metabolite mediation MR, MVMR, education PheWAS, and East Asian cross-ancestry replication."
 type: software
 authors:
   - family-names: "[Author Last Name]"
