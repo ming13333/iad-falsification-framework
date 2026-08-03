@@ -41,7 +41,7 @@ for sheet_name in ['ST9', 'ST10']:
         pos_hg37 = parts[1]
         a0, a1 = parts[2], parts[3]
         rsid_raw = str(row[10].value).strip() if row[10].value else ''
-        rsid = rsid_raw.replace('rs', '') if rsid_raw.startswith('rs') else rsid_raw
+        rsid = rsid_raw[2:] if rsid_raw.startswith('rs') else rsid_raw
         if rsid in ('NA', '-', ''):
             continue
         eaf = row[11].value
@@ -67,7 +67,7 @@ for sheet_name in ['ST9', 'ST10']:
             'beta': float(beta),
             'se': float(se),
             'log10p': float(log10p),
-            'pval': float(log10p),
+            'pval': pval,
             'cis_trans': cistrans,
         })
         count_by_protein[assay] = count_by_protein.get(assay, 0) + 1
@@ -86,14 +86,14 @@ for r in sorted(rows_out, key=lambda x: (0 if x['cis_trans']=='cis' else 1, 0 if
         uniq.append(r)
 
 cols = ['protein', 'sheet', 'rsid', 'chr', 'pos_hg38', 'A1', 'A0',
-        'eaf', 'beta', 'se', 'log10p', 'cis_trans', 'n_total_pqtls']
+        'eaf', 'beta', 'se', 'log10p', 'pval', 'cis_trans', 'n_total_pqtls']
 
 # 统计每蛋白总 pQTL 数
 from collections import Counter
 cnt = Counter(r['protein'] for r in uniq)
 
 with open(OUT, 'w', newline='', encoding='utf-8') as f:
-    w = csv.DictWriter(f, fieldnames=cols + ['n_total_pqtls'])
+    w = csv.DictWriter(f, fieldnames=cols)
     w.writeheader()
     for r in uniq:
         d = {k: r.get(k, '') for k in cols}
