@@ -1,0 +1,2814 @@
+TY  - JOUR
+TI  - 'Mendelian randomization': can genetic epidemiology contribute to understanding
+AU  - Smith GD
+AU  - Ebrahim S
+PY  - 2003
+JF  - Int J Epidemiol
+VL  - 32
+IS  - 1
+SP  - 1-22
+AB  - Associations between modifiable exposures and disease seen in observational
+DO  - 10.1093/ije/dyg070
+AN  - 12689998
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Mendelian randomization analysis with multiple genetic variants using summarized
+AU  - Burgess S
+AU  - Butterworth A
+AU  - Thompson SG
+PY  - 2013
+JF  - Genet Epidemiol
+VL  - 37
+IS  - 7
+SP  - 658-65
+AB  - Genome-wide association studies, which typically report regression coefficients
+DO  - 10.1002/gepi.21758
+AN  - 24114802
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Meta-analysis of 74,046 individuals identifies 11 new susceptibility loci for
+AU  - Lambert JC
+AU  - Ibrahim-Verbaas CA
+AU  - Harold D
+AU  - Naj AC
+AU  - Sims R
+AU  - Bellenguez C
+AU  - DeStafano AL
+AU  - Bis JC
+AU  - Beecham GW
+AU  - Grenier-Boley B
+AU  - Russo G
+AU  - Thorton-Wells TA
+AU  - Jones N
+AU  - Smith AV
+AU  - Chouraki V
+AU  - Thomas C
+AU  - Ikram MA
+AU  - Zelenika D
+AU  - Vardarajan BN
+AU  - Kamatani Y
+AU  - Lin CF
+AU  - Gerrish A
+AU  - Schmidt H
+AU  - Kunkle B
+AU  - Dunstan ML
+AU  - Ruiz A
+AU  - Bihoreau MT
+AU  - Choi SH
+AU  - Reitz C
+AU  - Pasquier F
+AU  - Cruchaga C
+AU  - Craig D
+AU  - Amin N
+AU  - Berr C
+AU  - Lopez OL
+AU  - De Jager PL
+AU  - Deramecourt V
+AU  - Johnston JA
+AU  - Evans D
+AU  - Lovestone S
+AU  - Letenneur L
+AU  - Moron FJ
+AU  - Rubinsztein DC
+AU  - Eiriksdottir G
+AU  - Sleegers K
+AU  - Goate AM
+AU  - Fievet N
+AU  - Huentelman MW
+AU  - Gill M
+AU  - Brown K
+AU  - Kamboh MI
+AU  - Keller L
+AU  - Barberger-Gateau P
+AU  - McGuiness B
+AU  - Larson EB
+AU  - Green R
+AU  - Myers AJ
+AU  - Dufouil C
+AU  - Todd S
+AU  - Wallon D
+AU  - Love S
+AU  - Rogaeva E
+AU  - Gallacher J
+AU  - St George-Hyslop P
+AU  - Clarimon J
+AU  - Lleo A
+AU  - Bayer A
+AU  - Tsuang DW
+AU  - Yu L
+AU  - Tsolaki M
+AU  - Bossu P
+AU  - Spalletta G
+AU  - Proitsi P
+AU  - Collinge J
+AU  - Sorbi S
+AU  - Sanchez-Garcia F
+AU  - Fox NC
+AU  - Hardy J
+AU  - Deniz Naranjo MC
+AU  - Bosco P
+AU  - Clarke R
+AU  - Brayne C
+AU  - Galimberti D
+AU  - Mancuso M
+AU  - Matthews F
+AU  - Moebus S
+AU  - Mecocci P
+AU  - Del Zompo M
+AU  - Maier W
+AU  - Hampel H
+AU  - Pilotto A
+AU  - Bullido M
+AU  - Panza F
+AU  - Caffarra P
+AU  - Nacmias B
+AU  - Gilbert JR
+AU  - Mayhaus M
+AU  - Lannefelt L
+AU  - Hakonarson H
+AU  - Pichler S
+AU  - Carrasquillo MM
+AU  - Ingelsson M
+AU  - Beekly D
+AU  - Alvarez V
+AU  - Zou F
+AU  - Valladares O
+AU  - Younkin SG
+AU  - Coto E
+AU  - Hamilton-Nelson KL
+AU  - Gu W
+AU  - Razquin C
+AU  - Pastor P
+AU  - Mateo I
+AU  - Owen MJ
+AU  - Faber KM
+AU  - Jonsson PV
+AU  - Combarros O
+AU  - O'Donovan MC
+AU  - Cantwell LB
+AU  - Soininen H
+AU  - Blacker D
+AU  - Mead S
+AU  - Mosley TH Jr
+AU  - Bennett DA
+AU  - Harris TB
+AU  - Fratiglioni L
+AU  - Holmes C
+AU  - de Bruijn RF
+AU  - Passmore P
+AU  - Montine TJ
+AU  - Bettens K
+AU  - Rotter JI
+AU  - Brice A
+AU  - Morgan K
+AU  - Foroud TM
+AU  - Kukull WA
+AU  - Hannequin D
+AU  - Powell JF
+AU  - Nalls MA
+AU  - Ritchie K
+AU  - Lunetta KL
+AU  - Kauwe JS
+AU  - Boerwinkle E
+AU  - Riemenschneider M
+AU  - Boada M
+AU  - Hiltuenen M
+AU  - Martin ER
+AU  - Schmidt R
+AU  - Rujescu D
+AU  - Wang LS
+AU  - Dartigues JF
+AU  - Mayeux R
+AU  - Tzourio C
+AU  - Hofman A
+AU  - Nothen MM
+AU  - Graff C
+AU  - Psaty BM
+AU  - Jones L
+AU  - Haines JL
+AU  - Holmans PA
+AU  - Lathrop M
+AU  - Pericak-Vance MA
+AU  - Launer LJ
+AU  - Farrer LA
+AU  - van Duijn CM
+AU  - Van Broeckhoven C
+AU  - Moskvina V
+AU  - Seshadri S
+AU  - Williams J
+AU  - Schellenberg GD
+AU  - Amouyel P
+PY  - 2013
+JF  - Nat Genet
+VL  - 45
+IS  - 12
+SP  - 1452-8
+AB  - Eleven susceptibility loci for late-onset Alzheimer's disease (LOAD) were
+DO  - 10.1038/ng.2802
+AN  - 24162737
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Bayesian test for colocalisation between pairs of genetic association studies
+AU  - Giambartolomei C
+AU  - Vukcevic D
+AU  - Schadt EE
+AU  - Franke L
+AU  - Hingorani AD
+AU  - Wallace C
+AU  - Plagnol V
+PY  - 2014
+JF  - PLoS Genet
+VL  - 10
+IS  - 5
+SP  - e1004383
+AB  - Genetic association studies, in particular the genome-wide association study
+DO  - 10.1371/journal.pgen.1004383
+AN  - 24830394
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Multivariable Mendelian randomization: the use of pleiotropic genetic variants to
+AU  - Burgess S
+AU  - Thompson SG
+PY  - 2015
+JF  - Am J Epidemiol
+VL  - 181
+IS  - 4
+SP  - 251-60
+AB  - A conventional Mendelian randomization analysis assesses the causal effect of a
+DO  - 10.1093/aje/kwu283
+AN  - 25632051
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - LD Score regression distinguishes confounding from polygenicity in genome-wide
+AU  - Bulik-Sullivan BK
+AU  - Loh PR
+AU  - Finucane HK
+AU  - Ripke S
+AU  - Yang J
+AU  - Patterson N
+AU  - Daly MJ
+AU  - Price AL
+AU  - Neale BM
+PY  - 2015
+JF  - Nat Genet
+VL  - 47
+IS  - 3
+SP  - 291-5
+AB  - Both polygenicity (many small genetic effects) and confounding biases, such as
+DO  - 10.1038/ng.3211
+AN  - 25642630
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Mendelian randomization with invalid instruments: effect estimation and bias
+AU  - Bowden J
+AU  - Davey Smith G
+AU  - Burgess S
+PY  - 2015
+JF  - Int J Epidemiol
+VL  - 44
+IS  - 2
+SP  - 512-25
+AB  - BACKGROUND: The number of Mendelian randomization analyses including large
+DO  - 10.1093/ije/dyv080
+AN  - 26050253
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - An atlas of genetic correlations across human diseases and traits.
+AU  - Bulik-Sullivan B
+AU  - Finucane HK
+AU  - Anttila V
+AU  - Gusev A
+AU  - Day FR
+AU  - Loh PR
+AU  - Duncan L
+AU  - Perry JR
+AU  - Patterson N
+AU  - Robinson EB
+AU  - Daly MJ
+AU  - Price AL
+AU  - Neale BM
+PY  - 2015
+JF  - Nat Genet
+VL  - 47
+IS  - 11
+SP  - 1236-41
+AB  - Identifying genetic correlations between complex traits and diseases can provide
+DO  - 10.1038/ng.3406
+AN  - 26414676
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Consistent Estimation in Mendelian Randomization with Some Invalid Instruments
+AU  - Bowden J
+AU  - Davey Smith G
+AU  - Haycock PC
+AU  - Burgess S
+PY  - 2016
+JF  - Genet Epidemiol
+VL  - 40
+IS  - 4
+SP  - 304-14
+AB  - Developments in genome-wide association studies and the increasing availability
+DO  - 10.1002/gepi.21965
+AN  - 27061298
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Triangulation in aetiological epidemiology.
+AU  - Lawlor DA
+AU  - Tilling K
+AU  - Davey Smith G
+PY  - 2016
+JF  - Int J Epidemiol
+VL  - 45
+IS  - 6
+SP  - 1866-1886
+AB  - Triangulation is the practice of obtaining more reliable answers to research
+DO  - 10.1093/ije/dyw314
+AN  - 28108528
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Robust inference in summary data Mendelian randomization via the zero modal
+AU  - Hartwig FP
+AU  - Davey Smith G
+AU  - Bowden J
+PY  - 2017
+JF  - Int J Epidemiol
+VL  - 46
+IS  - 6
+SP  - 1985-1998
+AB  - BACKGROUND: Mendelian randomization (MR) is being increasingly used to strengthen
+DO  - 10.1093/ije/dyx102
+AN  - 29040600
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Robust research needs many lines of evidence.
+AU  - Munafo MR
+AU  - Davey Smith G
+PY  - 2018
+JF  - Nature
+VL  - 553
+IS  - 7689
+SP  - 399-401
+DO  - 10.1038/d41586-018-01023-3
+AN  - 29368721
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Detection of widespread horizontal pleiotropy in causal relationships inferred
+AU  - Verbanck M
+AU  - Chen CY
+AU  - Neale B
+AU  - Do R
+PY  - 2018
+JF  - Nat Genet
+VL  - 50
+IS  - 5
+SP  - 693-698
+AB  - Horizontal pleiotropy occurs when the variant has an effect on disease outside of
+DO  - 10.1038/s41588-018-0099-7
+AN  - 29686387
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - The MR-Base platform supports systematic causal inference across the human
+AU  - Hemani G
+AU  - Zheng J
+AU  - Elsworth B
+AU  - Wade KH
+AU  - Haberland V
+AU  - Baird D
+AU  - Laurin C
+AU  - Burgess S
+AU  - Bowden J
+AU  - Langdon R
+AU  - Tan VY
+AU  - Yarmolinsky J
+AU  - Shihab HA
+AU  - Timpson NJ
+AU  - Evans DM
+AU  - Relton C
+AU  - Martin RM
+AU  - Davey Smith G
+AU  - Gaunt TR
+AU  - Haycock PC
+PY  - 2018
+JF  - Elife
+VL  - 7
+AB  - Results from genome-wide association studies (GWAS) can be used to infer causal
+DO  - 10.7554/eLife.34408
+AN  - 29846171
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Genomic atlas of the human plasma proteome.
+AU  - Sun BB
+AU  - Maranville JC
+AU  - Peters JE
+AU  - Stacey D
+AU  - Staley JR
+AU  - Blackshaw J
+AU  - Burgess S
+AU  - Jiang T
+AU  - Paige E
+AU  - Surendran P
+AU  - Oliver-Williams C
+AU  - Kamat MA
+AU  - Prins BP
+AU  - Wilcox SK
+AU  - Zimmerman ES
+AU  - Chi A
+AU  - Bansal N
+AU  - Spain SL
+AU  - Wood AM
+AU  - Morrell NW
+AU  - Bradley JR
+AU  - Janjic N
+AU  - Roberts DJ
+AU  - Ouwehand WH
+AU  - Todd JA
+AU  - Soranzo N
+AU  - Suhre K
+AU  - Paul DS
+AU  - Fox CS
+AU  - Plenge RM
+AU  - Danesh J
+AU  - Runz H
+AU  - Butterworth AS
+PY  - 2018
+JF  - Nature
+VL  - 558
+IS  - 7708
+SP  - 73-79
+AB  - Although plasma proteins have important roles in biological processes and are the
+DO  - 10.1038/s41586-018-0175-2
+AN  - 29875488
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Gene discovery and polygenic prediction from a genome-wide association study of
+AU  - Lee JJ
+AU  - Wedow R
+AU  - Okbay A
+AU  - Kong E
+AU  - Maghzian O
+AU  - Zacher M
+AU  - Nguyen-Viet TA
+AU  - Bowers P
+AU  - Sidorenko J
+AU  - Karlsson Linner R
+AU  - Fontana MA
+AU  - Kundu T
+AU  - Lee C
+AU  - Li H
+AU  - Li R
+AU  - Royer R
+AU  - Timshel PN
+AU  - Walters RK
+AU  - Willoughby EA
+AU  - Yengo L
+AU  - Alver M
+AU  - Bao Y
+AU  - Clark DW
+AU  - Day FR
+AU  - Furlotte NA
+AU  - Joshi PK
+AU  - Kemper KE
+AU  - Kleinman A
+AU  - Langenberg C
+AU  - Magi R
+AU  - Trampush JW
+AU  - Verma SS
+AU  - Wu Y
+AU  - Lam M
+AU  - Zhao JH
+AU  - Zheng Z
+AU  - Boardman JD
+AU  - Campbell H
+AU  - Freese J
+AU  - Harris KM
+AU  - Hayward C
+AU  - Herd P
+AU  - Kumari M
+AU  - Lencz T
+AU  - Luan J
+AU  - Malhotra AK
+AU  - Metspalu A
+AU  - Milani L
+AU  - Ong KK
+AU  - Perry JRB
+AU  - Porteous DJ
+AU  - Ritchie MD
+AU  - Smart MC
+AU  - Smith BH
+AU  - Tung JY
+AU  - Wareham NJ
+AU  - Wilson JF
+AU  - Beauchamp JP
+AU  - Conley DC
+AU  - Esko T
+AU  - Lehrer SF
+AU  - Magnusson PKE
+AU  - Oskarsson S
+AU  - Pers TH
+AU  - Robinson MR
+AU  - Thom K
+AU  - Watson C
+AU  - Chabris CF
+AU  - Meyer MN
+AU  - Laibson DI
+AU  - Yang J
+AU  - Johannesson M
+AU  - Koellinger PD
+AU  - Turley P
+AU  - Visscher PM
+AU  - Benjamin DJ
+AU  - Cesarini D
+PY  - 2018
+JF  - Nat Genet
+VL  - 50
+IS  - 8
+SP  - 1112-1121
+AB  - Here we conducted a large-scale genetic association analysis of educational
+DO  - 10.1038/s41588-018-0147-3
+AN  - 30038396
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - An examination of multivariable Mendelian randomization in the single-sample and
+AU  - Sanderson E
+AU  - Davey Smith G
+AU  - Windmeijer F
+AU  - Bowden J
+PY  - 2019
+JF  - Int J Epidemiol
+VL  - 48
+IS  - 3
+SP  - 713-727
+AB  - BACKGROUND: Mendelian randomization (MR) is a powerful tool in epidemiology that
+DO  - 10.1093/ije/dyy262
+AN  - 30535378
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Genome-wide analysis of insomnia in 1,331,010 individuals identifies new risk
+AU  - Jansen PR
+AU  - Watanabe K
+AU  - Stringer S
+AU  - Skene N
+AU  - Bryois J
+AU  - Hammerschlag AR
+AU  - de Leeuw CA
+AU  - Benjamins JS
+AU  - Munoz-Manchado AB
+AU  - Nagel M
+AU  - Savage JE
+AU  - Tiemeier H
+AU  - White T
+AU  - Tung JY
+AU  - Hinds DA
+AU  - Vacic V
+AU  - Wang X
+AU  - Sullivan PF
+AU  - van der Sluis S
+AU  - Polderman TJC
+AU  - Smit AB
+AU  - Hjerling-Leffler J
+AU  - Van Someren EJW
+AU  - Posthuma D
+PY  - 2019
+JF  - Nat Genet
+VL  - 51
+IS  - 3
+SP  - 394-403
+AB  - Insomnia is the second most prevalent mental disorder, with no sufficient
+DO  - 10.1038/s41588-018-0333-3
+AN  - 30804565
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Biological and clinical insights from genetics of insomnia symptoms.
+AU  - Lane JM
+AU  - Jones SE
+AU  - Dashti HS
+AU  - Wood AR
+AU  - Aragam KG
+AU  - van Hees VT
+AU  - Strand LB
+AU  - Winsvold BS
+AU  - Wang H
+AU  - Bowden J
+AU  - Song Y
+AU  - Patel K
+AU  - Anderson SG
+AU  - Beaumont RN
+AU  - Bechtold DA
+AU  - Cade BE
+AU  - Haas M
+AU  - Kathiresan S
+AU  - Little MA
+AU  - Luik AI
+AU  - Loudon AS
+AU  - Purcell S
+AU  - Richmond RC
+AU  - Scheer FAJL
+AU  - Schormair B
+AU  - Tyrrell J
+AU  - Winkelman JW
+AU  - Winkelmann J
+AU  - Hveem K
+AU  - Zhao C
+AU  - Nielsen JB
+AU  - Willer CJ
+AU  - Redline S
+AU  - Spiegelhalder K
+AU  - Kyle SD
+AU  - Ray DW
+AU  - Zwart JA
+AU  - Brumpton B
+AU  - Frayling TM
+AU  - Lawlor DA
+AU  - Rutter MK
+AU  - Weedon MN
+AU  - Saxena R
+PY  - 2019
+JF  - Nat Genet
+VL  - 51
+IS  - 3
+SP  - 387-393
+AB  - Insomnia is a common disorder linked with adverse long-term medical and
+DO  - 10.1038/s41588-019-0361-7
+AN  - 30804566
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Genetic meta-analysis of diagnosed Alzheimer's disease identifies new risk loci
+AU  - Kunkle BW
+AU  - Grenier-Boley B
+AU  - Sims R
+AU  - Bis JC
+AU  - Damotte V
+AU  - Naj AC
+AU  - Boland A
+AU  - Vronskaya M
+AU  - van der Lee SJ
+AU  - Amlie-Wolf A
+AU  - Bellenguez C
+AU  - Frizatti A
+AU  - Chouraki V
+AU  - Martin ER
+AU  - Sleegers K
+AU  - Badarinarayan N
+AU  - Jakobsdottir J
+AU  - Hamilton-Nelson KL
+AU  - Moreno-Grau S
+AU  - Olaso R
+AU  - Raybould R
+AU  - Chen Y
+AU  - Kuzma AB
+AU  - Hiltunen M
+AU  - Morgan T
+AU  - Ahmad S
+AU  - Vardarajan BN
+AU  - Epelbaum J
+AU  - Hoffmann P
+AU  - Boada M
+AU  - Beecham GW
+AU  - Garnier JG
+AU  - Harold D
+AU  - Fitzpatrick AL
+AU  - Valladares O
+AU  - Moutet ML
+AU  - Gerrish A
+AU  - Smith AV
+AU  - Qu L
+AU  - Bacq D
+AU  - Denning N
+AU  - Jian X
+AU  - Zhao Y
+AU  - Del Zompo M
+AU  - Fox NC
+AU  - Choi SH
+AU  - Mateo I
+AU  - Hughes JT
+AU  - Adams HH
+AU  - Malamon J
+AU  - Sanchez-Garcia F
+AU  - Patel Y
+AU  - Brody JA
+AU  - Dombroski BA
+AU  - Naranjo MCD
+AU  - Daniilidou M
+AU  - Eiriksdottir G
+AU  - Mukherjee S
+AU  - Wallon D
+AU  - Uphill J
+AU  - Aspelund T
+AU  - Cantwell LB
+AU  - Garzia F
+AU  - Galimberti D
+AU  - Hofer E
+AU  - Butkiewicz M
+AU  - Fin B
+AU  - Scarpini E
+AU  - Sarnowski C
+AU  - Bush WS
+AU  - Meslage S
+AU  - Kornhuber J
+AU  - White CC
+AU  - Song Y
+AU  - Barber RC
+AU  - Engelborghs S
+AU  - Sordon S
+AU  - Voijnovic D
+AU  - Adams PM
+AU  - Vandenberghe R
+AU  - Mayhaus M
+AU  - Cupples LA
+AU  - Albert MS
+AU  - De Deyn PP
+AU  - Gu W
+AU  - Himali JJ
+AU  - Beekly D
+AU  - Squassina A
+AU  - Hartmann AM
+AU  - Orellana A
+AU  - Blacker D
+AU  - Rodriguez-Rodriguez E
+AU  - Lovestone S
+AU  - Garcia ME
+AU  - Doody RS
+AU  - Munoz-Fernadez C
+AU  - Sussams R
+AU  - Lin H
+AU  - Fairchild TJ
+AU  - Benito YA
+AU  - Holmes C
+AU  - Karamujic-Comic H
+AU  - Frosch MP
+AU  - Thonberg H
+AU  - Maier W
+AU  - Roshchupkin G
+AU  - Ghetti B
+AU  - Giedraitis V
+AU  - Kawalia A
+AU  - Li S
+AU  - Huebinger RM
+AU  - Kilander L
+AU  - Moebus S
+AU  - Hernandez I
+AU  - Kamboh MI
+AU  - Brundin R
+AU  - Turton J
+AU  - Yang Q
+AU  - Katz MJ
+AU  - Concari L
+AU  - Lord J
+AU  - Beiser AS
+AU  - Keene CD
+AU  - Helisalmi S
+AU  - Kloszewska I
+AU  - Kukull WA
+AU  - Koivisto AM
+AU  - Lynch A
+AU  - Tarraga L
+AU  - Larson EB
+AU  - Haapasalo A
+AU  - Lawlor B
+AU  - Mosley TH
+AU  - Lipton RB
+AU  - Solfrizzi V
+AU  - Gill M
+AU  - Longstreth WT Jr
+AU  - Montine TJ
+AU  - Frisardi V
+AU  - Diez-Fairen M
+AU  - Rivadeneira F
+AU  - Petersen RC
+AU  - Deramecourt V
+AU  - Alvarez I
+AU  - Salani F
+AU  - Ciaramella A
+AU  - Boerwinkle E
+AU  - Reiman EM
+AU  - Fievet N
+AU  - Rotter JI
+AU  - Reisch JS
+AU  - Hanon O
+AU  - Cupidi C
+AU  - Andre Uitterlinden AG
+AU  - Royall DR
+AU  - Dufouil C
+AU  - Maletta RG
+AU  - de Rojas I
+AU  - Sano M
+AU  - Brice A
+AU  - Cecchetti R
+AU  - George-Hyslop PS
+AU  - Ritchie K
+AU  - Tsolaki M
+AU  - Tsuang DW
+AU  - Dubois B
+AU  - Craig D
+AU  - Wu CK
+AU  - Soininen H
+AU  - Avramidou D
+AU  - Albin RL
+AU  - Fratiglioni L
+AU  - Germanou A
+AU  - Apostolova LG
+AU  - Keller L
+AU  - Koutroumani M
+AU  - Arnold SE
+AU  - Panza F
+AU  - Gkatzima O
+AU  - Asthana S
+AU  - Hannequin D
+AU  - Whitehead P
+AU  - Atwood CS
+AU  - Caffarra P
+AU  - Hampel H
+AU  - Quintela I
+AU  - Carracedo A
+AU  - Lannfelt L
+AU  - Rubinsztein DC
+AU  - Barnes LL
+AU  - Pasquier F
+AU  - Frolich L
+AU  - Barral S
+AU  - McGuinness B
+AU  - Beach TG
+AU  - Johnston JA
+AU  - Becker JT
+AU  - Passmore P
+AU  - Bigio EH
+AU  - Schott JM
+AU  - Bird TD
+AU  - Warren JD
+AU  - Boeve BF
+AU  - Lupton MK
+AU  - Bowen JD
+AU  - Proitsi P
+AU  - Boxer A
+AU  - Powell JF
+AU  - Burke JR
+AU  - Kauwe JSK
+AU  - Burns JM
+AU  - Mancuso M
+AU  - Buxbaum JD
+AU  - Bonuccelli U
+AU  - Cairns NJ
+AU  - McQuillin A
+AU  - Cao C
+AU  - Livingston G
+AU  - Carlson CS
+AU  - Bass NJ
+AU  - Carlsson CM
+AU  - Hardy J
+AU  - Carney RM
+AU  - Bras J
+AU  - Carrasquillo MM
+AU  - Guerreiro R
+AU  - Allen M
+AU  - Chui HC
+AU  - Fisher E
+AU  - Masullo C
+AU  - Crocco EA
+AU  - DeCarli C
+AU  - Bisceglio G
+AU  - Dick M
+AU  - Ma L
+AU  - Duara R
+AU  - Graff-Radford NR
+AU  - Evans DA
+AU  - Hodges A
+AU  - Faber KM
+AU  - Scherer M
+AU  - Fallon KB
+AU  - Riemenschneider M
+AU  - Fardo DW
+AU  - Heun R
+AU  - Farlow MR
+AU  - Kolsch H
+AU  - Ferris S
+AU  - Leber M
+AU  - Foroud TM
+AU  - Heuser I
+AU  - Galasko DR
+AU  - Giegling I
+AU  - Gearing M
+AU  - Hull M
+AU  - Geschwind DH
+AU  - Gilbert JR
+AU  - Morris J
+AU  - Green RC
+AU  - Mayo K
+AU  - Growdon JH
+AU  - Feulner T
+AU  - Hamilton RL
+AU  - Harrell LE
+AU  - Drichel D
+AU  - Honig LS
+AU  - Cushion TD
+AU  - Huentelman MJ
+AU  - Hollingworth P
+AU  - Hulette CM
+AU  - Hyman BT
+AU  - Marshall R
+AU  - Jarvik GP
+AU  - Meggy A
+AU  - Abner E
+AU  - Menzies GE
+AU  - Jin LW
+AU  - Leonenko G
+AU  - Real LM
+AU  - Jun GR
+AU  - Baldwin CT
+AU  - Grozeva D
+AU  - Karydas A
+AU  - Russo G
+AU  - Kaye JA
+AU  - Kim R
+AU  - Jessen F
+AU  - Kowall NW
+AU  - Vellas B
+AU  - Kramer JH
+AU  - Vardy E
+AU  - LaFerla FM
+AU  - Jockel KH
+AU  - Lah JJ
+AU  - Dichgans M
+AU  - Leverenz JB
+AU  - Mann D
+AU  - Levey AI
+AU  - Pickering-Brown S
+AU  - Lieberman AP
+AU  - Klopp N
+AU  - Lunetta KL
+AU  - Wichmann HE
+AU  - Lyketsos CG
+AU  - Morgan K
+AU  - Marson DC
+AU  - Brown K
+AU  - Martiniuk F
+AU  - Medway C
+AU  - Mash DC
+AU  - Nothen MM
+AU  - Masliah E
+AU  - Hooper NM
+AU  - McCormick WC
+AU  - Daniele A
+AU  - McCurry SM
+AU  - Bayer A
+AU  - McDavid AN
+AU  - Gallacher J
+AU  - McKee AC
+AU  - van den Bussche H
+AU  - Mesulam M
+AU  - Brayne C
+AU  - Miller BL
+AU  - Riedel-Heller S
+AU  - Miller CA
+AU  - Miller JW
+AU  - Al-Chalabi A
+AU  - Morris JC
+AU  - Shaw CE
+AU  - Myers AJ
+AU  - Wiltfang J
+AU  - O'Bryant S
+AU  - Olichney JM
+AU  - Alvarez V
+AU  - Parisi JE
+AU  - Singleton AB
+AU  - Paulson HL
+AU  - Collinge J
+AU  - Perry WR
+AU  - Mead S
+AU  - Peskind E
+AU  - Cribbs DH
+AU  - Rossor M
+AU  - Pierce A
+AU  - Ryan NS
+AU  - Poon WW
+AU  - Nacmias B
+AU  - Potter H
+AU  - Sorbi S
+AU  - Quinn JF
+AU  - Sacchinelli E
+AU  - Raj A
+AU  - Spalletta G
+AU  - Raskind M
+AU  - Caltagirone C
+AU  - Bossu P
+AU  - Orfei MD
+AU  - Reisberg B
+AU  - Clarke R
+AU  - Reitz C
+AU  - Smith AD
+AU  - Ringman JM
+AU  - Warden D
+AU  - Roberson ED
+AU  - Wilcock G
+AU  - Rogaeva E
+AU  - Bruni AC
+AU  - Rosen HJ
+AU  - Gallo M
+AU  - Rosenberg RN
+AU  - Ben-Shlomo Y
+AU  - Sager MA
+AU  - Mecocci P
+AU  - Saykin AJ
+AU  - Pastor P
+AU  - Cuccaro ML
+AU  - Vance JM
+AU  - Schneider JA
+AU  - Schneider LS
+AU  - Slifer S
+AU  - Seeley WW
+AU  - Smith AG
+AU  - Sonnen JA
+AU  - Spina S
+AU  - Stern RA
+AU  - Swerdlow RH
+AU  - Tang M
+AU  - Tanzi RE
+AU  - Trojanowski JQ
+AU  - Troncoso JC
+AU  - Van Deerlin VM
+AU  - Van Eldik LJ
+AU  - Vinters HV
+AU  - Vonsattel JP
+AU  - Weintraub S
+AU  - Welsh-Bohmer KA
+AU  - Wilhelmsen KC
+AU  - Williamson J
+AU  - Wingo TS
+AU  - Woltjer RL
+AU  - Wright CB
+AU  - Yu CE
+AU  - Yu L
+AU  - Saba Y
+AU  - Pilotto A
+AU  - Bullido MJ
+AU  - Peters O
+AU  - Crane PK
+AU  - Bennett D
+AU  - Bosco P
+AU  - Coto E
+AU  - Boccardi V
+AU  - De Jager PL
+AU  - Lleo A
+AU  - Warner N
+AU  - Lopez OL
+AU  - Ingelsson M
+AU  - Deloukas P
+AU  - Cruchaga C
+AU  - Graff C
+AU  - Gwilliam R
+AU  - Fornage M
+AU  - Goate AM
+AU  - Sanchez-Juan P
+AU  - Kehoe PG
+AU  - Amin N
+AU  - Ertekin-Taner N
+AU  - Berr C
+AU  - Debette S
+AU  - Love S
+AU  - Launer LJ
+AU  - Younkin SG
+AU  - Dartigues JF
+AU  - Corcoran C
+AU  - Ikram MA
+AU  - Dickson DW
+AU  - Nicolas G
+AU  - Campion D
+AU  - Tschanz J
+AU  - Schmidt H
+AU  - Hakonarson H
+AU  - Clarimon J
+AU  - Munger R
+AU  - Schmidt R
+AU  - Farrer LA
+AU  - Van Broeckhoven C
+AU  - C O'Donovan M
+AU  - DeStefano AL
+AU  - Jones L
+AU  - Haines JL
+AU  - Deleuze JF
+AU  - Owen MJ
+AU  - Gudnason V
+AU  - Mayeux R
+AU  - Escott-Price V
+AU  - Psaty BM
+AU  - Ramirez A
+AU  - Wang LS
+AU  - Ruiz A
+AU  - van Duijn CM
+AU  - Holmans PA
+AU  - Seshadri S
+AU  - Williams J
+AU  - Amouyel P
+AU  - Schellenberg GD
+AU  - Lambert JC
+AU  - Pericak-Vance MA
+PY  - 2019
+JF  - Nat Genet
+VL  - 51
+IS  - 3
+SP  - 414-430
+AB  - Risk for late-onset Alzheimer's disease (LOAD), the most prevalent dementia, is
+DO  - 10.1038/s41588-019-0358-2
+AN  - 30820047
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Mendelian randomization accounting for correlated and uncorrelated pleiotropic
+AU  - Morrison J
+AU  - Knoblauch N
+AU  - Marcus JH
+AU  - Stephens M
+AU  - He X
+PY  - 2020
+JF  - Nat Genet
+VL  - 52
+IS  - 7
+SP  - 740-747
+AB  - Mendelian randomization (MR) is a valuable tool for detecting causal effects by
+DO  - 10.1038/s41588-020-0631-4
+AN  - 32451458
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Population-specific and trans-ancestry genome-wide analyses identify distinct and
+AU  - Koyama S
+AU  - Ito K
+AU  - Terao C
+AU  - Akiyama M
+AU  - Horikoshi M
+AU  - Momozawa Y
+AU  - Matsunaga H
+AU  - Ieki H
+AU  - Ozaki K
+AU  - Onouchi Y
+AU  - Takahashi A
+AU  - Nomura S
+AU  - Morita H
+AU  - Akazawa H
+AU  - Kim C
+AU  - Seo JS
+AU  - Higasa K
+AU  - Iwasaki M
+AU  - Yamaji T
+AU  - Sawada N
+AU  - Tsugane S
+AU  - Koyama T
+AU  - Ikezaki H
+AU  - Takashima N
+AU  - Tanaka K
+AU  - Arisawa K
+AU  - Kuriki K
+AU  - Naito M
+AU  - Wakai K
+AU  - Suna S
+AU  - Sakata Y
+AU  - Sato H
+AU  - Hori M
+AU  - Sakata Y
+AU  - Matsuda K
+AU  - Murakami Y
+AU  - Aburatani H
+AU  - Kubo M
+AU  - Matsuda F
+AU  - Kamatani Y
+AU  - Komuro I
+PY  - 2020
+JF  - Nat Genet
+VL  - 52
+IS  - 11
+SP  - 1169-1177
+AB  - To elucidate the genetics of coronary artery disease (CAD) in the Japanese
+DO  - 10.1038/s41588-020-0705-3
+AN  - 33020668
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Shared genetic architecture across psychiatric disorders.
+AU  - Grotzinger AD
+PY  - 2021
+JF  - Psychol Med
+VL  - 51
+IS  - 13
+SP  - 2210-2216
+AB  - Psychiatric disorders overlap substantially at the genetic level, with
+DO  - 10.1017/S0033291721000829
+AN  - 33729112
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Educational attainment protects against epilepsy independent of cognitive
+AU  - Wang M
+AU  - Zhang Z
+AU  - Liu D
+AU  - Xie W
+AU  - Ma Y
+AU  - Yao J
+AU  - Zhu L
+AU  - Liu M
+AU  - Sheng S
+AU  - Lian X
+PY  - 2021
+JF  - Epilepsia
+VL  - 62
+IS  - 6
+SP  - 1362-1368
+AB  - OBJECTIVE: Observational studies have suggested that increased levels of
+DO  - 10.1111/epi.16894
+AN  - 33818779
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Strengthening the Reporting of Observational Studies in Epidemiology Using
+AU  - Skrivankova VW
+AU  - Richmond RC
+AU  - Woolf BAR
+AU  - Yarmolinsky J
+AU  - Davies NM
+AU  - Swanson SA
+AU  - VanderWeele TJ
+AU  - Higgins JPT
+AU  - Timpson NJ
+AU  - Dimou N
+AU  - Langenberg C
+AU  - Golub RM
+AU  - Loder EW
+AU  - Gallo V
+AU  - Tybjaerg-Hansen A
+AU  - Davey Smith G
+AU  - Egger M
+AU  - Richards JB
+PY  - 2021
+JF  - JAMA
+VL  - 326
+IS  - 16
+SP  - 1614-1621
+AB  - IMPORTANCE: Mendelian randomization (MR) studies use genetic variation associated
+DO  - 10.1001/jama.2021.18236
+AN  - 34698778
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - A review of Mendelian randomization in amyotrophic lateral sclerosis.
+AU  - Julian TH
+AU  - Boddy S
+AU  - Islam M
+AU  - Kurz J
+AU  - Whittaker KJ
+AU  - Moll T
+AU  - Harvey C
+AU  - Zhang S
+AU  - Snyder MP
+AU  - McDermott C
+AU  - Cooper-Knock J
+AU  - Shaw PJ
+PY  - 2022
+JF  - Brain
+VL  - 145
+IS  - 3
+SP  - 832-842
+AB  - Amyotrophic lateral sclerosis is a relatively common and rapidly progressive
+DO  - 10.1093/brain/awab420
+AN  - 34791088
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Trans-ethnic Mendelian-randomization study reveals causal relationships between
+AU  - Zheng J
+AU  - Zhang Y
+AU  - Rasheed H
+AU  - Walker V
+AU  - Sugawara Y
+AU  - Li J
+AU  - Leng Y
+AU  - Elsworth B
+AU  - Wootton RE
+AU  - Fang S
+AU  - Yang Q
+AU  - Burgess S
+AU  - Haycock PC
+AU  - Borges MC
+AU  - Cho Y
+AU  - Carnegie R
+AU  - Howell A
+AU  - Robinson J
+AU  - Thomas LF
+AU  - Brumpton BM
+AU  - Hveem K
+AU  - Hallan S
+AU  - Franceschini N
+AU  - Morris AP
+AU  - Kottgen A
+AU  - Pattaro C
+AU  - Wuttke M
+AU  - Yamamoto M
+AU  - Kashihara N
+AU  - Akiyama M
+AU  - Kanai M
+AU  - Matsuda K
+AU  - Kamatani Y
+AU  - Okada Y
+AU  - Walters R
+AU  - Millwood IY
+AU  - Chen Z
+AU  - Davey Smith G
+AU  - Barbour S
+AU  - Yu C
+AU  - Asvold BO
+AU  - Zhang H
+AU  - Gaunt TR
+PY  - 2022
+JF  - Int J Epidemiol
+VL  - 50
+IS  - 6
+SP  - 1995-2010
+AB  - BACKGROUND: This study was to systematically test whether previously reported
+DO  - 10.1093/ije/dyab203
+AN  - 34999880
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Polygenic prediction of educational attainment within and between families from
+AU  - Okbay A
+AU  - Wu Y
+AU  - Wang N
+AU  - Jayashankar H
+AU  - Bennett M
+AU  - Nehzati SM
+AU  - Sidorenko J
+AU  - Kweon H
+AU  - Goldman G
+AU  - Gjorgjieva T
+AU  - Jiang Y
+AU  - Hicks B
+AU  - Tian C
+AU  - Hinds DA
+AU  - Ahlskog R
+AU  - Magnusson PKE
+AU  - Oskarsson S
+AU  - Hayward C
+AU  - Campbell A
+AU  - Porteous DJ
+AU  - Freese J
+AU  - Herd P
+AU  - Watson C
+AU  - Jala J
+AU  - Conley D
+AU  - Koellinger PD
+AU  - Johannesson M
+AU  - Laibson D
+AU  - Meyer MN
+AU  - Lee JJ
+AU  - Kong A
+AU  - Yengo L
+AU  - Cesarini D
+AU  - Turley P
+AU  - Visscher PM
+AU  - Beauchamp JP
+AU  - Benjamin DJ
+AU  - Young AI
+PY  - 2022
+JF  - Nat Genet
+VL  - 54
+IS  - 4
+SP  - 437-449
+AB  - We conduct a genome-wide association study (GWAS) of educational attainment (EA)
+DO  - 10.1038/s41588-022-01016-z
+AN  - 35361970
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - New insights into the genetic etiology of Alzheimer's disease and related
+AU  - Bellenguez C
+AU  - Kucukali F
+AU  - Jansen IE
+AU  - Kleineidam L
+AU  - Moreno-Grau S
+AU  - Amin N
+AU  - Naj AC
+AU  - Campos-Martin R
+AU  - Grenier-Boley B
+AU  - Andrade V
+AU  - Holmans PA
+AU  - Boland A
+AU  - Damotte V
+AU  - van der Lee SJ
+AU  - Costa MR
+AU  - Kuulasmaa T
+AU  - Yang Q
+AU  - de Rojas I
+AU  - Bis JC
+AU  - Yaqub A
+AU  - Prokic I
+AU  - Chapuis J
+AU  - Ahmad S
+AU  - Giedraitis V
+AU  - Aarsland D
+AU  - Garcia-Gonzalez P
+AU  - Abdelnour C
+AU  - Alarcon-Martin E
+AU  - Alcolea D
+AU  - Alegret M
+AU  - Alvarez I
+AU  - Alvarez V
+AU  - Armstrong NJ
+AU  - Tsolaki A
+AU  - Antunez C
+AU  - Appollonio I
+AU  - Arcaro M
+AU  - Archetti S
+AU  - Pastor AA
+AU  - Arosio B
+AU  - Athanasiu L
+AU  - Bailly H
+AU  - Banaj N
+AU  - Baquero M
+AU  - Barral S
+AU  - Beiser A
+AU  - Pastor AB
+AU  - Below JE
+AU  - Benchek P
+AU  - Benussi L
+AU  - Berr C
+AU  - Besse C
+AU  - Bessi V
+AU  - Binetti G
+AU  - Bizarro A
+AU  - Blesa R
+AU  - Boada M
+AU  - Boerwinkle E
+AU  - Borroni B
+AU  - Boschi S
+AU  - Bossu P
+AU  - Brathen G
+AU  - Bressler J
+AU  - Bresner C
+AU  - Brodaty H
+AU  - Brookes KJ
+AU  - Brusco LI
+AU  - Buiza-Rueda D
+AU  - Burger K
+AU  - Burholt V
+AU  - Bush WS
+AU  - Calero M
+AU  - Cantwell LB
+AU  - Chene G
+AU  - Chung J
+AU  - Cuccaro ML
+AU  - Carracedo A
+AU  - Cecchetti R
+AU  - Cervera-Carles L
+AU  - Charbonnier C
+AU  - Chen HH
+AU  - Chillotti C
+AU  - Ciccone S
+AU  - Claassen JAHR
+AU  - Clark C
+AU  - Conti E
+AU  - Corma-Gomez A
+AU  - Costantini E
+AU  - Custodero C
+AU  - Daian D
+AU  - Dalmasso MC
+AU  - Daniele A
+AU  - Dardiotis E
+AU  - Dartigues JF
+AU  - de Deyn PP
+AU  - de Paiva Lopes K
+AU  - de Witte LD
+AU  - Debette S
+AU  - Deckert J
+AU  - Del Ser T
+AU  - Denning N
+AU  - DeStefano A
+AU  - Dichgans M
+AU  - Diehl-Schmid J
+AU  - Diez-Fairen M
+AU  - Rossi PD
+AU  - Djurovic S
+AU  - Duron E
+AU  - Duzel E
+AU  - Dufouil C
+AU  - Eiriksdottir G
+AU  - Engelborghs S
+AU  - Escott-Price V
+AU  - Espinosa A
+AU  - Ewers M
+AU  - Faber KM
+AU  - Fabrizio T
+AU  - Nielsen SF
+AU  - Fardo DW
+AU  - Farotti L
+AU  - Fenoglio C
+AU  - Fernandez-Fuertes M
+AU  - Ferrari R
+AU  - Ferreira CB
+AU  - Ferri E
+AU  - Fin B
+AU  - Fischer P
+AU  - Fladby T
+AU  - Fliessbach K
+AU  - Fongang B
+AU  - Fornage M
+AU  - Fortea J
+AU  - Foroud TM
+AU  - Fostinelli S
+AU  - Fox NC
+AU  - Franco-Macias E
+AU  - Bullido MJ
+AU  - Frank-Garcia A
+AU  - Froelich L
+AU  - Fulton-Howard B
+AU  - Galimberti D
+AU  - Garcia-Alberca JM
+AU  - Garcia-Gonzalez P
+AU  - Garcia-Madrona S
+AU  - Garcia-Ribas G
+AU  - Ghidoni R
+AU  - Giegling I
+AU  - Giorgio G
+AU  - Goate AM
+AU  - Goldhardt O
+AU  - Gomez-Fonseca D
+AU  - Gonzalez-Perez A
+AU  - Graff C
+AU  - Grande G
+AU  - Green E
+AU  - Grimmer T
+AU  - Grunblatt E
+AU  - Grunin M
+AU  - Gudnason V
+AU  - Guetta-Baranes T
+AU  - Haapasalo A
+AU  - Hadjigeorgiou G
+AU  - Haines JL
+AU  - Hamilton-Nelson KL
+AU  - Hampel H
+AU  - Hanon O
+AU  - Hardy J
+AU  - Hartmann AM
+AU  - Hausner L
+AU  - Harwood J
+AU  - Heilmann-Heimbach S
+AU  - Helisalmi S
+AU  - Heneka MT
+AU  - Hernandez I
+AU  - Herrmann MJ
+AU  - Hoffmann P
+AU  - Holmes C
+AU  - Holstege H
+AU  - Vilas RH
+AU  - Hulsman M
+AU  - Humphrey J
+AU  - Biessels GJ
+AU  - Jian X
+AU  - Johansson C
+AU  - Jun GR
+AU  - Kastumata Y
+AU  - Kauwe J
+AU  - Kehoe PG
+AU  - Kilander L
+AU  - Stahlbom AK
+AU  - Kivipelto M
+AU  - Koivisto A
+AU  - Kornhuber J
+AU  - Kosmidis MH
+AU  - Kukull WA
+AU  - Kuksa PP
+AU  - Kunkle BW
+AU  - Kuzma AB
+AU  - Lage C
+AU  - Laukka EJ
+AU  - Launer L
+AU  - Lauria A
+AU  - Lee CY
+AU  - Lehtisalo J
+AU  - Lerch O
+AU  - Lleo A
+AU  - Longstreth W Jr
+AU  - Lopez O
+AU  - de Munain AL
+AU  - Love S
+AU  - Lowemark M
+AU  - Luckcuck L
+AU  - Lunetta KL
+AU  - Ma Y
+AU  - Macias J
+AU  - MacLeod CA
+AU  - Maier W
+AU  - Mangialasche F
+AU  - Spallazzi M
+AU  - Marquie M
+AU  - Marshall R
+AU  - Martin ER
+AU  - Montes AM
+AU  - Rodriguez CM
+AU  - Masullo C
+AU  - Mayeux R
+AU  - Mead S
+AU  - Mecocci P
+AU  - Medina M
+AU  - Meggy A
+AU  - Mehrabian S
+AU  - Mendoza S
+AU  - Menendez-Gonzalez M
+AU  - Mir P
+AU  - Moebus S
+AU  - Mol M
+AU  - Molina-Porcel L
+AU  - Montrreal L
+AU  - Morelli L
+AU  - Moreno F
+AU  - Morgan K
+AU  - Mosley T
+AU  - Nothen MM
+AU  - Muchnik C
+AU  - Mukherjee S
+AU  - Nacmias B
+AU  - Ngandu T
+AU  - Nicolas G
+AU  - Nordestgaard BG
+AU  - Olaso R
+AU  - Orellana A
+AU  - Orsini M
+AU  - Ortega G
+AU  - Padovani A
+AU  - Paolo C
+AU  - Papenberg G
+AU  - Parnetti L
+AU  - Pasquier F
+AU  - Pastor P
+AU  - Peloso G
+AU  - Perez-Cordon A
+AU  - Perez-Tur J
+AU  - Pericard P
+AU  - Peters O
+AU  - Pijnenburg YAL
+AU  - Pineda JA
+AU  - Pinol-Ripoll G
+AU  - Pisanu C
+AU  - Polak T
+AU  - Popp J
+AU  - Posthuma D
+AU  - Priller J
+AU  - Puerta R
+AU  - Quenez O
+AU  - Quintela I
+AU  - Thomassen JQ
+AU  - Rabano A
+AU  - Rainero I
+AU  - Rajabli F
+AU  - Ramakers I
+AU  - Real LM
+AU  - Reinders MJT
+AU  - Reitz C
+AU  - Reyes-Dumeyer D
+AU  - Ridge P
+AU  - Riedel-Heller S
+AU  - Riederer P
+AU  - Roberto N
+AU  - Rodriguez-Rodriguez E
+AU  - Rongve A
+AU  - Allende IR
+AU  - Rosende-Roca M
+AU  - Royo JL
+AU  - Rubino E
+AU  - Rujescu D
+AU  - Saez ME
+AU  - Sakka P
+AU  - Saltvedt I
+AU  - Sanabria A
+AU  - Sanchez-Arjona MB
+AU  - Sanchez-Garcia F
+AU  - Juan PS
+AU  - Sanchez-Valle R
+AU  - Sando SB
+AU  - Sarnowski C
+AU  - Satizabal CL
+AU  - Scamosci M
+AU  - Scarmeas N
+AU  - Scarpini E
+AU  - Scheltens P
+AU  - Scherbaum N
+AU  - Scherer M
+AU  - Schmid M
+AU  - Schneider A
+AU  - Schott JM
+AU  - Selbaek G
+AU  - Seripa D
+AU  - Serrano M
+AU  - Sha J
+AU  - Shadrin AA
+AU  - Skrobot O
+AU  - Slifer S
+AU  - Snijders GJL
+AU  - Soininen H
+AU  - Solfrizzi V
+AU  - Solomon A
+AU  - Song Y
+AU  - Sorbi S
+AU  - Sotolongo-Grau O
+AU  - Spalletta G
+AU  - Spottke A
+AU  - Squassina A
+AU  - Stordal E
+AU  - Tartan JP
+AU  - Tarraga L
+AU  - Tesi N
+AU  - Thalamuthu A
+AU  - Thomas T
+AU  - Tosto G
+AU  - Traykov L
+AU  - Tremolizzo L
+AU  - Tybjaerg-Hansen A
+AU  - Uitterlinden A
+AU  - Ullgren A
+AU  - Ulstein I
+AU  - Valero S
+AU  - Valladares O
+AU  - Broeckhoven CV
+AU  - Vance J
+AU  - Vardarajan BN
+AU  - van der Lugt A
+AU  - Dongen JV
+AU  - van Rooij J
+AU  - van Swieten J
+AU  - Vandenberghe R
+AU  - Verhey F
+AU  - Vidal JS
+AU  - Vogelgsang J
+AU  - Vyhnalek M
+AU  - Wagner M
+AU  - Wallon D
+AU  - Wang LS
+AU  - Wang R
+AU  - Weinhold L
+AU  - Wiltfang J
+AU  - Windle G
+AU  - Woods B
+AU  - Yannakoulia M
+AU  - Zare H
+AU  - Zhao Y
+AU  - Zhang X
+AU  - Zhu C
+AU  - Zulaica M
+AU  - Farrer LA
+AU  - Psaty BM
+AU  - Ghanbari M
+AU  - Raj T
+AU  - Sachdev P
+AU  - Mather K
+AU  - Jessen F
+AU  - Ikram MA
+AU  - de Mendonca A
+AU  - Hort J
+AU  - Tsolaki M
+AU  - Pericak-Vance MA
+AU  - Amouyel P
+AU  - Williams J
+AU  - Frikke-Schmidt R
+AU  - Clarimon J
+AU  - Deleuze JF
+AU  - Rossi G
+AU  - Seshadri S
+AU  - Andreassen OA
+AU  - Ingelsson M
+AU  - Hiltunen M
+AU  - Sleegers K
+AU  - Schellenberg GD
+AU  - van Duijn CM
+AU  - Sims R
+AU  - van der Flier WM
+AU  - Ruiz A
+AU  - Ramirez A
+AU  - Lambert JC
+PY  - 2022
+JF  - Nat Genet
+VL  - 54
+IS  - 4
+SP  - 412-436
+AB  - Characterization of the genetic landscape of Alzheimer's disease (AD) and related
+DO  - 10.1038/s41588-022-01024-z
+AN  - 35379992
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Sleep, Pain, and Neurodegeneration: A Mendelian Randomization Study.
+AU  - Grover S
+AU  - Sharma M
+PY  - 2022
+JF  - Front Neurol
+VL  - 13
+SP  - 765321
+AB  - Our aim was to determine whether the genetic liability to sleep and pain-related
+DO  - 10.3389/fneur.2022.765321
+AN  - 35585838
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Modifiable risk factors for incident dementia and cognitive impairment: An
+AU  - Zhang YR
+AU  - Xu W
+AU  - Zhang W
+AU  - Wang HF
+AU  - Ou YN
+AU  - Qu Y
+AU  - Shen XN
+AU  - Chen SD
+AU  - Wu KM
+AU  - Zhao QH
+AU  - Zhang HN
+AU  - Sun L
+AU  - Dong Q
+AU  - Tan L
+AU  - Feng L
+AU  - Zhang C
+AU  - Evangelou E
+AU  - Smith AD
+AU  - Yu JT
+PY  - 2022
+JF  - J Affect Disord
+VL  - 314
+SP  - 160-167
+AB  - BACKGROUND: Dementia and cognitive impairment can be attributed to genetic and
+DO  - 10.1016/j.jad.2022.07.008
+AN  - 35863541
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - The causes and consequences of Alzheimer's disease: phenome-wide evidence from
+AU  - Korologou-Linden R
+AU  - Bhatta L
+AU  - Brumpton BM
+AU  - Howe LD
+AU  - Millard LAC
+AU  - Kolaric K
+AU  - Ben-Shlomo Y
+AU  - Williams DM
+AU  - Smith GD
+AU  - Anderson EL
+AU  - Stergiakouli E
+AU  - Davies NM
+PY  - 2022
+JF  - Nat Commun
+VL  - 13
+IS  - 1
+SP  - 4726
+AB  - Alzheimer's disease (AD) has no proven causal and modifiable risk factors, or
+DO  - 10.1038/s41467-022-32183-6
+AN  - 35953482
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Cross-Ancestry Investigation of Venous Thromboembolism Genomic Predictors.
+AU  - Thibord F
+AU  - Klarin D
+AU  - Brody JA
+AU  - Chen MH
+AU  - Levin MG
+AU  - Chasman DI
+AU  - Goode EL
+AU  - Hveem K
+AU  - Teder-Laving M
+AU  - Martinez-Perez A
+AU  - Aissi D
+AU  - Daian-Bacq D
+AU  - Ito K
+AU  - Natarajan P
+AU  - Lutsey PL
+AU  - Nadkarni GN
+AU  - de Vries PS
+AU  - Cuellar-Partida G
+AU  - Wolford BN
+AU  - Pattee JW
+AU  - Kooperberg C
+AU  - Braekkan SK
+AU  - Li-Gao R
+AU  - Saut N
+AU  - Sept C
+AU  - Germain M
+AU  - Judy RL
+AU  - Wiggins KL
+AU  - Ko D
+AU  - O'Donnell CJ
+AU  - Taylor KD
+AU  - Giulianini F
+AU  - De Andrade M
+AU  - Nost TH
+AU  - Boland A
+AU  - Empana JP
+AU  - Koyama S
+AU  - Gilliland T
+AU  - Do R
+AU  - Huffman JE
+AU  - Wang X
+AU  - Zhou W
+AU  - Manuel Soria J
+AU  - Carlos Souto J
+AU  - Pankratz N
+AU  - Haessler J
+AU  - Hindberg K
+AU  - Rosendaal FR
+AU  - Turman C
+AU  - Olaso R
+AU  - Kember RL
+AU  - Bartz TM
+AU  - Lynch JA
+AU  - Heckbert SR
+AU  - Armasu SM
+AU  - Brumpton B
+AU  - Smadja DM
+AU  - Jouven X
+AU  - Komuro I
+AU  - Clapham KR
+AU  - Loos RJF
+AU  - Willer CJ
+AU  - Sabater-Lleal M
+AU  - Pankow JS
+AU  - Reiner AP
+AU  - Morelli VM
+AU  - Ridker PM
+AU  - Vlieg AVH
+AU  - Deleuze JF
+AU  - Kraft P
+AU  - Rader DJ
+AU  - Min Lee K
+AU  - Psaty BM
+AU  - Heidi Skogholt A
+AU  - Emmerich J
+AU  - Suchon P
+AU  - Rich SS
+AU  - Vy HMT
+AU  - Tang W
+AU  - Jackson RD
+AU  - Hansen JB
+AU  - Morange PE
+AU  - Kabrhel C
+AU  - Tregouet DA
+AU  - Damrauer SM
+AU  - Johnson AD
+AU  - Smith NL
+PY  - 2022
+JF  - Circulation
+VL  - 146
+IS  - 16
+SP  - 1225-1242
+AB  - BACKGROUND: Venous thromboembolism (VTE) is a life-threatening vascular event
+DO  - 10.1161/CIRCULATIONAHA.122.059675
+AN  - 36154123
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Educational attainment, structural brain reserve and Alzheimer's disease: a
+AU  - Seyedsalehi A
+AU  - Warrier V
+AU  - Bethlehem RAI
+AU  - Perry BI
+AU  - Burgess S
+AU  - Murray GK
+PY  - 2023
+JF  - Brain
+VL  - 146
+IS  - 5
+SP  - 2059-2074
+AB  - Higher educational attainment is observationally associated with lower risk of
+DO  - 10.1093/brain/awac392
+AN  - 36310536
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Genetic association of lipids and lipid-lowering drug target genes with
+AU  - Li Z
+AU  - Zhang B
+AU  - Liu Q
+AU  - Tao Z
+AU  - Ding L
+AU  - Guo B
+AU  - Zhang E
+AU  - Zhang H
+AU  - Meng Z
+AU  - Guo S
+AU  - Chen Y
+AU  - Peng J
+AU  - Li J
+AU  - Wang C
+AU  - Huang Y
+AU  - Xu H
+AU  - Wu Y
+PY  - 2023
+JF  - EBioMedicine
+VL  - 90
+SP  - 104543
+AB  - BACKGROUND: Some observational studies found that dyslipidaemia is a risk factor
+DO  - 10.1016/j.ebiom.2023.104543
+AN  - 37002989
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Bias correction for inverse variance weighting Mendelian randomization.
+AU  - Mounier N
+AU  - Kutalik Z
+PY  - 2023
+JF  - Genet Epidemiol
+VL  - 47
+IS  - 4
+SP  - 314-331
+AB  - Inverse-variance weighted two-sample Mendelian randomization (IVW-MR) is the most
+DO  - 10.1002/gepi.22522
+AN  - 37036286
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Genome-wide association analyses identified novel susceptibility loci for
+AU  - Zhang Z
+AU  - Li H
+AU  - Weng H
+AU  - Zhou G
+AU  - Chen H
+AU  - Yang G
+AU  - Zhang P
+AU  - Zhang X
+AU  - Ji Y
+AU  - Ying K
+AU  - Liu B
+AU  - Xu Q
+AU  - Tang Y
+AU  - Zhu G
+AU  - Liu Z
+AU  - Xia S
+AU  - Yang X
+AU  - Dong L
+AU  - Zhu L
+AU  - Zeng M
+AU  - Yuan Y
+AU  - Yang Y
+AU  - Zhang N
+AU  - Xu X
+AU  - Pang W
+AU  - Zhang M
+AU  - Zhang Y
+AU  - Zhen K
+AU  - Wang D
+AU  - Lei J
+AU  - Wu S
+AU  - Shu S
+AU  - Zhang Y
+AU  - Zhang S
+AU  - Gao Q
+AU  - Huang Q
+AU  - Deng C
+AU  - Fu X
+AU  - Chen G
+AU  - Duan W
+AU  - Wan J
+AU  - Xie W
+AU  - Zhang P
+AU  - Wang S
+AU  - Yang P
+AU  - Zuo X
+AU  - Zhai Z
+AU  - Wang C
+PY  - 2023
+JF  - BMC Med
+VL  - 21
+IS  - 1
+SP  - 153
+AB  - BACKGROUND: A large proportion of pulmonary embolism (PE) heritability remains
+DO  - 10.1186/s12916-023-02844-4
+AN  - 37076872
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Mendelian randomization evidence for the causal effects of socio-economic
+AU  - Ye CJ
+AU  - Kong LJ
+AU  - Wang YY
+AU  - Dou C
+AU  - Zheng J
+AU  - Xu M
+AU  - Xu Y
+AU  - Li M
+AU  - Zhao ZY
+AU  - Lu JL
+AU  - Chen YH
+AU  - Ning G
+AU  - Wang WQ
+AU  - Bi YF
+AU  - Wang TG
+PY  - 2023
+JF  - Nat Hum Behav
+VL  - 7
+IS  - 8
+SP  - 1357-1370
+AB  - Human longevity correlates with socio-economic status, and there is evidence that
+DO  - 10.1038/s41562-023-01646-1
+AN  - 37386110
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Plasma proteomic associations with genetics and health in the UK Biobank.
+AU  - Sun BB
+AU  - Chiou J
+AU  - Traylor M
+AU  - Benner C
+AU  - Hsu YH
+AU  - Richardson TG
+AU  - Surendran P
+AU  - Mahajan A
+AU  - Robins C
+AU  - Vasquez-Grinnell SG
+AU  - Hou L
+AU  - Kvikstad EM
+AU  - Burren OS
+AU  - Davitte J
+AU  - Ferber KL
+AU  - Gillies CE
+AU  - Hedman AK
+AU  - Hu S
+AU  - Lin T
+AU  - Mikkilineni R
+AU  - Pendergrass RK
+AU  - Pickering C
+AU  - Prins B
+AU  - Baird D
+AU  - Chen CY
+AU  - Ward LD
+AU  - Deaton AM
+AU  - Welsh S
+AU  - Willis CM
+AU  - Lehner N
+AU  - Arnold M
+AU  - Worheide MA
+AU  - Suhre K
+AU  - Kastenmuller G
+AU  - Sethi A
+AU  - Cule M
+AU  - Raj A
+AU  - Burkitt-Gray L
+AU  - Melamud E
+AU  - Black MH
+AU  - Fauman EB
+AU  - Howson JMM
+AU  - Kang HM
+AU  - McCarthy MI
+AU  - Nioi P
+AU  - Petrovski S
+AU  - Scott RA
+AU  - Smith EN
+AU  - Szalma S
+AU  - Waterworth DM
+AU  - Mitnaul LJ
+AU  - Szustakowski JD
+AU  - Gibson BW
+AU  - Miller MR
+AU  - Whelan CD
+PY  - 2023
+JF  - Nature
+VL  - 622
+IS  - 7982
+SP  - 329-338
+AB  - The Pharma Proteomics Project is a precompetitive biopharmaceutical consortium
+DO  - 10.1038/s41586-023-06592-6
+AN  - 37794186
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Proteogenomic Data Integration Reveals CXCL10 as a Potentially Downstream Causal
+AU  - Prapiadou S
+AU  - Zivkovic L
+AU  - Thorand B
+AU  - George MJ
+AU  - van der Laan SW
+AU  - Malik R
+AU  - Herder C
+AU  - Koenig W
+AU  - Ueland T
+AU  - Kleveland O
+AU  - Aukrust P
+AU  - Gullestad L
+AU  - Bernhagen J
+AU  - Pasterkamp G
+AU  - Peters A
+AU  - Hingorani AD
+AU  - Rosand J
+AU  - Dichgans M
+AU  - Anderson CD
+AU  - Georgakis MK
+PY  - 2024
+JF  - Circulation
+VL  - 149
+IS  - 9
+SP  - 669-683
+AB  - BACKGROUND: Genetic and experimental studies support a causal involvement of IL-6
+DO  - 10.1161/CIRCULATIONAHA.123.064974
+AN  - 38152968
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Associations between sleep-behavioral traits and healthspan: A one-sample
+AU  - Sambou ML
+AU  - Zhao X
+AU  - Hong T
+AU  - Wang N
+AU  - Dai J
+PY  - 2024
+JF  - J Affect Disord
+VL  - 350
+SP  - 854-862
+AB  - BACKGROUND: Although the association between sleep behavior and morbidity and
+DO  - 10.1016/j.jad.2024.01.122
+AN  - 38262521
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Sleep Characteristics and Risk of Stroke and Dementia: An Observational and
+AU  - Guo C
+AU  - Harshfield EL
+AU  - Markus HS
+PY  - 2024
+JF  - Neurology
+VL  - 102
+IS  - 5
+SP  - e209141
+AB  - BACKGROUND AND OBJECTIVES: Sleep disturbances are implicated as risk factors of
+DO  - 10.1212/WNL.0000000000209141
+AN  - 38350061
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Investigating the shared genetic architecture between COVID-19 and obesity: a
+AU  - Chen Y
+AU  - Fan C
+AU  - Liu J
+PY  - 2024
+JF  - Front Endocrinol (Lausanne)
+VL  - 15
+SP  - 1325939
+AB  - Observational studies have reported high comorbidity between obesity and severe
+DO  - 10.3389/fendo.2024.1325939
+AN  - 38352709
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - The genetic architecture of biological age in nine human organ systems.
+AU  - Wen J
+AU  - Tian YE
+AU  - Skampardoni I
+AU  - Yang Z
+AU  - Cui Y
+AU  - Anagnostakis F
+AU  - Mamourian E
+AU  - Zhao B
+AU  - Toga AW
+AU  - Zalesky A
+AU  - Davatzikos C
+PY  - 2024
+JF  - Nat Aging
+VL  - 4
+IS  - 9
+SP  - 1290-1307
+AB  - Investigating the genetic underpinnings of human aging is essential for
+DO  - 10.1038/s43587-024-00662-8
+AN  - 38942983
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Epidemiologic and genetic associations between primary biliary cholangitis and
+AU  - Qian Q
+AU  - Wu Y
+AU  - Cui N
+AU  - Li Y
+AU  - Zhou Y
+AU  - Li Y
+AU  - Lian M
+AU  - Xiao X
+AU  - Miao Q
+AU  - You Z
+AU  - Wang Q
+AU  - Shi Y
+AU  - Cordell HJ
+AU  - Timilsina S
+AU  - Gershwin ME
+AU  - Li Z
+AU  - Ma X
+AU  - Ruqi Tang
+PY  - 2024
+JF  - J Autoimmun
+VL  - 148
+SP  - 103289
+AB  - Patients with primary biliary cholangitis (PBC) commonly experience extrahepatic
+DO  - 10.1016/j.jaut.2024.103289
+AN  - 39059058
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Lipids, Apolipoproteins, Lipid-Lowering Drugs, and the Risk of Cerebral Small
+AU  - Xie Y
+AU  - Liu S
+AU  - Wang X
+AU  - Huang H
+AU  - Wang M
+AU  - Qu W
+AU  - Yu Z
+AU  - Wang W
+AU  - Luo X
+PY  - 2024
+JF  - J Am Heart Assoc
+VL  - 13
+IS  - 16
+SP  - e032409
+AB  - BACKGROUND: Serum lipids are causally involved in the occurrence of
+DO  - 10.1161/JAHA.123.032409
+AN  - 39158561
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Causal Associations of Sleep Apnea With Alzheimer Disease and Cardiovascular
+AU  - Cavailles C
+AU  - Andrews SJ
+AU  - Leng Y
+AU  - Chatterjee A
+AU  - Daghlas I
+AU  - Yaffe K
+PY  - 2024
+JF  - J Am Heart Assoc
+VL  - 13
+IS  - 18
+SP  - e033850
+AB  - BACKGROUND: Sleep apnea (SA) has been linked to an increased risk of dementia in
+DO  - 10.1161/JAHA.123.033850
+AN  - 39258525
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Shared genetic architecture and bidirectional clinical risks within the
+AU  - Guo X
+AU  - Feng Y
+AU  - Ji X
+AU  - Jia N
+AU  - Maimaiti A
+AU  - Lai J
+AU  - Wang Z
+AU  - Yang S
+AU  - Hu S
+PY  - 2025
+JF  - EBioMedicine
+VL  - 111
+SP  - 105530
+AB  - BACKGROUND: Increasing evidence suggests a complex interplay between psychiatric
+DO  - 10.1016/j.ebiom.2024.105530
+AN  - 39731856
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Variables associated with cognitive function: an exposome-wide and mendelian
+AU  - Zhao YL
+AU  - Hao YN
+AU  - Ge YJ
+AU  - Zhang Y
+AU  - Huang LY
+AU  - Fu Y
+AU  - Zhang DD
+AU  - Ou YN
+AU  - Cao XP
+AU  - Feng JF
+AU  - Cheng W
+AU  - Tan L
+AU  - Yu JT
+PY  - 2025
+JF  - Alzheimers Res Ther
+VL  - 17
+IS  - 1
+SP  - 13
+AB  - BACKGROUND: Evidence indicates that cognitive function is influenced by potential
+DO  - 10.1186/s13195-025-01670-5
+AN  - 39773296
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Inflammatory markers link triglyceride-glucose index and obesity indicators with
+AU  - Huang Y
+AU  - Zhou Y
+AU  - Xu Y
+AU  - Wang X
+AU  - Zhou Z
+AU  - Wu K
+AU  - Meng Q
+AU  - Wang L
+AU  - Yang Y
+AU  - Gao H
+AU  - Ji J
+AU  - Jiang X
+AU  - Yang Y
+AU  - Hao L
+AU  - Wang H
+PY  - 2025
+JF  - Cardiovasc Diabetol
+VL  - 24
+IS  - 1
+SP  - 11
+AB  - BACKGROUND: Among hypertensive cohorts across different nations, the relationship
+DO  - 10.1186/s12933-024-02571-x
+AN  - 39780176
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Genetic association analysis of lipid-lowering drug target genes in chronic
+AU  - Zhang Y
+AU  - Ou G
+AU  - Peng L
+AU  - Pan J
+AU  - Zhang S
+AU  - Shi J
+PY  - 2024
+JF  - Front Endocrinol (Lausanne)
+VL  - 15
+SP  - 1434145
+AB  - OBJECTIVE: The impact of lipid-lowering medications on chronic kidney disease
+DO  - 10.3389/fendo.2024.1434145
+AN  - 39877840
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Associations of Education Attainment With Postpartum Depression and the Mediating
+AU  - Wang X
+AU  - Zhou FY
+AU  - Hao Y
+AU  - Wu J
+AU  - Su K
+AU  - Chen SY
+AU  - Yu W
+AU  - Zhang C
+AU  - Wu YT
+AU  - Huang HF
+PY  - 2025
+JF  - Depress Anxiety
+VL  - 2025
+SP  - 8835118
+AB  - Background: Many studies have explored the relationship between education and
+DO  - 10.1155/da/8835118
+AN  - 40225735
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Polygenic overlap between subjective well-being and psychiatric disorders and
+AU  - Jung JY
+AU  - Ahn Y
+AU  - Park JW
+AU  - Jung K
+AU  - Kim S
+AU  - Lim S
+AU  - Jung SH
+AU  - Kim H
+AU  - Kim B
+AU  - Hwang MY
+AU  - Kim YJ
+AU  - Park WY
+AU  - Okbay A
+AU  - O'Connell KS
+AU  - Andreassen OA
+AU  - Myung W
+AU  - Won HH
+PY  - 2025
+JF  - Nat Hum Behav
+VL  - 9
+IS  - 6
+SP  - 1272-1282
+AB  - Subjective well-being (SWB) is important for understanding human behaviour and
+DO  - 10.1038/s41562-025-02155-z
+AN  - 40229577
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Causal Relevance of Lp(a) for Coronary Heart Disease and Stroke Types in East
+AU  - Clarke R
+AU  - Wright N
+AU  - Lin K
+AU  - Yu C
+AU  - Walters RG
+AU  - Lv J
+AU  - Hill M
+AU  - Kartsonaki C
+AU  - Millwood IY
+AU  - Bennett DA
+AU  - Avery D
+AU  - Yang L
+AU  - Chen Y
+AU  - Du H
+AU  - Sherliker P
+AU  - Yang X
+AU  - Sun D
+AU  - Li L
+AU  - Qu C
+AU  - Marcovina S
+AU  - Collins R
+AU  - Chen Z
+AU  - Parish S
+PY  - 2025
+JF  - Circulation
+VL  - 151
+IS  - 24
+SP  - 1699-1711
+AB  - BACKGROUND: Elevated plasma levels of Lp(a) [lipoprotein(a)] are a causal risk
+DO  - 10.1161/CIRCULATIONAHA.124.072086
+AN  - 40297899
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - A Mendelian randomization study investigating the causal effect of simvastatin
+AU  - Lin W
+AU  - Zheng Q
+AU  - Zippi M
+AU  - Fiorino S
+AU  - Zimmer V
+AU  - Zhang J
+AU  - Grottesi A
+AU  - Hong W
+PY  - 2025
+JF  - Pancreatology
+VL  - 25
+IS  - 5
+SP  - 614-623
+AB  - BACKGROUND: Simvastatin has been inconsistently linked to pancreatitis. We
+DO  - 10.1016/j.pan.2025.06.007
+AN  - 40537337
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Genetic mechanisms, brain structures, and peripheral biomarkers mediate the
+AU  - Gao PY
+AU  - Fu Y
+AU  - He XY
+AU  - Zhang DD
+AU  - Chi HC
+AU  - Huang YM
+AU  - Wang ZB
+AU  - Zhang W
+AU  - Ou YN
+AU  - Ge YJ
+AU  - You J
+AU  - Ma LZ
+AU  - Qiang YX
+AU  - Zhao B
+AU  - Yu HH
+AU  - Feng J
+AU  - Tan L
+AU  - Cheng W
+AU  - Zhang YR
+AU  - Yu JT
+PY  - 2026
+JF  - J Adv Res
+VL  - 82
+SP  - 685-699
+AB  - INTRODUCTION: Physical frailty, which is characterized by multisystem functional
+DO  - 10.1016/j.jare.2025.06.046
+AN  - 40543840
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - PTPRD pleiotropy, genetically driven childbirth timing, and corpus callosum
+AU  - Li FJ
+AU  - Li JY
+AU  - Zhang RY
+AU  - Liu XJ
+AU  - Lv BC
+AU  - Zhang T
+AU  - Liu YN
+AU  - Zhang ZX
+AU  - Zhang W
+AU  - Cui GY
+AU  - Xu CY
+PY  - 2025
+JF  - Sleep Med
+VL  - 133
+SP  - 106631
+AB  - OBJECTIVES: To investigate the genetic mechanisms underlying the comorbidity of
+DO  - 10.1016/j.sleep.2025.106631
+AN  - 40561837
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Genetic association analysis between LDL-c lowering drugs and portal hypertension
+AU  - Xiao QA
+AU  - Li XL
+AU  - Qin L
+AU  - Zhang XL
+PY  - 2025
+JF  - Sci Rep
+VL  - 15
+IS  - 1
+SP  - 22238
+AB  - Clinical guidelines recommend the use of statins to reduce portal pressure and
+DO  - 10.1038/s41598-025-08153-5
+AN  - 40596422
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Investigating shared genetic architecture between major depressive disorder and
+AU  - Zhan Y
+AU  - Zhao N
+AU  - Zhao QG
+AU  - Wu CX
+AU  - Yuan SJ
+AU  - Yu XJ
+AU  - Zheng X
+AU  - Liu CJ
+AU  - Hai R
+AU  - Liu ZQ
+AU  - Pei YF
+PY  - 2025
+JF  - Obesity (Silver Spring)
+VL  - 33
+IS  - 9
+SP  - 1745-1755
+AB  - OBJECTIVE: This study investigated the shared genetic architecture between major
+DO  - 10.1002/oby.24333
+AN  - 40716783
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Genetic Comorbidity of Psoriasis and Four Cardiovascular Diseases: Uncovering
+AU  - Li X
+AU  - Yan Z
+AU  - Lan H
+AU  - Wu Y
+AU  - Chen S
+AU  - Qiu G
+AU  - Wu Y
+PY  - 2025
+JF  - Exp Dermatol
+VL  - 34
+IS  - 8
+SP  - e70158
+AB  - Psoriasis (PSO) is a chronic, systemic immune-mediated inflammatory disease that
+DO  - 10.1111/exd.70158
+AN  - 40862320
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Amyotrophic Lateral Sclerosis and Risk of Common Cancer: Mendelian Randomization
+AU  - Tan X
+AU  - Liu G
+AU  - Li X
+AU  - Zhong F
+AU  - Su Z
+AU  - Wang H
+PY  - 2025
+JF  - Phenomics
+VL  - 5
+IS  - 3
+SP  - 270-283
+AB  - Compared with the well-documented inverse comorbidity of common neurodegenerative
+DO  - 10.1007/s43657-024-00159-9
+AN  - 40895324
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Multi-Ancestry Mendelian Randomization Reveals Lipid-Associated Genetic Risk
+AU  - Wu H
+AU  - Li H
+AU  - Tang W
+AU  - Di Y
+AU  - Zhu Y
+AU  - Dai W
+AU  - Zhao M
+PY  - 2025
+JF  - Int J Chron Obstruct Pulmon Dis
+VL  - 20
+SP  - 2979-2992
+AB  - BACKGROUND: Previous Mendelian randomization (MR) studies investigating the
+DO  - 10.2147/COPD.S532361
+AN  - 40901574
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Shared Genetic Architecture Between Atopic Dermatitis and Autoimmune Diseases.
+AU  - Lazanas P
+AU  - Antonatos C
+AU  - Tsoumani KT
+AU  - Sgourou A
+AU  - Vasilopoulos Y
+PY  - 2025
+JF  - Int J Mol Sci
+VL  - 26
+IS  - 18
+AB  - Atopic dermatitis (AD) and autoimmune diseases exhibit epidemiological
+DO  - 10.3390/ijms26189124
+AN  - 41009683
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Measures of General Intelligence and Risk for Alcohol Use Disorder.
+AU  - Capusan AJ
+AU  - Davis CN
+AU  - Thern E
+AU  - Rehm J
+AU  - Gelernter J
+AU  - Kranzler HR
+AU  - Heilig M
+PY  - 2025
+JF  - JAMA Psychiatry
+VL  - 82
+IS  - 12
+SP  - 1195-1202
+AB  - IMPORTANCE: Associations among general intelligence (IQ), educational attainment
+DO  - 10.1001/jamapsychiatry.2025.2689
+AN  - 41032335
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Immune, blood-brain barrier, and metabolic biomarkers mediate gut-brain axis
+AU  - Li J
+AU  - Yuan Z
+AU  - Li J
+AU  - Liu Z
+AU  - Wang Y
+AU  - Cui M
+AU  - Suo C
+AU  - Jin L
+AU  - Ding D
+AU  - Chen X
+AU  - Jiang Y
+PY  - 2025
+JF  - Biomark Res
+VL  - 13
+IS  - 1
+SP  - 137
+AB  - BACKGROUND: Gut microbiota may influence Alzheimer's disease (AD) pathogenesis by
+DO  - 10.1186/s40364-025-00851-6
+AN  - 41163121
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Gut microbiota, lipid metabolism, and PCOS: A Mendelian randomization and
+AU  - Li W
+AU  - Gan J
+AU  - Jiao J
+AU  - Li J
+AU  - Xu L
+AU  - Li D
+AU  - Geng Y
+AU  - Shen M
+AU  - Liang J
+AU  - Lin H
+AU  - Zhong L
+PY  - 2026
+JF  - Medicine (Baltimore)
+VL  - 105
+IS  - 3
+SP  - e47177
+AB  - Polycystic ovary syndrome (PCOS) is a common reproductive and metabolic disorder.
+DO  - 10.1097/MD.0000000000047177
+AN  - 41560095
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Sleep and dementia: Assessing established dementia-related factors using
+AU  - Guo Y
+AU  - Wang R
+AU  - Sindi S
+AU  - Middleton LT
+AU  - Kivipelto M
+PY  - 2026
+JF  - Alzheimers Dement
+VL  - 22
+IS  - 6
+SP  - e71592
+AB  - INTRODUCTION: The relationship between sleep, other dementia risk factors, and
+DO  - 10.1002/alz.71592
+AN  - 42298291
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Causal associations between sleep apnea and dementia: a two-sample Mendelian
+AU  - Zhao L
+AU  - Xu Y
+AU  - Xia L
+AU  - Zhang Y
+PY  - 2026
+JF  - Arch Med Sci
+VL  - 22
+IS  - 2
+SP  - 822-833
+AB  - INTRODUCTION: Observational studies suggest an association between sleep apnea
+DO  - 10.5114/aoms/214094
+AN  - 42305347
+DB  - PubMed
+ER  - 
