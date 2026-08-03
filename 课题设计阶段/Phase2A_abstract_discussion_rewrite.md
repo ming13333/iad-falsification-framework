@@ -14,7 +14,7 @@
 
 **Methods**: The framework proceeds in five escalating layers — (1) phenomenological: bidirectional MR with LD-clump sensitivity; (2) genome-wide: LDSC genetic correlation ± chromosome-19/APOE removal; (3) locus-level: colocalization; (4) mechanistic: two-step protein- and metabolite-mediation MR; (5) protective-factor: MVMR plus an educational-attainment PheWAS. We applied it to insomnia (UKB; n=462,341) and AD (IGAP Kunkle; n=63,926), and performed an East Asian cross-ancestry replication of the education→AD signal (exposure: Chen/Kim/Lam 2024 EAS-only EduYears, GCST90296498, n=165,232; outcome: GARD/NIAGADS NG00182 East Asian AD, n=6,518, 2,919 cases; coordinates lifted to GRCh37).
 
-**Results**: Layer 1 — unclumped MR yielded a positive insomnia→AD effect (+0.10, p=0.0009) that reversed to null/negative after LD-clumping and disappeared under MVMR, demonstrating the framework's gatekeeper value. Layer 2 — genome-wide rg=−0.03 (p=0.57), unchanged after removing chr19/APOE (−0.03, p=0.53), restricting shared architecture to locus-specific signal. Layer 3 — colocalization was strong only in the reverse direction (18/32 loci PP.H4>0.8), indicating shared liability rather than directed causality. Layer 4 — no protein mediation (CRP/IL-6 FDR=0.91); a metabolite screen identified triglycerides as a genetically proxied mediator of education's protection (indirect=−0.031, q=0.0006; bootstrap-validated 95% CI [−0.047, −0.017], p<0.001), accounting for ~9% of education's total effect. Layer 5 — educational attainment robustly protected against AD (β=−0.33, p=1.1×10⁻⁵) and PD (β=−0.39, p=7.2×10⁻⁶) but not MS; this direction was corroborated in East Asian replication (IVW β=−0.03, 95% CI [−0.33, 0.27]). Synthesizing all five layers, insomnia–AD is classified into quadrant III — shared liability, no independent causal upstream.
+**Results**: Layer 1 — unclumped MR yielded a positive insomnia→AD effect (+0.10, p=0.0009) that reversed to null/negative after LD-clumping and disappeared under MVMR, demonstrating the framework's gatekeeper value. Layer 2 — genome-wide rg=−0.03 (p=0.57), unchanged after removing chr19/APOE (−0.03, p=0.53), restricting shared architecture to locus-specific signal. Layer 3 — colocalization was strong only in the reverse direction (18/32 loci PP.H4>0.8), indicating shared liability rather than directed causality. Layer 4 — no protein mediation in a targeted 36-plasma-protein screen (25 evaluable after instrument exclusion, FDR<0.05 hits=0; the two pro-inflammatory anchors CRP and IL-6R also null); a metabolite screen identified triglycerides as a genetically proxied mediator of education's protection (indirect=−0.031, q=0.0006; bootstrap-validated 95% CI [−0.047, −0.017], p<0.001), accounting for ~9% of education's total effect. Layer 5 — educational attainment robustly protected against AD (β=−0.33, p=1.1×10⁻⁵) and PD (β=−0.39, p=7.2×10⁻⁶) but not MS; this direction was corroborated in East Asian replication (IVW β=−0.03, 95% CI [−0.33, 0.27]). Synthesizing all five layers, insomnia–AD is classified into quadrant III — shared liability, no independent causal upstream.
 
 **Conclusions**: The five-layer framework recalibrates the insomnia–AD literature: genome-wide evidence does not support insomnia as an independent causal upstream of AD; the apparent comorbidity is driven by APOE-centered locus-specific shared liability; and educational attainment is a cross-ancestry protective factor with lipid metabolism as a partly modifiable mediator. The framework is generalizable to other comorbidity pairs where MR-based causal claims warrant re-evaluation.
 
@@ -64,7 +64,21 @@ LDSC 给出 rg=−0.03（p=0.57），**去除 APOE 所在的 19 号染色体后 
 
 **诚实边界**：Step2 中 CRP=3、IL-6=2 个 IV（INTERVAL n=3,301 蛋白源限制），统计效力低。null 结论应解读为"在现有 IV 强度下无证据支持中介"，而非"彻底排除炎症通路"——未来用 UKB-PPP（n=54k）强 IV 补全仍是必要敏感性分析。
 
-### 3.4.1 代谢物中介桥梁：血脂（TG）作为教育→AD 保护的可遗传介质（C1 新增）
+### 3.4.2 靶向蛋白中介扩展筛查：36 个 AD 相关血浆蛋白均无显著介导（G2b 扩展）
+
+为把"炎症蛋白 null"从 2 个候选推广到一组**先验 AD 相关**血浆蛋白、并规避 §3.4 中"仅 2 蛋白、效力不足"的局限，我们在 INTERVAL 血浆蛋白面板（prot-a-1…2200，n=3,301；UKB-PPP 不可用时的代理源）中，依据关键词（complement / chemokine / interleukin / cathepsin / TNF / YKL-40 等炎症-免疫-神经退行相关通路）预设筛选了 **36 个候选蛋白**（iv_count≥15），以教育年限（ieu-a-1239，n=317 clumped IVs）为暴露、AD（ieu-b-2）为结局，逐蛋白重跑两步 MR 中介（Step1 教育→蛋白；Step2 蛋白→AD），并施加 BH-FDR 校正。
+
+**结果**：36 个靶向蛋白中，**25 个获得可评估的中介估计**（Step1 与 Step2 各有 ≥2 个 harmonized IV，n1=305、n2=2–5），**11 个因蛋白→AD 仪器不足**（Step2 仅 1 个或 0 个可 harmonized IV，包括 Cathepsin S、IL-18R、C1qTNF5、IL-21 receptor 等）被保守排除。**全部 25 个可评估蛋白的间接效应在 BH-FDR 校正后均无显著**（FDR<0.05 命中数 = 0；最小 p_ind = 0.111，prot-a-1506 Interleukin-21；最小 bootstrap p = 0.053；delta 法 95% CI 与 5000 次 bootstrap 95% CI 均跨 0）。火山图与 top-15 森林图见 Supplementary Figure 3C。
+
+这一扩展筛查把 §3.4 的"CRP/IL-6 不介导"结论**推广并加固**：无论上游暴露是失眠还是教育，无论考察 2 个还是 36 个先验 AD 相关炎症/免疫血浆蛋白，**血浆蛋白层面均未提供可遗传介导失眠/教育→AD 通路的证据**。结合 §3.4.3 代谢层面的 TG 介导，机制层呈现清晰的"**脂质可介导、蛋白不可介导**"二分——提示教育对 AD 的保护更可能经代谢（而非经典炎症血浆蛋白）轴传导。
+
+**诚实边界（靶向筛查的固有局限）**：
+1. **代理源限制**：INTERVAL 面板仅为 UKB-PPP（n=54k、含 NfL/GFAP 等神经特异性蛋白）的代理；本环境 IEU OpenGWAS 不含 UKB-PPP，故强 IV 补全与神经特异性蛋白（NfL/GFAP）验证**仍为待办敏感性分析**（见 L2）。
+2. **假设驱动而非穷举**：36 蛋白为关键词预设筛选，并非面板全 2,200 蛋白穷举；结果应定位为 hypothesis-driven 补充，不能替代原计划全面板筛查（后者因 INTERVAL 弱 IV / API 受限未执行，见 L2）。
+3. **排除蛋白的偏倚方向**：11 个被排除蛋白恰多为低丰度/弱 GWAS 信号者，其"无中介"未被评估——因此本结论对"弱信号蛋白也可能介导"保持开放，仅能断言**在可评估的 25 个中无显著介导**。
+4. **效力说明**：可评估蛋白的 Step2 IV 数仅 2–5，delta 法与 bootstrap 均跨 0，故结论是"现有 IV 强度下无证据支持中介"，而非"彻底排除蛋白通路"。
+
+### 3.4.3 代谢物中介桥梁：血脂（TG）作为教育→AD 保护的可遗传介质（C1 新增）
 
 为回应"成人期可干预桥梁"这一批评、并突破炎症蛋白中介（Step2 仅 2–3 IV）的检出力限制，我们将中介筛查扩展至代谢组学层面：以教育年限为暴露、10 个 AD 相关代谢物为候选介质、AD 为结局，进行两步 MR 中介分析。结果显示，**甘油三酯（TG）是最强的可遗传介质**——教育关联的 TG 降低部分介导了其对 AD 的保护（间接效应 = −0.031，delta 法 p=5.6×10⁻⁵，BH-FDR q=0.0006，占教育总保护效应约 9.4%；该中介经 5000 次非参数 bootstrap 复核，boot 95% CI [−0.047, −0.017]、boot p<0.001，与 delta 法一致）；总胆固醇、DHA、Omega-3 亦达 FDR 显著（q=0.03–0.04）。其余支链氨基酸（Ile/Leu/Val）与 GlycA 未达显著。
 
@@ -135,7 +149,7 @@ LDSC 给出 rg=−0.03（p=0.57），**去除 APOE 所在的 19 号染色体后 
 | # | 限制 | 处置 |
 |---|------|------|
 | L1 | Steiger 方向性检验**已复现但结论不稳定、无法确立方向**：按二进制性状校正（r_from_lor）得 AD→失眠，而 TwoSampleMR 默认的定量 p→r 回退得失眠→AD，方向相反；且失眠(患病率≈10%)与AD(17–34%)患病率差异使比较受患病率混淆，失眠工具解释两病方差均极小（中位\|r\|≈0.002）。原 TwoSampleMR 流程因 R 环境 ABI 段错误（加载即崩）不可用，已用 Python+pyreadr 纯实现复现（`code/08h_steiger_py.py`） | 方向性最终由双向 MR + coloc + 生物学先验共同判定；结论与 G1 修订一致——**不支持失眠作为 AD 独立因果上游**，共病归为共享负债（象限 III） |
-| L2 | G2 Step2 IV 极少（2-3） | 谨慎解读 null，待 UKB-PPP 强 IV 补 |
+| L2 | G2b 靶向 36 蛋白仅 25 可评估（Step2 IV 2–5），11 个因蛋白→AD 仪器不足被排除；全 2,200 面板筛查因 INTERVAL 弱 IV / API 受限未执行 | 谨慎解读 null（"现有 IV 强度下无证据"而非"彻底排除"）；UKB-PPP（n=54k，含 NfL/GFAP 神经特异性蛋白）强 IV 补全与全面板穷举仍为待办敏感性分析 |
 | L3 | AD Bellenguez 极端异质性 | 以 Kunkle 为主，Bellenguez IVW 标注不可靠 |
 | L4 | ALS 无可用 GWAS | 待补，不影响 AD/PD 核心 |
 | L5 | 欧洲裔偏倚（UKB/IGAP），东亚外部效度 | 教育→AD 保护已做东亚复制（见 §3.5.2）：EA IVW β=−0.03 方向与 EUR 一致但不显著（cases=2,919 效力有限），EUR 效应落其 CI 内，不构成矛盾；失眠→AD 的东亚复制仍缺大样本东亚失眠 GWAS，降级为探索（Phase 3） |
@@ -184,7 +198,7 @@ AI 生成内容均经研究者逐条核验与修正后采用。
 
 所有补充材料均位于 `课题设计阶段/Supplementary/`：
 
-- **Supplementary Figure 3**. Two-step MR forest plot: (A) insomnia → plasma CRP/IL-6 → AD and (B) education → plasma CRP/IL-6 → AD; both show null indirect effects under limited Step2 IVs.
+- **Supplementary Figure 3**. Two-step MR forest plot: (A) insomnia → plasma CRP/IL-6 → AD and (B) education → plasma CRP/IL-6 → AD; both show null indirect effects under limited Step2 IVs. (C) Targeted 36-plasma-protein screen (education → protein → AD): volcano of indirect effect vs −log10(q_BH) and top-15 forest, all 25 evaluable proteins null (FDR<0.05 hits=0).
 - **Supplementary Table 1**. Colocalisation loci (forward/reverse; main/replication), with PP.H0–PP.H4 and PP.H4 evidence class.
 - **Supplementary Table 2**. Instrument-set sensitivity for insomnia → AD, including unclumped multi-method MR and clumped UVMR IVW-only rows.
 - **Supplementary Table 3**. Complete MVMR/UVMR results (`MVMR_results_v3.csv`), with model, instrument set, method, and conditional F (where available).
