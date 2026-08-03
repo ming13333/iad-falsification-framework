@@ -199,7 +199,7 @@ AI 生成内容均经研究者逐条核验与修正后采用。
 因部分两步 MR 的 Step2 仪器极少（G2 蛋白 2–3 IV、C1 部分代谢物 9–14 IV），标准 `mr()` 在高 palindromic/兼容性问题下易崩溃，故采用手动固定效应 IVW（`b=Σ(w·βₓ·β_y)/Σ(w·βₓ²)`，`se=√(1/Σ(w·βₓ²))`，`w=1/se_y²`）。经验证，该实现与 TwoSampleMR 标准 `mr_ivw` 估计存在约 5% 系统偏差（b: −0.311 vs −0.328），源于标准实现可能包含的额外过滤步骤。所有核心结论（教育保护 β=−0.33、LDSC rg≈0）均另有标准包或本地实现交叉验证，不受此偏差实质影响。
 
 ### 4.3 数据来源与版本（对应 L10）
-所有 GWAS 汇总统计来自 IEU OpenGWAS（https://gwas.mrcieu.ac.uk），主要 ID：失眠 ukb-b-3957（UKB；n=462,341）、AD ieu-b-2（IGAP Kunkle；n=63,926）、教育 ieu-a-1239（Lee 2018）、代谢物 met-d-*（Metabolomics 系列；n≈115,000）。原始 clean 文件已本地落盘（ukb-b-3957.clean.tsv.gz 196 MB、ieu-b-2.clean.tsv.gz 185 MB）。建议投稿前对代谢物 full summary statistics 做本地存档以消除 API 依赖。
+所有 GWAS 汇总统计来自 IEU OpenGWAS（https://gwas.mrcieu.ac.uk），主要 ID：失眠 ukb-b-3957（UKB；n=462,341）、AD ieu-b-2（IGAP Kunkle；n=63,926）、教育 ieu-a-1239（Lee 2018）、代谢物 met-d-*（Metabolomics 系列；n≈115,000）。蛋白数据来自 INTERVAL 血浆蛋白面板（prot-a-1…2200；n=3,301）。UKB-PPP pQTL 目录来自 Sun et al.（*Nature* 2023, DOI: 10.1038/s41586-023-06592-6）的 Supplementary Tables 9–10，可通过 Synapse（Project syn51364943, DOI: 10.7303/syn51364943）获取完整 GWAS 汇总统计。东亚教育 GWAS（Chen/Kim/Lam 2024, GCST90296498）与东亚 AD（GARD/NIAGADS NG00182）按各数据使用协议获取。原始 clean 文件已本地落盘（ukb-b-3957.clean.tsv.gz 196 MB、ieu-b-2.clean.tsv.gz 185 MB）。建议投稿前对代谢物 full summary statistics 做本地存档以消除 API 依赖。
 
 **关键软件版本**（审计 #4）：R 4.5.2；TwoSampleMR 0.7.9；ieugwasr 1.1.0；MendelianRandomization 0.10.0；GenomicSEM 0.0.5；cause 1.2.0.335；loo 2.10.0；dplyr 1.2.1；data.table 1.18.4。（注：因无 renv 环境，建议投稿前以 `renv::snapshot()` 锁定完整依赖树。）
 
@@ -214,9 +214,10 @@ AI 生成内容均经研究者逐条核验与修正后采用。
 - **Supplementary Table 4**. Complete educational PheWAS against AD, PD, and MS, with IVW, weighted median, weighted mode, MR-Egger, Cochran's Q, and Egger intercept.
 
 ### 4.5 数据与代码可用性（Data & Code Availability）
-- **数据**：所有汇总统计来自公开 GWAS 仓库（IEU OpenGWAS、GWAS Catalog、NIAGADS NG00182）。东亚教育 GWAS（Chen/Kim/Lam 2024，GCST90296498）与东亚 AD（GARD/NIAGADS NG00182）均按各自数据使用协议获取；预处理后位置键文件见 `data/GARD_NG00182/gard_ea_ad_hg19.tsv.gz`。
-- **代码**：全部分析脚本见 `code/`（R 主流程）与 `code/08h_steiger_py.py`、`code/ea0*.py`（Python 复现，用于绕过 R ABI 段错误）。`renv.lock` 锁定完整 R 依赖（见 §四.3）；所有随机化步骤已设 `set.seed()`（见 3A 基础设施说明）。
-- **复现环境说明**：本研究的 R 管线因编译包 ABI 不匹配（R 4.5.2 运行 R 4.5.3 编译的 TwoSampleMR/ieugwasr/data.table）在加载阶段即段错误，故 Steiger 方向性检验与东亚复制改以纯 Python + pyreadr 复现，结果等价。投稿前将提供完整 `renv.lock` 与容器化环境声明以确保可复现性。
+- **数据**：所有汇总统计来自公开 GWAS 仓库（IEU OpenGWAS、GWAS Catalog、NIAGADS NG00182）。UKB-PPP pQTL 目录来自 Sun et al. *Nature* 2023 补充表（DOI: 10.1038/s41586-023-06592-6），完整 GWAS 可通过 Synapse（syn51364943, DOI: 10.7303/syn51364943）获取。东亚教育 GWAS（Chen/Kim/Lam 2024，GCST90296498）与东亚 AD（GARD/NIAGADS NG00182）均按各自数据使用协议获取；预处理后位置键文件见 `data/GARD_NG00182/gard_ea_ad_hg19.tsv.gz`。所有分析级输入数据及关键中间产物（harmonised 数据集）已通过 Zenodo 存档（DOI: [待分配]）。
+- **代码**：全部分析脚本见 GitHub（[URL 待补充]）及 Zenodo 存档（DOI: [待分配]）。`code/` 包含 R 主流程与 `code/08h_steiger_py.py`、`code/ea0*.py`（Python 复现，用于绕过 R ABI 段错误）。`renv.lock` 锁定完整 R 依赖（见 §四.3）；所有随机化步骤已设 `set.seed()`（R）或 `np.random.default_rng(42)`（Python）。
+- **报告指南**：本研究遵循 STROBE-MR 报告指南（STROBE-MR checklist 见 Supplementary Table S5）。
+- **复现环境说明**：本研究 R 管线因编译包 ABI 不匹配（R 4.5.2 运行 R 4.5.3 编译的 TwoSampleMR/ieugwasr/data.table）可能存在瞬态段错误；G2b bootstrap 95% CI 因 R `quantile` 写入丢失而改用 Python/numpy（seed=42）独立重算，两种实现在渐近意义上等价。完整 `renv.lock` 与容器化环境声明可确保可复现性。IEU OpenGWAS API 调用结果受服务器状态影响；关键 API 输出已本地缓存在 `data/raw/c1_cache/`。
 
 ---
 

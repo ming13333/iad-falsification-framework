@@ -1,27 +1,41 @@
-# 大型二进制 / 原始数据（不入库，避免仓库膨胀）
-data/
-# 预处理 / 原始 GWAS 大文件
-*.rds
-*.tsv.gz
-*.csv.gz
-*.gz
-*.vcf.gz
-
-# 日志
-*.log
-G1_run.log
-
-# 环境 / 缓存
-.venv/
-__pycache__/
-.Rproj.user/
+# R temporary files
 .Rhistory
 .RData
 .Ruserdata
+.Rproj.user/
+*.Rproj
 
-# WorkBuddy 内部
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Data files (too large for GitHub)
+*.tsv.gz
+*.tsv
+*.csv.gz
+*.rds
+*.Rds
+!code/*.csv
+!课题设计阶段/**/*.csv
+
+# Results (generated, can be reproduced)
+results/
+*.png
+*.pdf
+*.jpg
+!课题设计阶段/figures/
+
+# Environment
 .workbuddy/
+*.lock
+!renv.lock
 
-# 临时
-tmp/
-*.tmp
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+!code/**/*.log

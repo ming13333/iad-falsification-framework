@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software or the associated analysis pipeline, please cite it as below."
+title: "A five-layer causal verification framework for genetic comorbidity: recalibrating insomnia–Alzheimer's disease"
+abstract: "Analysis pipeline for five-layer Mendelian randomization framework applied to insomnia-AD comorbidity, including bidirectional MR, LDSC rg, coloc, two-step protein/metabolite mediation MR, MVMR, education PheWAS, and East Asian cross-ancestry replication."
+type: software
+authors:
+  - family-names: "[Author Last Name]"
+    given-names: "[Author First Name]"
+    orcid: "[ORCID]"
+repository-code: "https://github.com/[username]/insomnia-ad-comorbidity"
+url: "https://github.com/[username]/insomnia-ad-comorbidity"
+keywords:
+  - "Mendelian randomization"
+  - "Alzheimer's disease"
+  - "insomnia"
+  - "genetic epidemiology"
+  - "colocalization"
+  - "LD score regression"
+  - "plasma proteomics"
+  - "metabolomics"
+license: MIT
+version: 1.0.0
+date-released: "2026-08-03"
