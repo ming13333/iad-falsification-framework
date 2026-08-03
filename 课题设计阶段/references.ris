@@ -28,6 +28,21 @@ AN  - 24114802
 DB  - PubMed
 ER  - 
 TY  - JOUR
+TI  - Calculating statistical power in Mendelian randomization studies.
+AU  - Brion MJ
+AU  - Shakhbazov K
+AU  - Visscher PM
+PY  - 2013
+JF  - Int J Epidemiol
+VL  - 42
+IS  - 5
+SP  - 1497-501
+AB  - In Mendelian randomization (MR) studies, where genetic variants are used as proxy
+DO  - 10.1093/ije/dyt179
+AN  - 24159078
+DB  - PubMed
+ER  - 
+TY  - JOUR
 TI  - Meta-analysis of 74,046 individuals identifies 11 new susceptibility loci for
 AU  - Lambert JC
 AU  - Ibrahim-Verbaas CA
@@ -230,6 +245,19 @@ AN  - 24830394
 DB  - PubMed
 ER  - 
 TY  - JOUR
+TI  - Progress of the synthesis of condensed pyrazole derivatives (from 2010 to
+AU  - Li M
+AU  - Zhao BX
+PY  - 2014
+JF  - Eur J Med Chem
+VL  - 85
+SP  - 311-40
+AB  - Condensed pyrazole derivatives are important heterocyclic compounds due to their
+DO  - 10.1016/j.ejmech.2014.07.102
+AN  - 25104650
+DB  - PubMed
+ER  - 
+TY  - JOUR
 TI  - Multivariable Mendelian randomization: the use of pleiotropic genetic variants to
 AU  - Burgess S
 AU  - Thompson SG
@@ -262,6 +290,37 @@ SP  - 291-5
 AB  - Both polygenicity (many small genetic effects) and confounding biases, such as
 DO  - 10.1038/ng.3211
 AN  - 25642630
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - UK biobank: an open access resource for identifying the causes of a wide range of
+AU  - Sudlow C
+AU  - Gallacher J
+AU  - Allen N
+AU  - Beral V
+AU  - Burton P
+AU  - Danesh J
+AU  - Downey P
+AU  - Elliott P
+AU  - Green J
+AU  - Landray M
+AU  - Liu B
+AU  - Matthews P
+AU  - Ong G
+AU  - Pell J
+AU  - Silman A
+AU  - Young A
+AU  - Sprosen T
+AU  - Peakman T
+AU  - Collins R
+PY  - 2015
+JF  - PLoS Med
+VL  - 12
+IS  - 3
+SP  - e1001779
+AB  - Cathie Sudlow and colleagues describe the UK Biobank, a large population-based
+DO  - 10.1371/journal.pmed.1001779
+AN  - 25826379
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -302,6 +361,145 @@ SP  - 1236-41
 AB  - Identifying genetic correlations between complex traits and diseases can provide
 DO  - 10.1038/ng.3406
 AN  - 26414676
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - A global reference for human genetic variation.
+AU  - Auton A
+AU  - Brooks LD
+AU  - Durbin RM
+AU  - Garrison EP
+AU  - Kang HM
+AU  - Korbel JO
+AU  - Marchini JL
+AU  - McCarthy S
+AU  - McVean GA
+AU  - Abecasis GR
+PY  - 2015
+JF  - Nature
+VL  - 526
+IS  - 7571
+SP  - 68-74
+AB  - The 1000 Genomes Project set out to provide a comprehensive description of common
+DO  - 10.1038/nature15393
+AN  - 26432245
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Sixteen new lung function signals identified through 1000 Genomes Project
+AU  - Soler Artigas M
+AU  - Wain LV
+AU  - Miller S
+AU  - Kheirallah AK
+AU  - Huffman JE
+AU  - Ntalla I
+AU  - Shrine N
+AU  - Obeidat M
+AU  - Trochet H
+AU  - McArdle WL
+AU  - Alves AC
+AU  - Hui J
+AU  - Zhao JH
+AU  - Joshi PK
+AU  - Teumer A
+AU  - Albrecht E
+AU  - Imboden M
+AU  - Rawal R
+AU  - Lopez LM
+AU  - Marten J
+AU  - Enroth S
+AU  - Surakka I
+AU  - Polasek O
+AU  - Lyytikainen LP
+AU  - Granell R
+AU  - Hysi PG
+AU  - Flexeder C
+AU  - Mahajan A
+AU  - Beilby J
+AU  - Bosse Y
+AU  - Brandsma CA
+AU  - Campbell H
+AU  - Gieger C
+AU  - Glaser S
+AU  - Gonzalez JR
+AU  - Grallert H
+AU  - Hammond CJ
+AU  - Harris SE
+AU  - Hartikainen AL
+AU  - Heliovaara M
+AU  - Henderson J
+AU  - Hocking L
+AU  - Horikoshi M
+AU  - Hutri-Kahonen N
+AU  - Ingelsson E
+AU  - Johansson A
+AU  - Kemp JP
+AU  - Kolcic I
+AU  - Kumar A
+AU  - Lind L
+AU  - Melen E
+AU  - Musk AW
+AU  - Navarro P
+AU  - Nickle DC
+AU  - Padmanabhan S
+AU  - Raitakari OT
+AU  - Ried JS
+AU  - Ripatti S
+AU  - Schulz H
+AU  - Scott RA
+AU  - Sin DD
+AU  - Starr JM
+AU  - Vinuela A
+AU  - Volzke H
+AU  - Wild SH
+AU  - Wright AF
+AU  - Zemunik T
+AU  - Jarvis DL
+AU  - Spector TD
+AU  - Evans DM
+AU  - Lehtimaki T
+AU  - Vitart V
+AU  - Kahonen M
+AU  - Gyllensten U
+AU  - Rudan I
+AU  - Deary IJ
+AU  - Karrasch S
+AU  - Probst-Hensch NM
+AU  - Heinrich J
+AU  - Stubbe B
+AU  - Wilson JF
+AU  - Wareham NJ
+AU  - James AL
+AU  - Morris AP
+AU  - Jarvelin MR
+AU  - Hayward C
+AU  - Sayers I
+AU  - Strachan DP
+AU  - Hall IP
+AU  - Tobin MD
+PY  - 2015
+JF  - Nat Commun
+VL  - 6
+SP  - 8658
+AB  - Lung function measures are used in the diagnosis of chronic obstructive pulmonary
+DO  - 10.1038/ncomms9658
+AN  - 26635082
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Cohort profile of the UK Biobank: diagnosis and characteristics of
+AU  - Hewitt J
+AU  - Walters M
+AU  - Padmanabhan S
+AU  - Dawson J
+PY  - 2016
+JF  - BMJ Open
+VL  - 6
+IS  - 3
+SP  - e009161
+AB  - PURPOSE: The UK Biobank is a large-scale biomedical resource, containing
+DO  - 10.1136/bmjopen-2015-009161
+AN  - 27006341
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -541,6 +739,37 @@ SP  - 1112-1121
 AB  - Here we conducted a large-scale genetic association analysis of educational
 DO  - 10.1038/s41588-018-0147-3
 AN  - 30038396
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - The UK Biobank resource with deep phenotyping and genomic data.
+AU  - Bycroft C
+AU  - Freeman C
+AU  - Petkova D
+AU  - Band G
+AU  - Elliott LT
+AU  - Sharp K
+AU  - Motyer A
+AU  - Vukcevic D
+AU  - Delaneau O
+AU  - O'Connell J
+AU  - Cortes A
+AU  - Welsh S
+AU  - Young A
+AU  - Effingham M
+AU  - McVean G
+AU  - Leslie S
+AU  - Allen N
+AU  - Donnelly P
+AU  - Marchini J
+PY  - 2018
+JF  - Nature
+VL  - 562
+IS  - 7726
+SP  - 203-209
+AB  - The UK Biobank project is a prospective cohort study with deep genetic and
+DO  - 10.1038/s41586-018-0579-z
+AN  - 30305743
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -1131,6 +1360,153 @@ AN  - 30820047
 DB  - PubMed
 ER  - 
 TY  - JOUR
+TI  - Genomic structural equation modelling provides insights into the multivariate
+AU  - Grotzinger AD
+AU  - Rhemtulla M
+AU  - de Vlaming R
+AU  - Ritchie SJ
+AU  - Mallard TT
+AU  - Hill WD
+AU  - Ip HF
+AU  - Marioni RE
+AU  - McIntosh AM
+AU  - Deary IJ
+AU  - Koellinger PD
+AU  - Harden KP
+AU  - Nivard MG
+AU  - Tucker-Drob EM
+PY  - 2019
+JF  - Nat Hum Behav
+VL  - 3
+IS  - 5
+SP  - 513-525
+AB  - Genetic correlations estimated from genome-wide association studies (GWASs)
+DO  - 10.1038/s41562-019-0566-x
+AN  - 30962613
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Multiple sclerosis genomic map implicates peripheral immune cells and microglia
+PY  - 2019
+JF  - Science
+VL  - 365
+IS  - 6460
+AB  - We analyzed genetic data of 47,429 multiple sclerosis (MS) and 68,374 control
+DO  - 10.1126/science.aav7188
+AN  - 31604244
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Identification of novel risk loci, causal insights, and heritable risk for
+AU  - Nalls MA
+AU  - Blauwendraat C
+AU  - Vallerga CL
+AU  - Heilbron K
+AU  - Bandres-Ciga S
+AU  - Chang D
+AU  - Tan M
+AU  - Kia DA
+AU  - Noyce AJ
+AU  - Xue A
+AU  - Bras J
+AU  - Young E
+AU  - von Coelln R
+AU  - Simon-Sanchez J
+AU  - Schulte C
+AU  - Sharma M
+AU  - Krohn L
+AU  - Pihlstrom L
+AU  - Siitonen A
+AU  - Iwaki H
+AU  - Leonard H
+AU  - Faghri F
+AU  - Gibbs JR
+AU  - Hernandez DG
+AU  - Scholz SW
+AU  - Botia JA
+AU  - Martinez M
+AU  - Corvol JC
+AU  - Lesage S
+AU  - Jankovic J
+AU  - Shulman LM
+AU  - Sutherland M
+AU  - Tienari P
+AU  - Majamaa K
+AU  - Toft M
+AU  - Andreassen OA
+AU  - Bangale T
+AU  - Brice A
+AU  - Yang J
+AU  - Gan-Or Z
+AU  - Gasser T
+AU  - Heutink P
+AU  - Shulman JM
+AU  - Wood NW
+AU  - Hinds DA
+AU  - Hardy JA
+AU  - Morris HR
+AU  - Gratten J
+AU  - Visscher PM
+AU  - Graham RR
+AU  - Singleton AB
+PY  - 2019
+JF  - Lancet Neurol
+VL  - 18
+IS  - 12
+SP  - 1091-1102
+AB  - BACKGROUND: Genome-wide association studies (GWAS) in Parkinson's disease have
+DO  - 10.1016/S1474-4422(19)30320-5
+AN  - 31701892
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Author Correction: Biological parameters, life table and thermal requirements of
+AU  - Barbosa LR
+AU  - Santos F
+AU  - Soliman EP
+AU  - Rodrigues AP
+AU  - Wilcken CF
+AU  - Campos JM
+AU  - Zanuncio AJV
+AU  - Zanuncio JC
+PY  - 2020
+JF  - Sci Rep
+VL  - 10
+IS  - 1
+SP  - 903
+AB  - An amendment to this paper has been published and can be accessed via a link at
+DO  - 10.1038/s41598-020-57955-2
+AN  - 31942035
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Power calculation for the general two-sample Mendelian randomization analysis.
+AU  - Deng L
+AU  - Zhang H
+AU  - Yu K
+PY  - 2020
+JF  - Genet Epidemiol
+VL  - 44
+IS  - 3
+SP  - 290-299
+AB  - Mendelian randomization (MR) study has become a powerful approach to assess the
+DO  - 10.1002/gepi.22284
+AN  - 32048336
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Multivariable Mendelian Randomization and Mediation.
+AU  - Sanderson E
+PY  - 2021
+JF  - Cold Spring Harb Perspect Med
+VL  - 11
+IS  - 2
+AB  - Mendelian randomization (MR) is the use of genetic variants associated with an
+DO  - 10.1101/cshperspect.a038984
+AN  - 32341063
+DB  - PubMed
+ER  - 
+TY  - JOUR
 TI  - Mendelian randomization accounting for correlated and uncorrelated pleiotropic
 AU  - Morrison J
 AU  - Knoblauch N
@@ -1145,6 +1521,95 @@ SP  - 740-747
 AB  - Mendelian randomization (MR) is a valuable tool for detecting causal effects by
 DO  - 10.1038/s41588-020-0631-4
 AN  - 32451458
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Mutations disrupting neuritogenesis genes confer risk for cerebral palsy.
+AU  - Jin SC
+AU  - Lewis SA
+AU  - Bakhtiari S
+AU  - Zeng X
+AU  - Sierant MC
+AU  - Shetty S
+AU  - Nordlie SM
+AU  - Elie A
+AU  - Corbett MA
+AU  - Norton BY
+AU  - van Eyk CL
+AU  - Haider S
+AU  - Guida BS
+AU  - Magee H
+AU  - Liu J
+AU  - Pastore S
+AU  - Vincent JB
+AU  - Brunstrom-Hernandez J
+AU  - Papavasileiou A
+AU  - Fahey MC
+AU  - Berry JG
+AU  - Harper K
+AU  - Zhou C
+AU  - Zhang J
+AU  - Li B
+AU  - Zhao H
+AU  - Heim J
+AU  - Webber DL
+AU  - Frank MSB
+AU  - Xia L
+AU  - Xu Y
+AU  - Zhu D
+AU  - Zhang B
+AU  - Sheth AH
+AU  - Knight JR
+AU  - Castaldi C
+AU  - Tikhonova IR
+AU  - Lopez-Giraldez F
+AU  - Keren B
+AU  - Whalen S
+AU  - Buratti J
+AU  - Doummar D
+AU  - Cho M
+AU  - Retterer K
+AU  - Millan F
+AU  - Wang Y
+AU  - Waugh JL
+AU  - Rodan L
+AU  - Cohen JS
+AU  - Fatemi A
+AU  - Lin AE
+AU  - Phillips JP
+AU  - Feyma T
+AU  - MacLennan SC
+AU  - Vaughan S
+AU  - Crompton KE
+AU  - Reid SM
+AU  - Reddihough DS
+AU  - Shang Q
+AU  - Gao C
+AU  - Novak I
+AU  - Badawi N
+AU  - Wilson YA
+AU  - McIntyre SJ
+AU  - Mane SM
+AU  - Wang X
+AU  - Amor DJ
+AU  - Zarnescu DC
+AU  - Lu Q
+AU  - Xing Q
+AU  - Zhu C
+AU  - Bilguvar K
+AU  - Padilla-Lopez S
+AU  - Lifton RP
+AU  - Gecz J
+AU  - MacLennan AH
+AU  - Kruer MC
+PY  - 2020
+JF  - Nat Genet
+VL  - 52
+IS  - 10
+SP  - 1046-1056
+AB  - In addition to commonly associated environmental factors, genomic factors may
+DO  - 10.1038/s41588-020-0695-1
+AN  - 32989326
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -1201,38 +1666,83 @@ AN  - 33020668
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Shared genetic architecture across psychiatric disorders.
-AU  - Grotzinger AD
+TI  - Evidence against benefits from cognitive training and transcranial direct current
+AU  - Horne KS
+AU  - Filmer HL
+AU  - Nott ZE
+AU  - Hawi Z
+AU  - Pugsley K
+AU  - Mattingley JB
+AU  - Dux PE
 PY  - 2021
-JF  - Psychol Med
-VL  - 51
-IS  - 13
-SP  - 2210-2216
-AB  - Psychiatric disorders overlap substantially at the genetic level, with
-DO  - 10.1017/S0033291721000829
-AN  - 33729112
+JF  - Nat Hum Behav
+VL  - 5
+IS  - 1
+SP  - 146-158
+AB  - Cognitive training and brain stimulation show promise for ameliorating
+DO  - 10.1038/s41562-020-00979-5
+AN  - 33106629
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Educational attainment protects against epilepsy independent of cognitive
-AU  - Wang M
-AU  - Zhang Z
-AU  - Liu D
-AU  - Xie W
-AU  - Ma Y
-AU  - Yao J
-AU  - Zhu L
-AU  - Liu M
-AU  - Sheng S
-AU  - Lian X
+TI  - Plasma p-tau181, p-tau217, and other blood-based Alzheimer's disease biomarkers
+AU  - Brickman AM
+AU  - Manly JJ
+AU  - Honig LS
+AU  - Sanchez D
+AU  - Reyes-Dumeyer D
+AU  - Lantigua RA
+AU  - Lao PJ
+AU  - Stern Y
+AU  - Vonsattel JP
+AU  - Teich AF
+AU  - Airey DC
+AU  - Proctor NK
+AU  - Dage JL
+AU  - Mayeux R
 PY  - 2021
-JF  - Epilepsia
-VL  - 62
-IS  - 6
-SP  - 1362-1368
-AB  - OBJECTIVE: Observational studies have suggested that increased levels of
-DO  - 10.1111/epi.16894
-AN  - 33818779
+JF  - Alzheimers Dement
+VL  - 17
+IS  - 8
+SP  - 1353-1364
+AB  - INTRODUCTION: Blood-based Alzheimer's disease (AD) biomarkers provide
+DO  - 10.1002/alz.12301
+AN  - 33580742
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Potential Novel Genes for Late-Onset Alzheimer's Disease in East-Asian Descent
+AU  - Kang S
+AU  - Gim J
+AU  - Lee J
+AU  - Gunasekaran TI
+AU  - Choi KY
+AU  - Lee JJ
+AU  - Seo EH
+AU  - Ko PW
+AU  - Chung JY
+AU  - Choi SM
+AU  - Lee YM
+AU  - Jeong JH
+AU  - Park KW
+AU  - Song MK
+AU  - Lee HW
+AU  - Kim KW
+AU  - Choi SH
+AU  - Lee DY
+AU  - Kim SY
+AU  - Kim H
+AU  - Kim BC
+AU  - Ikeuchi T
+AU  - Lee KH
+PY  - 2021
+JF  - J Alzheimers Dis
+VL  - 82
+IS  - 4
+SP  - 1451-1460
+AB  - The present study reports two novel genome-wide significant loci for late-onset
+DO  - 10.3233/JAD-210145
+AN  - 34151794
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -1290,6 +1800,58 @@ AN  - 34791088
 DB  - PubMed
 ER  - 
 TY  - JOUR
+TI  - Large-scale integration of the plasma proteome with genetics and disease.
+AU  - Ferkingstad E
+AU  - Sulem P
+AU  - Atlason BA
+AU  - Sveinbjornsson G
+AU  - Magnusson MI
+AU  - Styrmisdottir EL
+AU  - Gunnarsdottir K
+AU  - Helgason A
+AU  - Oddsson A
+AU  - Halldorsson BV
+AU  - Jensson BO
+AU  - Zink F
+AU  - Halldorsson GH
+AU  - Masson G
+AU  - Arnadottir GA
+AU  - Katrinardottir H
+AU  - Juliusson K
+AU  - Magnusson MK
+AU  - Magnusson OT
+AU  - Fridriksdottir R
+AU  - Saevarsdottir S
+AU  - Gudjonsson SA
+AU  - Stacey SN
+AU  - Rognvaldsson S
+AU  - Eiriksdottir T
+AU  - Olafsdottir TA
+AU  - Steinthorsdottir V
+AU  - Tragante V
+AU  - Ulfarsson MO
+AU  - Stefansson H
+AU  - Jonsdottir I
+AU  - Holm H
+AU  - Rafnar T
+AU  - Melsted P
+AU  - Saemundsdottir J
+AU  - Norddahl GL
+AU  - Lund SH
+AU  - Gudbjartsson DF
+AU  - Thorsteinsdottir U
+AU  - Stefansson K
+PY  - 2021
+JF  - Nat Genet
+VL  - 53
+IS  - 12
+SP  - 1712-1721
+AB  - The plasma proteome can help bridge the gap between the genome and diseases. Here
+DO  - 10.1038/s41588-021-00978-w
+AN  - 34857953
+DB  - PubMed
+ER  - 
+TY  - JOUR
 TI  - Trans-ethnic Mendelian-randomization study reveals causal relationships between
 AU  - Zheng J
 AU  - Zhang Y
@@ -1342,6 +1904,19 @@ SP  - 1995-2010
 AB  - BACKGROUND: This study was to systematically test whether previously reported
 DO  - 10.1093/ije/dyab203
 AN  - 34999880
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - APOE mediated neuroinflammation and neurodegeneration in Alzheimer's disease.
+AU  - Parhizkar S
+AU  - Holtzman DM
+PY  - 2022
+JF  - Semin Immunol
+VL  - 59
+SP  - 101594
+AB  - Neuroinflammation is a central mechanism involved in neurodegeneration as
+DO  - 10.1016/j.smim.2022.101594
+AN  - 35232622
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -1823,6 +2398,29 @@ AN  - 35585838
 DB  - PubMed
 ER  - 
 TY  - JOUR
+TI  - Genome-wide association meta-analysis of 88,250 individuals highlights
+AU  - Xue Z
+AU  - Yuan J
+AU  - Chen F
+AU  - Yao Y
+AU  - Xing S
+AU  - Yu X
+AU  - Li K
+AU  - Wang C
+AU  - Bao J
+AU  - Qu J
+AU  - Su J
+AU  - Chen H
+PY  - 2022
+JF  - EBioMedicine
+VL  - 82
+SP  - 104161
+AB  - BACKGROUND: Ocular diseases may exhibit common clinical symptoms and
+DO  - 10.1016/j.ebiom.2022.104161
+AN  - 35841873
+DB  - PubMed
+ER  - 
+TY  - JOUR
 TI  - Modifiable risk factors for incident dementia and cognitive impairment: An
 AU  - Zhang YR
 AU  - Xu W
@@ -1976,6 +2574,31 @@ AN  - 36154123
 DB  - PubMed
 ER  - 
 TY  - JOUR
+TI  - SGLT2 Inhibition, Choline Metabolites, and Cardiometabolic Diseases: A Mediation
+AU  - Xu M
+AU  - Zheng J
+AU  - Hou T
+AU  - Lin H
+AU  - Wang T
+AU  - Wang S
+AU  - Lu J
+AU  - Zhao Z
+AU  - Li M
+AU  - Xu Y
+AU  - Ning G
+AU  - Bi Y
+AU  - Wang W
+PY  - 2022
+JF  - Diabetes Care
+VL  - 45
+IS  - 11
+SP  - 2718-2728
+AB  - OBJECTIVE: To investigate the causal role of choline metabolites mediating
+DO  - 10.2337/dc22-0323
+AN  - 36161993
+DB  - PubMed
+ER  - 
+TY  - JOUR
 TI  - Educational attainment, structural brain reserve and Alzheimer's disease: a
 AU  - Seyedsalehi A
 AU  - Warrier V
@@ -1991,6 +2614,23 @@ SP  - 2059-2074
 AB  - Higher educational attainment is observationally associated with lower risk of
 DO  - 10.1093/brain/awac392
 AN  - 36310536
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Mitochondrial related genome-wide Mendelian randomization identifies putatively
+AU  - Li Y
+AU  - Sundquist K
+AU  - Zhang N
+AU  - Wang X
+AU  - Sundquist J
+AU  - Memon AA
+PY  - 2023
+JF  - EBioMedicine
+VL  - 88
+SP  - 104432
+AB  - BACKGROUND: Mitochondrial dysfunction is a hallmark of cancer. However, it is
+DO  - 10.1016/j.ebiom.2022.104432
+AN  - 36634566
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -2096,6 +2736,62 @@ AN  - 37076872
 DB  - PubMed
 ER  - 
 TY  - JOUR
+TI  - GFAP as a Potential Biomarker for Alzheimer's Disease: A Systematic Review and
+AU  - Kim KY
+AU  - Shin KY
+AU  - Chang KA
+PY  - 2023
+JF  - Cells
+VL  - 12
+IS  - 9
+AB  - Blood biomarkers have been considered tools for the diagnosis, prognosis, and
+DO  - 10.3390/cells12091309
+AN  - 37174709
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Multiscale characterization and contact performance analysis of machining
+AU  - Li L
+AU  - Zhang W
+AU  - Wang J
+AU  - Ruan X
+AU  - Li L
+AU  - Xie M
+PY  - 2023
+JF  - Sci Rep
+VL  - 13
+IS  - 1
+SP  - 9710
+AB  - Accurately characterizing the surface topography of parts is crucial to improve
+DO  - 10.1038/s41598-023-36907-6
+AN  - 37322105
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Cohort profile: rationale and methods of UK Biobank repeat imaging study eye
+AU  - Foster PJ
+AU  - Atan D
+AU  - Khawaja A
+AU  - Lotery A
+AU  - MacGillivray T
+AU  - Owen CG
+AU  - Patel PJ
+AU  - Petzold A
+AU  - Rudnicka A
+AU  - Sun Z
+AU  - Sheard S
+AU  - Allen N
+PY  - 2023
+JF  - BMJ Open
+VL  - 13
+IS  - 6
+SP  - e069258
+AB  - PURPOSE: The retina provides biomarkers of neuronal and vascular health that
+DO  - 10.1136/bmjopen-2022-069258
+AN  - 37355273
+DB  - PubMed
+ER  - 
+TY  - JOUR
 TI  - Mendelian randomization evidence for the causal effects of socio-economic
 AU  - Ye CJ
 AU  - Kong LJ
@@ -2190,6 +2886,18 @@ AN  - 37794186
 DB  - PubMed
 ER  - 
 TY  - JOUR
+TI  - UK Biobank pharma proteomics resource.
+AU  - Li W
+PY  - 2023
+JF  - Nat Genet
+VL  - 55
+IS  - 11
+SP  - 1781
+DO  - 10.1038/s41588-023-01575-9
+AN  - 37938722
+DB  - PubMed
+ER  - 
+TY  - JOUR
 TI  - Proteogenomic Data Integration Reveals CXCL10 as a Potentially Downstream Causal
 AU  - Prapiadou S
 AU  - Zivkovic L
@@ -2222,6 +2930,43 @@ AN  - 38152968
 DB  - PubMed
 ER  - 
 TY  - JOUR
+TI  - Shared genetic architectures of educational attainment in East Asian and European
+AU  - Chen TT
+AU  - Kim J
+AU  - Lam M
+AU  - Chuang YF
+AU  - Chiu YL
+AU  - Lin SC
+AU  - Jung SH
+AU  - Kim B
+AU  - Kim S
+AU  - Cho C
+AU  - Shim I
+AU  - Park S
+AU  - Ahn Y
+AU  - Okbay A
+AU  - Jang H
+AU  - Kim HJ
+AU  - Seo SW
+AU  - Park WY
+AU  - Ge T
+AU  - Huang H
+AU  - Feng YA
+AU  - Lin YF
+AU  - Myung W
+AU  - Chen CY
+AU  - Won HH
+PY  - 2024
+JF  - Nat Hum Behav
+VL  - 8
+IS  - 3
+SP  - 562-575
+AB  - Educational attainment (EduYears), a heritable trait often used as a proxy for
+DO  - 10.1038/s41562-023-01781-9
+AN  - 38182883
+DB  - PubMed
+ER  - 
+TY  - JOUR
 TI  - Associations between sleep-behavioral traits and healthspan: A one-sample
 AU  - Sambou ML
 AU  - Zhao X
@@ -2235,6 +2980,29 @@ SP  - 854-862
 AB  - BACKGROUND: Although the association between sleep behavior and morbidity and
 DO  - 10.1016/j.jad.2024.01.122
 AN  - 38262521
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Plasma proteomic profiles predict future dementia in healthy adults.
+AU  - Guo Y
+AU  - You J
+AU  - Zhang Y
+AU  - Liu WS
+AU  - Huang YY
+AU  - Zhang YR
+AU  - Zhang W
+AU  - Dong Q
+AU  - Feng JF
+AU  - Cheng W
+AU  - Yu JT
+PY  - 2024
+JF  - Nat Aging
+VL  - 4
+IS  - 2
+SP  - 247-260
+AB  - The advent of proteomics offers an unprecedented opportunity to predict dementia
+DO  - 10.1038/s43587-023-00565-0
+AN  - 38347190
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -2253,17 +3021,20 @@ AN  - 38350061
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Investigating the shared genetic architecture between COVID-19 and obesity: a
-AU  - Chen Y
-AU  - Fan C
-AU  - Liu J
+TI  - Peripheral GFAP and NfL as early biomarkers for dementia: longitudinal insights
+AU  - Wang X
+AU  - Shi Z
+AU  - Qiu Y
+AU  - Sun D
+AU  - Zhou H
 PY  - 2024
-JF  - Front Endocrinol (Lausanne)
-VL  - 15
-SP  - 1325939
-AB  - Observational studies have reported high comorbidity between obesity and severe
-DO  - 10.3389/fendo.2024.1325939
-AN  - 38352709
+JF  - BMC Med
+VL  - 22
+IS  - 1
+SP  - 192
+AB  - BACKGROUND: Peripheral glial fibrillary acidic protein (GFAP) and neurofilament
+DO  - 10.1186/s12916-024-03418-8
+AN  - 38735950
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -2290,32 +3061,22 @@ AN  - 38942983
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Epidemiologic and genetic associations between primary biliary cholangitis and
-AU  - Qian Q
-AU  - Wu Y
-AU  - Cui N
-AU  - Li Y
-AU  - Zhou Y
-AU  - Li Y
-AU  - Lian M
-AU  - Xiao X
-AU  - Miao Q
-AU  - You Z
-AU  - Wang Q
-AU  - Shi Y
-AU  - Cordell HJ
-AU  - Timilsina S
-AU  - Gershwin ME
-AU  - Li Z
-AU  - Ma X
-AU  - Ruqi Tang
-PY  - 2024
-JF  - J Autoimmun
-VL  - 148
-SP  - 103289
-AB  - Patients with primary biliary cholangitis (PBC) commonly experience extrahepatic
-DO  - 10.1016/j.jaut.2024.103289
-AN  - 39059058
+TI  - Genetic neurodevelopmental clustering and dyslexia.
+AU  - Ciulkinyte A
+AU  - Mountford HS
+AU  - Fontanillas P
+AU  - Bates TC
+AU  - Martin NG
+AU  - Fisher SE
+AU  - Luciano M
+PY  - 2025
+JF  - Mol Psychiatry
+VL  - 30
+IS  - 1
+SP  - 140-150
+AB  - Dyslexia is a learning difficulty with neurodevelopmental origins, manifesting as
+DO  - 10.1038/s41380-024-02649-8
+AN  - 39009701
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -2340,6 +3101,52 @@ AN  - 39158561
 DB  - PubMed
 ER  - 
 TY  - JOUR
+TI  - Genome-wide association study meta-analysis of neurofilament light (NfL) levels
+AU  - Ahmad S
+AU  - Imtiaz MA
+AU  - Mishra A
+AU  - Wang R
+AU  - Herrera-Rivero M
+AU  - Bis JC
+AU  - Fornage M
+AU  - Roshchupkin G
+AU  - Hofer E
+AU  - Logue M
+AU  - Longstreth WT Jr
+AU  - Xia R
+AU  - Bouteloup V
+AU  - Mosley T
+AU  - Launer LJ
+AU  - Khalil M
+AU  - Kuhle J
+AU  - Rissman RA
+AU  - Chene G
+AU  - Dufouil C
+AU  - Djousse L
+AU  - Lyons MJ
+AU  - Mukamal KJ
+AU  - Kremen WS
+AU  - Franz CE
+AU  - Schmidt R
+AU  - Debette S
+AU  - Breteler MMB
+AU  - Berger K
+AU  - Yang Q
+AU  - Seshadri S
+AU  - Aziz NA
+AU  - Ghanbari M
+AU  - Ikram MA
+PY  - 2024
+JF  - Commun Biol
+VL  - 7
+IS  - 1
+SP  - 1103
+AB  - Neurofilament light chain (NfL) levels in circulation have been established as a
+DO  - 10.1038/s42003-024-06804-3
+AN  - 39251807
+DB  - PubMed
+ER  - 
+TY  - JOUR
 TI  - Causal Associations of Sleep Apnea With Alzheimer Disease and Cardiovascular
 AU  - Cavailles C
 AU  - Andrews SJ
@@ -2358,23 +3165,62 @@ AN  - 39258525
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Shared genetic architecture and bidirectional clinical risks within the
-AU  - Guo X
-AU  - Feng Y
-AU  - Ji X
-AU  - Jia N
-AU  - Maimaiti A
-AU  - Lai J
-AU  - Wang Z
-AU  - Yang S
-AU  - Hu S
-PY  - 2025
-JF  - EBioMedicine
+TI  - Head-to-head comparison of leading blood tests for Alzheimer's disease pathology.
+AU  - Schindler SE
+AU  - Petersen KK
+AU  - Saef B
+AU  - Tosun D
+AU  - Shaw LM
+AU  - Zetterberg H
+AU  - Dage JL
+AU  - Ferber K
+AU  - Triana-Baltzer G
+AU  - Du-Cuny L
+AU  - Li Y
+AU  - Coomaraswamy J
+AU  - Baratta M
+AU  - Mordashova Y
+AU  - Saad ZS
+AU  - Raunig DL
+AU  - Ashton NJ
+AU  - Meyers EA
+AU  - Rubel CE
+AU  - Rosenbaugh EG
+AU  - Bannon AW
+AU  - Potter WZ
+PY  - 2024
+JF  - Alzheimers Dement
+VL  - 20
+IS  - 11
+SP  - 8074-8096
+AB  - INTRODUCTION: Blood tests have the potential to improve the accuracy of
+DO  - 10.1002/alz.14315
+AN  - 39394841
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Proteome-wide Mendelian randomization and functional studies uncover therapeutic
+AU  - Ni F
+AU  - Wang F
+AU  - Sun J
+AU  - Tu M
+AU  - Chen J
+AU  - Shen X
+AU  - Ye X
+AU  - Chen R
+AU  - Liu Y
+AU  - Sun X
+AU  - Chen J
+AU  - Li X
+AU  - Zhang D
+PY  - 2024
+JF  - Am J Hum Genet
 VL  - 111
-SP  - 105530
-AB  - BACKGROUND: Increasing evidence suggests a complex interplay between psychiatric
-DO  - 10.1016/j.ebiom.2024.105530
-AN  - 39731856
+IS  - 12
+SP  - 2799-2813
+AB  - Polycystic ovarian syndrome (PCOS) is an endocrine syndrome that affects a large
+DO  - 10.1016/j.ajhg.2024.10.008
+AN  - 39541979
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -2430,41 +3276,22 @@ AN  - 39780176
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Genetic association analysis of lipid-lowering drug target genes in chronic
-AU  - Zhang Y
-AU  - Ou G
-AU  - Peng L
-AU  - Pan J
-AU  - Zhang S
-AU  - Shi J
-PY  - 2024
-JF  - Front Endocrinol (Lausanne)
-VL  - 15
-SP  - 1434145
-AB  - OBJECTIVE: The impact of lipid-lowering medications on chronic kidney disease
-DO  - 10.3389/fendo.2024.1434145
-AN  - 39877840
-DB  - PubMed
-ER  - 
-TY  - JOUR
-TI  - Associations of Education Attainment With Postpartum Depression and the Mediating
-AU  - Wang X
-AU  - Zhou FY
-AU  - Hao Y
-AU  - Wu J
-AU  - Su K
-AU  - Chen SY
-AU  - Yu W
-AU  - Zhang C
-AU  - Wu YT
-AU  - Huang HF
+TI  - Associations of 2923 plasma proteins with incident inflammatory bowel disease in
+AU  - Zhang X
+AU  - Zhao H
+AU  - Wan M
+AU  - Man J
+AU  - Zhang T
+AU  - Yang X
+AU  - Lu M
 PY  - 2025
-JF  - Depress Anxiety
-VL  - 2025
-SP  - 8835118
-AB  - Background: Many studies have explored the relationship between education and
-DO  - 10.1155/da/8835118
-AN  - 40225735
+JF  - Nat Commun
+VL  - 16
+IS  - 1
+SP  - 2813
+AB  - The prospective relationship between proteomics and inflammatory bowel disease
+DO  - 10.1038/s41467-025-57879-3
+AN  - 40118817
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -2532,54 +3359,26 @@ AN  - 40297899
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - A Mendelian randomization study investigating the causal effect of simvastatin
-AU  - Lin W
-AU  - Zheng Q
-AU  - Zippi M
-AU  - Fiorino S
-AU  - Zimmer V
-AU  - Zhang J
-AU  - Grottesi A
-AU  - Hong W
+TI  - Circulating mediators linking cardiometabolic diseases to HFpEF: a mediation
+AU  - Lin M
+AU  - Guo J
+AU  - Tao H
+AU  - Gu Z
+AU  - Tang W
+AU  - Zhou F
+AU  - Jiang Y
+AU  - Zhang R
+AU  - Jia D
+AU  - Sun Y
+AU  - Jia P
 PY  - 2025
-JF  - Pancreatology
-VL  - 25
-IS  - 5
-SP  - 614-623
-AB  - BACKGROUND: Simvastatin has been inconsistently linked to pancreatitis. We
-DO  - 10.1016/j.pan.2025.06.007
-AN  - 40537337
-DB  - PubMed
-ER  - 
-TY  - JOUR
-TI  - Genetic mechanisms, brain structures, and peripheral biomarkers mediate the
-AU  - Gao PY
-AU  - Fu Y
-AU  - He XY
-AU  - Zhang DD
-AU  - Chi HC
-AU  - Huang YM
-AU  - Wang ZB
-AU  - Zhang W
-AU  - Ou YN
-AU  - Ge YJ
-AU  - You J
-AU  - Ma LZ
-AU  - Qiang YX
-AU  - Zhao B
-AU  - Yu HH
-AU  - Feng J
-AU  - Tan L
-AU  - Cheng W
-AU  - Zhang YR
-AU  - Yu JT
-PY  - 2026
-JF  - J Adv Res
-VL  - 82
-SP  - 685-699
-AB  - INTRODUCTION: Physical frailty, which is characterized by multisystem functional
-DO  - 10.1016/j.jare.2025.06.046
-AN  - 40543840
+JF  - Cardiovasc Diabetol
+VL  - 24
+IS  - 1
+SP  - 201
+AB  - BACKGROUND: Heart failure with preserved ejection fraction (HFpEF) is an
+DO  - 10.1186/s12933-025-02738-0
+AN  - 40355922
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -2605,116 +3404,6 @@ AN  - 40561837
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Genetic association analysis between LDL-c lowering drugs and portal hypertension
-AU  - Xiao QA
-AU  - Li XL
-AU  - Qin L
-AU  - Zhang XL
-PY  - 2025
-JF  - Sci Rep
-VL  - 15
-IS  - 1
-SP  - 22238
-AB  - Clinical guidelines recommend the use of statins to reduce portal pressure and
-DO  - 10.1038/s41598-025-08153-5
-AN  - 40596422
-DB  - PubMed
-ER  - 
-TY  - JOUR
-TI  - Investigating shared genetic architecture between major depressive disorder and
-AU  - Zhan Y
-AU  - Zhao N
-AU  - Zhao QG
-AU  - Wu CX
-AU  - Yuan SJ
-AU  - Yu XJ
-AU  - Zheng X
-AU  - Liu CJ
-AU  - Hai R
-AU  - Liu ZQ
-AU  - Pei YF
-PY  - 2025
-JF  - Obesity (Silver Spring)
-VL  - 33
-IS  - 9
-SP  - 1745-1755
-AB  - OBJECTIVE: This study investigated the shared genetic architecture between major
-DO  - 10.1002/oby.24333
-AN  - 40716783
-DB  - PubMed
-ER  - 
-TY  - JOUR
-TI  - Genetic Comorbidity of Psoriasis and Four Cardiovascular Diseases: Uncovering
-AU  - Li X
-AU  - Yan Z
-AU  - Lan H
-AU  - Wu Y
-AU  - Chen S
-AU  - Qiu G
-AU  - Wu Y
-PY  - 2025
-JF  - Exp Dermatol
-VL  - 34
-IS  - 8
-SP  - e70158
-AB  - Psoriasis (PSO) is a chronic, systemic immune-mediated inflammatory disease that
-DO  - 10.1111/exd.70158
-AN  - 40862320
-DB  - PubMed
-ER  - 
-TY  - JOUR
-TI  - Amyotrophic Lateral Sclerosis and Risk of Common Cancer: Mendelian Randomization
-AU  - Tan X
-AU  - Liu G
-AU  - Li X
-AU  - Zhong F
-AU  - Su Z
-AU  - Wang H
-PY  - 2025
-JF  - Phenomics
-VL  - 5
-IS  - 3
-SP  - 270-283
-AB  - Compared with the well-documented inverse comorbidity of common neurodegenerative
-DO  - 10.1007/s43657-024-00159-9
-AN  - 40895324
-DB  - PubMed
-ER  - 
-TY  - JOUR
-TI  - Multi-Ancestry Mendelian Randomization Reveals Lipid-Associated Genetic Risk
-AU  - Wu H
-AU  - Li H
-AU  - Tang W
-AU  - Di Y
-AU  - Zhu Y
-AU  - Dai W
-AU  - Zhao M
-PY  - 2025
-JF  - Int J Chron Obstruct Pulmon Dis
-VL  - 20
-SP  - 2979-2992
-AB  - BACKGROUND: Previous Mendelian randomization (MR) studies investigating the
-DO  - 10.2147/COPD.S532361
-AN  - 40901574
-DB  - PubMed
-ER  - 
-TY  - JOUR
-TI  - Shared Genetic Architecture Between Atopic Dermatitis and Autoimmune Diseases.
-AU  - Lazanas P
-AU  - Antonatos C
-AU  - Tsoumani KT
-AU  - Sgourou A
-AU  - Vasilopoulos Y
-PY  - 2025
-JF  - Int J Mol Sci
-VL  - 26
-IS  - 18
-AB  - Atopic dermatitis (AD) and autoimmune diseases exhibit epidemiological
-DO  - 10.3390/ijms26189124
-AN  - 41009683
-DB  - PubMed
-ER  - 
-TY  - JOUR
 TI  - Measures of General Intelligence and Risk for Alcohol Use Disorder.
 AU  - Capusan AJ
 AU  - Davis CN
@@ -2734,49 +3423,52 @@ AN  - 41032335
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Immune, blood-brain barrier, and metabolic biomarkers mediate gut-brain axis
-AU  - Li J
-AU  - Yuan Z
-AU  - Li J
-AU  - Liu Z
-AU  - Wang Y
-AU  - Cui M
-AU  - Suo C
-AU  - Jin L
-AU  - Ding D
-AU  - Chen X
-AU  - Jiang Y
+TI  - Impact of APOE on cerebrovascular lipid profile in Alzheimer's disease.
+AU  - Inoue Y
+AU  - Wang H
+AU  - Heckman MG
+AU  - Ren Y
+AU  - White LJ
+AU  - Lu W
+AU  - Wang P
+AU  - Tcw J
+AU  - Koga S
+AU  - Alnobani A
+AU  - DeTure M
+AU  - Murray ME
+AU  - Petersen RC
+AU  - Dickson DW
+AU  - Bu G
+AU  - Han X
+AU  - Kanekiyo T
 PY  - 2025
-JF  - Biomark Res
-VL  - 13
+JF  - Acta Neuropathol
+VL  - 150
 IS  - 1
-SP  - 137
-AB  - BACKGROUND: Gut microbiota may influence Alzheimer's disease (AD) pathogenesis by
-DO  - 10.1186/s40364-025-00851-6
-AN  - 41163121
+SP  - 39
+AB  - Disturbances within the cerebrovascular system substantially contribute to the
+DO  - 10.1007/s00401-025-02949-5
+AN  - 41060400
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Gut microbiota, lipid metabolism, and PCOS: A Mendelian randomization and
-AU  - Li W
-AU  - Gan J
-AU  - Jiao J
-AU  - Li J
-AU  - Xu L
-AU  - Li D
-AU  - Geng Y
-AU  - Shen M
-AU  - Liang J
-AU  - Lin H
-AU  - Zhong L
-PY  - 2026
-JF  - Medicine (Baltimore)
-VL  - 105
-IS  - 3
-SP  - e47177
-AB  - Polycystic ovary syndrome (PCOS) is a common reproductive and metabolic disorder.
-DO  - 10.1097/MD.0000000000047177
-AN  - 41560095
+TI  - Plasma P-tau217, GFAP, and NfL as biomarkers for Alzheimer's disease: role in
+AU  - Pan FF
+AU  - Huang L
+AU  - Wang Y
+AU  - Huang Q
+AU  - Guan YH
+AU  - Li YH
+AU  - Xie F
+AU  - Guo QH
+PY  - 2025
+JF  - Alzheimers Dement
+VL  - 21
+IS  - 12
+SP  - e70987
+AB  - INTRODUCTION: Blood-based phosphorylated tau 217 (p-tau217), glial fibrillary
+DO  - 10.1002/alz.70987
+AN  - 41376134
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -2794,21 +3486,5 @@ SP  - e71592
 AB  - INTRODUCTION: The relationship between sleep, other dementia risk factors, and
 DO  - 10.1002/alz.71592
 AN  - 42298291
-DB  - PubMed
-ER  - 
-TY  - JOUR
-TI  - Causal associations between sleep apnea and dementia: a two-sample Mendelian
-AU  - Zhao L
-AU  - Xu Y
-AU  - Xia L
-AU  - Zhang Y
-PY  - 2026
-JF  - Arch Med Sci
-VL  - 22
-IS  - 2
-SP  - 822-833
-AB  - INTRODUCTION: Observational studies suggest an association between sleep apnea
-DO  - 10.5114/aoms/214094
-AN  - 42305347
 DB  - PubMed
 ER  - 
