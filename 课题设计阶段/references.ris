@@ -1524,95 +1524,6 @@ AN  - 32451458
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Mutations disrupting neuritogenesis genes confer risk for cerebral palsy.
-AU  - Jin SC
-AU  - Lewis SA
-AU  - Bakhtiari S
-AU  - Zeng X
-AU  - Sierant MC
-AU  - Shetty S
-AU  - Nordlie SM
-AU  - Elie A
-AU  - Corbett MA
-AU  - Norton BY
-AU  - van Eyk CL
-AU  - Haider S
-AU  - Guida BS
-AU  - Magee H
-AU  - Liu J
-AU  - Pastore S
-AU  - Vincent JB
-AU  - Brunstrom-Hernandez J
-AU  - Papavasileiou A
-AU  - Fahey MC
-AU  - Berry JG
-AU  - Harper K
-AU  - Zhou C
-AU  - Zhang J
-AU  - Li B
-AU  - Zhao H
-AU  - Heim J
-AU  - Webber DL
-AU  - Frank MSB
-AU  - Xia L
-AU  - Xu Y
-AU  - Zhu D
-AU  - Zhang B
-AU  - Sheth AH
-AU  - Knight JR
-AU  - Castaldi C
-AU  - Tikhonova IR
-AU  - Lopez-Giraldez F
-AU  - Keren B
-AU  - Whalen S
-AU  - Buratti J
-AU  - Doummar D
-AU  - Cho M
-AU  - Retterer K
-AU  - Millan F
-AU  - Wang Y
-AU  - Waugh JL
-AU  - Rodan L
-AU  - Cohen JS
-AU  - Fatemi A
-AU  - Lin AE
-AU  - Phillips JP
-AU  - Feyma T
-AU  - MacLennan SC
-AU  - Vaughan S
-AU  - Crompton KE
-AU  - Reid SM
-AU  - Reddihough DS
-AU  - Shang Q
-AU  - Gao C
-AU  - Novak I
-AU  - Badawi N
-AU  - Wilson YA
-AU  - McIntyre SJ
-AU  - Mane SM
-AU  - Wang X
-AU  - Amor DJ
-AU  - Zarnescu DC
-AU  - Lu Q
-AU  - Xing Q
-AU  - Zhu C
-AU  - Bilguvar K
-AU  - Padilla-Lopez S
-AU  - Lifton RP
-AU  - Gecz J
-AU  - MacLennan AH
-AU  - Kruer MC
-PY  - 2020
-JF  - Nat Genet
-VL  - 52
-IS  - 10
-SP  - 1046-1056
-AB  - In addition to commonly associated environmental factors, genomic factors may
-DO  - 10.1038/s41588-020-0695-1
-AN  - 32989326
-DB  - PubMed
-ER  - 
-TY  - JOUR
 TI  - Population-specific and trans-ancestry genome-wide analyses identify distinct and
 AU  - Koyama S
 AU  - Ito K
@@ -2398,29 +2309,6 @@ AN  - 35585838
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Genome-wide association meta-analysis of 88,250 individuals highlights
-AU  - Xue Z
-AU  - Yuan J
-AU  - Chen F
-AU  - Yao Y
-AU  - Xing S
-AU  - Yu X
-AU  - Li K
-AU  - Wang C
-AU  - Bao J
-AU  - Qu J
-AU  - Su J
-AU  - Chen H
-PY  - 2022
-JF  - EBioMedicine
-VL  - 82
-SP  - 104161
-AB  - BACKGROUND: Ocular diseases may exhibit common clinical symptoms and
-DO  - 10.1016/j.ebiom.2022.104161
-AN  - 35841873
-DB  - PubMed
-ER  - 
-TY  - JOUR
 TI  - Modifiable risk factors for incident dementia and cognitive impairment: An
 AU  - Zhang YR
 AU  - Xu W
@@ -2676,66 +2564,6 @@ AN  - 37036286
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Genome-wide association analyses identified novel susceptibility loci for
-AU  - Zhang Z
-AU  - Li H
-AU  - Weng H
-AU  - Zhou G
-AU  - Chen H
-AU  - Yang G
-AU  - Zhang P
-AU  - Zhang X
-AU  - Ji Y
-AU  - Ying K
-AU  - Liu B
-AU  - Xu Q
-AU  - Tang Y
-AU  - Zhu G
-AU  - Liu Z
-AU  - Xia S
-AU  - Yang X
-AU  - Dong L
-AU  - Zhu L
-AU  - Zeng M
-AU  - Yuan Y
-AU  - Yang Y
-AU  - Zhang N
-AU  - Xu X
-AU  - Pang W
-AU  - Zhang M
-AU  - Zhang Y
-AU  - Zhen K
-AU  - Wang D
-AU  - Lei J
-AU  - Wu S
-AU  - Shu S
-AU  - Zhang Y
-AU  - Zhang S
-AU  - Gao Q
-AU  - Huang Q
-AU  - Deng C
-AU  - Fu X
-AU  - Chen G
-AU  - Duan W
-AU  - Wan J
-AU  - Xie W
-AU  - Zhang P
-AU  - Wang S
-AU  - Yang P
-AU  - Zuo X
-AU  - Zhai Z
-AU  - Wang C
-PY  - 2023
-JF  - BMC Med
-VL  - 21
-IS  - 1
-SP  - 153
-AB  - BACKGROUND: A large proportion of pulmonary embolism (PE) heritability remains
-DO  - 10.1186/s12916-023-02844-4
-AN  - 37076872
-DB  - PubMed
-ER  - 
-TY  - JOUR
 TI  - GFAP as a Potential Biomarker for Alzheimer's Disease: A Systematic Review and
 AU  - Kim KY
 AU  - Shin KY
@@ -2886,6 +2714,24 @@ AN  - 37794186
 DB  - PubMed
 ER  - 
 TY  - JOUR
+TI  - Integration of multiple-omics data to reveal the shared genetic architecture of
+AU  - Wang F
+AU  - Wang H
+AU  - Yuan Y
+AU  - Han B
+AU  - Qiu S
+AU  - Hu Y
+AU  - Zang T
+PY  - 2023
+JF  - Front Genet
+VL  - 14
+SP  - 1243879
+AB  - Growing evidence suggests the effect of educational attainment (EA) on
+DO  - 10.3389/fgene.2023.1243879
+AN  - 37900179
+DB  - PubMed
+ER  - 
+TY  - JOUR
 TI  - UK Biobank pharma proteomics resource.
 AU  - Li W
 PY  - 2023
@@ -2964,6 +2810,17 @@ SP  - 562-575
 AB  - Educational attainment (EduYears), a heritable trait often used as a proxy for
 DO  - 10.1038/s41562-023-01781-9
 AN  - 38182883
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Erratum: Integration of multiple-omics data to reveal the shared genetic
+PY  - 2023
+JF  - Front Genet
+VL  - 14
+SP  - 1359014
+AB  - [This corrects the article DOI: 10.3389/fgene.2023.1243879.].
+DO  - 10.3389/fgene.2023.1359014
+AN  - 38250574
 DB  - PubMed
 ER  - 
 TY  - JOUR
@@ -3199,31 +3056,6 @@ AN  - 39394841
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Proteome-wide Mendelian randomization and functional studies uncover therapeutic
-AU  - Ni F
-AU  - Wang F
-AU  - Sun J
-AU  - Tu M
-AU  - Chen J
-AU  - Shen X
-AU  - Ye X
-AU  - Chen R
-AU  - Liu Y
-AU  - Sun X
-AU  - Chen J
-AU  - Li X
-AU  - Zhang D
-PY  - 2024
-JF  - Am J Hum Genet
-VL  - 111
-IS  - 12
-SP  - 2799-2813
-AB  - Polycystic ovarian syndrome (PCOS) is an endocrine syndrome that affects a large
-DO  - 10.1016/j.ajhg.2024.10.008
-AN  - 39541979
-DB  - PubMed
-ER  - 
-TY  - JOUR
 TI  - Variables associated with cognitive function: an exposome-wide and mendelian
 AU  - Zhao YL
 AU  - Hao YN
@@ -3359,29 +3191,6 @@ AN  - 40297899
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Circulating mediators linking cardiometabolic diseases to HFpEF: a mediation
-AU  - Lin M
-AU  - Guo J
-AU  - Tao H
-AU  - Gu Z
-AU  - Tang W
-AU  - Zhou F
-AU  - Jiang Y
-AU  - Zhang R
-AU  - Jia D
-AU  - Sun Y
-AU  - Jia P
-PY  - 2025
-JF  - Cardiovasc Diabetol
-VL  - 24
-IS  - 1
-SP  - 201
-AB  - BACKGROUND: Heart failure with preserved ejection fraction (HFpEF) is an
-DO  - 10.1186/s12933-025-02738-0
-AN  - 40355922
-DB  - PubMed
-ER  - 
-TY  - JOUR
 TI  - PTPRD pleiotropy, genetically driven childbirth timing, and corpus callosum
 AU  - Li FJ
 AU  - Li JY
@@ -3452,6 +3261,24 @@ AN  - 41060400
 DB  - PubMed
 ER  - 
 TY  - JOUR
+TI  - Genetic evidence for a causal relationship between 179 lipid species and
+AU  - Sun Y
+AU  - Meng D
+AU  - Yu H
+AU  - Yin G
+AU  - Zhang X
+AU  - Yu W
+AU  - Liu H
+AU  - Jiang W
+AU  - Zhang F
+PY  - 2025
+JF  - Eur Arch Psychiatry Clin Neurosci
+AB  - The public health burden of cognitive decline escalates with population aging.
+DO  - 10.1007/s00406-025-02152-3
+AN  - 41205072
+DB  - PubMed
+ER  - 
+TY  - JOUR
 TI  - Plasma P-tau217, GFAP, and NfL as biomarkers for Alzheimer's disease: role in
 AU  - Pan FF
 AU  - Huang L
@@ -3472,6 +3299,67 @@ AN  - 41376134
 DB  - PubMed
 ER  - 
 TY  - JOUR
+TI  - Plasma lipid subspecies and Alzheimer's disease: genetic evidence for risk and
+AU  - Zhang X
+AU  - Xie G
+AU  - Zhao C
+AU  - Lv Z
+PY  - 2026
+JF  - QJM
+VL  - 119
+IS  - 7
+SP  - 542-549
+AB  - BACKGROUND: Alzheimer's disease (AD) is a neurodegenerative disorder with lipid
+DO  - 10.1093/qjmed/hcag006
+AN  - 41490095
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Associations between sleep disturbance and cerebrospinal fluid Abeta, and shared
+AU  - Li T
+AU  - Liu M
+AU  - Zhang P
+AU  - Li S
+AU  - Qiu T
+AU  - Qiu X
+AU  - Sun B
+AU  - Cai H
+AU  - Liu C
+AU  - Yuan J
+AU  - Le W
+PY  - 2026
+JF  - Alzheimers Dement
+VL  - 22
+IS  - 4
+SP  - e71316
+AB  - INTRODUCTION: Sleep disturbance is increasingly recognized as a risk factor for
+DO  - 10.1002/alz.71316
+AN  - 41912985
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - Network Pharmacology Reveals the Therapeutic Potential of BBB-Permeable Compounds
+AU  - He J
+AU  - Li J
+AU  - Huo J
+AU  - Pang Y
+AU  - Sun K
+AU  - Zhu H
+AU  - He Y
+AU  - Ren Z
+AU  - Cheng X
+AU  - Ao S
+AU  - Peng Y
+PY  - 2026
+JF  - Int J Mol Sci
+VL  - 27
+IS  - 10
+AB  - Although risk factors for Alzheimer's disease (AD) involve obesity and elevated
+DO  - 10.3390/ijms27104556
+AN  - 42196534
+DB  - PubMed
+ER  - 
+TY  - JOUR
 TI  - Sleep and dementia: Assessing established dementia-related factors using
 AU  - Guo Y
 AU  - Wang R
@@ -3486,5 +3374,26 @@ SP  - e71592
 AB  - INTRODUCTION: The relationship between sleep, other dementia risk factors, and
 DO  - 10.1002/alz.71592
 AN  - 42298291
+DB  - PubMed
+ER  - 
+TY  - JOUR
+TI  - FLOT1 and EEF1D: ac4C-related genes bridging Alzheimer's disease and sleep
+AU  - Zhao B
+AU  - Zhou R
+AU  - Liu P
+AU  - Li Q
+AU  - Yan Y
+AU  - Du J
+AU  - Zhao K
+AU  - Liu J
+AU  - Wang J
+AU  - Qu Q
+PY  - 2026
+JF  - Front Aging Neurosci
+VL  - 18
+SP  - 1825164
+AB  - BACKGROUND: Alzheimer's disease (AD) and sleep deprivation (SD), two common
+DO  - 10.3389/fnagi.2026.1825164
+AN  - 42395345
 DB  - PubMed
 ER  - 
