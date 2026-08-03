@@ -81,6 +81,7 @@ def fig1():
              fontsize=9.2, fontweight="bold", color="#c00")
     axR.set_title("Comorbidity classification", fontsize=10.5, fontweight="bold", pad=10)
     fig.savefig(os.path.join(OUT, "Fig1_framework_quadrant.png"), dpi=300, bbox_inches="tight")
+    fig.savefig(os.path.join(OUT, "Fig1_framework_quadrant.svg"), bbox_inches="tight")
     plt.close(fig)
 
 # ---------------------------------------------------------------------------
@@ -128,6 +129,7 @@ def fig2():
     axB.legend(fontsize=7.5, loc="upper right")
     fig.tight_layout()
     fig.savefig(os.path.join(OUT, "Fig2_MR_forest_coloc.png"), dpi=300, bbox_inches="tight")
+    fig.savefig(os.path.join(OUT, "Fig2_MR_forest_coloc.svg"), bbox_inches="tight")
     plt.close(fig)
 
 # ---------------------------------------------------------------------------
@@ -163,6 +165,7 @@ def fig5():
             ha="center", va="center", fontsize=10, fontweight="bold", color="#900")
     ax.set_title("Triangulation synthesis across the five analytical dimensions", fontsize=11, fontweight="bold", loc="left")
     fig.savefig(os.path.join(OUT, "Fig5_triangulation.png"), dpi=300, bbox_inches="tight")
+    fig.savefig(os.path.join(OUT, "Fig5_triangulation.svg"), bbox_inches="tight")
     plt.close(fig)
 
 if __name__ == "__main__":

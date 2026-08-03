@@ -87,6 +87,7 @@ for _, r in df_eval.sort_values("p_ind").head(8).iterrows():
                 xytext=(3, 2), textcoords="offset points")
 plt.tight_layout()
 plt.savefig(os.path.join(OUT, "G2b_curated_volcano.png"), dpi=150)
+plt.savefig(os.path.join(OUT, "G2b_curated_volcano.svg"))
 plt.close()
 
 # ---- Forest top 15 by |indirect| ----
@@ -103,5 +104,6 @@ ax.set_xlabel("Indirect effect (95% CI)")
 ax.set_title("G2b (curated): top 15 candidate protein mediators")
 plt.tight_layout()
 plt.savefig(os.path.join(OUT, "G2b_curated_forest_top15.png"), dpi=150)
+plt.savefig(os.path.join(OUT, "G2b_curated_forest_top15.svg"))
 plt.close()
 print("[ok] figures written to", OUT)
