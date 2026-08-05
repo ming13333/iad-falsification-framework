@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 680 750"
+   version="1.1"
+   id="svg23"
+   sodipodi:docname="SuppFig4_decision_tree.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   inkscape:export-filename="SuppFig4_decision_tree.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview23"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.3859293"
+     inkscape:cx="221.87279"
+     inkscape:cy="301.96346"
+     inkscape:window-width="1680"
+     inkscape:window-height="979"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg23" />
+  <defs
+     id="defs1">
+    <marker
+       id="ar"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0,10 3.5,0 7"
+         fill="#555"
+         id="polygon1" />
+    </marker>
+  </defs>
+  <rect
+     width="680"
+     height="750"
+     fill="white"
+     id="rect1" />
+  <text
+     x="340"
+     y="28"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="16"
+     font-weight="bold"
+     fill="#1a1a2e"
+     id="text1">Decision Tree: Six-Level Evidence Grading</text>
+  <ellipse
+     cx="340"
+     cy="60"
+     rx="155"
+     ry="20"
+     fill="#e8f5e9"
+     stroke="#2e7d32"
+     stroke-width="2"
+     id="ellipse1" />
+  <text
+     x="340"
+     y="65"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="12"
+     font-weight="bold"
+     fill="#222"
+     id="text2">L1: MR IVW Significant?</text>
+  <line
+     x1="185"
+     y1="58"
+     x2="85"
+     y2="110"
+     stroke="#2e7d32"
+     stroke-width="2"
+     marker-end="url(#ar)"
+     id="line2" />
+  <text
+     x="40"
+     y="125"
+     font-family="Arial"
+     font-size="11"
+     fill="#2e7d32"
+     font-weight="bold"
+     id="text3">No → Grade D</text>
+  <line
+     x1="340"
+     y1="80"
+     x2="340"
+     y2="125"
+     stroke="#2e7d32"
+     stroke-width="2"
+     marker-end="url(#ar)"
+     id="line3" />
+  <text
+     x="355"
+     y="120"
+     font-family="Arial"
+     font-size="10"
+     fill="#2e7d32"
+     id="text4">Yes</text>
+  <ellipse
+     cx="340"
+     cy="145"
+     rx="155"
+     ry="20"
+     fill="#fff3e0"
+     stroke="#e65100"
+     stroke-width="2"
+     id="ellipse4" />
+  <text
+     x="340"
+     y="150"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="12"
+     font-weight="bold"
+     fill="#222"
+     id="text5">L2: LD-Clump Robust?</text>
+  <line
+     x1="185"
+     y1="143"
+     x2="85"
+     y2="195"
+     stroke="#e65100"
+     stroke-width="2"
+     marker-end="url(#ar)"
+     id="line5" />
+  <text
+     x="40"
+     y="210"
+     font-family="Arial"
+     font-size="11"
+     fill="#e65100"
+     font-weight="bold"
+     id="text6">No → Grade C/D</text>
+  <line
+     x1="340"
+     y1="165"
+     x2="340"
+     y2="210"
+     stroke="#2e7d32"
+     stroke-width="2"
+     marker-end="url(#ar)"
+     id="line6" />
+  <text
+     x="355"
+     y="205"
+     font-family="Arial"
+     font-size="10"
+     fill="#2e7d32"
+     id="text7">Yes</text>
+  <ellipse
+     cx="340"
+     cy="230"
+     rx="155"
+     ry="20"
+     fill="#e3f2fd"
+     stroke="#1565c0"
+     stroke-width="2"
+     id="ellipse7" />
+  <text
+     x="340"
+     y="235"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="12"
+     font-weight="bold"
+     fill="#222"
+     id="text8">L3: rg + Coloc Support?</text>
+  <line
+     x1="185"
+     y1="228"
+     x2="85"
+     y2="280"
+     stroke="#1565c0"
+     stroke-width="2"
+     marker-end="url(#ar)"
+     id="line8" />
+  <text
+     x="40"
+     y="295"
+     font-family="Arial"
+     font-size="11"
+     fill="#1565c0"
+     font-weight="bold"
+     id="text9">Shared liab → Grade C</text>
+  <line
+     x1="340"
+     y1="250"
+     x2="340"
+     y2="295"
+     stroke="#2e7d32"
+     stroke-width="2"
+     marker-end="url(#ar)"
+     id="line9" />
+  <text
+     x="355"
+     y="290"
+     font-family="Arial"
+     font-size="10"
+     fill="#2e7d32"
+     id="text10">Yes</text>
+  <ellipse
+     cx="340"
+     cy="315"
+     rx="155"
+     ry="20"
+     fill="#f3e5f5"
+     stroke="#7b1fa2"
+     stroke-width="2"
+     id="ellipse10" />
+  <text
+     x="340"
+     y="320"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="12"
+     font-weight="bold"
+     fill="#222"
+     id="text11">L4: MVMR Direct Effect?</text>
+  <line
+     x1="185"
+     y1="313"
+     x2="85"
+     y2="365"
+     stroke="#7b1fa2"
+     stroke-width="2"
+     marker-end="url(#ar)"
+     id="line11" />
+  <text
+     x="40"
+     y="380"
+     font-family="Arial"
+     font-size="11"
+     fill="#7b1fa2"
+     font-weight="bold"
+     id="text12">Confounded → Grade C</text>
+  <line
+     x1="340"
+     y1="335"
+     x2="340"
+     y2="380"
+     stroke="#2e7d32"
+     stroke-width="2"
+     marker-end="url(#ar)"
+     id="line12" />
+  <text
+     x="355"
+     y="375"
+     font-family="Arial"
+     font-size="10"
+     fill="#2e7d32"
+     id="text13">Yes</text>
+  <ellipse
+     cx="340"
+     cy="400"
+     rx="155"
+     ry="20"
+     fill="#fff9c4"
+     stroke="#f9a825"
+     stroke-width="2"
+     id="ellipse13" />
+  <text
+     x="340"
+     y="405"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="12"
+     font-weight="bold"
+     fill="#222"
+     id="text14">L5: Biological Mediation?</text>
+  <line
+     x1="185"
+     y1="398"
+     x2="85"
+     y2="450"
+     stroke="#f9a825"
+     stroke-width="2"
+     marker-end="url(#ar)"
+     id="line14" />
+  <text
+     x="40"
+     y="465"
+     font-family="Arial"
+     font-size="11"
+     fill="#f9a825"
+     font-weight="bold"
+     id="text15">No mediator → Grade B</text>
+  <line
+     x1="340"
+     y1="420"
+     x2="340"
+     y2="465"
+     stroke="#2e7d32"
+     stroke-width="2"
+     marker-end="url(#ar)"
+     id="line15" />
+  <text
+     x="355"
+     y="460"
+     font-family="Arial"
+     font-size="10"
+     fill="#2e7d32"
+     id="text16">Yes</text>
+  <ellipse
+     cx="340"
+     cy="485"
+     rx="155"
+     ry="20"
+     fill="#ffebee"
+     stroke="#c62828"
+     stroke-width="2"
+     id="ellipse16" />
+  <text
+     x="340"
+     y="490"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="12"
+     font-weight="bold"
+     fill="#222"
+     id="text17">L6: External Validation?</text>
+  <line
+     x1="185"
+     y1="483"
+     x2="85"
+     y2="535"
+     stroke="#c62828"
+     stroke-width="2"
+     marker-end="url(#ar)"
+     id="line17" />
+  <text
+     x="40"
+     y="550"
+     font-family="Arial"
+     font-size="11"
+     fill="#c62828"
+     font-weight="bold"
+     id="text18">No → Grade B</text>
+  <line
+     x1="340"
+     y1="505"
+     x2="340"
+     y2="530"
+     stroke="#2e7d32"
+     stroke-width="2"
+     marker-end="url(#ar)"
+     id="line18" />
+  <rect
+     x="230"
+     y="533"
+     width="220"
+     height="28"
+     rx="6"
+     fill="#2e7d32"
+     id="rect18" />
+  <text
+     x="340"
+     y="552"
+     text-anchor="middle"
+     font-family="Arial"
+     font-size="13"
+     fill="white"
+     font-weight="bold"
+     id="text19">Grade A: High Confidence</text>
+  <text
+     x="40"
+     y="630"
+     font-family="Arial"
+     font-size="11"
+     fill="#2e7d32"
+     id="text20">■ Grade A: LDL→CAD, Education→AD, BMI→T2D, Height→CAD</text>
+  <text
+     x="40"
+     y="650"
+     font-family="Arial"
+     font-size="11"
+     fill="#f9a825"
+     id="text21">■ Grade C: Insomnia→AD, BMI→Stroke, HDL→CAD</text>
+  <text
+     x="40"
+     y="670"
+     font-family="Arial"
+     font-size="11"
+     fill="#c62828"
+     id="text22">■ Grade D: BMI→AD, CRP→CAD</text>
+  <text
+     x="40"
+     y="695"
+     font-family="Arial"
+     font-size="10"
+     fill="#777"
+     id="text23">Scoring: 0/1/2 per level → total 0–12 → Grade D(0-3), C(4-6), B(7-9), A(10-12)</text>
+</svg>

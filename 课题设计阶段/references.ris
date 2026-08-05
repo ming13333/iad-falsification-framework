@@ -549,7 +549,7 @@ AN  - 29368721
 DB  - PubMed
 ER  - 
 TY  - JOUR
-TI  - Detection of widespread horizontal pleiotropy in causal relationships inferred
+TI  - Detection of widespread horizontal pleiotropy in causal relationships inferred from Mendelian randomization
 AU  - Verbanck M
 AU  - Chen CY
 AU  - Neale B
@@ -3345,4 +3345,50 @@ AB  - BACKGROUND: Alzheimer's disease (AD) and sleep deprivation (SD), two commo
 DO  - 10.3389/fnagi.2026.1825164
 AN  - 42395345
 DB  - PubMed
+ER  - 
+
+TY  - JOUR
+TI  - The Logic of Scientific Discovery
+AU  - Popper KR
+PY  - 1959
+PB  - Routledge
+DO  - 10.4324/9780203994627
+ER  - 
+
+TY  - JOUR
+TI  - The use of negative control outcomes in Mendelian randomization to detect potential population stratification
+AU  - Sanderson E
+AU  - Richardson TG
+AU  - Hemani G
+AU  - Davey Smith G
+PY  - 2021
+JF  - Int J Epidemiol
+VL  - 50
+IS  - 4
+SP  - 1350-1361
+DO  - 10.1093/ije/dyaa288
+ER  - 
+
+TY  - JOUR
+TI  - Genetic Determinants of Lipids and Cardiovascular Disease Outcomes: A Wide-Angled Mendelian Randomization Investigation
+AU  - Allara E
+AU  - Morani G
+AU  - Carter P
+AU  - Gkatzionis A
+AU  - Zuber V
+AU  - Foley CN
+AU  - Rees JMB
+AU  - Mason AM
+AU  - Gill D
+AU  - Lindstrom S
+AU  - Butterworth AS
+AU  - Di Angelantonio E
+AU  - Peters J
+AU  - Burgess S
+PY  - 2019
+JF  - Circ Genom Precis Med
+VL  - 12
+IS  - 12
+SP  - e002711
+DO  - 10.1161/circgen.119.002711
 ER  - 

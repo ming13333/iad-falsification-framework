@@ -11,9 +11,12 @@
 #   G2b_curated_summary.txt  -- 文本汇总 (供 §3.4.2 / Fig3C 使用)
 # 运行: python make_g2b_curated_fig.py
 # =====================================================================
-import os, sys
+import os, sys, shutil
 import pandas as pd
 import numpy as np
+
+FIGS = r"C:\D\workbuddy\科研\共病分析\课题设计阶段\figures"
+os.makedirs(FIGS, exist_ok=True)
 
 try:
     import matplotlib
@@ -40,7 +43,7 @@ n_excl     = n_total - len(df_eval)
 n_eval     = len(df_eval)
 df_eval["logq"] = -np.log10(df_eval["q_ind"].clip(lower=1e-300))
 df_eval["sig"]  = df_eval["q_ind"] < 0.05
-df_eval["target"] = df_eval["target"].astype(str).str.replace(",", " ").str.slice(0, 30)
+df_eval["target"] = df_eval["target"].astype(str).str.replace(",", " ").str.slice(0, 24)
 
 excluded = df[df["p_ind"].isna()]["protein"].tolist()
 
@@ -74,7 +77,7 @@ if not HAVE_MPL:
     sys.exit(0)
 
 # ---- Volcano: indirect vs -log10(q) ----
-fig, ax = plt.subplots(figsize=(8, 6))
+fig, ax = plt.subplots(figsize=(10, 6))
 colors = np.where(df_eval["sig"], "#c0392b", "#3498db")
 ax.scatter(df_eval["indirect"], df_eval["logq"], c=colors, s=22, alpha=0.75, edgecolors="none")
 ax.axhline(-np.log10(0.05), ls="--", c="gray", lw=1)
@@ -82,12 +85,31 @@ ax.axvline(0, ls=":", c="gray", lw=1)
 ax.set_xlabel("Indirect effect (education -> plasma protein -> AD)")
 ax.set_ylabel(r"$-\log_{10}(q_{\mathrm{BH}})$")
 ax.set_title("G2b (curated): education -> plasma protein -> AD mediation")
-for _, r in df_eval.sort_values("p_ind").head(8).iterrows():
-    ax.annotate(r["target"], (r["indirect"], r["logq"]), fontsize=6,
-                xytext=(3, 2), textcoords="offset points")
+
+# Staggered annotation: all q-values are close to 1, so points cluster at y~0.
+# Place labels on several horizontal rows above the points with leader lines.
+n_annotate = 8
+ann = df_eval.sort_values("p_ind").head(n_annotate).copy()
+ann = ann.sort_values("indirect").reset_index(drop=True)
+n_rows = 5
+base_y = 0.06
+step_y = 0.055
+for i, (_, r) in enumerate(ann.iterrows()):
+    row = i % n_rows
+    x = r["indirect"]
+    y_label = base_y + row * step_y
+    y_point = r["logq"]
+    ax.plot([x, x], [y_point + 0.004, y_label - 0.012], c="#555", lw=0.6, zorder=1)
+    ax.annotate(r["target"], (x, y_label), fontsize=6.5, ha="center", va="bottom",
+                color="#1a1a2e", zorder=2,
+                bbox=dict(boxstyle="round,pad=0.12", fc="white", ec="none", alpha=0.85))
+
+ax.set_ylim(0, base_y + n_rows * step_y + 0.03)
 plt.tight_layout()
 plt.savefig(os.path.join(OUT, "G2b_curated_volcano.png"), dpi=150)
 plt.savefig(os.path.join(OUT, "G2b_curated_volcano.svg"))
+shutil.copy(os.path.join(OUT, "G2b_curated_volcano.png"), os.path.join(FIGS, "SuppFig3C_volcano.png"))
+shutil.copy(os.path.join(OUT, "G2b_curated_volcano.svg"), os.path.join(FIGS, "SuppFig3C_volcano.svg"))
 plt.close()
 
 # ---- Forest top 15 by |indirect| ----
@@ -105,5 +127,8 @@ ax.set_title("G2b (curated): top 15 candidate protein mediators")
 plt.tight_layout()
 plt.savefig(os.path.join(OUT, "G2b_curated_forest_top15.png"), dpi=150)
 plt.savefig(os.path.join(OUT, "G2b_curated_forest_top15.svg"))
+shutil.copy(os.path.join(OUT, "G2b_curated_forest_top15.png"), os.path.join(FIGS, "SuppFig3C_forest_top15.png"))
+shutil.copy(os.path.join(OUT, "G2b_curated_forest_top15.svg"), os.path.join(FIGS, "SuppFig3C_forest_top15.svg"))
 plt.close()
 print("[ok] figures written to", OUT)
+print("[ok] SuppFig3C copies written to", FIGS)
