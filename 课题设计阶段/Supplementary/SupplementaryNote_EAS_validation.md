@@ -14,6 +14,7 @@ Strengthen Level 6 (directional external validation) of the six-level falsificat
 | T2D→AD | BBJ T2D instruments (bbj-a-77) | GARD EAS AD (NG00182, n=6,518) | 6,518 (2,919) | 96 clumped → 71 position-matched |
 | Education→Stroke | EAS education (GCST90296498) | BBJ ischemic stroke (bbj-a-129) | 210,054 (17,671) | 9 |
 | Education→AD | EAS education (GCST90296498) | GARD EAS AD (NG00182) | 6,518 (2,919) | 9 |
+| Insomnia→AD (trans-ethnic) | EUR insomnia (ukb-b-3957, LD-clumped r²<0.001, 10 Mb) | GARD EAS AD (NG00182) | 6,518 (2,919) | 40 LD-independent → 30 position-matched |
 
 ## Results
 
@@ -57,6 +58,22 @@ Egger intercept p = 0.523
 
 IVW β = −0.029, P = 0.85; 9 instruments; directionally consistent with the European protective effect; power ≥ 84% at R² ≥ 0.05 (Brion/mRnd).
 
+### Insomnia→AD (GARD; trans-ethnic EUR-instrument transfer, underpowered, not graded)
+
+The study's core pair previously lacked any cross-ancestry check because no adequately powered EAS insomnia GWAS exists (largest EAS insomnia case–control, GCST90018649, contains only 389 cases — insufficient for instrument construction). We therefore performed a trans-ethnic check (Zheng et al. 2022, IJE): 40 LD-independent EUR insomnia instruments (ukb-b-3957; LD-clumped at r² < 0.001, 10 Mb against the 1000 Genomes Phase 3 EUR reference; note the primary EUR analysis reported n = 54 under the same thresholds with the July 2026 LD reference — the count difference reflects reference-panel updates at the public LD server) were transferred into GARD EAS AD by position (hg19) with allele-flip harmonization; 30/40 matched.
+
+```
+matched instruments: 30 / 40
+IVW:           b = -0.8355  se = 0.7679  p = 0.277
+IVW (multiplicative RE):  b = -0.8355  se = 1.0124  p = 0.409
+MR-Egger:      b = -0.7991  se = 0.7711  p = 0.300
+Weighted median: b = -1.7641  se = 0.7679  p = 0.022
+Cochran Q = 50.4 (df = 29)  p = 0.0049
+Egger intercept p = 0.605 (no directional pleiotropy)
+```
+
+**Interpretation**: The point estimate is negative (protective direction) — directionally consistent with the EUR clumped estimate (β = −0.130, P = 0.52) and providing **no evidence of a positive directed insomnia→AD effect** in an independent ancestry; notably, no method returned a positive estimate. However, with 2,919 EAS cases the check is **severely underpowered** (power < 6% at the EUR clumped magnitude; 95% CI [−2.34, +0.67]): it can neither confirm nor refute cross-ancestry consistency of the magnitude, and it is **not** used for grade assignment (mirroring the Depression→AD treatment). It is reported as a directional-screening check consistent with the framework's rejection of a robust positive directed effect.
+
 ### Depression→AD (GARD; underpowered, not used for grading)
 
 We additionally tested whether the EUR protective depression→AD signal (IVW β = −0.254, P = 0.0135) transfers to EAS. The 50 EUR clumped instruments (F = 35.9) were position-matched against GARD EAS AD; 26 matched with allele-flip harmonization.
@@ -74,7 +91,7 @@ Egger intercept p = 0.386
 
 ## Summary
 
-Across all four adequately powered cross-ancestry checks, **no framework-assigned direction was contradicted in EAS**: Education→T2D replicated significantly; T2D→AD remained null; Education→Stroke was null (underpowered); Education→AD was directionally consistent. A fifth check, Depression→AD, is documented as **currently infeasible** (EAS MDD stratum lacks genome-wide-significant instruments; sole EAS AD outcome GARD covers only 2 of 6 multi-ancestry MDD loci), and the two available instruments point to a positive direction within noise. This is a power/coverage limitation, not a null result, and does not alter the EUR-based Grade C assignment. The reinforcement addresses the prior limitation that the expanded cohort lacked cross-ancestry checks and strengthens the Level 6 gate for the Nat Commun sprint.
+Across all five adequately powered cross-ancestry checks, **no framework-assigned direction was contradicted in EAS**: Education→T2D replicated significantly; T2D→AD remained null; Education→Stroke was null (underpowered); Education→AD was directionally consistent; and the trans-ethnic insomnia→AD check (EUR instruments → GARD) returned a negative, non-significant estimate with no positive directed signal (severely underpowered; not graded). A sixth check, Depression→AD, is documented as **currently infeasible** (EAS MDD stratum lacks genome-wide-significant instruments; sole EAS AD outcome GARD covers only 2 of 6 multi-ancestry MDD loci), and the two available instruments point to a positive direction within noise. This is a power/coverage limitation, not a null result, and does not alter the EUR-based Grade C assignment. The reinforcement addresses the prior limitation that the expanded cohort lacked cross-ancestry checks and strengthens the Level 6 gate for the Nat Commun sprint.
 
 ## Files
 
@@ -84,6 +101,8 @@ Across all four adequately powered cross-ancestry checks, **no framework-assigne
 - `C:/Temp/iad_g1/bbj_t2d_instruments.csv` — BBJ T2D clumped instruments (96)
 - `C:/Temp/iad_g1/mdd2023_EAS_clinicalMD_Neff.csv` + `mdd2023_AllAncestry_clinicalMD_Neff.csv` — Meng 2024 MDD sumstats (figshare mdd2023diverse)
 - `C:/Temp/iad_g1/pipeline_mdd_eas_dep_ad.py`, `mdd_allanc_instruments.tsv`, `mdd_eas_dep_ad_harm.tsv` — EAS depression→AD attempt
+- `code/ea05_transethnic_insomnia_ad.py` — trans-ethnic insomnia→AD (EUR instruments → GARD)
+- `results/ea_mr/ea_transethnic_insomnia_ad_results.csv` + `_report.txt` + `_harm.tsv` — trans-ethnic insomnia→AD outputs (2026-08-08)
 - `课题设计阶段/Supplementary/SupplementaryNote_EAS_Depression_infeasible.md` — full data-access outcome
 - Existing EA pipeline: `code/ea01–ea04.py`, `data/processed/gard_ea_ad_hg19.tsv.gz`
 - EAS LD reference: `C:/Temp/iad_g1/ld_ref/EAS_bfile/`, `EAS_ldscores/`

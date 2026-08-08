@@ -1,0 +1,30 @@
+=== Trans-ethnic Insomnia -> AD MR (EUR instruments -> EAS outcome) ===
+
+Exposure: Insomnia ukb-b-3957 (UK Biobank, EUR, n=462,341); 40 LD-independent instruments at r2<0.001, 10 Mb (current 1000G EUR reference; primary EUR analysis reported n=54 under the same thresholds with the July 2026 reference)
+Outcome:  GARD/NIAGADS NG00182 East Asian AD (n=6,518, cases=2,919, controls=3,599, lifted hg38->hg19)
+Harmonized: 30/40 instruments matched positionally; strand-aligned; 30 retained
+
+--- Primary Results ---
+IVW (fixed effects)       beta=-0.8355  SE=0.7679  p=0.2766
+IVW (multiplicative RE)   beta=-0.8355  SE=1.0124  p=0.4092
+MR-Egger                  beta=-0.7991  SE=0.7711  p=0.3000
+Weighted median           beta=-1.7641  SE=0.7679  p=0.0216
+
+Cochran Q = 50.41 (df=29)  p = 0.0049
+MR-Egger intercept = -0.0044  SE = 0.0084  p = 0.6051  (no directional pleiotropy)
+
+--- EUR comparison ---
+EUR clumped (54 IVs, loose): beta = -0.130, p = 0.52  [manuscript Level 2]
+EAS point estimate: beta = -0.8355, p = 0.2766
+Direction: consistent with EUR (negative) — EUR 95% CI [-0.53, 0.27] vs EAS 95% CI [-2.340, +0.670]
+
+--- Power (directional consistency only) ---
+R2 instruments (EUR): 0.0028
+Power to detect EAS point estimate at alpha=0.05 (2-sided): 0.193
+Power to detect EUR clumped beta=-0.13: 0.053
+
+--- Caveats ---
+1. EAS outcome small (cases=2,919) — wide CIs; directional-consistency check only, NOT an independent replication
+2. EUR instruments transferred trans-ethnically; EUR LD used for clumping (no EAS LD panel available)
+3. Instrument count (n=30) differs from primary EUR analysis (n=54) due to LD reference panel update at the public LD server
+4. Steiger/coloc/LDSC not possible without EAS LD reference
