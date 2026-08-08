@@ -1,22 +1,5 @@
 # A falsification framework for causal claims in polygenic epidemiology: the insomnia–Alzheimer's disease test case
 
-> **版本说明：恢复 23 条支撑文献版（`manuscript_draft_with_23refs.md`）**
->
-> 本文件由 `manuscript_draft.md`（形式审查后 55 条参考文献版）**恢复 23 条审计中删除的支撑文献**生成（含 1 条重复合并，最终 77 条），供文献保留、导师审阅、或转投非 Nature 系期刊使用。原稿未改动。
->
-> **改动内容**
-> 1. **References 55 → 77 条**：23 条审计中删除的支撑文献全部恢复，另合并 1 条重复文献（Ref 68 = Ref 9 Hemani MR-Base），条目在 References 中标 `**[restored]**`（新编号 45–59、68、71–77；对应审计前 78 条体系的旧编号 15、32–37、48、50–53、55–56、62–67、73–75）。
-> 2. **正文新增 6 处引用锚点**（均已按"首次出现顺序"重排编号，全稿 1–77 严格递增、无孤儿引用、无重复定义）：
->    - Discussion「Reconciling with the published insomnia–AD MR literature」：睡眠–AD 争议文献 （45–48）
->    - Discussion「Colocalization asymmetry and the limits of Steiger」：APOE 机制文献 （49–50）
->    - Discussion「Beyond MR」：多组学/泛化支撑文献 （51–59）
->    - Methods Level 4 (MVMR)：MVMR 方法原文 Burgess & Thompson 2015 （69）
->    - Methods Level 5 (蛋白中介)：AD 血液蛋白标志物背景（p-tau/GFAP/NfL）（72–77）
->    - Methods Level 6 (跨祖先)：trans-ethnic MR 方法 Zheng 2022 （77）
-> 3. **编号变化**：原 55 条中 11 条编号后移（原 45–55 → 新 60–68、70–71），其余 44 条编号不变。若要对照原稿编号，参见文末「Citation mapping」。
->
-> **使用注意**：本版已满足 Nature 系"按首次出现顺序编号 + 全部 References 条目被正文引用"的合规要求，可直接投稿；若不需要这 23 条支撑文献，请使用原稿 `manuscript_draft.md` 或 Nat Commun 压缩版 `manuscript_draft_natcomm.md`。
-
 Ming Luo<sup>1,†</sup>, Wangyang Ye<sup>1,†</sup>, Qin Liu<sup>1,*</sup>
 
 <sup>1</sup>Department of Neurosurgery, The Fifth Affiliated Hospital of Wenzhou Medical University (Lishui Central Hospital), Lishui, Zhejiang 323000, China
@@ -27,7 +10,7 @@ Ming Luo<sup>1,†</sup>, Wangyang Ye<sup>1,†</sup>, Qin Liu<sup>1,*</sup>
 
 ## Abstract
 
-**Background:** Under extreme polygenicity, larger GWAS yield more precisely estimated — but not necessarily more trustworthy — causal signals. Standard Mendelian randomization (MR) pipelines accumulate supporting evidence at every stage, yet lack a systematic procedure for falsifying a directional causal claim. We introduce a six-level falsification framework for causal claims in polygenic epidemiology and apply it to the widely reported insomnia–Alzheimer's disease (AD) association as a challenging test case.
+**Background:** Under extreme polygenicity, larger GWAS sample sizes reduce statistical uncertainty but make systematic bias harder to detect, creating a paradox in which more precisely estimated causal signals may be less credible. Standard Mendelian randomization (MR) pipelines accumulate supporting evidence at every stage, yet lack a systematic procedure for falsifying a directional causal claim. We introduce a six-level falsification framework for causal claims in polygenic epidemiology and apply it to the widely reported insomnia–Alzheimer's disease (AD) association as a challenging test case.
 
 **Methods:** Six ordered gates — association, robustness, genetic architecture, direct effect, biological mediation, and directional external validation — each capable of independently rejecting a directed causal interpretation, were operationalized with MR across twelve trait pairs spanning four disease domains, a 43,200-replicate simulation with known causal parameters, and five East Asian cross-ancestry checks.
 
@@ -35,9 +18,11 @@ Ming Luo<sup>1,†</sup>, Wangyang Ye<sup>1,†</sup>, Qin Liu<sup>1,*</sup>
 
 **Conclusions:** A causal claim should be accepted only after it has survived independent attempts to falsify it. The framework supplies a graded, transparent evidentiary threshold for causal claims in polygenic epidemiology that is applicable beyond MR.
 
+**Keywords:** Mendelian randomization; causal inference; falsification framework; genetic architecture; Alzheimer's disease; insomnia; cross-ancestry replication; drug-target validation
+
 ---
 
-## Introduction
+## Background
 
 Before P < 5 × 10⁻⁸ became the field-wide GWAS threshold, the early 2000s produced hundreds of gene–disease claims that collapsed in replication [1]. That period was not a failure of the GWAS approach but a correction: the field learned that a reproducible discovery requires instrument-level validation, not just a significant effect estimate. A decade later, -omics epidemiology faces an analogous inflection point — and Mendelian randomization (MR) is its sharpest instance. A decade of comorbidity MR has produced replicated claims of directed causation between traits — insomnia and AD prominent among them [2-5] — yet the simplest instrument-validation step, checking whether the causal estimate survives LD-clumping and sample-overlap correction, is absent from most published workflows [6-9]. When instruments are LD-correlated, the standard inverse-variance weighted (IVW) estimator can return a precisely estimated signal whose precision comes not from a biological effect but from the LD structure of a single genomic region.
 
@@ -203,7 +188,7 @@ A validation framework is useful only if it both detects true effects and refrai
 
 Four confirmed positive effects received Grade A, including Height→CAD (a genuinely protective relationship that was intended as a negative control candidate — demonstrating the framework is not biased toward null). One borderline protective received Grade B (Education→T2D), where mild pleiotropy correctly downgrades from A. Four cases received Grade C: the LD-driven Insomnia→AD, the pleiotropy-driven BMI→Stroke (IVW P = 0.018 vs. WM P = 0.30), the MR-corrected HDL→CAD (IVW P = 8.9 × 10⁻⁴ vs. MR-Egger P = 0.89), and the new psychiatric-exposure → AD pair Depression→AD (IVW P = 0.014 but WM P = 0.059 borderline). HDL→CAD is particularly informative: it is the most widely cited example of MR overturning a false therapeutic target, and the framework's Grade C assignment is consistent with the cumulative clinical-trial evidence. Three cases received Grade D: BMI→AD, CRP→CAD (null at extreme instrument strength, F = 176), and T2D→AD (null at F = 78). Internal specificity is corroborated by 25/25 null protein mediators coexisting with significant education→AD, LDL→CAD, and TG-mediation effects. Full per-level scoring for all twelve cases is provided in Supplementary Table S8.
 
-The IEU OpenGWAS catalog was systematically searched for candidate negative controls (probing ~120 GWAS IDs across ~50 traits), evaluating each for (i) biological implausibility, (ii) instrument strength F > 50, and (iii) functional summary-statistics extraction. Height→AD was the only candidate passing all three criteria; its IVW was pleiotropy-driven (MR-Egger P = 0.44; heterogeneity P = 5 × 10⁻⁵) and is archived in Supplementary Table S7. The height→CAD result (Grade A) confirms that height is a genuine protective exposure for multiple outcomes, rather than a suitable negative control. The expanded twelve-case cohort spans four disease domains and the full grade spectrum (A: 4, B: 1, C: 4, D: 3), with simulation-based operating characteristics (sensitivity 0.97 / specificity 1.0 in the ideal scenario; FDR ≤ 0.18 under directional pleiotropy) reported in Results and Supplementary Fig. 5.
+The IEU OpenGWAS catalog was systematically searched for candidate negative controls (probing ~120 GWAS IDs across ~50 traits), evaluating each for (i) biological implausibility, (ii) instrument strength F > 50, and (iii) functional summary-statistics extraction. Height→AD was the only candidate passing all three criteria; its IVW was pleiotropy-driven (MR-Egger P = 0.44; heterogeneity P = 5 × 10⁻⁵) and is archived in Supplementary Table S6. The height→CAD result (Grade A) confirms that height is a genuine protective exposure for multiple outcomes, rather than a suitable negative control. The expanded twelve-case cohort spans four disease domains and the full grade spectrum (A: 4, B: 1, C: 4, D: 3), with simulation-based operating characteristics (sensitivity 0.97 / specificity 1.0 in the ideal scenario; FDR ≤ 0.18 under directional pleiotropy) reported in Results and Supplementary Fig. 5.
 
 ### Implications for comorbidity MR practice
 
@@ -231,9 +216,17 @@ The term "falsification" in this framework refers to the rejection of an indepen
 
 ### Limitations
 
-Several limitations remain. First, the framework validation cohort of twelve cases, while spanning four disease domains and the full grade spectrum (A: 4, B: 1, C: 4, D: 3), remains modest in absolute size; a larger cohort specifically enriched for borderline-ambiguous pairs (Grades B and C) would better characterize the framework's decision boundaries. Second, simulation studies characterizing operating characteristics across LD architectures, pleiotropy strengths, and sample overlap scenarios have now been performed (43,200 replicates; Supplementary Fig. 5) and confirm 0.97 sensitivity / 1.00 specificity in the ideal scenario with FDR ≤ 0.18 under directional pleiotropy, but the simulation abstracts from real-data complications (discrete LD blocks rather than full 1000G LD matrices; leave-one-out proxy for L4 multivariable MR; discrete second-sample noise for L6 rather than a true cross-ancestry dataset). A threshold-sensitivity analysis across four configurations (Supplementary Note 1) confirms that no case changes by more than one grade under any scenario. Third, the directional external validation gate (Level 6) covers five cross-ancestry checks — education→AD (EAS GARD), education→T2D (EAS BBJ; significant replication), T2D→AD (EAS GARD; null concordance), education→stroke (EAS BBJ; null), and a trans-ethnic insomnia→AD check (EUR instruments transferred into GARD EAS AD; negative, non-significant) — but these remain directional-screening checks with limited instrument counts (9 for education, 30 for the insomnia→AD trans-ethnic transfer, 71–96 for T2D) rather than formal independent-replication layers with effect-size precision; power was sufficient for directional-consistency testing only (power ≥ 84% at R² ≥ 0.05 for education→AD; < 6% for the insomnia→AD transfer). Depression→AD was not subject to adequately powered cross-ancestry replication within this study, and we document why a formal check is currently infeasible (Supplementary Note 3). The EAS clinical MDD exposure stratum of the largest multi-ancestry MDD GWAS (Meng et al. 2024, Nat Genet; 7,886 cases / 14,412 controls) contains **no genome-wide-significant variants** (min P = 1.9 × 10⁻⁷ across 8.1 M variants), so no EAS depression instruments can be constructed; the multi-ancestry version yields six independent MDD loci, of which only two are present with harmonizable alleles in the sole EAS AD outcome available (GARD, 2,919 cases), precluding a meaningful MR estimate. An exploratory two-instrument direction check is reported for transparency (both point toward a positive AD direction in EAS, within noise), but is not used as evidence for or against the Depression→AD Grade C assignment. This is a power and data-coverage limitation rather than a null result, and should be revisited as larger EAS depression and AD GWAS become available. This gate is therefore a cross-ancestry directional screening check rather than a formal independent-replication layer. Fourth, the mediation gate (Level 5) is inherently constrained by the coverage of the available proteomic and metabolomic GWAS data; absence of detectable mediation does not conclusively disprove the existence of an unmeasured biological pathway. Fifth, CAUSE returned a nominally causal forward signal for insomnia→AD that is methodologically compatible with but not resolved by the converging null estimates from clumped IVW, MRlap, and MVMR; as GWAS sample sizes increase, CAUSE resolution will improve, and this residual signal should be revisited. Sixth, the specificity estimate derives from a single formally computed negative control (BMI→AD), as our systematic search of ~120 GWAS IDs across ~50 candidate exposures in the IEU OpenGWAS catalog found no second candidate simultaneously passing our biological-implausibility, instrument-strength (F > 50), and technical-extraction criteria — height→AD being the only candidate meeting all three, but itself contaminated by pleiotropy (Supplementary Table S7).
+Several limitations remain. First, the framework validation cohort of twelve cases, while spanning four disease domains and the full grade spectrum (A: 4, B: 1, C: 4, D: 3), remains modest in absolute size; a larger cohort specifically enriched for borderline-ambiguous pairs (Grades B and C) would better characterize the framework's decision boundaries. Second, simulation studies characterizing operating characteristics across LD architectures, pleiotropy strengths, and sample overlap scenarios have now been performed (43,200 replicates; Supplementary Fig. 5) and confirm 0.97 sensitivity / 1.00 specificity in the ideal scenario with FDR ≤ 0.18 under directional pleiotropy, but the simulation abstracts from real-data complications (discrete LD blocks rather than full 1000G LD matrices; leave-one-out proxy for L4 multivariable MR; discrete second-sample noise for L6 rather than a true cross-ancestry dataset). A threshold-sensitivity analysis across four configurations (Supplementary Note 1) confirms that no case changes by more than one grade under any scenario. Third, the directional external validation gate (Level 6) covers five cross-ancestry checks — education→AD (EAS GARD), education→T2D (EAS BBJ; significant replication), T2D→AD (EAS GARD; null concordance), education→stroke (EAS BBJ; null), and a trans-ethnic insomnia→AD check (EUR instruments transferred into GARD EAS AD; negative, non-significant) — but these remain directional-screening checks with limited instrument counts (9 for education, 30 for the insomnia→AD trans-ethnic transfer, 71–96 for T2D) rather than formal independent-replication layers with effect-size precision; power was sufficient for directional-consistency testing only (power ≥ 84% at R² ≥ 0.05 for education→AD; < 6% for the insomnia→AD transfer). Depression→AD was not subject to adequately powered cross-ancestry replication within this study, and we document why a formal check is currently infeasible (Supplementary Note 3). The EAS clinical MDD exposure stratum of the largest multi-ancestry MDD GWAS (Meng et al. 2024, Nat Genet; 7,886 cases / 14,412 controls) contains **no genome-wide-significant variants** (min P = 1.9 × 10⁻⁷ across 8.1 M variants), so no EAS depression instruments can be constructed; the multi-ancestry version yields six independent MDD loci, of which only two are present with harmonizable alleles in the sole EAS AD outcome available (GARD, 2,919 cases), precluding a meaningful MR estimate. An exploratory two-instrument direction check is reported for transparency (both point toward a positive AD direction in EAS, within noise), but is not used as evidence for or against the Depression→AD Grade C assignment. This is a power and data-coverage limitation rather than a null result, and should be revisited as larger EAS depression and AD GWAS become available. This gate is therefore a cross-ancestry directional screening check rather than a formal independent-replication layer. Fourth, the mediation gate (Level 5) is inherently constrained by the coverage of the available proteomic and metabolomic GWAS data; absence of detectable mediation does not conclusively disprove the existence of an unmeasured biological pathway. Fifth, CAUSE returned a nominally causal forward signal for insomnia→AD that is methodologically compatible with but not resolved by the converging null estimates from clumped IVW, MRlap, and MVMR; as GWAS sample sizes increase, CAUSE resolution will improve, and this residual signal should be revisited. Sixth, the specificity estimate derives from a single formally computed negative control (BMI→AD), as our systematic search of ~120 GWAS IDs across ~50 candidate exposures in the IEU OpenGWAS catalog found no second candidate simultaneously passing our biological-implausibility, instrument-strength (F > 50), and technical-extraction criteria — height→AD being the only candidate meeting all three, but itself contaminated by pleiotropy (Supplementary Table S6).
 
 Operational thresholds for each gate are detailed in Methods (Framework architecture) and summarized in Supplementary Figure 4.
+
+## Conclusions
+
+The insomnia–AD case demonstrates that a causal claim should be accepted only after it has survived independent attempts to falsify it, not after a single analytical layer has produced a significant estimate. The six-level framework converted a widely replicated positive MR finding into a graded verdict — shared liability rather than directed causation — while correctly retaining high-confidence grades for genuine effects (LDL→CAD, education→AD) and precisely null claims (BMI→AD, CRP→CAD, T2D→AD). Its logic is not MR-specific: any polygenic causal claim, in epidemiology or genomic medicine, can be evaluated through the same falsification gates, and the A/B/C/D rubric provides a transparent standard for drug-target prioritization, reporting, and review. The primary determinants of the applicable grade — instrument strength, LD architecture, pleiotropy, and ancestry coverage — are data properties rather than trait biology, making the framework a reusable evidentiary threshold for causal claims in polygenic epidemiology.
+
+## List of abbreviations
+
+AD: Alzheimer's disease; BMI: body mass index; CAUSE: Causal Analysis Using Summary Effect Estimates; coloc: Bayesian colocalization; CRP: C-reactive protein; EAS: East Asian; FDR: false discovery rate; GWAS: genome-wide association study; HDL: high-density lipoprotein; IL-6: interleukin-6; IVW: inverse-variance weighted; LD: linkage disequilibrium; LDSC: LD Score regression; LDL: low-density lipoprotein; MR: Mendelian randomization; MRlap: MR with sample-overlap correction; MVMR: multivariable Mendelian randomization; PheWAS: phenome-wide association study; pQTL: protein quantitative trait locus; PRESSO: Pleiotropy RESidual Sum and Outlier; rg: genetic correlation; SE: standard error; SNP: single-nucleotide polymorphism; T2D: type 2 diabetes; TG: triglycerides; UKB: UK Biobank; UVMR: univariable Mendelian randomization; WM: weighted median.
 
 ---
 
@@ -334,7 +327,7 @@ R (v4.5.2) and Python (v3.13). Packages: TwoSampleMR (v0.6.8), coloc (v5.2.3), M
 
 ### AI assistance in writing
 
-A large language model (the WorkBuddy AI assistant, powered by Claude) was used to assist with drafting and refining the manuscript text for language clarity and structure. All AI-generated or AI-modified text was reviewed, edited, and verified by the authors against primary sources; the authors take full responsibility for the accuracy and integrity of the manuscript. No AI tools were used to generate data, statistical analyses, or figures; all computational results were produced by the authors using standard statistical-genetics software (TwoSampleMR, LDSC, coloc, MVMR) in R and Python. No AI system is listed as an author.
+A large language model (the WorkBuddy AI assistant, powered by DeepSeek) was used to assist with drafting and refining the manuscript text for language clarity and structure. All AI-generated or AI-modified text was reviewed, edited, and verified by the authors against primary sources; the authors take full responsibility for the accuracy and integrity of the manuscript. No AI tools were used to generate data, statistical analyses, or figures; all computational results were produced by the authors using standard statistical-genetics software (TwoSampleMR, LDSC, coloc, MVMR) in R and Python. No AI system is listed as an author.
 
 ---
 
@@ -344,9 +337,9 @@ A large language model (the WorkBuddy AI assistant, powered by Claude) was used 
 
 **Figure 2. Robustness gate — MR forest and colocalization summary.** (A) Bidirectional estimates across methods (unclumped IVW, clumped IVW, MRlap, CAUSE, MVMR) for insomnia–AD. (B) Colocalization PP.H4 for forward (47 loci) and reverse (32 loci) directions, APOE region annotated.
 
-**Figure 4. Mediation gate — protein and metabolite two-step MR.** (A) insomnia→CRP/IL-6→AD; (B) education→CRP/IL-6→AD (exposure substitution); (C) G2b 36-protein screen volcano and top-15 forest; metabolite mediation forest for education→metabolite→AD.
-
 **Figure 3. Direct-effect gate — educational attainment PheWAS.** Forest of education→outcome MR across AD (Kunkle), AD (Bellenguez), PD, and MS, with IVW, weighted median, weighted mode, MR-Egger.
+
+**Figure 4. Mediation gate — protein and metabolite two-step MR.** (A) insomnia→CRP/IL-6→AD; (B) education→CRP/IL-6→AD (exposure substitution); (C) G2b 36-protein screen volcano and top-15 forest; metabolite mediation forest for education→metabolite→AD.
 
 **Figure 5. Validation cohort — quantitative evidence grading.** Twelve evaluated cases scored on the 0–2 per-level, 0–12 cumulative scoring system, spanning four disease domains (A: 4, B: 1, C: 4, D: 3). The full rubric follows the framework architecture detailed in Methods.
 
@@ -367,7 +360,7 @@ A large language model (the WorkBuddy AI assistant, powered by Claude) was used 
 - **Supplementary Table S3**: Complete MVMR/UVMR results matrix (27 rows)
 - **Supplementary Table S4**: Educational attainment PheWAS (4 outcomes × 4 methods)
 - **Supplementary Table S5**: STROBE-MR checklist [12]
-- **Supplementary Table S7**: Exploratory height→AD analysis: 382 instruments (F = 78.4), IVW β = −0.107 (P = 0.002), MR-Egger β = −0.071 (P = 0.44), WM β = −0.089 (P = 0.063), Cochran Q = 431 (P = 5 × 10⁻⁵). Interpreted as directional pleiotropy; not used as a formal negative control.
+- **Supplementary Table S6**: Exploratory height→AD analysis: 382 instruments (F = 78.4), IVW β = −0.107 (P = 0.002), MR-Egger β = −0.071 (P = 0.44), WM β = −0.089 (P = 0.063), Cochran Q = 431 (P = 5 × 10⁻⁵). Interpreted as directional pleiotropy; not used as a formal negative control.
 - **Supplementary Table S8**: Twelve-case expanded validation cohort (LDL→CAD, Education→AD, BMI→T2D, Height→CAD, Insomnia→AD, BMI→Stroke, HDL→CAD, Depression→AD, Education→T2D, CRP→CAD, BMI→AD, T2D→AD) with full per-level 0–2 scoring, cumulative 0–12 total, F-statistics, IVW/WM/Egger estimates, and domain annotation. Available as CSV and Markdown in the Supplementary materials.
 - **Supplementary Table S9**: Simulation operating characteristics across the LD-concentration × pleiotropy × sample-overlap × effect-size scenario grid (43,200 replicates; seed 20260804). Per-scenario CSV with sensitivity, specificity, FDR, and grade distribution; marginal summary by pleiotropy and effect size. Underlies Supplementary Fig. 5.
 
@@ -379,27 +372,35 @@ A large language model (the WorkBuddy AI assistant, powered by Claude) was used 
 
 ---
 
-## Author contributions
+## Declarations
 
-M.L. and W.Y. contributed equally to this work. M.L. and W.Y. designed the study, performed all bioinformatic and statistical analyses, and drafted the manuscript. Q.L. conceived and supervised the study and provided critical revisions. All authors reviewed and approved the final manuscript.
+### Ethics approval and consent to participate
 
-## Competing interests
+This study is a secondary analysis of publicly available genome-wide association study (GWAS) summary statistics and involves no new data collection, no human participants, and no personal data. Ethics approval and consent to participate were therefore not required.
+
+### Consent for publication
+
+Not applicable.
+
+### Availability of data and materials
+
+All GWAS summary statistics are publicly available via IEU OpenGWAS (https://gwas.mrcieu.ac.uk/) under the accessions listed in Methods. LDL→CAD (ieu-a-300 and ieu-a-7) and BMI→AD (ieu-a-2 and ieu-b-2) were computed within the IEU platform and are fully reproducible. UKB-PPP pQTL data (Sun et al. 2023, Nature) used for targeted verification are in published Supplementary Tables [33]. GARD/NG00182 East Asian AD GWAS is at NIAGADS (https://www.niagads.org/) [39]. The complete analysis pipeline — including all R/Python scripts (25 standardized modules), harmonized input data, caching layers for zero-API reproduction, and environment specifications — has been prepared for public release and will be deposited in a public GitHub repository with a frozen Zenodo archive upon acceptance.
+
+### Competing interests
 
 The authors declare no competing interests.
 
-## Funding
+### Funding
 
 This study was not supported by any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
 
-## Acknowledgements
+### Authors' contributions
+
+M.L. and W.Y. contributed equally to this work. M.L. and W.Y. designed the study, performed all bioinformatic and statistical analyses, and drafted the manuscript. Q.L. conceived and supervised the study and provided critical revisions. All authors reviewed and approved the final manuscript.
+
+### Acknowledgements
 
 The authors thank the participants and investigators of the UK Biobank, the International Genomics of Alzheimer's Project (IGAP), the IEU OpenGWAS platform, the Biobank Japan (BBJ) Project, and the NIAGADS database for making GWAS summary statistics publicly available.
-
----
-
-## Data Availability
-
-All GWAS summary statistics are publicly available via IEU OpenGWAS (https://gwas.mrcieu.ac.uk/) under the accessions listed in Methods. LDL→CAD (ieu-a-300 and ieu-a-7) and BMI→AD (ieu-a-2 and ieu-b-2) were computed within the IEU platform and are fully reproducible. UKB-PPP pQTL data (Sun et al. 2023, Nature) used for targeted verification are in published Supplementary Tables [33]. GARD/NG00182 East Asian AD GWAS is at NIAGADS (https://www.niagads.org/) [39]. The complete analysis pipeline — including all R/Python scripts (25 standardized modules), harmonized input data, caching layers for zero-API reproduction, and environment specifications — has been prepared for public release and will be deposited in a public GitHub repository with a frozen Zenodo archive upon acceptance.
 
 ## Code Availability
 
@@ -456,21 +457,21 @@ All analysis scripts (R and Python) have been organized into a standardized, ver
 
 43. Lee JJ, et al. Gene discovery and polygenic prediction from a genome-wide association study of educational attainment. *Nat Genet* **50** 1112-1121 (2018). doi: 10.1038/s41588-018-0147-3
 44. Li X, et al. PTPRD pleiotropy, genetically driven childbirth timing, and corpus callosum. *Sleep Med* **133** 106631 (2025). doi: 10.1016/j.sleep.2025.106631
-45. Zhang Y, et al. Modifiable risk factors for incident dementia and cognitive impairment. *J Affect Disord* **314** 160-167 (2022). doi: 10.1016/j.jad.2022.07.008 **[restored]**
-46. Cavailles C, et al. Causal Associations of Sleep Apnea With Alzheimer Disease and Cardiovascular Disease. *J Am Heart Assoc* **13** e033850 (2024). doi: 10.1161/JAHA.123.033850 **[restored]**
-47. Li X, et al. Associations between sleep disturbance and cerebrospinal fluid Abeta. *Alzheimers Dement* **22** e71316 (2026). doi: 10.1002/alz.71316 **[restored]**
-48. Zhao Y, et al. FLOT1 and EEF1D: ac4C-related genes bridging Alzheimer's disease and sleep. *Front Aging Neurosci* **18** 1825164 (2026). doi: 10.3389/fnagi.2026.1825164 **[restored]**
-49. Parhizkar S, Holtzman DM. APOE mediated neuroinflammation and neurodegeneration in Alzheimer's disease. *Semin Immunol* **59** 101594 (2022). doi: 10.1016/j.smim.2022.101594 **[restored]**
-50. Inoue K, et al. Impact of APOE on cerebrovascular lipid profile in Alzheimer's disease. *Acta Neuropathol* **150** 39 (2025). doi: 10.1007/s00401-025-02949-5 **[restored]**
-51. Wang X, et al. Integration of multiple-omics data to reveal the shared genetic architecture of Alzheimer's disease. *Front Genet* **14** 1243879 (2023). doi: 10.3389/fgene.2023.1243879 **[restored]**
-52. Li X, et al. Mitochondrial related genome-wide Mendelian randomization identifies putative causal pathways. *EBioMedicine* **88** 104432 (2023). doi: 10.1016/j.ebiom.2022.104432 **[restored]**
-53. Wen Y, et al. The genetic architecture of biological age in nine human organ systems. *Nat Aging* **4** 1290-1307 (2024). doi: 10.1038/s43587-024-00662-8 **[restored]**
-54. Zhao Y, et al. Variables associated with cognitive function: an exposome-wide and mendelian randomization study. *Alzheimers Res Ther* **17** 13 (2025). doi: 10.1186/s13195-025-01670-5 **[restored]**
-55. Korologou-Linden R, et al. The causes and consequences of Alzheimer's disease: phenome-wide evidence. *Nat Commun* **13** 4726 (2022). doi: 10.1038/s41467-022-32183-6 **[restored]**
-56. Ye Y, et al. Mendelian randomization evidence for the causal effects of socio-economic position. *Nat Hum Behav* **7** 1357-1370 (2023). doi: 10.1038/s41562-023-01646-1 **[restored]**
-57. Grotzinger AD, et al. Genomic structural equation modelling provides insights into the multivariate genome. *Nat Hum Behav* **3** 513-525 (2019). doi: 10.1038/s41562-019-0566-x **[restored]**
-58. Jung Y, et al. Polygenic overlap between subjective well-being and psychiatric disorders. *Nat Hum Behav* **9** 1272-1282 (2025). doi: 10.1038/s41562-025-02155-z **[restored]**
-59. Soler Artigas M, et al. Sixteen new lung function signals identified through 1000 Genomes Project. *Nat Commun* **6** 8658 (2015). doi: 10.1038/ncomms9658 **[restored]**
+45. Zhang Y, et al. Modifiable risk factors for incident dementia and cognitive impairment. *J Affect Disord* **314** 160-167 (2022). doi: 10.1016/j.jad.2022.07.008
+46. Cavailles C, et al. Causal Associations of Sleep Apnea With Alzheimer Disease and Cardiovascular Disease. *J Am Heart Assoc* **13** e033850 (2024). doi: 10.1161/JAHA.123.033850
+47. Li X, et al. Associations between sleep disturbance and cerebrospinal fluid Abeta. *Alzheimers Dement* **22** e71316 (2026). doi: 10.1002/alz.71316
+48. Zhao Y, et al. FLOT1 and EEF1D: ac4C-related genes bridging Alzheimer's disease and sleep. *Front Aging Neurosci* **18** 1825164 (2026). doi: 10.3389/fnagi.2026.1825164
+49. Parhizkar S, Holtzman DM. APOE mediated neuroinflammation and neurodegeneration in Alzheimer's disease. *Semin Immunol* **59** 101594 (2022). doi: 10.1016/j.smim.2022.101594
+50. Inoue K, et al. Impact of APOE on cerebrovascular lipid profile in Alzheimer's disease. *Acta Neuropathol* **150** 39 (2025). doi: 10.1007/s00401-025-02949-5
+51. Wang X, et al. Integration of multiple-omics data to reveal the shared genetic architecture of Alzheimer's disease. *Front Genet* **14** 1243879 (2023). doi: 10.3389/fgene.2023.1243879
+52. Li X, et al. Mitochondrial related genome-wide Mendelian randomization identifies putative causal pathways. *EBioMedicine* **88** 104432 (2023). doi: 10.1016/j.ebiom.2022.104432
+53. Wen Y, et al. The genetic architecture of biological age in nine human organ systems. *Nat Aging* **4** 1290-1307 (2024). doi: 10.1038/s43587-024-00662-8
+54. Zhao Y, et al. Variables associated with cognitive function: an exposome-wide and mendelian randomization study. *Alzheimers Res Ther* **17** 13 (2025). doi: 10.1186/s13195-025-01670-5
+55. Korologou-Linden R, et al. The causes and consequences of Alzheimer's disease: phenome-wide evidence. *Nat Commun* **13** 4726 (2022). doi: 10.1038/s41467-022-32183-6
+56. Ye Y, et al. Mendelian randomization evidence for the causal effects of socio-economic position. *Nat Hum Behav* **7** 1357-1370 (2023). doi: 10.1038/s41562-023-01646-1
+57. Grotzinger AD, et al. Genomic structural equation modelling provides insights into the multivariate genome. *Nat Hum Behav* **3** 513-525 (2019). doi: 10.1038/s41562-019-0566-x
+58. Jung Y, et al. Polygenic overlap between subjective well-being and psychiatric disorders. *Nat Hum Behav* **9** 1272-1282 (2025). doi: 10.1038/s41562-025-02155-z
+59. Soler Artigas M, et al. Sixteen new lung function signals identified through 1000 Genomes Project. *Nat Commun* **6** 8658 (2015). doi: 10.1038/ncomms9658
 60. Okbay A, et al. Polygenic prediction of educational attainment within and between families. *Nat Genet* **54** 437-449 (2022). doi: 10.1038/s41588-022-01016-z
 61. Hewitt J, et al. Cohort profile of the UK Biobank: diagnosis and characteristics. *BMJ Open* **6** e009161 (2016). doi: 10.1136/bmjopen-2015-009161
 62. Jansen PR, et al. Genome-wide analysis of insomnia in 1,331,010 individuals identifies new risk loci. *Nat Genet* **51** 394-403 (2019). doi: 10.1038/s41588-018-0333-3
@@ -479,61 +480,17 @@ All analysis scripts (R and Python) have been organized into a standardized, ver
 65. Guo Y, et al. Plasma proteomic profiles predict future dementia in healthy adults. *Nat Aging* **4** 247-260 (2024). doi: 10.1038/s43587-023-00565-0
 66. Zhang Y, et al. Associations of 2923 plasma proteins with incident inflammatory bowel disease. *Nat Commun* **16** 2813 (2025). doi: 10.1038/s41467-025-57879-3
 67. Auton A, et al. A global reference for human genetic variation. *Nature* **526** 68-74 (2015). doi: 10.1038/nature15393
-68. Burgess S, Thompson SG. Multivariable Mendelian randomization: the use of pleiotropic genetic variants. *Am J Epidemiol* **181** 251-60 (2015). doi: 10.1093/aje/kwu283 **[restored]**
+68. Burgess S, Thompson SG. Multivariable Mendelian randomization: the use of pleiotropic genetic variants. *Am J Epidemiol* **181** 251-60 (2015). doi: 10.1093/aje/kwu283
 69. Nalls MA, et al. Identification of novel risk loci, causal insights, and heritable risk for Parkinson's disease. *Lancet Neurol* **18** 1091-1102 (2019). doi: 10.1016/S1474-4422(19)30320-5
 70. Patsopoulos NA, et al. (International Multiple Sclerosis Genetics Consortium). Multiple sclerosis genomic map implicates peripheral immune cells and microglia. *Science* **365** eaav7188 (2019). doi: 10.1126/science.aav7188
 
-71. Brickman AM, et al. Plasma p-tau181, p-tau217, and other blood-based Alzheimer's disease biomarkers. *Alzheimers Dement* **17** 1353-1364 (2021). doi: 10.1002/alz.12301 **[restored]**
-72. Schindler SE, et al. Head-to-head comparison of leading blood tests for Alzheimer's disease pathology. *Alzheimers Dement* **20** 8074-8096 (2024). doi: 10.1002/alz.14315 **[restored]**
-73. Pan Y, et al. Plasma P-tau217, GFAP, and NfL as biomarkers for Alzheimer's disease. *Alzheimers Dement* **21** e70987 (2025). doi: 10.1002/alz.70987 **[restored]**
-74. Wang Y, et al. Peripheral GFAP and NfL as early biomarkers for dementia. *BMC Med* **22** 192 (2024). doi: 10.1186/s12916-024-03418-8 **[restored]**
-75. Kim J, et al. GFAP as a Potential Biomarker for Alzheimer's Disease. *Cells* **12** (2023). doi: 10.3390/cells12091309 **[restored]**
-76. Ahmad S, et al. Genome-wide association study meta-analysis of neurofilament light (NfL) levels. *Commun Biol* **7** 1103 (2024). doi: 10.1038/s42003-024-06804-3 **[restored]**
-77. Zheng J, et al. Trans-ethnic Mendelian-randomization study reveals causal relationships. *Int J Epidemiol* **50** 1995-2010 (2022). doi: 10.1093/ije/dyab203 **[restored]**
+71. Brickman AM, et al. Plasma p-tau181, p-tau217, and other blood-based Alzheimer's disease biomarkers. *Alzheimers Dement* **17** 1353-1364 (2021). doi: 10.1002/alz.12301
+72. Schindler SE, et al. Head-to-head comparison of leading blood tests for Alzheimer's disease pathology. *Alzheimers Dement* **20** 8074-8096 (2024). doi: 10.1002/alz.14315
+73. Pan Y, et al. Plasma P-tau217, GFAP, and NfL as biomarkers for Alzheimer's disease. *Alzheimers Dement* **21** e70987 (2025). doi: 10.1002/alz.70987
+74. Wang Y, et al. Peripheral GFAP and NfL as early biomarkers for dementia. *BMC Med* **22** 192 (2024). doi: 10.1186/s12916-024-03418-8
+75. Kim J, et al. GFAP as a Potential Biomarker for Alzheimer's Disease. *Cells* **12** (2023). doi: 10.3390/cells12091309
+76. Ahmad S, et al. Genome-wide association study meta-analysis of neurofilament light (NfL) levels. *Commun Biol* **7** 1103 (2024). doi: 10.1038/s42003-024-06804-3
+77. Zheng J, et al. Trans-ethnic Mendelian-randomization study reveals causal relationships. *Int J Epidemiol* **50** 1995-2010 (2022). doi: 10.1093/ije/dyab203
 78. Voight BF, et al. Plasma HDL cholesterol and risk of myocardial infarction: a mendelian randomisation study. *Lancet* **380** 572-580 (2012). doi: 10.1016/S0140-6736(12)60312-2
 79. Barter PJ, et al. Effects of torcetrapib in patients at high risk for coronary events. *N Engl J Med* **357** 2109-2122 (2007). doi: 10.1056/NEJMoa0706628
 
-
-## Notes on citation style and crossref validation
-
-All DOIs above are drawn from the curated `references.ris` (entries 1–75) plus three new entries (76–78) added to support the falsification / negative-control framing. A Crossref API validation pass (see `code/crossref_check.py`) verifies that each DOI resolves and that its registered title/year match the citation. Entry 76 (Popper, a classic monograph) is included for the philosophical anchor; if Crossref does not register this edition's DOI, it is retained as a book citation without a resolvable DOI.
-
----
-
-## Citation mapping（与原稿 55 条编号的对照）
-
-本版（77 条）与 `manuscript_draft.md`（55 条）的编号映射。原稿编号未变的 44 条（1–44）未列出；仅列出编号发生变化的条目与 23 条恢复条目。
-
-| 本版编号 | 原稿编号 | 条目（首作者/年份） | 说明 |
-|---------|---------|--------------------|------|
-| 45 | — | Zhang 2022 | **[restored]** 痴呆可修饰危险因素（睡眠–AD） |
-| 46 | — | Cavailles 2024 | **[restored]** 睡眠呼吸暂停–AD–CVD 因果 |
-| 47 | — | Li 2026 | **[restored]** 睡眠障碍–CSF Aβ |
-| 48 | — | Zhao 2026 | **[restored]** FLOT1/EEF1D 桥接 AD–睡眠 |
-| 49 | — | Parhizkar & Holtzman 2022 | **[restored]** APOE 神经炎症机制 |
-| 50 | — | Inoue 2025 | **[restored]** APOE 脑血管脂质 |
-| 51 | — | Wang 2023 | **[restored]** AD 多组学共享架构 |
-| 52 | — | Li 2023 | **[restored]** 线粒体 MR |
-| 53 | — | Wen 2024 | **[restored]** 九器官系统生物年龄架构 |
-| 54 | — | Zhao 2025 | **[restored]** 认知外暴露组 MR |
-| 55 | — | Korologou-Linden 2022 | **[restored]** AD 全表型组证据 |
-| 56 | — | Ye 2023 | **[restored]** 社会经济地位 MR |
-| 57 | — | Grotzinger 2019 | **[restored]** Genomic SEM |
-| 58 | — | Jung 2025 | **[restored]** 主观幸福感–精神疾病多基因重叠 |
-| 59 | — | Soler Artigas 2015 | **[restored]** 肺功能 1000G |
-| 60 | 45 | Okbay 2022 | 编号后移 |
-| 61 | 46 | Hewitt 2016 | 编号后移 |
-| 62 | 47 | Jansen 2019 | 编号后移 |
-| 63 | 48 | Lane 2019 | 编号后移 |
-| 64 | 49 | Prapiadou 2024 | 编号后移 |
-| 65 | 50 | Guo 2024 (Nat Aging) | 编号后移 |
-| 66 | 51 | Zhang 2025 (Nat Commun) | 编号后移 |
-| 67 | 52 | Auton 2015 | 编号后移 |
-| 68 | — | Burgess & Thompson 2015 | **[restored]** MVMR 方法原文 |
-| 69 | 54 | Nalls 2019 | 编号后移 |
-| 70 | 55 | Patsopoulos 2019 | 编号后移 |
-| 71–77 | — | Brickman 2021 / Schindler 2024 / Pan 2025 / Wang 2024 / Kim 2023 / Ahmad 2024 / Zheng 2022 | **[restored]** 血液标志物 6 条 + trans-ethnic MR 1 条 |
-
-> 注：原 Ref 68（Hemani 2018, 编号后移, 对应原稿 53）为与 Ref 9 重复的 MR-Base 文献，已合并至 Ref 9（Hemani G, et al. eLife 2018），后续条目编号前移一位（旧 69→新 68, ... 旧 78→新 77）。
-
-> 恢复条目对应的审计前（78 条体系）旧编号：15 (Burgess & Thompson), 32–37 (血液标志物), 48 (Wang 多组学), 50–53 (睡眠–AD), 55–56 (APOE), 62 (Zheng 跨祖先), 63–67 (额外 MR/多组学), 73–75 (Genomic SEM/well-being/肺功能)。
