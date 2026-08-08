@@ -1,41 +1,17 @@
-# R temporary files
-.Rhistory
-.RData
-.Ruserdata
-.Rproj.user/
-*.Rproj
+# ===== Large data / intermediate files (kept locally, excluded from repo) =====
+# GWAS summary statistics (hundreds of MB) — re-download from IEU OpenGWAS (GCST90296498)
+GCST90296498.tsv
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.egg-info/
+# Raw genotype / VCF intermediates
+data/
+raw/
+*.vcf.gz
+*.vcf.gz.tbi
 
-# Data files (too large for GitHub)
-*.tsv.gz
-*.tsv
-*.csv.gz
-*.rds
-*.Rds
-!code/*.csv
-!课题设计阶段/**/*.csv
+# Misc archives
+*.zip
 
-# Results (generated, can be reproduced)
-results/
-*.png
-*.pdf
-*.jpg
-!课题设计阶段/figures/
-
-# Environment
-.workbuddy/
-*.lock
-!renv.lock
-
-# OS
+# OS / editor cruft
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log
-!code/**/*.log
+~$*
