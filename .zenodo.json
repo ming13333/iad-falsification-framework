@@ -1,0 +1,36 @@
+{
+  "creators": [
+    {
+      "name": "Luo, Ming",
+      "affiliation": "Department of Neurosurgery, The Fifth Affiliated Hospital of Wenzhou Medical University (Lishui Central Hospital), Lishui, Zhejiang, China",
+      "orcid": ""
+    },
+    {
+      "name": "Ye, Wangyang",
+      "affiliation": "Department of Neurosurgery, The Fifth Affiliated Hospital of Wenzhou Medical University (Lishui Central Hospital), Lishui, Zhejiang, China",
+      "orcid": ""
+    },
+    {
+      "name": "Liu, Qin",
+      "affiliation": "Department of Neurosurgery, The Fifth Affiliated Hospital of Wenzhou Medical University (Lishui Central Hospital), Lishui, Zhejiang, China",
+      "orcid": ""
+    }
+  ],
+  "title": "A falsification framework for causal claims in polygenic epidemiology: the insomnia–Alzheimer's disease test case",
+  "description": "Analysis code and cached inputs for a six-level falsification framework for Mendelian randomization-based causal claims. Includes 25 R modules, Python simulation and figure-generation scripts, cached harmonised inputs for zero-API reproduction, and environment specifications (renv.lock).",
+  "access_right": "open",
+  "license": "MIT",
+  "upload_type": "software",
+  "language": "eng",
+  "keywords": [
+    "Mendelian randomization",
+    "causal inference",
+    "falsification framework",
+    "genetic architecture",
+    "Alzheimer's disease",
+    "insomnia",
+    "cross-ancestry replication",
+    "drug-target validation"
+  ],
+  "notes": "This repository accompanies the manuscript submitted to Genome Medicine. DOI will be finalised upon acceptance."
+}

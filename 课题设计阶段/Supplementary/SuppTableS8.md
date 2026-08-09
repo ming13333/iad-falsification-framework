@@ -1,6 +1,6 @@
 # Supplementary Table S8. Twelve-case validation cohort with full per-level scoring
 
-Twelve trait pairs spanning four disease domains (Lipid, Neuro, Metabolic, Inflammatory/General) were scored across all six levels of the falsification framework (0–2 per level, 0–12 cumulative). Grade A: 10–12 (high confidence); B: 7–9 (moderate); C: 4–6 (weak / shared liability); D: 0–3 (not supported).
+Twelve trait pairs spanning four disease domains (Lipid, Neuro, Metabolic, Inflammatory/General) were scored across all six levels of the falsification framework (0–2 per level, 0–12 cumulative). Grade A: 10–12 (high confidence); B: 7–9 (moderate); C: 4–6 (weak / shared liability); D: 0–3 (not supported). Inter-rater reliability: grade-level Cohen's κ = 0.76 (substantial), quadratic-weighted κ = 0.94 (almost perfect); per-level κ (72 items) = 0.89. Two one-grade-adjacent disagreements (Height→CAD, Education→T2D); no case differed by more than one grade.
 
 | Case | Domain | L1 | L2 | L3 | L4 | L5 | L6 | Score | Grade | F | IVW_beta | IVW_SE | IVW_P | WM_P | Egger_P | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
