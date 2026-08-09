@@ -327,7 +327,7 @@ Each replicate (n = 43,200 total: 3 LD × 3 pleio × 2 overlap × 3 effect × 2 
 
 ### Software and reproducibility
 
-R (v4.5.2) and Python (v3.13). Packages: TwoSampleMR (v0.6.8), coloc (v5.2.3), MRlap (v0.0.3.1), cause (v1.2.2), MVMR (v0.4), ieugwasr (v1.0.0); numpy, scipy, pandas, matplotlib, seaborn. Code, cached inputs, and reproducible analysis scripts have been deposited in a public GitHub repository (https://github.com/ming13333/iad-falsification-framework) and archived via Zenodo [DOI pending release] upon submission. The six-level framework and the analysis plan were defined a priori before the analyses and are documented in Methods (Framework architecture and theoretical rationale).
+R (v4.5.2) and Python (v3.13). Packages: TwoSampleMR (v0.6.8), coloc (v5.2.3), MRlap (v0.0.3.1), cause (v1.2.2), MVMR (v0.4), ieugwasr (v1.0.0); numpy, scipy, pandas, matplotlib, seaborn. Code, cached inputs, and reproducible analysis scripts have been deposited in a public GitHub repository (https://github.com/ming13333/iad-falsification-framework) and archived via Zenodo https://doi.org/10.5281/zenodo.21858125 upon submission. The six-level framework and the analysis plan were defined a priori before the analyses and are documented in Methods (Framework architecture and theoretical rationale).
 
 ### AI assistance in writing
 
@@ -388,7 +388,7 @@ Not applicable.
 
 ### Availability of data and materials
 
-All GWAS summary statistics are publicly available via IEU OpenGWAS (https://gwas.mrcieu.ac.uk/) under the accessions listed in Methods. LDL→CAD (ieu-a-300 and ieu-a-7) and BMI→AD (ieu-a-2 and ieu-b-2) were computed within the IEU platform and are fully reproducible. UKB-PPP pQTL data (Sun et al. 2023, Nature) used for targeted verification are in published Supplementary Tables [32]. GARD/NG00182 East Asian AD GWAS is at NIAGADS (https://www.niagads.org/) [36]. The complete analysis pipeline — including all R/Python scripts (25 standardized modules), harmonized input data, caching layers for zero-API reproduction, and environment specifications — has been deposited in a public GitHub repository (https://github.com/ming13333/iad-falsification-framework) with a frozen Zenodo archive (DOI pending) and is freely available upon submission.
+All GWAS summary statistics are publicly available via IEU OpenGWAS (https://gwas.mrcieu.ac.uk/) under the accessions listed in Methods. LDL→CAD (ieu-a-300 and ieu-a-7) and BMI→AD (ieu-a-2 and ieu-b-2) were computed within the IEU platform and are fully reproducible. UKB-PPP pQTL data (Sun et al. 2023, Nature) used for targeted verification are in published Supplementary Tables [32]. GARD/NG00182 East Asian AD GWAS is at NIAGADS (https://www.niagads.org/) [36]. The complete analysis pipeline — including all R/Python scripts (25 standardized modules), harmonized input data, caching layers for zero-API reproduction, and environment specifications — has been deposited in a public GitHub repository (https://github.com/ming13333/iad-falsification-framework) with a frozen Zenodo archive https://doi.org/10.5281/zenodo.21858125 and is freely available upon submission.
 
 ### Competing interests
 
@@ -408,7 +408,7 @@ The authors thank the participants and investigators of the UK Biobank, the Inte
 
 ## Code Availability
 
-All analysis scripts (R and Python) have been organized into a standardized, versioned codebase (25 R modules; complementary Python modules for figure generation, Steiger analysis, and East Asian replication) with documented environment specifications (renv.lock). Cached harmonized input data for the metabolite mediation module (C1) enable zero-API reproduction. The full repository has been deposited in a public GitHub repository (https://github.com/ming13333/iad-falsification-framework) with a frozen Zenodo archive (DOI pending) and is freely available upon submission.
+All analysis scripts (R and Python) have been organized into a standardized, versioned codebase (25 R modules; complementary Python modules for figure generation, Steiger analysis, and East Asian replication) with documented environment specifications (renv.lock). Cached harmonized input data for the metabolite mediation module (C1) enable zero-API reproduction. The full repository has been deposited in a public GitHub repository (https://github.com/ming13333/iad-falsification-framework) with a frozen Zenodo archive https://doi.org/10.5281/zenodo.21858125 and is freely available upon submission.
 
 
 

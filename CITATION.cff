@@ -1,14 +1,18 @@
 cff-version: 1.2.0
 message: "If you use this software or the associated analysis pipeline, please cite it as below."
-title: "A triangulation framework for causal verification of genetic comorbidity: recalibrating insomnia–Alzheimer's disease"
-abstract: "Analysis pipeline for triangulation-based Mendelian randomization framework applied to insomnia-AD comorbidity, including bidirectional MR, LDSC rg, coloc, two-step protein/metabolite mediation MR, MVMR, education PheWAS, and East Asian cross-ancestry replication."
+title: "A falsification framework for causal claims in polygenic epidemiology: the insomnia–Alzheimer's disease test case"
+abstract: "Analysis pipeline for a six-level falsification framework for Mendelian randomization-based causal claims, applied to insomnia–Alzheimer's disease comorbidity. Includes bidirectional MR, LDSC rg, coloc, two-step protein/metabolite mediation MR, MVMR, education PheWAS, East Asian cross-ancestry replication, and a 43,200-replicate simulation."
 type: software
 authors:
-  - family-names: "[Author Last Name]"
-    given-names: "[Author First Name]"
-    orcid: "[ORCID]"
-repository-code: "https://github.com/[username]/insomnia-ad-comorbidity"
-url: "https://github.com/[username]/insomnia-ad-comorbidity"
+  - family-names: "Luo"
+    given-names: "Ming"
+  - family-names: "Ye"
+    given-names: "Wangyang"
+  - family-names: "Liu"
+    given-names: "Qin"
+repository-code: "https://github.com/ming13333/iad-falsification-framework"
+url: "https://github.com/ming13333/iad-falsification-framework"
+doi: 10.5281/zenodo.21858125
 keywords:
   - "Mendelian randomization"
   - "Alzheimer's disease"
@@ -16,8 +20,9 @@ keywords:
   - "genetic epidemiology"
   - "colocalization"
   - "LD score regression"
-  - "plasma proteomics"
-  - "metabolomics"
+  - "falsification framework"
+  - "cross-ancestry replication"
+  - "drug-target validation"
 license: MIT
 version: 1.0.0
-date-released: "2026-08-03"
+date-released: "2026-08-09"
