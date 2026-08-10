@@ -4,7 +4,7 @@ Inter-rater reliability analysis for the six-level falsification framework.
 Computes Cohen's κ (unweighted and quadratically weighted) for 12-case grading
 between Rater 1 (authors) and Rater 2 (independent blinded reviewer).
 
-Rater 1 scores are from Supplementary Table S8.
+Rater 1 scores are from Supplementary Table s7.
 Rater 2 scores are an independent assessment applying the same rubric
 without knowledge of Rater 1's per-level breakdowns.
 
@@ -25,7 +25,7 @@ cases = [
 levels = ["L1", "L2", "L3", "L4", "L5", "L6"]
 
 # ============================================================
-# Rater 1 scores (from Supplementary Table S8)
+# Rater 1 scores (from Supplementary Table s7)
 # ============================================================
 r1_per_level = {
     "LDL→CAD":       [2, 2, 2, 2, 2, 2],
