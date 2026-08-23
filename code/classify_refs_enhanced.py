@@ -2,7 +2,7 @@
 Output: classified RIS with section tags in N2 field, plus placement map."""
 import re, collections
 
-RIS = "C:/D/workbuddy/科研/共病分析/课题设计阶段/references.ris"
+RIS = "./docs/historical/references.ris"
 
 def parse_ris(path):
     entries = []
@@ -187,7 +187,7 @@ def classify(entry):
     if len(sorted_s) >= 2:
         second_score = sorted_s[1][1]
         if second_score > 0 and best_score / second_score < 1.3:
-            # Close call — show dual assignment
+            # Close call - show dual assignment
             return f"{best}/{sorted_s[1][0]}", best_score
 
     return best, best_score
@@ -206,12 +206,12 @@ for i, e in enumerate(entries):
 
 # Print by section
 section_short = {
-    "1_Methods_STATS": "Methods — Statistics",
-    "2_Methods_DATA": "Methods — Data sources",
+    "1_Methods_STATS": "Methods - Statistics",
+    "2_Methods_DATA": "Methods - Data sources",
     "3_Intro_Background": "Introduction / Background",
-    "4_Results_GWAS": "Results — GWAS / Genetic architecture",
-    "5_Results_MR": "Results — MR / Mediation",
-    "6_Results_Education_PheWAS": "Results — Education PheWAS",
+    "4_Results_GWAS": "Results - GWAS / Genetic architecture",
+    "5_Results_MR": "Results - MR / Mediation",
+    "6_Results_Education_PheWAS": "Results - Education PheWAS",
     "7_Discussion": "Discussion / Implications",
     "8_Unclassified": "UNCLASSIFIED",
 }
@@ -230,7 +230,6 @@ for sec_key in SECTIONS:
         print(f"       {ti}")
     print()
 
-# Unclassified
 uncl = [p for p in placement if "Unclassified" in p[1]]
 if uncl:
     print(f"## UNCLASSIFIED: {len(uncl)} refs")
@@ -239,7 +238,7 @@ if uncl:
         print(f"  [{idx:2d}] {au} ({yr}) {jt[:22]:22s}")
         print(f"       {ti}")
 else:
-    print("## UNCLASSIFIED: 0 — ALL REFERENCES CLASSIFIED ✓")
+    print("## UNCLASSIFIED: 0 - ALL REFERENCES CLASSIFIED ✓")
 
 print()
 counts = collections.Counter()

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 """
 Inter-rater reliability analysis for the six-level falsification framework.
 Computes Cohen's κ (unweighted and quadratically weighted) for 12-case grading
@@ -15,54 +15,54 @@ import numpy as np
 from sklearn.metrics import cohen_kappa_score as cks
 
 # ============================================================
-# Case labels (in manuscript order)
+# Case labels in manuscript order
 # ============================================================
 cases = [
-    "LDL→CAD", "Education→AD", "BMI→T2D", "Height→CAD",
-    "Insomnia→AD", "BMI→Stroke", "HDL→CAD", "Depression→AD",
-    "CRP→CAD", "BMI→AD", "T2D→AD", "Education→T2D"
+    "LDL->CAD", "Education->AD", "BMI->T2D", "Height->CAD",
+    "Insomnia->AD", "BMI->Stroke", "HDL->CAD", "Depression->AD",
+    "CRP->CAD", "BMI->AD", "T2D->AD", "Education->T2D"
 ]
 levels = ["L1", "L2", "L3", "L4", "L5", "L6"]
 
 # ============================================================
-# Rater 1 scores (from Supplementary Table s7)
+# Rater 1 scores from Supplementary Table s7
 # ============================================================
 r1_per_level = {
-    "LDL→CAD":       [2, 2, 2, 2, 2, 2],
-    "Education→AD":  [2, 2, 2, 2, 2, 2],
-    "BMI→T2D":       [2, 2, 2, 2, 2, 2],
-    "Height→CAD":    [2, 2, 2, 1, 1, 2],
-    "Insomnia→AD":   [2, 0, 1, 1, 0, 0],
-    "BMI→Stroke":    [2, 1, 1, 1, 0, 0],
-    "HDL→CAD":       [2, 1, 1, 1, 0, 1],
-    "Depression→AD": [2, 1, 1, 1, 0, 0],
-    "CRP→CAD":       [1, 0, 0, 0, 0, 0],
-    "BMI→AD":        [1, 0, 0, 0, 0, 0],
-    "T2D→AD":        [1, 0, 0, 0, 0, 0],
-    "Education→T2D": [2, 1, 2, 1, 1, 2],
+    "LDL->CAD":       [2, 2, 2, 2, 2, 2],
+    "Education->AD":  [2, 2, 2, 2, 2, 2],
+    "BMI->T2D":       [2, 2, 2, 2, 2, 2],
+    "Height->CAD":    [2, 2, 2, 1, 1, 2],
+    "Insomnia->AD":   [2, 0, 1, 1, 0, 0],
+    "BMI->Stroke":    [2, 1, 1, 1, 0, 0],
+    "HDL->CAD":       [2, 1, 1, 1, 0, 1],
+    "Depression->AD": [2, 1, 1, 1, 0, 0],
+    "CRP->CAD":       [1, 0, 0, 0, 0, 0],
+    "BMI->AD":        [1, 0, 0, 0, 0, 0],
+    "T2D->AD":        [1, 0, 0, 0, 0, 0],
+    "Education->T2D": [2, 1, 2, 1, 1, 2],
 }
 
 # ============================================================
 # Rater 2: Independent blinded assessment
 # Principle: Same rubric, same evidence, but no knowledge of R1's
-# per-level scores. Deliberately stricter on:
-#   L3: requires formal coloc rg rather than literature consensus
-#   L5: requires two-step mediation with FDR<0.05, not literature
-#   L6: requires formal cross-ancestry check, not RCT/literature
+# per-level scores. Deliberately stricter on
+# L3: requires formal coloc rg rather than literature consensus
+# L5: requires two-step mediation with FDR<0.05, not literature
+# L6: requires formal cross-ancestry check, not RCT/literature
 # ============================================================
 r2_per_level = {
-    "LDL→CAD":       [2, 2, 2, 2, 2, 2],
-    "Education→AD":  [2, 2, 2, 2, 2, 2],
-    "BMI→T2D":       [2, 2, 2, 2, 2, 2],
-    "Height→CAD":    [2, 2, 1, 2, 0, 2],   # L3 rg not coloc-tested; L5 no formal mediation
-    "Insomnia→AD":   [2, 0, 1, 1, 0, 0],
-    "BMI→Stroke":    [2, 1, 1, 1, 0, 0],
-    "HDL→CAD":       [2, 1, 1, 1, 0, 0],   # L6: no formal cross-ancestry replication for HDL→CAD
-    "Depression→AD": [2, 1, 1, 1, 0, 0],
-    "CRP→CAD":       [1, 0, 0, 0, 0, 0],
-    "BMI→AD":        [1, 0, 0, 0, 0, 0],
-    "T2D→AD":        [1, 0, 0, 0, 0, 0],
-    "Education→T2D": [2, 1, 2, 2, 1, 2],   # L4: EAS replication supports direct effect
+    "LDL->CAD":       [2, 2, 2, 2, 2, 2],
+    "Education->AD":  [2, 2, 2, 2, 2, 2],
+    "BMI->T2D":       [2, 2, 2, 2, 2, 2],
+    "Height->CAD":    [2, 2, 1, 2, 0, 2],   # L3 rg not coloc-tested; L5 no formal mediation
+    "Insomnia->AD":   [2, 0, 1, 1, 0, 0],
+    "BMI->Stroke":    [2, 1, 1, 1, 0, 0],
+    "HDL->CAD":       [2, 1, 1, 1, 0, 0],   # L6: no formal cross-ancestry replication for HDL->CAD
+    "Depression->AD": [2, 1, 1, 1, 0, 0],
+    "CRP->CAD":       [1, 0, 0, 0, 0, 0],
+    "BMI->AD":        [1, 0, 0, 0, 0, 0],
+    "T2D->AD":        [1, 0, 0, 0, 0, 0],
+    "Education->T2D": [2, 1, 2, 2, 1, 2],   # L4: EAS replication supports direct effect
 }
 
 # ============================================================
@@ -99,10 +99,10 @@ for i, case in enumerate(cases):
     print(f"{case:<16} [{s1_str:<25}] [{s2_str:<25}] {r1_totals[i]:>4} {r2_totals[i]:>4} {d:>+3} {r1_grades[i]:>3} {r2_grades[i]:>3} {a:>6}")
 
 # ============================================================
-# Cohen's κ — grade-level (A/B/C/D)
+# Cohen's κ - grade-level A/B/C/D
 # ============================================================
 print("\n" + "=" * 110)
-print("Cohen's κ — Grade-level agreement (A/B/C/D)")
+print("Cohen's κ - Grade-level agreement (A/B/C/D)")
 print("=" * 110)
 
 grade_labels = ["A", "B", "C", "D"]
@@ -119,24 +119,22 @@ for i, gl in enumerate(grade_labels):
     row = "  ".join(f"{agree_matrix[i,j]:>4}" for j in range(4))
     print(f"{gl:>6} {row}")
 
-# Unweighted κ
 from sklearn.metrics import cohen_kappa_score as cks
 kappa_unweighted = cks(r1_grades, r2_grades)
 print(f"\nUnweighted Cohen's κ = {kappa_unweighted:.4f}")
 
-# Weighted κ (quadratic weights)
+# Weighted κ quadratic weights
 kappa_weighted = cks(r1_grades, r2_grades, weights='quadratic')
 print(f"Quadratic-weighted Cohen's κ = {kappa_weighted:.4f}")
 
-# Raw agreement
 po = sum(1 for g1, g2 in zip(r1_grades, r2_grades) if g1 == g2) / 12
 print(f"Raw agreement = {po:.3f} ({int(po*12)}/12)")
 
 # ============================================================
-# Per-level κ (6 levels × 12 cases = 72 items)
+# Per-level κ 6 levels × 12 cases = 72 items
 # ============================================================
 print("\n" + "=" * 110)
-print("Cohen's κ — Per-level agreement (0/1/2, 72 items)")
+print("Cohen's κ - Per-level agreement (0/1/2, 72 items)")
 print("=" * 110)
 
 all_r1 = []
@@ -157,7 +155,6 @@ for li, lname in enumerate(levels):
     print(f"  {lname}: {d}/12 disagreements")
 
 # ============================================================
-# Specific disagreements
 # ============================================================
 print("\n" + "=" * 110)
 print("Specific disagreements:")
@@ -172,7 +169,6 @@ for case, g1, g2, s1, s2 in disagree_pairs:
         print(f"    {ln}: R1={v1} R2={v2}")
 
 # ============================================================
-# Interpretation text
 # ============================================================
 print("\n" + "=" * 110)
 print("Interpretation (Landis & Koch 1977):")
@@ -189,15 +185,15 @@ interp_weighted = (
     "moderate" if kappa_weighted > 0.41 else
     "fair" if kappa_weighted > 0.21 else "slight"
 )
-print(f"  Grade-level κ = {kappa_unweighted:.3f} → {interp_unweighted}")
-print(f"  Grade-level weighted κ = {kappa_weighted:.3f} → {interp_weighted}")
+print(f"  Grade-level κ = {kappa_unweighted:.3f} -> {interp_unweighted}")
+print(f"  Grade-level weighted κ = {kappa_weighted:.3f} -> {interp_weighted}")
 print(f"  Per-level κ (72 items) = {kappa_perlevel:.3f}")
 
 print("\n" + "=" * 110)
 print("SUGGESTED TEXT FOR MANUSCRIPT")
 print("=" * 110)
 print(f"""
-### Inter-rater reliability of framework scoring
+# Inter-rater reliability of framework scoring
 
 To assess whether the six-level scoring rubric yields reproducible grades
 across independent evaluators, a second rater blinded to the original
@@ -206,21 +202,21 @@ per-level scores independently applied the same 0–1–2 per-level,
 published evidence summaries. Grade-level agreement was {int(po*12)}/12
 (raw agreement {po:.2f}). Cohen's κ at the grade level (A/B/C/D) was
 {kappa_unweighted:.2f} ({interp_unweighted} agreement); with quadratic
-weighting—which penalises larger disagreements (e.g., A vs C) more
-severely than adjacent disagreements (e.g., A vs B)—the weighted κ was
+weighting-which penalises larger disagreements (e.g., A vs C) more
+severely than adjacent disagreements (e.g., A vs B)-the weighted κ was
 {kappa_weighted:.2f} ({interp_weighted}). At the individual-gate level
 (0–1–2 scores across six gates and twelve cases, 72 items), κ was
 {kappa_perlevel:.2f}.
 
 The two disagreements were both one-grade-adjacent and involved
-borderline cases: Height→CAD (Rater 1: Grade A, score 10; Rater 2:
+borderline cases: Height->CAD (Rater 1: Grade A, score 10; Rater 2:
 Grade B, score 9) due to a stricter interpretation of the genetic
-architecture gate (L3: R1=2, R2=1), and Education→T2D (Rater 1: Grade
+architecture gate (L3: R1=2, R2=1), and Education->T2D (Rater 1: Grade
 B, score 9; Rater 2: Grade A, score 10) due to a more lenient reading
 of the direct-effect gate (L4: R1=1, R2=2). No case differed by more
 than one grade across the two raters, and the three unanimous A
-(LDL→CAD, Education→AD, BMI→T2D) and three unanimous D (CRP→CAD,
-BMI→AD, T2D→AD) assignments at the extremes of the spectrum support
+(LDL->CAD, Education->AD, BMI->T2D) and three unanimous D (CRP->CAD,
+BMI->AD, T2D->AD) assignments at the extremes of the spectrum support
 the framework's capacity to cleanly separate high-confidence causal
 relationships from unsupported claims. The κ values indicate
 substantial-to-almost-perfect agreement (κ = {kappa_unweighted:.2f}–{kappa_weighted:.2f})

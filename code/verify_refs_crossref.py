@@ -1,14 +1,14 @@
-#!/usr/bin/env python3
-"""RIS 参考文献质量验证 + 补全（CrossRef API）
+# !/usr/bin/env python3
+"""RIS  + (CrossRef API)
 
-读 references.ris → 逐条 DOI 查 CrossRef → 校验作者/标题/期刊一致性
-→ 补全缺失摘要 → 标记异常 → 输出 verified_references.ris + audit_report.txt
+ references.ris ->  DOI  CrossRef -> ./
+->  ->  ->  verified_references.ris + audit_report.txt
 """
 import re, time, requests, sys
 
-RIS_IN  = "C:/D/workbuddy/科研/共病分析/课题设计阶段/references.ris"
-RIS_OUT = "C:/D/workbuddy/科研/共病分析/课题设计阶段/references.ris"  # overwrite
-AUDIT   = "C:/D/workbuddy/科研/共病分析/课题设计阶段/reference_audit.txt"
+RIS_IN  = "./docs/historical/references.ris"
+RIS_OUT = "./docs/historical/references.ris"  # overwrite
+AUDIT   = "./docs/historical/reference_audit.txt"
 
 def parse_ris(path):
     entries = []
@@ -78,7 +78,7 @@ for i, e in enumerate(entries):
     doi = e.get('DO','')
     pmid = e.get('AN','')
     if not doi or doi == 'N/A':
-        audit_lines.append(f"[?] Entry {i+1}: no DOI (PMID={pmid}) — cannot verify via CrossRef")
+        audit_lines.append(f"[?] Entry {i+1}: no DOI (PMID={pmid}) - cannot verify via CrossRef")
         not_found += 1
         continue
 
@@ -104,15 +104,14 @@ for i, e in enumerate(entries):
 
     issues = []
 
-    # Title check (first 8 normalized chars)
+    # Title check first 8 normalized chars
     if normalize(ris_title)[:80] != normalize(cr_title)[:80]:
         issues.append(f"TITLE mismatch: RIS='{ris_title[:60]}' vs CR='{cr_title[:60]}'")
 
-    # Author check
     if not check_author_match(ris_au, cr_author):
         issues.append(f"AUTHOR mismatch: RIS first='{ris_au[0] if ris_au else '?'}' vs CR='{cr_author}'")
 
-    # Abstract — fill if missing
+    # Abstract - fill if missing
     ab = e.get('AB','')
     if (not ab or len(ab) < 30) and cr_abstract:
         e['AB'] = cr_abstract[:3000].replace('\n',' ').replace('<jats:','').replace('</jats:','')
@@ -159,7 +158,7 @@ with open(RIS_OUT, 'w', encoding='utf-8') as f:
 print(f"Fixed RIS written -> {RIS_OUT}")
 
 with open(AUDIT, 'w', encoding='utf-8') as f:
-    f.write(f"CrossRef Audit Report — {len(entries)} entries\n")
+    f.write(f"CrossRef Audit Report - {len(entries)} entries\n")
     f.write(f"Verified: {verified} | Mismatches: {mismatch} | Not found: {not_found} | Abs filled: {fixed_ab}\n\n")
     f.write('\n'.join(audit_lines) + '\n')
 print(f"Audit report -> {AUDIT}")

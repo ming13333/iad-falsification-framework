@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Generate core figures for the framework-elevated manuscript.
 Figures: Fig1 (5-layer framework + quadrant), Fig2 (MR forest + coloc), Fig5 (triangulation).
 Reproducible: managed python venv (matplotlib/numpy). Headless Agg backend.
@@ -11,7 +10,7 @@ from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 import numpy as np
 import os
 
-OUT = os.path.join(os.path.dirname(__file__), "..", "课题设计阶段", "figures")
+OUT = os.path.join(os.path.dirname(__file__), "..", "docs/historical", "figures")
 os.makedirs(OUT, exist_ok=True)
 plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10,
                      "axes.spines.top": False, "axes.spines.right": False})
@@ -21,7 +20,6 @@ plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10,
 # ---------------------------------------------------------------------------
 def fig1():
     fig = plt.figure(figsize=(11, 5.2))
-    # left: pipeline
     axL = fig.add_axes([0.03, 0.08, 0.56, 0.84])
     axL.axis("off")
     layers = [
@@ -58,7 +56,6 @@ def fig1():
     axL.text(0.28, 0.935, "Each layer narrows the space of plausible causal interpretations",
              ha="center", fontsize=8, style="italic", color="#666")
 
-    # right: quadrant
     axR = fig.add_axes([0.64, 0.10, 0.34, 0.80])
     axR.set_xlim(0, 2); axR.set_ylim(0, 2)
     axR.set_xticks([0.5, 1.5]); axR.set_yticks([0.5, 1.5])
@@ -85,10 +82,9 @@ def fig1():
     plt.close(fig)
 
 # ---------------------------------------------------------------------------
-# FIG 2A: MR forest (clump reversal + education protection)  2B: coloc loci
+# FIG 2A: MR forest clump reversal + education protection 2B: coloc loci
 # ---------------------------------------------------------------------------
 def fig2():
-    # 2A forest
     est = [
         ("Unclumped UVMR\ninsomnia->AD", 0.1035, 0.041, 0.166, "#c00000"),
         ("Clumped UVMR (r2=0.1)\ninsomnia->AD", -0.130, -0.528, 0.268, "#555"),
@@ -114,7 +110,6 @@ def fig2():
     axA.text(-1.2, len(est)-0.05, "Unclumped +0.10 flips to null after LD-clump; education protects AD/PD;",
              fontsize=7.6, style="italic", color="#666")
 
-    # 2B coloc
     dirs = ["Fwd main", "Fwd repl", "Rev main", "Rev repl"]
     strong = [1, 0, 18, 0]
     total = [47, 49, 32, 1]

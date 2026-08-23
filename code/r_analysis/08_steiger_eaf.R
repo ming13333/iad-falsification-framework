@@ -1,18 +1,16 @@
-# B2 v2: 补 eaf + Steiger（高效版）
-# 策略：用 TwoSampleMR 原生 extract_instruments/outcome 获取 eaf
-# 仅处理 clumped 主集（54 SNP, r2=0.1），避免 2462 SNP 批量查询超时
-# 运行须 --dangerouslyDisableSandbox（联网）
+# : TwoSampleMR extract_instruments/outcome eaf
+# clumped 54 SNP, r2=0.1, 2462 SNP
 
 suppressWarnings({
   library(TwoSampleMR)
   library(ieugwasr)
 })
 
-setwd("C:/Temp/iad_g1")
+setwd("./output")
 dir.create("results/steiger", showWarnings = FALSE, recursive = TRUE)
 
 # ============================================================
-# 1. 获取 clumped insomnia instruments（含 eaf）
+# 1. clumped insomnia instruments eaf
 # ============================================================
 cat("[1] Extracting clumped insomnia instruments with eaf...\n")
 ins_exp <- tryCatch({
@@ -38,7 +36,7 @@ if (!is.null(ins_exp)) {
 }
 
 # ============================================================
-# 2. 获取 AD outcome（含 eaf）
+# 2. AD outcome eaf
 # ============================================================
 if (!is.null(ins_exp) && nrow(ins_exp) > 0) {
   cat("\n[2] Extracting AD outcome data with eaf...\n")
@@ -60,7 +58,6 @@ if (!is.null(ins_exp) && nrow(ins_exp) > 0) {
 }
 
 # ============================================================
-# 3. Harmonise
 # ============================================================
 if (!is.null(ins_exp) && nrow(ins_exp) > 0 && !is.null(ad_out) && nrow(ad_out) > 0) {
   cat("\n[3] Harmonising...\n")
@@ -84,7 +81,6 @@ if (!is.null(ins_exp) && nrow(ins_exp) > 0 && !is.null(ad_out) && nrow(ad_out) >
 }
 
 # ============================================================
-# 4. Run Steiger
 # ============================================================
 if (!is.null(harm) && nrow(harm) > 0) {
   eaf_ok <- sum(!is.na(harm$eaf.exposure) & !is.na(harm$eaf.outcome))
@@ -104,14 +100,12 @@ if (!is.null(harm) && nrow(harm) > 0) {
       cat("=== STEIGER RESULTS ===\n")
       print(st)
       
-      # 保存
       st$exposure_id <- "ukb-b-3957"
       st$outcome_id <- "ieu-b-2"
       st$n_snps <- nrow(harm_clean)
       st$clump_r2 <- 0.1
       saveRDS(st, "results/steiger/G1_steiger_fwd_clumped.rds")
       
-      # 文本摘要
       sink("results/steiger/G1_steiger_summary.txt")
       cat("Steiger directionality test\n")
       cat("Date:", as.character(Sys.Date()), "\n")

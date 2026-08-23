@@ -1,10 +1,8 @@
-#!/usr/bin/env Rscript
+# !/usr/bin/env Rscript
 # ============================================================
-# 01c_cause_patched.R
-# 修复 CAUSE 与 loo >= 2.6.0 的矩阵维度不兼容问题
-# 根因: loo 2.10.0 期望 S x N (draws x obs), cause 传 N x S (obs x draws)
-# 修复: monkey-patch cause:::in_sample_elpd_loo, 转置矩阵后再调 loo()
-# 同时修复: 向量经 ncol() 返回 NULL 导致 if() 报错
+# : loo 2.10.0 S x N draws x obs, cause N x S obs x draws
+# : monkey-patch cause:::in_sample_elpd_loo, loo
+# : ncol NULL if
 # ============================================================
 
 set.seed(20240721)
@@ -47,10 +45,9 @@ patched_in_sample_elpd_loo <- function(X, fits, variants, nsamps = 500) {
         mods$model2 <- mods$m2
     }
 
-    # 计算每个模型的 log-likelihood 矩阵
     lls <- lapply(fits, FUN = function(fit) {
         if (is.null(fit$joint_post)) {
-            # null model: 标量参数 -> 返回向量 (每 SNP 一个 loglik)
+            # null model: -> SNP loglik
             llmat <- cause:::loglik_loo(0, 0, 0, fit$rho, fit$mix_grid$S1,
                 fit$mix_grid$S2, fit$mix_grid$pi, X$beta_hat_1,
                 X$beta_hat_2, X$seb1, X$seb2)
@@ -63,18 +60,17 @@ patched_in_sample_elpd_loo <- function(X, fits, variants, nsamps = 500) {
         return(llmat)
     })
 
-    # ---- 修复: loo >= 2.6.0 兼容 ----
-    # 1. 向量 -> 1 列矩阵 (修复 ncol(vector)=NULL 问题)
-    # 2. llmat 已经是 nsamps x n_obs (draws x obs) 格式 (cause 的 t() 已处理)
-    #    loo 2.10.0 期望 S x N (draws x obs), 所以不需要额外转置
-    #    r_eff: 每个观测一个值 = ncol(llmat) = n_obs
+    # 1. -> 1 ncolvector=NULL
+    # 2. llmat nsamps x n_obs draws x obs cause t
+    # loo 2.10.0 S x N draws x obs
+    # r_eff: = ncolllmat = n_obs
     cat("  [patched] Computing LOO (nsamps=", nsamps, ")...\n")
     loos <- lapply(lls, function(llmat) {
         if (is.null(dim(llmat))) {
             llmat <- matrix(llmat, ncol = 1)
         }
         if (ncol(llmat) == 1) return(NULL)
-        # llmat: nsamps x n_obs (draws x observations) — loo 2.10.0 期望的格式
+        # llmat: nsamps x n_obs draws x observations - loo 2.10.0
         loo(llmat, r_eff = rep(1, ncol(llmat)))
     })
     cat("  [patched] LOO computation done.\n")
@@ -83,27 +79,25 @@ patched_in_sample_elpd_loo <- function(X, fits, variants, nsamps = 500) {
         i1 <- mods$m1[j]
         i2 <- mods$m2[j]
         if (is.null(loos[[i1]])) {
-            # null model vs sharing/causal: 直接用 loglik 差
+            # null model vs sharing/causal: loglik
             diff <- lls[[i1]] - loos[[i2]]$pointwise[, 1]
             est <- sum(diff)
             se <- sd(diff) * sqrt(nrow(X))
         } else if (is.null(loos[[i2]])) {
-            # 修复原代码 bug: loos[i2] (单括号) 永远非 NULL, 改用 [[i2]]
+            # bug: loos[i2] NULL, [[i2]]
             diff <- loos[[i1]]$pointwise[, 1] - lls[[i2]]
             est <- sum(diff)
             se <- sd(diff) * sqrt(nrow(X))
         } else {
-            # ---- 修复: loo >= 2.6.0 的 loo_compare 返回结构变化 ----
-            # loo 2.10.0: 第一列是 "model" (字符型), elpd_diff/se_diff 在第 2/3 列
-            # 旧版 loo: 第一列就是 elpd_diff (数值型), 无 model 列
+            # ---- : loo >= 2.6.0 loo_compare
+            # loo 2.10.0: "model" , elpd_diff/se_diff 2/3
+            # loo: elpd_diff , model
             comp <- loo_compare(loos[[i1]], loos[[i2]])
             if ("model" %in% colnames(comp)) {
-                # loo >= 2.6.0: 用列名访问, 用 model 列判断哪个模型更好
                 best_is_model2 <- comp$model[1] == "model2"
                 est_raw <- comp[2, "elpd_diff"]
                 se_val <- comp[2, "se_diff"]
             } else {
-                # 旧版 loo: 用行名和列索引
                 best_is_model2 <- rownames(comp)[1] == "model2"
                 est_raw <- comp[2, 1]
                 se_val <- comp[2, 2]
@@ -126,43 +120,40 @@ patched_in_sample_elpd_loo <- function(X, fits, variants, nsamps = 500) {
     return(ret)
 }
 
-# 注入到 cause 偶namespace
 cat("Patching cause:::in_sample_elpd_loo for loo >= 2.6.0 compatibility...\n")
 assignInNamespace("in_sample_elpd_loo", patched_in_sample_elpd_loo, ns = "cause")
 cat("Patch applied successfully.\n\n")
 
 # ============================================================
-# 配置
 # ============================================================
-DIR_RAW  <- "C:/Temp/iad_g1/data/raw"
-DIR_RES  <- "C:/Temp/iad_g1/results"
-DIR_LD   <- "C:/Temp/iad_g1/ld_ref/LDscore"
-DIR_EXTR <- "C:/Temp/iad_g1/data/extracted"
+DIR_RAW  <- "./output/data/raw"
+DIR_RES  <- "./output/results"
+DIR_LD   <- "./output/ld_ref/LDscore"
+DIR_EXTR <- "./output/data/extracted"
 
-# ---- 构建 CHR+POS -> rsID 映射 ----
-cat("构建 CHR+POS -> rsID 映射...\n")
+# ---- CHR+POS -> rsID
+cat(" CHR+POS -> rsID ...\n")
 rsid_map <- rbindlist(lapply(1:22, function(chr) {
   f <- file.path(DIR_LD, paste0(chr, ".l2.ldscore.gz"))
   if (!file.exists(f)) return(NULL)
   fread(f, select=c("CHR","SNP","BP"))
 }))
 setnames(rsid_map, c("SNP","BP"), c("rsid","POS"))
-cat("映射表:", nrow(rsid_map), "SNPs\n")
+cat(":", nrow(rsid_map), "SNPs\n")
 
-# ---- 辅助函数 (从 01b 复制) ----
 load_gwas_for_overlap <- function(gwas_id, GWAS_FILES) {
   f <- GWAS_FILES[[gwas_id]]
   dt <- fread(f)
   if ("BP" %in% names(dt)) setnames(dt, "BP", "POS")
   if (!"n" %in% names(dt) && "n_cases" %in% names(dt) && "n_controls" %in% names(dt)) {
     dt[, n := n_cases + n_controls]
-    cat("  补 n 列: n = n_cases + n_controls\n")
+    cat("   n : n = n_cases + n_controls\n")
   }
   if (!grepl("^rs", dt$SNP[1])) {
-    cat("  SNP 列非 rsID 格式 (", dt$SNP[1], "), 用 CHR+POS -> rsID 映射...\n")
+    cat("  SNP  rsID  (", dt$SNP[1], "),  CHR+POS -> rsID ...\n")
     dt <- merge(dt, rsid_map[, .(CHR, POS, rsid)], by=c("CHR","POS"), all.x=TRUE)
     n_mapped <- sum(!is.na(dt$rsid))
-    cat("  映射成功:", n_mapped, "/", nrow(dt), "SNPs\n")
+    cat("  :", n_mapped, "/", nrow(dt), "SNPs\n")
     dt <- dt[!is.na(rsid)]
     dt[, SNP := rsid]
     dt[, rsid := NULL]
@@ -170,7 +161,7 @@ load_gwas_for_overlap <- function(gwas_id, GWAS_FILES) {
       n_before <- nrow(dt)
       setorder(dt, SNP, p)
       dt <- dt[!duplicated(SNP)]
-      cat("  去重:", n_before, "->", nrow(dt), "\n")
+      cat("  :", n_before, "->", nrow(dt), "\n")
     }
   }
   dt <- dt[grepl("^rs", SNP)]
@@ -194,21 +185,19 @@ COMBOS <- list(
 )
 
 # ============================================================
-# CAUSE 运行函数
 # ============================================================
 run_cause_one <- function(exp_id, out_id, label) {
-  cat("\n[", label, "] CAUSE 启动 (exp=", exp_id, ", out=", out_id, ")...\n")
+  cat("\n[", label, "] CAUSE  (exp=", exp_id, ", out=", out_id, ")...\n")
 
   e <- tryCatch(load_gwas_for_overlap(exp_id, GWAS_FILES),
-    error=function(err) { cat("[",label,"] 读暴露失败:", conditionMessage(err), "\n"); NULL })
+    error=function(err) { cat("[",label,"] :", conditionMessage(err), "\n"); NULL })
   o <- tryCatch(load_gwas_for_overlap(out_id, GWAS_FILES),
-    error=function(err) { cat("[",label,"] 读结局失败:", conditionMessage(err), "\n"); NULL })
+    error=function(err) { cat("[",label,"] :", conditionMessage(err), "\n"); NULL })
   if (is.null(e) || is.null(o)) return(NULL)
 
   e <- data.frame(snp=e$SNP, beta_hat=e$beta, se=e$se, A1=e$A1, A2=e$A2, stringsAsFactors=FALSE)
   o <- data.frame(snp=o$SNP, beta_hat=o$beta, se=o$se, A1=o$A1, A2=o$A2, stringsAsFactors=FALSE)
 
-  # 1) gwas_merge
   X <- tryCatch(
     cause::gwas_merge(e, o,
                       snp_name_cols=c("snp","snp"),
@@ -217,12 +206,12 @@ run_cause_one <- function(exp_id, out_id, label) {
                       A1_cols=c("A1","A1"),
                       A2_cols=c("A2","A2"),
                       compute_pvals=TRUE),
-    error=function(err) { cat("[",label,"] gwas_merge 失败:", conditionMessage(err), "\n"); NULL }
+    error=function(err) { cat("[",label,"] gwas_merge :", conditionMessage(err), "\n"); NULL }
   )
   if (is.null(X)) return(NULL)
-  cat("[", label, "] gwas_merge 完成:", nrow(X), "SNPs\n")
+  cat("[", label, "] gwas_merge :", nrow(X), "SNPs\n")
 
-  # 2) est_cause_params
+  # 2 est_cause_params
   varlist <- tryCatch({
     s <- X$snp
     ns <- if (length(s) > 500000) 500000 else length(s)
@@ -230,36 +219,33 @@ run_cause_one <- function(exp_id, out_id, label) {
   }, error=function(err) NULL)
   params <- tryCatch(
     cause::est_cause_params(X, variants=varlist),
-    error=function(err) { cat("[",label,"] est_cause_params 失败:", conditionMessage(err), "\n"); NULL }
+    error=function(err) { cat("[",label,"] est_cause_params :", conditionMessage(err), "\n"); NULL }
   )
   if (is.null(params)) return(NULL)
-  cat("[", label, "] est_cause_params 完成\n")
+  cat("[", label, "] est_cause_params \n")
 
-  # 3) 变体选择: p<1e-3
   variants <- tryCatch({
     if (!is.null(X$p1)) {
       v <- X$snp[which(X$p1 < 1e-3)]
-      cat("[", label, "] p<1e-3 过滤后变体数:", length(v), "\n")
-      if (length(v) > 50000) { v <- sample(v, 50000); cat("[", label, "] 降采样至 50k\n") }
+      cat("[", label, "] p<1e-3 :", length(v), "\n")
+      if (length(v) > 50000) { v <- sample(v, 50000); cat("[", label, "]  50k\n") }
       v
     } else {
-      cat("[", label, "] 无 p1 列, 退回 500k 子集\n")
+      cat("[", label, "]  p1 ,  500k \n")
       varlist
     }
   }, error=function(err) {
-    cat("[", label, "] 变体选择失败:", conditionMessage(err), "\n")
+    cat("[", label, "] :", conditionMessage(err), "\n")
     varlist
   })
-  cat("[", label, "] 最终变体数:", length(variants), "\n")
+  cat("[", label, "] :", length(variants), "\n")
 
-  # 4) cause (patched)
   fit <- tryCatch(
     cause::cause(X=X, variants=variants, param_ests=params, force=TRUE),
-    error=function(err) { cat("[",label,"] cause() 失败:", conditionMessage(err), "\n"); NULL }
+    error=function(err) { cat("[",label,"] cause() :", conditionMessage(err), "\n"); NULL }
   )
   if (is.null(fit)) return(NULL)
 
-  # 5) 输出
   summ <- tryCatch(summary(fit), error=function(err) NULL)
   elpd <- tryCatch(fit$elpd, error=function(err) NULL)
   causal_p <- NA_real_
@@ -283,16 +269,15 @@ run_cause_one <- function(exp_id, out_id, label) {
     cause_n_variants=length(variants),
     stringsAsFactors=FALSE
   )
-  cat("[", label, "] CAUSE 完成: causal_p=", signif(causal_p,3),
+  cat("[", label, "] CAUSE : causal_p=", signif(causal_p,3),
       " decision=", decision, "\n")
   return(res)
 }
 
 # ============================================================
-# 主执行
 # ============================================================
 cat("\n========================================\n")
-cat("  CAUSE 重叠校正 (loo 兼容性修复版)\n")
+cat("  CAUSE  (loo )\n")
 cat("========================================\n\n")
 
 cause_results <- list()
@@ -304,19 +289,17 @@ for (cmb in COMBOS) {
 if (length(cause_results) > 0) {
   cause_df <- do.call(rbind, cause_results)
   write.csv(cause_df, file.path(DIR_RES, "G1_cause.csv"), row.names=FALSE)
-  cat("\n=== CAUSE 结果已保存:", file.path(DIR_RES, "G1_cause.csv"), "===\n")
+  cat("\n=== CAUSE :", file.path(DIR_RES, "G1_cause.csv"), "===\n")
   print(cause_df)
 } else {
-  cat("\n=== CAUSE: 无成功结果 ===\n")
+  cat("\n=== CAUSE:  ===\n")
   cause_df <- NULL
 }
 
-# ---- 更新 G1_bidirectional.rds ----
 rds_path <- file.path(DIR_RES, "G1_bidirectional.rds")
 if (file.exists(rds_path)) {
   dat <- readRDS(rds_path)
 
-  # 读取已完成的 MRlap 结果
   mrlap_csv <- file.path(DIR_RES, "G1_mrlap.csv")
   if (file.exists(mrlap_csv)) {
     mrlap_df <- fread(mrlap_csv)
@@ -324,24 +307,23 @@ if (file.exists(rds_path)) {
       row <- mrlap_df[label == lbl]
       if (nrow(row) > 0) {
         dat[[lbl]] <- as.data.frame(row)
-        cat("MRlap", lbl, "-> RDS 已更新\n")
+        cat("MRlap", lbl, "-> RDS \n")
       }
     }
   }
 
-  # 写入 CAUSE 结果
   for (lbl in c("cause_fwd","cause_rev","cause_rep_fwd","cause_rep_rev")) {
     if (!is.null(cause_results[[lbl]])) {
       dat[[lbl]] <- cause_results[[lbl]]
-      cat("CAUSE", lbl, "-> RDS 已更新\n")
+      cat("CAUSE", lbl, "-> RDS \n")
     }
   }
 
   dat$overlap_correction_run <- TRUE
   saveRDS(dat, rds_path)
-  cat("\n=== G1_bidirectional.rds 已更新 (overlap_correction_run=TRUE) ===\n")
+  cat("\n=== G1_bidirectional.rds  (overlap_correction_run=TRUE) ===\n")
 }
 
 cat("\n========================================\n")
-cat("  CAUSE 修复版完成\n")
+cat("  CAUSE \n")
 cat("========================================\n")

@@ -1,14 +1,13 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# !/usr/bin/env python3
 """Parse the GM manuscript: extract in-text citations + reference list; check
 coverage (dangling / uncited) and BMC ordering (numbering by order of first citation)."""
 import re
 from docx import Document
 
-DOCX = r"C:/D/workbuddy/科研/共病分析/课题设计阶段/manuscript_GenomeMedicine_submission.docx"
-MD   = r"C:/D/workbuddy/科研/共病分析/课题设计阶段/manuscript_draft_with_23refs.md"
+DOCX = r"./docs/historical/manuscript_GenomeMedicine_submission.docx"
+MD   = r"./docs/historical/manuscript_draft_with_23refs.md"
 
-# ---------- 1. reference list from docx ----------
+# ---------- 1. reference list from docx
 d = Document(DOCX)
 paras = [p.text for p in d.paragraphs]
 ref_idx = [i for i, t in enumerate(paras) if t.strip() == 'References']
@@ -23,7 +22,7 @@ for t in ref_paras:
         print("WARN non-ref paragraph in refs section:", t[:60])
 print("refs parsed from docx:", len(refs), "min:", min(refs), "max:", max(refs))
 
-# ---------- 2. citations from md full text ----------
+# ---------- 2. citations from md full text
 with open(MD, encoding='utf-8') as f:
     mdtext = f.read()
 
@@ -69,7 +68,7 @@ print("cited distinct ref numbers:", len(cited_nums))
 print("dangling citations (cited but no ref):", missing)
 print("uncited refs (in list, never cited):", uncited)
 
-# ---------- 3. BMC ordering: refs should be numbered by first citation ----------
+# ---------- 3. BMC ordering: refs should be numbered by first citation
 order = sorted(first_cite.items(), key=lambda kv: kv[1][0])
 seq = [n for n, _ in order]
 print("\n=== first-citation order of reference numbers ===")
@@ -89,14 +88,14 @@ print("\nuncited ref numbers (with first-cite offset if any):")
 for n in uncited:
     print("  ref", n, "first_cite:", first_cite.get(n, "NEVER"))
 
-# ---------- 4. contexts for flagged numbers ----------
+# ---------- 4. contexts for flagged numbers
 import json
 print("\n=== first-citation contexts for flagged refs ===")
 for n in [6, 7, 8, 9, 30, 31, 32, 43, 44, 45, 46, 47, 48, 51, 78, 79]:
     off, snip = first_cite.get(n, (None, "NOT CITED"))
     print(f"ref {n}: offset={off} | ...{snip}...")
 
-# ---------- 5. dump refs for crossref stage ----------
-with open(r"C:/Temp/iad_g1/refs_dump.json", 'w', encoding='utf-8') as f:
+# ---------- 5. dump refs for crossref stage
+with open(r"./output/refs_dump.json", 'w', encoding='utf-8') as f:
     json.dump({str(k): v for k, v in sorted(refs.items())}, f, ensure_ascii=False, indent=1)
-print("\ndumped refs to C:/Temp/iad_g1/refs_dump.json")
+print("\ndumped refs to ./output/refs_dump.json")

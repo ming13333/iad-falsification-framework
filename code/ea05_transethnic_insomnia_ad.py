@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 """
 ea05_transethnic_insomnia_ad.py
 Trans-ethnic (EUR instruments -> EAS outcome) MR check for the core study pair:
@@ -20,20 +20,20 @@ Output:
 import csv, os, math, gzip
 import numpy as np
 
-PROJ = r'c:/D/workbuddy/科研/共病分析'
+PROJ = r'.'
 IVS  = 'C:/Temp/g1_clumped_insomnia_ivs.csv'
 GARD = os.path.join(PROJ, 'data/processed/gard_ea_ad_hg19.tsv.gz')
 OUTDIR = os.path.join(PROJ, 'results/ea_mr')
 os.makedirs(OUTDIR, exist_ok=True)
 
-# ---------- 1. load EUR insomnia instruments ----------
+# ---------- 1. load EUR insomnia instruments
 ivs = []
 with open(IVS, 'r') as f:
     for row in csv.DictReader(f):
         ivs.append({k: row[k] for k in row})
 print(f'Loaded {len(ivs)} EUR LD-independent insomnia instruments')
 
-# ---------- 2. index GARD EAS AD by hg19 chr:pos ----------
+# ---------- 2. index GARD EAS AD by hg19 chr:pos
 gard = {}
 n_rows = 0
 with gzip.open(GARD, 'rt') as f:
@@ -44,15 +44,15 @@ with gzip.open(GARD, 'rt') as f:
         gard[key] = row
 print(f'Indexed GARD EAS AD: {n_rows:,} variants')
 
-# ---------- 3. harmonize (position match + allele alignment) ----------
+# ---------- 3. harmonize position match + allele alignment
 harm = []
 for iv in ivs:
     key = f"{iv['chr']}:{iv['pos']}"
     g = gard.get(key)
     if g is None:
         continue
-    # alleles: exposure A1=effect allele?  In ukb-b-3957 clean: A1=effect, A2=other.
-    # GARD: A1=effect, A2=other (beta is for A1).
+    # alleles: exposure A1=effect allele? In ukb-b-3957 clean: A1=effect, A2=other.
+    # GARD: A1=effect, A2=other beta is for A1.
     ea_iv, oa_iv = iv['ea'], iv['oa']
     ea_g, oa_g = g['A1'], g['A2']
     # allele alignment: if iv effect allele == gard effect allele -> same direction
@@ -80,7 +80,6 @@ print(f'Harmonized into GARD EAS AD: {len(harm)} / {len(ivs)} instruments')
 if len(harm) < 3:
     print('FATAL: too few instruments'); raise SystemExit(1)
 
-# ---------- 4. MR ----------
 bx = np.array([d['bx'] for d in harm]); sx = np.array([d['sx'] for d in harm])
 by = np.array([d['by'] for d in harm]); sy = np.array([d['sy'] for d in harm])
 k = len(harm)
@@ -104,7 +103,6 @@ scale = math.sqrt(q/q_df) if (q_df > 0 and q_p < 0.05) else 1.0
 se_ivw_re = se_ivw*scale
 z_re, p_re = z_test(beta_ivw, se_ivw_re)
 
-# MR-Egger
 w_egg = 1.0/sy**2
 X = np.column_stack([bx, np.ones(k)])
 XTWX = X.T @ np.diag(w_egg) @ X
@@ -119,7 +117,7 @@ try:
 except np.linalg.LinAlgError:
     slope=inter=se_slope=se_inter=float('nan'); p_s=p_i=float('nan')
 
-# Weighted median (empirical bootstrap-free; linear interpolation of weighted ratios)
+# Weighted median empirical bootstrap-free; linear interpolation of weighted ratios
 order = np.argsort(beta_iv)
 bs_ = beta_iv[order]; ws_ = w[order]
 cum = np.cumsum(ws_); tot = cum[-1]
@@ -132,15 +130,14 @@ else:
 se_wm = se_ivw
 z_wm, p_wm = z_test(beta_wm, se_wm)
 
-# ---------- 5. power (directional-consistency, mRnd-style) ----------
+# ---------- 5. power directional-consistency, mRnd-style
 # R^2 of the 40 instruments in the EUR insomnia GWAS
 f_stats = (bx/sx)**2
 r2_iv = np.sum(f_stats/(f_stats + n_exp))
-# case fraction
 p_cases = n_cases/n_out
 # for a binary outcome, the variance explained by instruments at the liability scale
-# is approximated by R2_liab = R2_obs * ... we use a simple approximation:
-# z-score power for detecting the EUR clumped null (beta_eur=-0.13) at EAS SE:
+# is approximated by R2_liab = R2_obs * ... we use a simple approximation
+# z-score power for detecting the EUR clumped null beta_eur=-0.13 at EAS SE
 # effective SE from IVW here.
 z_detect = abs(beta_ivw)/se_ivw
 power_2sided_005 = None
@@ -153,7 +150,6 @@ def power_for_beta(b_alt, se):
 power_eur_null = power_for_beta(beta_ivw, se_ivw)  # power to detect OUR point estimate
 power_eur_obs = power_for_beta(-0.13, se_ivw)      # power to detect EUR clumped beta=-0.13
 
-# ---------- 6. report ----------
 lines = []
 lines.append('=== Trans-ethnic Insomnia -> AD MR (EUR instruments -> EAS outcome) ===\n')
 lines.append(f'Exposure: Insomnia ukb-b-3957 (UK Biobank, EUR, n={n_exp:,}); {len(ivs)} LD-independent instruments at r2<0.001, 10 Mb (current 1000G EUR reference; primary EUR analysis reported n=54 under the same thresholds with the July 2026 reference)')
@@ -169,13 +165,13 @@ lines.append(f'MR-Egger intercept = {inter:+.4f}  SE = {se_inter:.4f}  p = {p_i:
 lines.append(f'\n--- EUR comparison ---')
 lines.append(f'EUR clumped (54 IVs, loose): beta = -0.130, p = 0.52  [manuscript Level 2]')
 lines.append(f'EAS point estimate: beta = {beta_ivw:+.4f}, p = {p_ivw:.4f}')
-lines.append(f'Direction: {"consistent with EUR (negative)" if beta_ivw<0 else "opposite sign to EUR (positive)"} — EUR 95% CI [-0.53, 0.27] vs EAS 95% CI [{beta_ivw-1.96*se_ivw:+.3f}, {beta_ivw+1.96*se_ivw:+.3f}]')
+lines.append(f'Direction: {"consistent with EUR (negative)" if beta_ivw<0 else "opposite sign to EUR (positive)"} - EUR 95% CI [-0.53, 0.27] vs EAS 95% CI [{beta_ivw-1.96*se_ivw:+.3f}, {beta_ivw+1.96*se_ivw:+.3f}]')
 lines.append(f'\n--- Power (directional consistency only) ---')
 lines.append(f'R2 instruments (EUR): {r2_iv:.4f}')
 lines.append(f'Power to detect EAS point estimate at alpha=0.05 (2-sided): {power_eur_null:.3f}')
 lines.append(f'Power to detect EUR clumped beta=-0.13: {power_eur_obs:.3f}')
 lines.append(f'\n--- Caveats ---')
-lines.append(f'1. EAS outcome small (cases={n_cases:,}) — wide CIs; directional-consistency check only, NOT an independent replication')
+lines.append(f'1. EAS outcome small (cases={n_cases:,}) - wide CIs; directional-consistency check only, NOT an independent replication')
 lines.append(f'2. EUR instruments transferred trans-ethnically; EUR LD used for clumping (no EAS LD panel available)')
 lines.append(f'3. Instrument count (n={k}) differs from primary EUR analysis (n=54) due to LD reference panel update at the public LD server')
 lines.append(f'4. Steiger/coloc/LDSC not possible without EAS LD reference')
@@ -183,7 +179,6 @@ lines.append(f'4. Steiger/coloc/LDSC not possible without EAS LD reference')
 rep = '\n'.join(lines)
 print(rep)
 
-# ---------- 7. save ----------
 with open(os.path.join(OUTDIR, 'ea_transethnic_insomnia_ad_report.txt'), 'w') as f:
     f.write(rep + '\n')
 

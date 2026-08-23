@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
-"""PubMed 跨库检索 → RIS 参考文献导出（insomnia-AD 三角验证框架论文）
+# !/usr/bin/env python3
+"""PubMed  -> RIS (insomnia-AD )
 
-用法:
-  python build_references.py          # 交互模式：按类别搜索 PubMed，合成 RIS
-  python build_references.py --pmids  # 按预定义 PMID 列表精确获取并生成 RIS
+:
+  python build_references.py          # :  PubMed,  RIS
+  python build_references.py --pmids  #  PMID  RIS
 
-输出: C:/D/workbuddy/科研/共病分析/课题设计阶段/references.ris
+: ./docs/historical/references.ris
 """
 import time, json, sys, re, csv
 import requests
@@ -14,11 +14,9 @@ from urllib.parse import quote
 BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
 TOOL = "insomnia_ad_ref_builder"
 EMAIL = "research@example.com"
-OUT_RIS = "C:/D/workbuddy/科研/共病分析/课题设计阶段/references.ris"
+OUT_RIS = "./docs/historical/references.ris"
 
-# ── 核心引用 PMID/DOI 列表（事先人工确认的）──
 KNOWN_PMIDS = {
-    # MR 方法学
     "Burgess2013_IVW": 23614981,        # Burgess et al. Genet Epidemiol 2013
     "Bowden2016_WM": 27061298,          # Bowden et al. Genet Epidemiol 2016 (weighted median)
     "Bowden2015_Egger": 26050253,       # Bowden et al. IJE 2015 (MR-Egger)
@@ -28,55 +26,45 @@ KNOWN_PMIDS = {
     "Morrison2020_CAUSE": 32989316,     # Morrison et al. Nat Genet 2020 (CAUSE)
     "Burgess2011_MVMR": 21300989,       # Burgess & Thompson. Stat Med 2011 (MVMR)
     "Sanderson2019_MVMR": 30452641,     # Sanderson et al. Stat Med 2019 (MVMR)
-    "Mounier2023_MRlap": None,          # Mounier & Kutalik 2023 — need DOI search
+    "Mounier2023_MRlap": None,          # Mounier & Kutalik 2023 - need DOI search
     "Burgess2015_MVMR": 25411351,       # Burgess et al. IJE 2015 (multivariable MR)
 
     # LDSC / Genetic Correlation
     "BulikSullivan2015_LDSC1": 25642630,   # Bulik-Sullivan et al. Nat Genet 2015 (LDSC)
     "BulikSullivan2015_LDSC2": 25642631,   # Bulik-Sullivan et al. Nat Genet 2015 (rg)
 
-    # Colocalization
     "Giambartolomei2014_coloc": 24830394, # Giambartolomei et al. PLoS Genet 2014
 
-    # AD GWAS
     "Kunkle2019_AD": 30820047,             # Kunkle et al. Nat Genet 2019
     "Bellenguez2022_AD": 35379992,         # Bellenguez et al. Nat Genet 2022
     "Lambert2013_AD": 24162737,            # Lambert et al. Nat Genet 2013 (IGAP)
 
-    # Insomnia GWAS
     "Lane2019_Insomnia": 30804566,         # Lane et al. Nat Genet 2019
     "Jansen2019_Insomnia": 30804565,       # Jansen et al. Nat Genet 2019
 
-    # Education
     "Lee2018_Edu": 30038396,               # Lee et al. Nat Genet 2018
     "Okbay2022_Edu": 35361970,             # Okbay et al. Nat Genet 2022
 
-    # Proteomics
     "Sun2023_UKBPPP": 37794188,            # Sun et al. Nature 2023 (UKB-PPP)
     "Sun2018_INTERVAL": 29875488,          # Sun et al. Nature 2018 (INTERVAL)
     "Zheng2020_protMR": 33020668,          # Zheng et al. Nat Genet 2020
 
-    # Triangulation / Framework
     "Lawlor2016_Triangulation": 27342221,  # Lawlor et al. IJE 2016
     "Munafo2018_Nature": 29474905,         # Munafo & Davey Smith. Nature 2018
     "DaveySmith2003_MRreview": 12689998,   # Davey Smith & Ebrahim. IJE 2003
 
-    # STROBE-MR
     "STROBE_MR_2021": 34698778,            # Skrivankova et al. JAMA 2021
 
     # Insomnia-AD literature
     "KorologouLinden2022_AD_PheWAS": 35953482,  # AD PheWAS+MR Nat Commun 2022
-    "Shi2018_insomnia_cognitive": 29445277,      # Insomnia → cognitive decline MR
+    "Shi2018_insomnia_cognitive": 29445277,      # Insomnia -> cognitive decline MR
     "Henry2022_insomnia_AD_MR": None,             # need search
 
-    # Steiger
     "Hemani2017_Steiger": None,            # Hemani et al. 2017 Steiger
 
-    # R software
     "R_Core_2023": None,                   # R Core Team
 }
 
-# ── 补充检索词（通过 PubMed 自由文本检索）──
 SEARCH_QUERIES = {
     "insomnia_AD_MR": '("insomnia"[tiab] OR "sleep"[tiab]) AND ("Alzheimer"[tiab] OR "dementia"[tiab]) AND "Mendelian randomization"[tiab] AND (2019:2026[pdat])',
     "education_AD_protection_MR": '("educational attainment"[tiab] OR "education"[tiab]) AND ("Alzheimer"[tiab]) AND "Mendelian randomization"[tiab]',
@@ -107,7 +95,7 @@ def eutils(endpoint, params, retries=3):
 
 
 def search_pubmed(query, retmax=30):
-    """ESearch → PMID 列表"""
+    """ESearch -> PMID """
     params = {"db": "pubmed", "term": query, "retmax": retmax,
               "retmode": "json", "sort": "relevance", "usehistory": "n"}
     data = eutils("esearch.fcgi", params)
@@ -117,7 +105,7 @@ def search_pubmed(query, retmax=30):
 
 
 def fetch_pubmed_records(pmids):
-    """EFetch → MEDLINE 格式文本"""
+    """EFetch -> MEDLINE """
     if not pmids:
         return ""
     params = {"db": "pubmed", "id": ",".join(str(p) for p in pmids),
@@ -126,7 +114,7 @@ def fetch_pubmed_records(pmids):
 
 
 def parse_medline_to_ris(medline_text):
-    """将 MEDLINE 格式文本解析为 RIS 条目列表"""
+    """ MEDLINE  RIS """
     entries = []
     current = {}
     for line in medline_text.split("\n"):
@@ -166,7 +154,7 @@ def parse_medline_to_ris(medline_text):
 
 
 def ris_from_record(r):
-    """将单条 MEDLINE 记录转换为 RIS 字符串"""
+    """ MEDLINE  RIS """
     ris = []
     ris.append("TY  - JOUR")
     ris.append(f"TI  - {r.get('TI', 'N/A')}")
@@ -197,7 +185,6 @@ def main():
     all_pmids = set()
     all_records = {}
 
-    # ── Phase 1: 预定义 PMID 精确获取 ──
     known = [p for p in KNOWN_PMIDS.values() if p is not None]
     print(f"Phase 1: fetching {len(known)} known PMIDs...")
     for i in range(0, len(known), 50):
@@ -210,7 +197,6 @@ def main():
         time.sleep(0.35)
     print(f"  -> {len(all_records)} records from known PMIDs")
 
-    # ── Phase 2: 自由文本检索 ──
     for label, query in SEARCH_QUERIES.items():
         print(f"Phase 2: searching '{label}'...")
         pmids = search_pubmed(query, retmax=15)
@@ -228,28 +214,25 @@ def main():
 
     print(f"\nTotal unique PMIDs collected: {len(all_pmids)}")
 
-    # ── Phase 3: 写入 RIS ──
     with open(OUT_RIS, "w", encoding="utf-8") as f:
         for pmid in sorted(all_pmids, key=lambda x: int(x)):
             r = all_records[pmid]
             f.write(ris_from_record(r) + "\n")
     print(f"RIS written to {OUT_RIS}")
 
-    # ── Phase 4: 简单质量报告 ──
     missing_doi = [pmid for pmid, r in all_records.items() if "DOI" not in r]
     missing_ab = [pmid for pmid, r in all_records.items() if "AB" not in r or len(r["AB"]) < 30]
     print(f"\nQuality report:")
     print(f"  Missing DOI: {len(missing_doi)} ({', '.join(missing_doi[:10])}...)")
     print(f"  Missing/short abstract: {len(missing_ab)} ({', '.join(missing_ab[:10])}...)")
     
-    # 输出引用计数
     print(f"\nCategory counts (known PMIDs matched):")
     for label, pmid in KNOWN_PMIDS.items():
         if pmid and str(pmid) in all_records:
             r = all_records[str(pmid)]
             print(f"  [{label}] {r.get('AU',['?'])[0] if r.get('AU') else '?'} ({r.get('PY','?')}) - {r.get('TI','N/A')[:70]}...")
         elif pmid is None:
-            print(f"  [{label}] (PMID unknown — needs manual lookup)")
+            print(f"  [{label}] (PMID unknown - needs manual lookup)")
 
 if __name__ == "__main__":
     main()

@@ -1,11 +1,11 @@
-"""Figure 4: Education PheWAS — AD, PD, MS protection + East Asian replication.
+"""Figure 4: Education PheWAS - AD, PD, MS protection + East Asian replication.
 Generates pure vector SVG + PNG."""
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np, os
 
-OUT = os.path.join(os.path.dirname(__file__), "..", "课题设计阶段", "figures")
+OUT = os.path.join(os.path.dirname(__file__), "..", "docs/historical", "figures")
 os.makedirs(OUT, exist_ok=True)
 
 # Data from manuscript §3.5 / §3.5.2
@@ -39,7 +39,6 @@ ax.set_xlabel("MR effect (log OR / SD)  [<0 protective | >0 risk]", fontsize=9)
 ax.set_title("Education PheWAS: protection across AD/PD with East Asian replication",
              fontsize=10, fontweight="bold")
 
-# Annotations
 ax.annotate("Strong protection\nin EUR", xy=(-0.33, 2.8), fontsize=7.8, color="#1f77b4",
             ha="center", style="italic")
 ax.annotate("No effect", xy=(0.12, 1.0), fontsize=7.8, color="#8c8c8c",

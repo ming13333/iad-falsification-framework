@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Simulation study: operating characteristics of the six-level falsification framework
 ==============================================================================
@@ -100,7 +99,7 @@ def simulate_replicate(n_iv, n_block, effect, pleio, overlap):
     se_y = np.full(n_iv, 0.03)
     by = gamma_y + 0.01 * e_y
 
-    # ---- Mediator M (X -> M -> Y), signal ONLY under true causal pathway ----
+    # ---- Mediator M X -> M -> Y, signal ONLY under true causal pathway
     if effect > 0:
         a = 0.40
         bxm = a * bx                       # instrument -> M
@@ -109,7 +108,7 @@ def simulate_replicate(n_iv, n_block, effect, pleio, overlap):
         bxm = rng.normal(0, 0.01, n_iv)    # no true mediation channel
         bym = rng.normal(0, 0.01, n_iv)
 
-    # ---- Independent second sample for L6 (different noise draw) ----
+    # ---- Independent second sample for L6 different noise draw
     e2 = rng.normal(0, 1, n_iv)
     by2 = true_beta * bx + (u if pleio != "none" else 0) + \
         (0.03 if pleio == "directional" else 0) + 0.01 * e2
@@ -123,7 +122,7 @@ def grade_framework(d):
     bx, by, se_x, se_y, block = d["bx"], d["by"], d["se_x"], d["se_y"], d["block"]
     s = {}
 
-    # ---- L1: association (unclumped IVW) ----
+    # ---- L1: association unclumped IVW
     b1, se1, p1 = ivw(bx, by, se_x, se_y)
     s["L1"] = 2 if (p1 < 0.05 and abs(b1) > 1e-4) else (1 if p1 < 0.2 else 0)
     if s["L1"] == 0:
@@ -132,7 +131,7 @@ def grade_framework(d):
                     L1_p=p1, L2_p=np.nan, egg_int_p=np.nan, n_iv_clumped=0,
                     ivw_b=b1, ivw_p=p1)
 
-    # ---- L2: robustness (clumped IVW + no directional pleiotropy) ----
+    # ---- L2: robustness clumped IVW + no directional pleiotropy
     idx = clump_instruments(bx, se_x, block)
     bc, byc, se_xc, se_yc = bx[idx], by[idx], se_x[idx], se_y[idx]
     b2, se2, p2 = ivw(bc, byc, se_xc, se_yc)
@@ -140,16 +139,16 @@ def grade_framework(d):
     n_eff = len(bc)
     s["L2"] = 2 if (p2 < 0.05 and p_int > 0.05) else (1 if p2 < 0.05 else 0)
 
-    # ---- L3: architecture (signal spread across blocks, not single-locus) ----
+    # ---- L3: architecture signal spread across blocks, not single-locus
     n_blocks_used = len(np.unique(block[idx]))
     frac_blocks = n_blocks_used / len(np.unique(block))
     s["L3"] = 2 if (frac_blocks >= 0.5 and n_eff >= 5) else (1 if frac_blocks >= 0.3 else 0)
 
-    # ---- L4: conditional/direct-effect estimate (MVMR proxy) ----
-    # crude adjustment: residualize Y on the pleiotropy proxy (u ~ gamma_y - true_beta*bx)
+    # ---- L4: conditional/direct-effect estimate MVMR proxy
+    # crude adjustment: residualize Y on the pleiotropy proxy u ~ gamma_y - true_beta*bx
     # In simulation we know u; in real life MVMR adjusts for correlated exposures.
     resid_b = by - (d["true_beta"] * bx - d["true_beta"] * bx)   # = by (no-op guard)
-    # Use leave-one-out robustness as direct-effect proxy:
+    # Use leave-one-out robustness as direct-effect proxy
     b_loo = []
     for i in range(len(bc)):
         keep = np.arange(len(bc)) != i
@@ -157,12 +156,12 @@ def grade_framework(d):
     loo_spread = np.std(b_loo) / max(np.abs(b2), 1e-6)
     s["L4"] = 2 if (p2 < 0.05 and loo_spread < 0.5) else (1 if p2 < 0.05 else 0)
 
-    # ---- L5: two-step mediation (X->M and M->Y) ----
+    # ---- L5: two-step mediation X->M and M->Y
     b5x, se5x, p5x = ivw(bx, d["bxm"], se_x, np.full(len(bx), 0.02))
     b5y, se5y, p5y = ivw(d["bxm"], d["bym"], np.full(len(bx), 0.02), np.full(len(bx), 0.03))
     s["L5"] = 2 if (p5x < 0.05 and p5y < 0.05) else (1 if (p5x < 0.05 or p5y < 0.05) else 0)
 
-    # ---- L6: external validation (independent sample directional consistency) ----
+    # ---- L6: external validation independent sample directional consistency
     b6, se6, p6 = ivw(bx, d["by2"], se_x, np.full(len(bx), 0.03))
     consistent = (b6 * b2) > 0 if abs(b2) > 1e-4 else (abs(b6) < 1e-3)
     s["L6"] = 2 if (p6 < 0.05 and consistent) else 0
@@ -193,13 +192,13 @@ def main():
 
 if __name__ == "__main__":
     df = main()
-    outdir = "C:/Temp/iad_g1/results/Simulation"
+    outdir = "./output/results/Simulation"
     os.makedirs(outdir, exist_ok=True)
     df.to_csv(os.path.join(outdir, "sim_replicates.csv"), index=False)
 
-    # ---- aggregate operating characteristics ----
-    # FDR computed across effect strata within each scenario (pooling null and
-    # causal replicates): FDR = P(effect==0 | grade in {A,B}).
+    # ---- aggregate operating characteristics
+    # FDR computed across effect strata within each scenario pooling null and
+    # causal replicates: FDR = Peffect==0 | grade in {A,B}.
     agg = []
     for (n_iv, ld, pleio, overlap), g in df.groupby(["n_iv", "ld", "pleio", "overlap"]):
         tp = g[g["effect"] > 0]
@@ -222,7 +221,7 @@ if __name__ == "__main__":
     a = pd.DataFrame(agg)
     a.to_csv(os.path.join(outdir, "sim_operating_chars.csv"), index=False)
 
-    # ---- marginal table by scenario axis ----
+    # ---- marginal table by scenario axis
     marg_rows = []
     for (pleio, effect), g in df.groupby(["pleio", "effect"]):
         gt = g[g["effect"] > 0]
@@ -239,7 +238,6 @@ if __name__ == "__main__":
     marg = pd.DataFrame(marg_rows)
     marg.to_csv(os.path.join(outdir, "sim_marginal.csv"), index=False)
 
-    # ---- summary text ----
     lines = []
     lines.append("=== SIMULATION OPERATING CHARACTERISTICS (seed %d, %d sims) ===" % (RNG_SEED, len(df)))
     for label, flt in [("Ideal (no pleio, no overlap)", (a["pleio"] == "none") & (a["overlap"] == 0)),

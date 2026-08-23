@@ -1,14 +1,14 @@
-#!/usr/bin/env python3
-"""G2b 靶向蛋白教育->蛋白->AD 两步 MR 中介: BH/FDR 校正 + 汇总.
+# !/usr/bin/env python3
+"""G2b ->->AD  MR : BH/FDR  + .
 
-输入: C:/Temp/iad_g1/results/G2b_curated_mediation.csv
-输出: C:/Temp/iad_g1/results/G2b_curated_fdr.csv (含 q 值)
-      stdout: 关键统计量
+: ./output/results/G2b_curated_mediation.csv
+: ./output/results/G2b_curated_fdr.csv ( q )
+      stdout: 
 """
 import csv, math
 
-SRC = "C:/Temp/iad_g1/results/G2b_curated_mediation.csv"
-OUT = "C:/Temp/iad_g1/results/G2b_curated_fdr.csv"
+SRC = "./output/results/G2b_curated_mediation.csv"
+OUT = "./output/results/G2b_curated_fdr.csv"
 
 def isnan(x):
     return x is None or x == "" or x.upper() == "NA"
@@ -20,11 +20,9 @@ with open(SRC, newline="", encoding="utf-8") as f:
     for d in r:
         rows.append(d)
 
-# 计入的: 有 p_ind 的 (34 个已评估)
 eval_rows = [d for d in rows if not isnan(d.get("p_ind"))]
 excl_rows = [d for d in rows if isnan(d.get("p_ind"))]
 
-# BH FDR
 pvals = [float(d["p_ind"]) for d in eval_rows]
 m = len(pvals)
 order = sorted(range(m), key=lambda i: pvals[i])
@@ -44,7 +42,6 @@ sig = [d for d in eval_rows if float(d["q_ind"]) < 0.05]
 min_p = min(pvals)
 min_row = eval_rows[pvals.index(min_p)]
 
-# 写回带 q 值 (评估行) + 排除行 (q=NA)
 out_rows = list(eval_rows)
 for d in excl_rows:
     d2 = dict(d); d2["q_ind"] = "NA"; out_rows.append(d2)
@@ -55,16 +52,15 @@ with open(OUT, "w", newline="", encoding="utf-8") as f:
     for d in out_rows:
         w.writerow(d)
 
-print(f"总靶向蛋白: {len(rows)}")
-print(f"已评估 (有 p_ind): {len(eval_rows)}")
-print(f"排除 (器械不足 Step2 无 AD 工具): {len(excl_rows)} -> " +
+print(f": {len(rows)}")
+print(f" ( p_ind): {len(eval_rows)}")
+print(f" ( Step2  AD ): {len(excl_rows)} -> " +
       ", ".join(d['protein'] for d in excl_rows))
-print(f"FDR<0.05 显著数: {len(sig)}")
-print(f"最小 p_ind = {min_p:.4g} ({min_row['protein']} {min_row['target']})")
-print(f"boot_p 最小 = {min(float(d['boot_p']) for d in eval_rows):.4g}")
-print(f"输出: {OUT}")
+print(f"FDR<0.05 : {len(sig)}")
+print(f" p_ind = {min_p:.4g} ({min_row['protein']} {min_row['target']})")
+print(f"boot_p  = {min(float(d['boot_p']) for d in eval_rows):.4g}")
+print(f": {OUT}")
 
-# top10 按 |indirect| 排序预览
 def fnum(x):
     return float(x) if not isnan(x) else float('nan')
 top = sorted(eval_rows, key=lambda d: abs(fnum(d['indirect'])), reverse=True)[:10]

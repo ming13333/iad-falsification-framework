@@ -1,20 +1,19 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# !/usr/bin/env python3
 """
-B1_verify.py — UKB-PPP 下载产物质量验证门 (数据源验证)
+B1_verify.py - UKB-PPP  ()
 =======================================================
-读取 B1_fetch_ukbppp.py 生成的 manifest.json, 对每个下载文件检查:
-  - 可读 (gzip tsv)
-  - 含必需列 SNP/CHR/BP/A1/A2/BETA/SE/PVAL
-  - 含至少一个频率列 (AF / EAF / effect_allele_frequency / MAF) —— 供 G2 coloc 方差与 eaf 重抽
-  - 重点蛋白 (GFAP/NEFL/CRP/IL6) 在册
-输出 verify_report.json + 打印摘要。
+ B1_fetch_ukbppp.py  manifest.json, :
+  -  (gzip tsv)
+  -  SNP/CHR/BP/A1/A2/BETA/SE/PVAL
+  -  (AF / EAF / effect_allele_frequency / MAF) --  G2 coloc  eaf 
+  -  (GFAP/NEFL/CRP/IL6) 
+ verify_report.json + . 
 """
 import os
 import sys
 import json
 
-OUT_DIR = "C:/Temp/iad_g1/data/ukbppp"
+OUT_DIR = "./output/data/ukbppp"
 REQ = ["SNP", "CHR", "BP", "A1", "A2", "BETA", "SE", "PVAL"]
 FREQ = ["AF", "EAF", "effect_allele_frequency", "MAF"]
 PRIORITY = ["GFAP", "NEFL", "CRP", "IL6"]
@@ -43,7 +42,7 @@ def check_file(path):
 def main():
     man_path = os.path.join(OUT_DIR, "manifest.json")
     if not os.path.exists(man_path):
-        print("NO manifest.json — run B1_fetch_ukbppp.py first")
+        print("NO manifest.json - run B1_fetch_ukbppp.py first")
         sys.exit(1)
     man = json.load(open(man_path, encoding="utf-8"))
     results = [check_file(p) for p in man.get("downloaded", [])]

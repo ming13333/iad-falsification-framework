@@ -1,10 +1,9 @@
-# LDSC 诊断: 直接调用 ldsc() 查看错误
 suppressMessages({ library(GenomicSEM); library(data.table) })
-setwd("C:/Temp/iad_g1/ldsc_work")
+setwd("./output/ldsc_work")
 
-LDSCORE <- "C:/Temp/iad_g1/ld_ref/LDscore"
+LDSCORE <- "./output/ld_ref/LDscore"
 
-cat("=== LDSC 诊断 ===\n")
+cat("=== LDSC  ===\n")
 cat("LDSCORE dir:", LDSCORE, "\n")
 cat("Munged files:\n")
 print(list.files(pattern="\\.sumstats\\.gz$"))
@@ -36,7 +35,7 @@ result <- tryCatch({
 })
 
 if (!is.null(result)) {
-  cat("\n=== LDSC 成功! ===\n")
+  cat("\n=== LDSC ! ===\n")
   cat("S matrix:\n"); print(result$S)
   cat("V matrix:\n"); print(result$V)
   cat("I matrix:\n"); print(result$I)

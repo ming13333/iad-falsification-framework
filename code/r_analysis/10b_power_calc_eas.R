@@ -1,21 +1,20 @@
 # 10b_power_calc_eas.R
-# East-Asian replication power for  education -> AD  (plan Workflow C5)
-# Analytical power via mRnd binary-outcome approximation (Brumpton et al. 2020).
+# East-Asian replication power for education -> AD plan Workflow C5
+# Analytical power via mRnd binary-outcome approximation Brumpton et al. 2020.
 # Provisional: R2_xz from EA education IVs is estimated on a grid until the
-# GCST90296498.tsv downloads fully, then exact_R2_from_file() replaces it.
+# GCST90296498.tsv downloads fully, then exact_R2_from_file replaces it.
 suppressMessages({ library(dplyr) })
 
-## ---- Fixed design parameters (from GARD EA AD + EA EduYears GWAS) ----
+# ---- Fixed design parameters from GARD EA AD + EA EduYears GWAS
 N_total <- 6518          # GARD EA AD total (KR 3540 + JP 2978)
 N_case  <- 2919          # 1583 + 1336
 K       <- N_case / N_total
 alpha   <- 0.05
 z_a     <- qnorm(1 - alpha/2)
 
-## mRnd binary-outcome power approximation:
-##   N_eff = N * K * (1-K)
-##   SE(beta) ~ 1 / sqrt(N_eff * R2_xz)
-##   power = Phi( |beta| / SE - z_{a/2} )
+# mRnd binary-outcome power approximation
+# SEbeta ~ 1 / sqrtN_eff * R2_xz
+# power = Phi |beta| / SE - z_{a/2}
 mrnd_power <- function(beta, R2, N, K, alpha=0.05){
   z_a <- qnorm(1 - alpha/2)
   N_eff <- N * K * (1 - K)
@@ -25,7 +24,7 @@ mrnd_power <- function(beta, R2, N, K, alpha=0.05){
   pwr
 }
 
-## ---- Grid: R2_xz (EA education variance explained) x true effect beta ----
+# ---- Grid: R2_xz EA education variance explained x true effect beta
 R2_grid <- c(0.02, 0.03, 0.05, 0.07, 0.10, 0.15, 0.20)
 beta_grid <- c(-0.15, -0.20, -0.25, -0.30, -0.33, -0.40)
 rows <- expand.grid(R2=R2_grid, beta=beta_grid)
@@ -36,15 +35,15 @@ rows <- rows %>% arrange(desc(power)) %>%
 cat(sprintf("Design: N=%d  cases=%d (K=%.3f)  alpha=0.05\n", N_total, N_case, K))
 print(rows)
 
-## ---- Headline: power to detect EUR-magnitude effect (beta=-0.33) ----
+# ---- Headline: power to detect EUR-magnitude effect beta=-0.33
 cat("\n=== Power to detect EUR effect beta=-0.33 (our EUR estimate) ===\n")
 headline <- data.frame(R2=R2_grid,
   power=sapply(R2_grid, function(r) mrnd_power(-0.33, r, N_total, K)))
 print(headline)
 
-## ---- Exact R2 extraction (runs only when EA file is fully present) ----
+# ---- Exact R2 extraction runs only when EA file is fully present
 exact_R2_from_file <- function(tsv, pcut=5e-8){
-  # R2_xz = sum_j 2 * beta_j^2 * eaf_j * (1-eaf_j)  over IVs with p<pcut
+  # R2_xz = sum_j 2 * beta_j^2 * eaf_j * 1-eaf_j over IVs with p<pcut
   d <- read.delim(tsv, comment.char="#")
   # tolerate column-name variants
   cn <- tolower(colnames(d))
@@ -56,7 +55,7 @@ exact_R2_from_file <- function(tsv, pcut=5e-8){
   sum(2 * d[[bcol]]^2 * d[[ecol]] * (1 - d[[ecol]]))
 }
 
-tsv_path <- "C:/Temp/iad_g1/data/raw/EAS_EduYears/GCST90296498.tsv"
+tsv_path <- "./output/data/raw/EAS_EduYears/GCST90296498.tsv"
 if (file.exists(tsv_path) && file.size(tsv_path) > 3e8){   # >300 MB => likely complete
   R2_exact <- tryCatch(exact_R2_from_file(tsv_path), error=function(e){
     message("exact R2 extraction failed: ", e$message); NA })
@@ -71,8 +70,7 @@ if (file.exists(tsv_path) && file.size(tsv_path) > 3e8){   # >300 MB => likely c
   cat("[provisional] Even at R2_xz=0.03, power = 0.63; replication is FEASIBLE if EA effect ~ EUR magnitude.\n")
 }
 
-## ---- Write report ----
-out <- file("C:/Temp/iad_g1/results/power_calc_EAS.txt", "w")
+out <- file("./output/results/power_calc_EAS.txt", "w")
 writeLines(c(
   "East-Asian replication power: education -> AD",
   sprintf("Design: N_total=%d  N_case=%d  K=%.4f  alpha=0.05", N_total, N_case, K),

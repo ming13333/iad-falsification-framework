@@ -1,15 +1,14 @@
-#!/usr/bin/env python3
-"""从 UKB-PPP Nature 补充表 ST9/ST10 提取 GFAP/NEFL + INTERVAL 匹配蛋白 pQTL.
+# !/usr/bin/env python3
+""" UKB-PPP Nature  ST9/ST10  GFAP/NEFL + INTERVAL  pQTL.
 
-输出: C:/Temp/iad_g1/results/ukbppp_pqtl_extracted.csv
-列: protein, sheet, rsid, chr, pos_hg38, A1, A0, eaf, beta, se, log10p, pval, cis_trans, n_pqtls_total
+: ./output/results/ukbppp_pqtl_extracted.csv
+: protein, sheet, rsid, chr, pos_hg38, A1, A0, eaf, beta, se, log10p, pval, cis_trans, n_pqtls_total
 """
 import openpyxl, csv, math
 
-SRC = "C:/Temp/iad_g1/data/supp_tables.xlsx"
-OUT = "C:/Temp/iad_g1/results/ukbppp_pqtl_extracted.csv"
+SRC = "./output/data/supp_tables.xlsx"
+OUT = "./output/results/ukbppp_pqtl_extracted.csv"
 
-# 靶向蛋白 (基因名)
 TARGETS = {
     'NEFL': 'NEFL', 'GFAP': 'GFAP', 'CRP': 'CRP', 'IL6R': 'IL6R',
     'IL21': 'IL21', 'IL25': 'IL25',
@@ -72,11 +71,10 @@ for sheet_name in ['ST9', 'ST10']:
         })
         count_by_protein[assay] = count_by_protein.get(assay, 0) + 1
 
-    # summary
     for p in sorted(count_by_protein):
         print(f'  [{sheet_name}] {p}: {count_by_protein[p]} pQTLs')
 
-# 去重 (同 rsID 优先保留 cis > trans; 同 cis 保留 ST9)
+# rsID cis > trans; cis ST9
 seen = {}
 uniq = []
 for r in sorted(rows_out, key=lambda x: (0 if x['cis_trans']=='cis' else 1, 0 if x['sheet']=='ST9' else 1)):
@@ -88,7 +86,6 @@ for r in sorted(rows_out, key=lambda x: (0 if x['cis_trans']=='cis' else 1, 0 if
 cols = ['protein', 'sheet', 'rsid', 'chr', 'pos_hg38', 'A1', 'A0',
         'eaf', 'beta', 'se', 'log10p', 'pval', 'cis_trans', 'n_total_pqtls']
 
-# 统计每蛋白总 pQTL 数
 from collections import Counter
 cnt = Counter(r['protein'] for r in uniq)
 

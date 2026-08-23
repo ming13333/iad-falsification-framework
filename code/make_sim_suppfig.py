@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """SuppFig: Simulation operating characteristics of the six-level framework.
 Panel A: sensitivity (P(grade A/B | true effect>0)) vs effect size, by pleiotropy.
 Panel B: specificity (P(grade D | null)) and FDR (P(null | grade A/B)) by scenario.
@@ -11,7 +10,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-OUT = "C:/Temp/iad_g1/results/Simulation"
+OUT = "./output/results/Simulation"
 df = pd.read_csv(os.path.join(OUT, "sim_operating_chars.csv"))
 marg = pd.read_csv(os.path.join(OUT, "sim_marginal.csv"))
 
@@ -21,7 +20,7 @@ plt.rcParams.update({"font.size": 9, "axes.titlesize": 10, "axes.labelsize": 9.5
 
 fig, axes = plt.subplots(1, 3, figsize=(13.5, 4.2))
 
-# ---- Panel A: sensitivity vs effect size by pleiotropy (avg over ld, n_iv, overlap=0) ----
+# ---- Panel A: sensitivity vs effect size by pleiotropy avg over ld, n_iv, overlap=0
 ax = axes[0]
 sub = df[df["overlap"] == 0].groupby(["pleio", "effect"])["sens"].mean().reset_index()
 colors = {"none": "#1a7f37", "balanced": "#d29922", "directional": "#c0392b"}
@@ -34,7 +33,7 @@ ax.set_ylim(0, 1.05)
 ax.set_title("A. Sensitivity")
 ax.legend(title="Pleiotropy", frameon=False)
 
-# ---- Panel B: specificity & FDR by scenario (marginal over ld/n_iv, null stratum) ----
+# ---- Panel B: specificity & FDR by scenario marginal over ld/n_iv, null stratum
 ax = axes[1]
 scen = df.groupby("pleio").agg(
     spec=("spec", lambda x: np.nanmean(x)),
@@ -48,7 +47,7 @@ ax.set_ylim(0, 1.05)
 ax.set_title("B. Specificity and FDR")
 ax.legend(frameon=False)
 
-# ---- Panel C: grade distribution by pleiotropy x effect (marginal) ----
+# ---- Panel C: grade distribution by pleiotropy x effect marginal
 ax = axes[2]
 labels = []
 n_groups = len(marg)

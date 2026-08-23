@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# !/usr/bin/env python3
 """Apply reference-audit fixes to the GM manuscript:
   1. discard refs 31, 35, 37 (doubtful per Crossref audit)
   2. drop the misplaced [43] marker in the 'BMI-AD contested' sentence
@@ -10,11 +9,11 @@
 """
 import json, re, html
 
-MD = r"C:/D/workbuddy/科研/共病分析/课题设计阶段/manuscript_draft_with_23refs.md"
-CR = json.load(open(r"C:/Temp/iad_g1/crossref_results.json", encoding='utf-8'))
+MD = r"./docs/historical/manuscript_draft_with_23refs.md"
+CR = json.load(open(r"./output/crossref_results.json", encoding='utf-8'))
 DEL = {31, 35, 37}
 
-# ---------------- reference formatting helpers (from audit) ----------------
+# ---------------- reference formatting helpers from audit
 JRNL_MAP = {
     "International Journal of Epidemiology": "Int J Epidemiol",
     "Journal of Affective Disorders": "J Affect Disord",
@@ -87,7 +86,7 @@ def parse_ms(text):
 
 def norm_t(s):
     s = s.replace('\u2010', '-').replace('\u2011', '-').replace('\u2019', "'")
-    return re.sub(r'[\s\-–—]+', '', s).lower().rstrip('.')
+    return re.sub(r'[\s\-–-]+', '', s).lower().rstrip('.')
 
 def pick_title(ms_t, cr_t):
     if not ms_t: return cr_t
@@ -124,7 +123,7 @@ def build_bmc(num, ms):
         if pag and ms['page'] and cr_page:
             if re.fullmatch(r'\d+', cr_page) and re.match(rf'^{cr_page}-\d+', ms['page']):
                 pag = ms['page']
-        pag = re.sub(r'[\s\-–—]+', '–', str(pag).strip())
+        pag = re.sub(r'[\s\-–-]+', '–', str(pag).strip())
     tail = f"{jrn}. " if jrn else ''
     tail += f"{year}"
     if vol:
@@ -137,7 +136,7 @@ def build_bmc(num, ms):
     doi = f" {cr.get('doi')}." if ok and cr.get('doi') else ''
     return f"{au}. {title}. {tail}{doi}"
 
-# ---------------- load original md & refs ----------------
+# ---------------- load original md & refs
 orig = open(MD, encoding='utf-8').read()
 main_orig, refsec_orig = orig.split('## References', 1)
 REFS = {}
@@ -147,7 +146,7 @@ for line in refsec_orig.split('\n'):
         REFS[int(m.group(1))] = m.group(2).strip()
 print("original refs:", len(REFS))
 
-# ---------------- 1) rewrite citation tokens: drop DEL numbers ----------------
+# ---------------- 1 rewrite citation tokens: drop DEL numbers
 CIT_RE = re.compile(r'\[(\d+(?:\s*[-,–]\s*\d+)?(?:\s*,\s*\d+(?:\s*[-,–]\s*\d+)?)*)\]')
 
 def token_numbers(tok):
@@ -189,11 +188,11 @@ def rewrite_main(text):
     return ''.join(out)
 
 main_rewritten = rewrite_main(main_orig)
-# drop the misplaced [43] at the BMI-AD sentence (standalone marker)
+# drop the misplaced [43] at the BMI-AD sentence standalone marker
 main_rewritten = main_rewritten.replace('relationship [43]; assigning',
                                         'relationship; assigning')
 
-# ---------------- 2) first-citation order on rewritten main ----------------
+# ---------------- 2 first-citation order on rewritten main
 first = {}
 for m in CIT_RE.finditer(main_rewritten):
     for n in token_numbers(m.group(1)):
@@ -204,7 +203,7 @@ old_to_new = {n: i + 1 for i, n in enumerate(ordered)}
 new_to_old = {v: k for k, v in old_to_new.items()}
 print("refs kept:", len(ordered), "| mapping:", old_to_new)
 
-# ---------------- 3) remap all tokens ----------------
+# ---------------- 3 remap all tokens
 def remap_token(tok):
     items = re.split(r'\s*,\s*', tok)
     new_items = []
@@ -225,7 +224,7 @@ for m in CIT_RE.finditer(main_rewritten):
 main_final.append(main_rewritten[pos:])
 main_final = ''.join(main_final)
 
-# ---------------- 4) rebuild reference list ----------------
+# ---------------- 4 rebuild reference list
 entries = []
 for new_n in range(1, len(ordered) + 1):
     old_n = new_to_old[new_n]
@@ -238,10 +237,9 @@ ref_list = '\n'.join(entries)
 new_md = main_final + '## References\n\n' + ref_list + '\n'
 open(MD, 'w', encoding='utf-8').write(new_md)
 json.dump({str(k): v for k, v in old_to_new.items()},
-          open(r"C:/Temp/iad_g1/renumber_map_final.json", 'w'), indent=1)
+          open(r"./output/renumber_map_final.json", 'w'), indent=1)
 print("written:", MD, "| new refs:", len(entries))
 
-# ---------------- 5) verify ----------------
 main_check = new_md.split('## References')[0]
 cited = set()
 for m in CIT_RE.finditer(main_check):

@@ -1,13 +1,12 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# !/usr/bin/env python3
 """Generate BMC/Vancouver-formatted reference list (renumbered by first-citation
 order). Manuscript fields parsed from MD (markdown intact); official titles/authors
 from Crossref (longer-title wins; person authors preferred over consortium orgs)."""
 import json, re, html
 
-CR = json.load(open(r"C:/Temp/iad_g1/crossref_results.json", encoding='utf-8'))
+CR = json.load(open(r"./output/crossref_results.json", encoding='utf-8'))
 
-md = open(r"C:/D/workbuddy/科研/共病分析/课题设计阶段/manuscript_draft_with_23refs.md", encoding='utf-8').read()
+md = open(r"./docs/historical/manuscript_draft_with_23refs.md", encoding='utf-8').read()
 refsec = md.split('## References')[1]
 REFS = {}
 for line in refsec.split('\n'):
@@ -87,7 +86,7 @@ def parse_ms(text):
 
 def norm_t(s):
     s = s.replace('\u2010', '-').replace('\u2011', '-').replace('\u2019', "'")
-    s = re.sub(r'[\s\-–—]+', '', s).lower().rstrip('.')
+    s = re.sub(r'[\s\-–-]+', '', s).lower().rstrip('.')
     return s
 
 def pick_title(ms_t, cr_t):
@@ -126,7 +125,7 @@ def build_bmc(num):
         if pag and ms['page'] and cr_page:
             if re.fullmatch(r'\d+', cr_page) and re.match(rf'^{cr_page}-\d+', ms['page']):
                 pag = ms['page']
-        pag = re.sub(r'[\s\-–—]+', '–', str(pag).strip())
+        pag = re.sub(r'[\s\-–-]+', '–', str(pag).strip())
     tail = f"{jrn}. " if jrn else ''
     tail += f"{year}"
     if vol:
@@ -139,7 +138,7 @@ def build_bmc(num):
     doi = f" {cr.get('doi')}." if ok and cr.get('doi') else ''
     return f"{au}. {title}. {tail}{doi}"
 
-# ---------- old -> new renumbering (first-citation order) ----------
+# ---------- old -> new renumbering first-citation order
 old_to_new = {n: n for n in range(1, 51)}
 for n in range(51, 78):
     old_to_new[n] = n + 2
@@ -155,9 +154,9 @@ clean = []
 for new_n, old_n, txt in new_list:
     txt = re.sub(r'^\d+\.\s+', '', txt, count=1)
     clean.append(f"{new_n}. {txt}")
-open(r"C:/Temp/iad_g1/bmc_references_clean.txt", 'w', encoding='utf-8').write('\n'.join(clean))
+open(r"./output/bmc_references_clean.txt", 'w', encoding='utf-8').write('\n'.join(clean))
 
-json.dump(old_to_new, open(r"C:/Temp/iad_g1/renumber_map.json", 'w'), indent=1)
+json.dump(old_to_new, open(r"./output/renumber_map.json", 'w'), indent=1)
 print("written bmc_references_clean.txt (79 refs) + renumber_map.json")
 print("\n--- full corrected list (new numbering) ---")
 for l in clean:

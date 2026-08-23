@@ -1,9 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# !/usr/bin/env python3
 """Compare manuscript reference fields (parsed from MD, markdown intact) vs Crossref."""
 import json, re
 
-md = open(r"C:/D/workbuddy/科研/共病分析/课题设计阶段/manuscript_draft_with_23refs.md", encoding='utf-8').read()
+md = open(r"./docs/historical/manuscript_draft_with_23refs.md", encoding='utf-8').read()
 refsec = md.split('## References')[1]
 refs = {}
 for line in refsec.split('\n'):
@@ -11,7 +10,7 @@ for line in refsec.split('\n'):
     if m:
         refs[int(m.group(1))] = m.group(2).strip()
 
-CR = json.load(open(r"C:/Temp/iad_g1/crossref_results.json", encoding='utf-8'))
+CR = json.load(open(r"./output/crossref_results.json", encoding='utf-8'))
 
 def norm(s):
     if s is None: return ''
@@ -19,7 +18,7 @@ def norm(s):
     # normalize unicode punctuation & accents for comparison
     s = s.replace('\u2010', '-').replace('\u2011', '-').replace('\u2012', '-').replace('\u2013', '-').replace('\u2014', '-')
     s = s.replace('\u2018', "'").replace('\u2019', "'").replace('\u201c', '"').replace('\u201d', '"')
-    s = re.sub(r'[\s\-–—]+', '', s).lower().lstrip('0') or '0'
+    s = re.sub(r'[\s\-–-]+', '', s).lower().lstrip('0') or '0'
     return s
 
 def norm_title(s):
@@ -69,7 +68,7 @@ for num in sorted(refs, key=int):
             fam = cr['authors'][0][0] or ''
             if norm(ms['first_author']) != norm(fam):
                 issues.append(f"author1 ms={ms['first_author']} vs cr={fam}")
-        # full-title compare (normalized, accent/punct-insensitive)
+        # full-title compare normalized, accent/punct-insensitive
         mt = re.search(r'\.\s+(.+?)\s+\*', refs[num])
         crt = cr.get('title') or ''
         if mt and crt:

@@ -1,47 +1,38 @@
 # =====================================================================
-# 02b_g2_enhanced.R  --  G2 方法学补强: 多方法 MR + 敏感性分析
 # ---------------------------------------------------------------------
-# 在 02_g2_open_gwas.R 基础上补充 6 项:
-#   1. 多方法 MR (IVW, MR-Egger, weighted median, weighted mode)
-#   2. 异质性检验 (Cochran's Q via mr_heterogeneity)
-#   3. 多效性检验 (MR-Egger intercept via mr_pleiotropy_test)
-#   4. 留一法 (mr_leaveoneout)
-#   5. Steiger 方向性检验 (directionality_test, 需 eaf)
-#   6. F 统计量 + Bootstrap CI (indirect effect)
-#
-# 已知限制:
-#   - Step1 (insomnia -> protein): 42 IV -> 可跑全部敏感性
-#   - Step2 (protein -> AD): CRP=3 IV / IL-6=2 IV -> Egger/异质性受限
-#   - NfL/GFAP 不在本索引(IV 太少, 留 UKB-PPP 补全后单独跑)
-#
-# 运行(需 VPN 以访问 IEU REST, 须禁用沙箱):
-#   Rscript 02b_g2_enhanced.R
+# 1. MR IVW, MR-Egger, weighted median, weighted mode
+# 2. Cochran's Q via mr_heterogeneity
+# 3. MR-Egger intercept via mr_pleiotropy_test
+# 5. Steiger directionality_test, eaf
+# 6. F + Bootstrap CI indirect effect
+# - Step1 insomnia -> protein: 42 IV ->
+# - Step2 protein -> AD: CRP=3 IV / IL-6=2 IV -> Egger/
+# - NfL/GFAP IV , UKB-PPP
+# VPN IEU REST
 # =====================================================================
 suppressMessages({
   library(TwoSampleMR); library(ieugwasr); library(coloc); library(dplyr)
 })
 
-## ---- 配置(自包含, 不依赖 00_config) ----
 GWAS_ID <- list(insomnia = "ukb-b-3957", ad = "ieu-b-2")
 THRESH  <- list(clump_r2 = 0.001, clump_kb = 10000, protein_fdr = 0.05, n_boot = 5000)
 AD_N    <- 63860
-G2_OUT  <- "C:/Temp/iad_g1/results/G2_enhanced"
+G2_OUT  <- "./output/results/G2_enhanced"
 dir.create(G2_OUT, showWarnings = FALSE, recursive = TRUE)
-PROT_INDEX <- "C:/Temp/iad_g1/proteins/g2_index.csv"
+PROT_INDEX <- "./output/proteins/g2_index.csv"
 
 logmsg <- function(...) message("[G2+] ", ..., " (", format(Sys.time(), "%H:%M:%S"), ")")
 
-## ---- 读蛋白索引 ----
-if (!file.exists(PROT_INDEX)) stop("[G2+] 缺索引: ", PROT_INDEX)
+## ---- ----
+if (!file.exists(PROT_INDEX)) stop("[G2+] : ", PROT_INDEX)
 protein_map <- read.csv(PROT_INDEX, stringsAsFactors = FALSE, fileEncoding = "UTF-8-BOM")
-if (!"ieu_id" %in% names(protein_map)) stop("[G2+] 索引需含 ieu_id 列")
-if (!"protein_id" %in% names(protein_map)) stop("[G2+] 索引缺 protein_id")
+if (!"ieu_id" %in% names(protein_map)) stop("[G2+]  ieu_id ")
+if (!"protein_id" %in% names(protein_map)) stop("[G2+]  protein_id")
 if (!"olink_target" %in% names(protein_map)) protein_map$olink_target <- protein_map$protein_id
-if (!"n_samples" %in% names(protein_map)) { protein_map$n_samples <- 3301; warning("索引缺 n_samples, 用 3301") }
+if (!"n_samples" %in% names(protein_map)) { protein_map$n_samples <- 3301; warning(" n_samples,  3301") }
 protein_map$source <- "ieu"; protein_map$path <- protein_map$ieu_id
-logmsg("蛋白索引: ", nrow(protein_map), " 个 (", paste(protein_map$olink_target, collapse=", "), ")")
+logmsg(": ", nrow(protein_map), "  (", paste(protein_map$olink_target, collapse=", "), ")")
 
-## ---- 批量拉结局关联 (IEU, 分批降速) ----
 BATCH_SIZE <- 20
 extract_outcome_data_batched <- function(snps, outcomes, batch_size=BATCH_SIZE, sleep_sec=1, ...) {
   snps <- unique(as.character(snps)); n <- length(snps)
@@ -59,12 +50,11 @@ extract_outcome_data_batched <- function(snps, outcomes, batch_size=BATCH_SIZE, 
   dplyr::bind_rows(pieces)
 }
 
-## ---- 蛋白作暴露/结局的分流 ----
 get_protein_instruments <- function(prow, p1=5e-8) {
   d <- tryCatch(extract_instruments(prow$path, p1=p1, r2=THRESH$clump_r2, kb=THRESH$clump_kb),
                 error=function(e) { message("[G2+] ieu_exp ", prow$protein_id, " err: ", conditionMessage(e)); NULL })
   if (is.null(d) || nrow(d) == 0) return(NULL)
-  d$outcome <- prow$olink_target  # 标记为暴露但保留来源名
+  d$outcome <- prow$olink_target  # 
   d
 }
 get_protein_outcome <- function(snps, prow) {
@@ -75,10 +65,9 @@ get_protein_outcome <- function(snps, prow) {
   out
 }
 
-## ---- F 统计量 ----
 compute_fstat <- function(d) {
   if (is.null(d) || nrow(d) == 0) return(NA_real_)
-  # 近似: F ≈ beta^2 / se^2 (每 SNP)
+  # : F ≈ beta^2 / se^2 SNP
   if ("beta.exposure" %in% names(d) && "se.exposure" %in% names(d)) {
     f_per <- (d$beta.exposure / d$se.exposure)^2
   } else if ("beta" %in% names(d) && "se" %in% names(d)) {
@@ -87,16 +76,14 @@ compute_fstat <- function(d) {
   round(median(f_per, na.rm=TRUE), 1)
 }
 
-## ---- 完整 MR 套件 (多方法 + 敏感性) ----
 run_mr_suite <- function(d, label) {
   if (is.null(d) || nrow(d) == 0) {
-    logmsg(label, ": 无 harmonised 数据, 跳过"); return(NULL)
+    logmsg(label, ":  harmonised , "); return(NULL)
   }
   n_iv <- nrow(d)
-  logmsg(label, ": n_iv=", n_iv, " -> 运行 MR 套件")
+  logmsg(label, ": n_iv=", n_iv, " ->  MR ")
 
   result <- list(label=label, n_iv=n_iv)
-  # 默认值 (防止后续引用 NULL)
   result$b_ivw <- NA; result$se_ivw <- NA; result$p_ivw <- NA
   result$b_egger <- NA; result$p_egger <- NA
   result$b_wmed <- NA; result$p_wmed <- NA
@@ -107,7 +94,6 @@ run_mr_suite <- function(d, label) {
   result$steiger_snpc <- NA
   result$median_F <- NA
 
-  # 1. 多方法 MR
   methods <- c("mr_ivw", "mr_weighted_median", "mr_weighted_mode")
   if (n_iv >= 3) methods <- c("mr_egger_regression", methods)
   mr_res <- tryCatch(mr(d, method_list=methods), error=function(e) {
@@ -115,7 +101,6 @@ run_mr_suite <- function(d, label) {
     tryCatch(mr(d, method_list="mr_ivw"), error=function(e2) {
       logmsg(label, ": mr() IVW-only also err: ", conditionMessage(e2)); NULL }) })
 
-  # 方法名映射: TwoSampleMR 显示名 -> 短 key
   method_map <- c(
     "Inverse variance weighted" = "ivw",
     "MR Egger"                  = "egger",
@@ -133,8 +118,8 @@ run_mr_suite <- function(d, label) {
       result[[paste0("p_",  key)]] <- suppressWarnings(signif(as.numeric(row$pval), 4))
     }
   } else {
-    # 最终 fallback: 手动 IVW (当 mr() 因 proxy SNP 维度问题崩溃时)
-    logmsg(label, ": 手动 IVW 计算 (mr() 不可用)")
+    # fallback: IVW mr proxy SNP
+    logmsg(label, ":  IVW  (mr() )")
     w <- 1 / d$se.outcome^2
     bx <- d$beta.exposure
     by <- d$beta.outcome
@@ -156,7 +141,6 @@ run_mr_suite <- function(d, label) {
     }
   }
 
-  # 2. 异质性 (Cochran's Q) — 需 >=2 SNPs
   if (n_iv >= 2) {
     het <- tryCatch(mr_heterogeneity(d, method_list=c("mr_egger_regression", "mr_ivw")),
                     error=function(e) { logmsg(label, ": het err: ", conditionMessage(e)); NULL })
@@ -170,7 +154,7 @@ run_mr_suite <- function(d, label) {
     }
   }
 
-  # 3. 多效性 (MR-Egger intercept) — 需 >=3 SNPs
+  # 3. MR-Egger intercept - >=3 SNPs
   if (n_iv >= 3) {
     pleio <- tryCatch(mr_pleiotropy_test(d), error=function(e) {
       logmsg(label, ": pleio err: ", conditionMessage(e)); NULL })
@@ -182,21 +166,19 @@ run_mr_suite <- function(d, label) {
     }
   } else {
     result$egger_intercept <- NA; result$egger_intercept_p <- NA
-    logmsg(label, ": n_iv < 3, Egger 截距跳过")
+    logmsg(label, ": n_iv < 3, Egger ")
   }
 
-  # 4. 留一法 — 需 >=2 SNPs
   if (n_iv >= 2) {
     loo <- tryCatch(mr_leaveoneout(d), error=function(e) {
       logmsg(label, ": loo err: ", conditionMessage(e)); NULL })
     if (!is.null(loo) && nrow(loo) > 0) {
       result$loo <- loo
-      # 概括: 最显著和最不显著的 SNP
       loo_ivw <- if ("method" %in% names(loo)) loo[grepl("Inverse variance|IVW", loo$method), ] else loo
       if (nrow(loo_ivw) > 0) {
         result$loo_min_p <- signif(min(loo_ivw$p, na.rm=TRUE), 4)
         result$loo_max_p <- signif(max(loo_ivw$p, na.rm=TRUE), 4)
-        # 是否有 SNP 驱动结果 (去掉后 p 从 sig 变 ns)
+        # SNP p sig ns
         full_p <- result$p_ivw
         if (!is.na(full_p) && full_p < 0.05) {
           result$loo_driven <- any(loo_ivw$p > 0.05, na.rm=TRUE)
@@ -207,7 +189,7 @@ run_mr_suite <- function(d, label) {
     }
   }
 
-  # 5. Steiger 方向性检验 — 需 eaf.exposure + eaf.outcome
+  # 5. Steiger - eaf.exposure + eaf.outcome
   has_eaf_exp <- !is.null(d$eaf.exposure) && any(!is.na(d$eaf.exposure))
   has_eaf_out <- !is.null(d$eaf.outcome) && any(!is.na(d$eaf.outcome))
   if (has_eaf_exp && has_eaf_out && n_iv >= 2) {
@@ -215,14 +197,13 @@ run_mr_suite <- function(d, label) {
       logmsg(label, ": steiger err: ", conditionMessage(e)); NULL })
     if (!is.null(steiger) && nrow(steiger) > 0) {
       result$steiger <- steiger
-      result$steiger_snpc <- steiger$steiger_dir[1]  # TRUE=exp->out 方向正确
+      result$steiger_snpc <- steiger$steiger_dir[1]  # TRUE=exp->out 
     }
   } else {
     result$steiger_snpc <- NA
-    logmsg(label, ": eaf 缺失, Steiger 跳过")
+    logmsg(label, ": eaf , Steiger ")
   }
 
-  # 6. F 统计量
   result$median_F <- compute_fstat(d)
   logmsg(label, ": median F=", result$median_F,
          " | IVW p=", result$p_ivw,
@@ -231,7 +212,7 @@ run_mr_suite <- function(d, label) {
   result
 }
 
-## ---- Bootstrap CI for indirect effect ----
+# ---- Bootstrap CI for indirect effect
 bootstrap_mediation <- function(b1, se1, b2, se2, n_boot=THRESH$n_boot, seed=42) {
   set.seed(seed)
   boots <- numeric(n_boot)
@@ -249,9 +230,7 @@ bootstrap_mediation <- function(b1, se1, b2, se2, n_boot=THRESH$n_boot, seed=42)
   )
 }
 
-## ---- 准备 harmonised 数据 (两步中介的两步) ----
 prepare_harmonised <- function(exp_id, out_id, exp_is_protein, out_is_protein, prow=NULL, p1=5e-8) {
-  # 提取暴露
   if (exp_is_protein) {
     exp <- get_protein_instruments(prow, p1=p1)
   } else {
@@ -260,7 +239,6 @@ prepare_harmonised <- function(exp_id, out_id, exp_is_protein, out_is_protein, p
   }
   if (is.null(exp) || nrow(exp) == 0) { logmsg("exp NULL/empty"); return(NULL) }
 
-  # 提取结局
   if (out_is_protein) {
     out <- get_protein_outcome(exp$SNP, prow)
   } else {
@@ -269,7 +247,6 @@ prepare_harmonised <- function(exp_id, out_id, exp_is_protein, out_is_protein, p
   }
   if (is.null(out) || nrow(out) == 0) { logmsg("out NULL/empty (exp n=", nrow(exp), ")"); return(NULL) }
 
-  # 调和
   d <- tryCatch(harmonise_data(exp, out), error=function(e) {
     logmsg("harm err: ", conditionMessage(e)); NULL })
   if (is.null(d) || nrow(d) < 2) { logmsg("harm fail n=", if(is.data.frame(d)) nrow(d) else "NULL"); return(NULL) }
@@ -277,7 +254,6 @@ prepare_harmonised <- function(exp_id, out_id, exp_is_protein, out_is_protein, p
 }
 
 ## =====================================================================
-## 主分析: 逐蛋白两步中介 + 全套敏感性
 ## =====================================================================
 insomnia_exp_id <- GWAS_ID$insomnia
 ad_out_id       <- GWAS_ID$ad
@@ -290,30 +266,30 @@ for (i in seq_len(nrow(protein_map))) {
   prow <- protein_map[i, ]
   pid <- prow$protein_id
   name <- prow$olink_target
-  logmsg("===== 蛋白 ", i, "/", nrow(protein_map), ": ", pid, " (", name, ") =====")
+  logmsg("=====  ", i, "/", nrow(protein_map), ": ", pid, " (", name, ") =====")
 
-  # ---- Step1: insomnia -> protein ----
+  # ---- Step1: insomnia -> protein
   logmsg("Step1: insomnia -> ", name)
   d1 <- prepare_harmonised(exp_id=insomnia_exp_id, out_id=prow$path,
                            exp_is_protein=FALSE, out_is_protein=TRUE, prow=prow)
   if (is.null(d1)) {
-    logmsg("Step1 失败, 跳过 ", pid); next
+    logmsg("Step1 ,  ", pid); next
   }
   s1_suite <- run_mr_suite(d1, paste0("Step1_ins_to_", name))
   all_step1[[pid]] <- s1_suite
 
-  # IVW 估计用于中介 (可能为 NA 如果 mr() 失败)
+  # IVW NA mr
   s1_b  <- as.numeric(s1_suite$b_ivw)
   s1_se <- as.numeric(s1_suite$se_ivw)
   s1_ivw <- as.numeric(s1_suite$p_ivw)
   s1_n  <- s1_suite$n_iv
 
-  # ---- Step2: protein -> AD ----
+  # ---- Step2: protein -> AD
   logmsg("Step2: ", name, " -> AD")
   d2 <- prepare_harmonised(exp_id=prow$path, out_id=ad_out_id,
                            exp_is_protein=TRUE, out_is_protein=FALSE, prow=prow)
   if (is.null(d2)) {
-    logmsg("Step2 失败, 跳步 ", pid); next
+    logmsg("Step2 ,  ", pid); next
   }
   s2_suite <- run_mr_suite(d2, paste0("Step2_", name, "_to_AD"))
   all_step2[[pid]] <- s2_suite
@@ -323,8 +299,6 @@ for (i in seq_len(nrow(protein_map))) {
   s2_ivw <- as.numeric(s2_suite$p_ivw)
   s2_n  <- s2_suite$n_iv
 
-  # ---- 间接效应 (delta 法 + bootstrap) ----
-  # 安全处理 NA
   indirect <- if (any(is.na(c(s1_b, s2_b)))) NA_real_ else s1_b * s2_b
   se_ind <- if (any(is.na(c(s1_se, s2_se, s1_b, s2_b)))) NA_real_ else sqrt(s2_b^2 * s1_se^2 + s1_b^2 * s2_se^2)
   p_ind <- if (any(is.na(c(indirect, se_ind))) || se_ind == 0) NA_real_ else 2 * pnorm(-abs(indirect) / se_ind)
@@ -338,7 +312,6 @@ for (i in seq_len(nrow(protein_map))) {
                list(boot_mean=NA_real_, boot_ci_lower=NA_real_, boot_ci_upper=NA_real_, boot_p=NA_real_) })
   }
 
-  # 安全 signif 包装 (保证返回长度 1 的 numeric)
   sg <- function(x) {
     v <- suppressWarnings(as.numeric(x))
     if (length(v) == 0) NA_real_ else suppressWarnings(signif(v[1], 4))
@@ -346,21 +319,18 @@ for (i in seq_len(nrow(protein_map))) {
 
   all_mediation[[pid]] <- data.frame(
     protein=pid, target=name,
-    # Step1
     b1=sg(s1_b), se1=sg(s1_se), p1=sg(s1_ivw), n1=s1_n,
     b1_egger=sg(s1_suite$b_egger), p1_egger=sg(s1_suite$p_egger),
     egger_int1=sg(s1_suite$egger_intercept), egger_int_p1=sg(s1_suite$egger_intercept_p),
     Q_p1=sg(s1_suite$Q_p_ivw), loo_min_p1=sg(s1_suite$loo_min_p), loo_max_p1=sg(s1_suite$loo_max_p),
     loo_driven1=if(is.null(s1_suite$loo_driven)) NA else s1_suite$loo_driven,
     median_F1=sg(s1_suite$median_F), steiger1=sg(s1_suite$steiger_snpc),
-    # Step2
     b2=sg(s2_b), se2=sg(s2_se), p2=sg(s2_ivw), n2=s2_n,
     b2_egger=sg(s2_suite$b_egger), p2_egger=sg(s2_suite$p_egger),
     egger_int2=sg(s2_suite$egger_intercept), egger_int_p2=sg(s2_suite$egger_intercept_p),
     Q_p2=sg(s2_suite$Q_p_ivw), loo_min_p2=sg(s2_suite$loo_min_p), loo_max_p2=sg(s2_suite$loo_max_p),
     loo_driven2=if(is.null(s2_suite$loo_driven)) NA else s2_suite$loo_driven,
     median_F2=sg(s2_suite$median_F), steiger2=sg(s2_suite$steiger_snpc),
-    # Mediation
     indirect=sg(indirect), se_ind=sg(se_ind), p_ind=sg(p_ind),
     boot_mean=sg(boot$boot_mean),
     boot_ci_lower=sg(boot$boot_ci_lower),
@@ -368,22 +338,21 @@ for (i in seq_len(nrow(protein_map))) {
     boot_p=sg(boot$boot_p),
     stringsAsFactors=FALSE
   )
-  logmsg(pid, " 完成: indirect=", sg(indirect),
+  logmsg(pid, " : indirect=", sg(indirect),
          " (delta p=", sg(p_ind), ", boot p=", sg(boot$boot_p), ")")
 }
 
-if (length(all_mediation) == 0) stop("[G2+] 未得到任何中介估计")
+if (length(all_mediation) == 0) stop("[G2+] ")
 
 mediation_df <- dplyr::bind_rows(all_mediation) %>%
   mutate(fdr = p.adjust(p_ind, method="fdr")) %>%
   arrange(p_ind)
 
-## ---- 保存 ----
+## ---- ----
 saveRDS(list(step1=all_step1, step2=all_step2, mediation=mediation_df),
         file.path(G2_OUT, "G2_enhanced_full.rds"))
 write.csv(mediation_df, file.path(G2_OUT, "G2_enhanced_mediation.csv"), row.names=FALSE)
 
-# 保存各步 MR 套件明细
 for (pid in names(all_step1)) {
   s1 <- all_step1[[pid]]
   if (!is.null(s1$mr_all)) {
@@ -415,10 +384,10 @@ for (pid in names(all_step2)) {
   }
 }
 
-## ---- 汇总打印 ----
-logmsg("=== G2 方法学补强汇总 ===")
-logmsg("蛋白数: ", nrow(mediation_df))
-logmsg("显著 (FDR<0.05): ", sum(mediation_df$fdr < THRESH$protein_fdr))
+## ---- ----
+logmsg("=== G2  ===")
+logmsg(": ", nrow(mediation_df))
+logmsg(" (FDR<0.05): ", sum(mediation_df$fdr < THRESH$protein_fdr))
 for (i in seq_len(nrow(mediation_df))) {
   r <- mediation_df[i, ]
   logmsg(r$protein, " (", r$target, "):")
@@ -433,5 +402,5 @@ for (i in seq_len(nrow(mediation_df))) {
   logmsg("  Indirect: ", r$indirect, " (delta p=", r$p_ind,
          ", boot p=", r$boot_p, ", 95% CI=[", r$boot_ci_lower, ", ", r$boot_ci_upper, "])")
 }
-logmsg("结果保存至: ", G2_OUT)
+logmsg(": ", G2_OUT)
 logmsg("Done.")

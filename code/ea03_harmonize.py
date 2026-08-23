@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 """
 ea03_harmonize.py
 Harmonize EA education instruments with liftover-GARD AD outcome.
@@ -11,13 +11,12 @@ Output: data/processed/ea_harmonized.csv
 
 import csv, gzip, sys, os, math
 
-PROJ = r'c:/D/workbuddy/科研/共病分析'
+PROJ = r'.'
 OUTDIR = os.path.join(PROJ, 'data/processed')
 INSTFILE = os.path.join(OUTDIR, 'ea_education_instruments.csv')
 GARDFILE = os.path.join(OUTDIR, 'gard_ea_ad_hg19.tsv.gz')
 OUTFILE  = os.path.join(OUTDIR, 'ea_harmonized.csv')
 
-# --- load instruments ---
 print('Loading instruments...')
 instruments = []
 with open(INSTFILE, 'r') as f:
@@ -28,7 +27,7 @@ with open(INSTFILE, 'r') as f:
         instruments.append(row)
 print(f'  {len(instruments)} instruments loaded')
 
-# --- build index: chr:pos -> GARD row ---
+# --- build index: chr:pos -> GARD row
 print('\nLoading GARD (hg19-lifted) and indexing by chr:pos...')
 # We'll scan GARD once and build a dict for our 9 positions of interest
 # For efficiency: build lookup set first, then scan
@@ -60,7 +59,6 @@ with gzip.open(GARDFILE, 'rt') as f:
 
 print(f'  Scanned {n_scanned:,} GARD rows, matched {n_matched}/{len(lookup)} instruments')
 
-# --- allele alignment ---
 print('\nHarmonizing alleles...')
 harmonized = []
 for key, inst in lookup.items():
@@ -68,8 +66,8 @@ for key, inst in lookup.items():
         print(f'  NOT FOUND in GARD: {inst["rsid"]} ({key})')
         continue
     parts = matches[key]
-    # parts[0]=SNP_hg19, [1]=CHR_hg19, [2]=BP_hg19, [3]=SNP_hg38orig, [4]=CHR, [5]=BP_hg38,
-    #       [6]=A1, [7]=A2, [8]=beta, [9]=se, [10]=p, [11]=N, [12]=N_cases, [13]=N_controls
+    # parts[0]=SNP_hg19, [1]=CHR_hg19, [2]=BP_hg19, [3]=SNP_hg38orig, [4]=CHR, [5]=BP_hg38
+    # [6]=A1, [7]=A2, [8]=beta, [9]=se, [10]=p, [11]=N, [12]=N_cases, [13]=N_controls
     a1_gard = parts[6].strip()
     a2_gard = parts[7].strip()
     beta_gard = float(parts[8])
@@ -87,17 +85,14 @@ for key, inst in lookup.items():
     a1_gard_u = a1_gard.upper()
     a2_gard_u = a2_gard.upper()
 
-    # allele alignment
     if ea_edu == a1_gard_u and oa_edu == a2_gard_u:
-        # direct match
         beta_gard_align = beta_gard
         align = 'direct'
     elif ea_edu == a2_gard_u and oa_edu == a1_gard_u:
-        # flip
         beta_gard_align = -beta_gard
         align = 'flip'
     else:
-        # palindromic or mismatch — try matching by one allele
+        # palindromic or mismatch - try matching by one allele
         if ea_edu == a1_gard_u:
             beta_gard_align = beta_gard
             align = 'partial(A1)'
@@ -131,7 +126,6 @@ for key, inst in lookup.items():
 
 print(f'  Harmonized: {len(harmonized)} / {len(lookup)} instruments')
 
-# --- write output ---
 fieldnames = ['rsid','chromosome','position','effect_allele','other_allele','eaf',
               'beta_exposure','se_exposure','p_exposure','f_stat','n_exposure',
               'beta_outcome','se_outcome','p_outcome','n_outcome','n_cases','n_controls',
@@ -144,7 +138,6 @@ with open(OUTFILE, 'w', newline='') as f:
 
 print(f'\n=== Output: {OUTFILE} ({len(harmonized)} rows) ===')
 
-# --- quick preview ---
 print('\nHarmonized data preview:')
 for r in harmonized:
     print(f'  {r["rsid"]:15s} {r["chromosome"]}:{r["position"]:>10,d}  '

@@ -1,15 +1,15 @@
-#!/usr/bin/env Rscript
+# !/usr/bin/env Rscript
 # ============================================================
-# 08c_steiger_final.R  (cached extraction + validated pure-R r)
-# Steiger directionality test (insomnia <-> AD)
-#   - exposure eaf: from extract_instruments() API (ukb-b-3957 carries eaf.exposure)
-#   - outcome eaf (Kunkle & Bellenguez): ieugwasr::associations() chunked API
-#   - binary-trait r via VALIDATED pure-R r_from_lor() (get_r_from_lor segfaults in
-#     this R4.5.2 / pkg-built-4.5.3 ABI-mismatched env; replaced by exact
-#     population-genetics derivation.)
-#   - directionality_test() reads r.exposure/r.outcome (does NOT call get_r_from_lor)
-#   - CACHES extraction+eaf to RDS so retries skip the API (random load segfaults
-#     are the only gate; once past load, Steiger runs fast).
+# 08c_steiger_final.R cached extraction + validated pure-R r
+# Steiger directionality test insomnia <-> AD
+# - exposure eaf: from extract_instruments API ukb-b-3957 carries eaf.exposure
+# - outcome eaf Kunkle & Bellenguez: ieugwasr::associations chunked API
+# - binary-trait r via VALIDATED pure-R r_from_lor get_r_from_lor segfaults in
+# this R4.5.2 / pkg-built-4.5.3 ABI-mismatched env; replaced by exact
+# population-genetics derivation.
+# - directionality_test reads r.exposure/r.outcome does NOT call get_r_from_lor
+# - CACHES extraction+eaf to RDS so retries skip the API random load segfaults
+# are the only gate; once past load, Steiger runs fast.
 # ============================================================
 suppressMessages({
   library(TwoSampleMR)
@@ -34,7 +34,7 @@ api_retry <- function(f, max_try=6, sleep_base=20) {
 INS_ID   <- "ukb-b-3957"
 KUNKLE   <- "ieu-b-2"
 BELL     <- "ebi-a-GCST90027158"
-OUT      <- "C:/Temp/iad_g1/results/steiger"
+OUT      <- "./output/results/steiger"
 dir.create(OUT, showWarnings=FALSE, recursive=TRUE)
 CACHE    <- file.path(OUT, "steiger_cache.rds")
 
@@ -44,7 +44,7 @@ BELL_NC    <- 39762;  BELL_NN  <- 41302
 
 cat("\n===== Steiger directionality test (insomnia <-> AD) =====\n\n"); flush.console()
 
-# ---------- validated pure-R genotype-phenotype r for binary traits ----------
+# ---------- validated pure-R genotype-phenotype r for binary traits
 r_from_lor <- function(lor, af, ncase, ncontrol, prevalence) {
   q   <- exp(lor)
   afv <- af
@@ -92,7 +92,6 @@ inject_eaf_outcome <- function(harm, eaf_df) {
   harm
 }
 
-# ---------- extraction (cached) ----------
 SKIP <- FALSE
 if (file.exists(CACHE)) {
   cat("loading cached extraction+eaf...\n")
@@ -140,7 +139,7 @@ if (!SKIP) {
   cat("cached extraction+eaf ->", CACHE, "\n")
 }
 
-# ---------- compute r via validated pure-R function ----------
+# ---------- compute r via validated pure-R function
 harm_k$r.exposure <- r_from_lor(harm_k$beta.exposure, harm_k$eaf.exposure,
                                 INS_N*INS_PREV, INS_N*(1-INS_PREV), INS_PREV)
 harm_k$r.outcome  <- r_from_lor(harm_k$beta.outcome,  harm_k$eaf.outcome,
@@ -154,7 +153,7 @@ cat(sprintf("  Kunkle: median |r.exp|=%.4f, |r.out|=%.4f\n",
 cat(sprintf("  Bellenguez: median |r.exp|=%.4f, |r.out|=%.4f\n",
             median(abs(harm_b$r.exposure), na.rm=TRUE), median(abs(harm_b$r.outcome), na.rm=TRUE))); flush.console()
 
-# ---------- directionality_test (crash-safe list-collect) ----------
+# ---------- directionality_test crash-safe list-collect
 run_steiger <- function(harm, label, path) {
   n_r <- sum(!is.na(harm$r.exposure) & !is.na(harm$r.outcome))
   cat(sprintf("  [%s] SNPs with both r.exposure & r.outcome = %d\n", label, n_r)); flush.console()
@@ -170,7 +169,6 @@ run_steiger <- function(harm, label, path) {
 st_k <- run_steiger(harm_k, "insomnia<->Kunkle",    file.path(OUT, "steiger_ins_kunkle.rds"))
 st_b <- run_steiger(harm_b, "insomnia<->Bellenguez", file.path(OUT, "steiger_ins_bell.rds"))
 
-# ---------- summary ----------
 summ <- function(res, label) {
   if (is.null(res)) return(data.frame(label=label, status="SKIPPED/ERROR",
                                        steiger_p=NA_real_, correct_causal=NA_character_,

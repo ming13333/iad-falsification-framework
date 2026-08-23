@@ -1,6 +1,0 @@
-Tue Jul 21 11:03:53     2026 GitHub URL: 
-Tue Jul 21 11:03:54     2026 CRAN URL: https://cran.r-project.org/bin/windows/Rtools/rtools45/
-Tue Jul 21 11:03:54     2026 FINAL: https://cran.r-project.org/bin/windows/Rtools/rtools45/
-Tue Jul 21 11:03:55     2026 exit=0 size:
--rwxr-xr-x 1 lm962 197609 1416 Jul 21 11:03 C:/Users/lm962/rtools45_installer.exe
-Tue Jul 21 11:03:55     2026 === done ===

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 """
 ea02_instruments.py
 Extract genome-wide significant instruments from Chen 2024 EAS EduYears GWAS.
@@ -11,18 +11,17 @@ Output: data/processed/ea_education_instruments.csv
 
 import csv, sys, os, heapq, math
 
-PROJ = r'c:/D/workbuddy/科研/共病分析'
+PROJ = r'.'
 INFILE = os.path.join(PROJ, 'GCST90296498.tsv')
 OUTDIR = os.path.join(PROJ, 'data/processed')
 OUTFILE = os.path.join(OUTDIR, 'ea_education_instruments.csv')
 
 os.makedirs(OUTDIR, exist_ok=True)
 
-# --- config ---
 P_THRESH = 5e-8
 CLUMP_KB = 10000
 
-# --- scan: find all GW-sig SNPs (single nucleotide, non-zero beta) ---
+# --- scan: find all GW-sig SNPs single nucleotide, non-zero beta
 print('Scanning for p<5e-8, single-nucleotide, beta!=0 instruments...')
 candidates = []  # list of (p, dict)
 n_scanned = 0; n_gwsig = 0; n_indel = 0; n_beta0 = 0; n_total_nonan = 0
@@ -42,13 +41,11 @@ with open(INFILE, 'r') as f:
         if p >= P_THRESH:
             continue
         n_gwsig += 1
-        # filter indels
         ea = row.get('effect_allele', '')
         oa = row.get('other_allele', '')
         if len(ea) != 1 or len(oa) != 1:
             n_indel += 1
             continue
-        # filter beta==0
         if beta == 0.0:
             n_beta0 += 1
             continue
@@ -72,7 +69,7 @@ print(f'  Indels excluded: {n_indel:,}')
 print(f'  beta=0 excluded: {n_beta0:,}')
 print(f'  Candidates:      {len(candidates):,}')
 
-# --- distance-based clumping ---
+# --- distance-based clumping
 print('\nClumping (kb=10Mb greedy, by p-value)...')
 candidates.sort(key=lambda x: x[0])  # sort by p ascending
 last_pos = {}  # chrom -> last kept bp
@@ -82,7 +79,6 @@ for p, rec in candidates:
     chrom = rec['chromosome']
     pos = rec['position']
     if chrom not in last_pos or abs(pos - last_pos[chrom]) > CLUMP_KB * 1000:
-        # compute F-statistic
         f_stat = (rec['beta'] / rec['se']) ** 2
         rec['f_stat'] = round(f_stat, 2)
         rec['r2_approx'] = round(f_stat / (f_stat + rec.get('', 1) - 2) if f_stat > 0 else 0, 6)
@@ -101,13 +97,11 @@ print('Per-chromosome:')
 for ch in sorted(chr_counts, key=lambda x: (len(x), x)):
     print(f'  chr{ch}: {chr_counts[ch]}')
 
-# F-stat distribution
 fs = [r['f_stat'] for r in clumped]
 print(f'F-stat range: {min(fs):.1f} – {max(fs):.1f}')
 print(f'F-stat <10: {sum(1 for f in fs if f<10)} / {len(fs)}')
 print(f'F-stat median: {sorted(fs)[len(fs)//2]:.1f}')
 
-# top 5 instruments
 print('\nTop 5 instruments (by p-value):')
 for r in clumped[:5]:
     print(f'  {r["rsid"]:15s} chr{r["chromosome"]}:{r["position"]:>10,d}  '
@@ -115,7 +109,6 @@ for r in clumped[:5]:
           f'beta={r["beta"]:.4f}  se={r["se"]:.4f}  '
           f'p={r["p_value"]:.2e}  F={r["f_stat"]:.1f}  eaf={r["eaf"]:.3f}')
 
-# --- write output ---
 fieldnames = ['rsid','chromosome','position','effect_allele','other_allele',
               'beta','se','p_value','eaf','f_stat','n_total',
               'variant_id']
@@ -127,8 +120,7 @@ with open(OUTFILE, 'w', newline='') as f:
 
 print(f'\n=== Output: {OUTFILE} ({len(clumped)} rows) ===')
 
-# --- quality gate ---
 if len(clumped) < 5:
     print('\nWARNING: <5 clumped instruments extracted. Consider p<5e-6 relaxation.')
 elif len(clumped) < 10:
-    print('\nCAUTION: only {} clumped instruments — MR-Egger may be underpowered.')
+    print('\nCAUTION: only {} clumped instruments - MR-Egger may be underpowered.')

@@ -1,116 +1,71 @@
-# A Triangulation Framework for Causal Verification of Genetic Comorbidity: Recalibrating Insomnia–Alzheimer's Disease
+# iad-falsification-framework
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+Analysis pipeline for a six-level falsification framework for Mendelian randomization (MR)-based causal claims, applied to the insomnia–Alzheimer's disease (AD) comorbidity as a test case.
 
-## Overview
-
-This repository contains the complete analysis pipeline for the paper **"A triangulation framework for causal verification of genetic comorbidity: recalibrating insomnia–Alzheimer's disease from a presumed causal upstream to APOE-locus-specific shared liability with cross-ancestry educational protection."**
-
-We propose and validate a **triangulation framework** for genetic comorbidity verification, using insomnia–AD as a proof-of-concept:
-1. **Phenomenological**: Bidirectional MR with LD-clump sensitivity
-2. **Genome-wide**: LDSC genetic correlation ± chromosome-19/APOE removal
-3. **Locus-level**: Colocalization (forward + reverse)
-4. **Mechanistic**: Two-step protein- and metabolite-mediation MR
-5. **Protective-factor**: MVMR + educational-attainment PheWAS + East Asian replication
-
-## Key Findings
-
-- Unclumped insomnia→AD MR (+0.10, p=0.0009) was a **false positive** — reversed to null after LD-clumping
-- Genome-wide genetic correlation rg≈0; shared signal confined to **APOE locus only**
-- Educational attainment is a cross-ancestry protective factor for AD and PD (but not MS)
-- **No plasma protein mediates education→AD** (36-targeted screen, FDR=0; UKB-PPP verification confirms null)
-- Triglycerides are a genetically proxied mediator of education's AD protection (indirect=−0.031, q=0.0006)
-- Insomnia–AD classified as **quadrant III (shared liability, no independent causal upstream)**
-
-## Repository Structure
-
-```
-├── README.md                          # This file
-├── CITATION.cff                       # Citation metadata for Zenodo/GitHub
-├── renv.lock                          # R package version lockfile
-├── code/
-│   ├── 00_config.R                    # Global configuration & paths
-│   ├── 01_bidirectional_mr_coloc.R    # Layer 1+3: Bidirectional MR + coloc
-│   ├── 01b_overlap_correction.R       # MRlap sample overlap correction
-│   ├── 01c_cause_patched.R            # CAUSE correlated pleiotropy
-│   ├── 01d_g1_wrapup.R                # Layer 1+3 synthesis
-│   ├── 02_g2_open_gwas.R             # G2 insomnia→protein→AD mediation
-│   ├── 02b_g2_enhanced.R             # G2 enhanced protein screen
-│   ├── 02e_g2b_curated.R             # G2b education→protein→AD curated (36-protein)
-│   ├── 04_mvmr.R                      # Layer 5: MVMR
-│   ├── 06_ldsc_genetic_correlation.R  # Layer 2: LDSC rg
-│   ├── 07_education_phewas_mr.R       # Layer 5: Education PheWAS
-│   ├── 08h_steiger_py.py             # Steiger directionality (Python fallback)
-│   ├── 09b_metabolite_mediation_slim.R # C1: Metabolite mediation
-│   ├── 10b_power_calc_eas.R           # East Asian replication power calc
-│   ├── g2b_fdr.py                     # G2b FDR correction
-│   ├── make_g2b_curated_fig.py        # Fig3C generation
-│   ├── recompute_g2b_bootci.py        # Bootstrap CI recomputation
-│   ├── extract_ukbppp_pqtl.py         # UKB-PPP pQTL extraction from Nature supp tables
-│   ├── make_figures.py                # Fig1/2/5 generation
-│   ├── r_analysis/                    # Standardised R analysis scripts
-│   └── README.md                      # Code documentation
-├── 课题设计阶段/
-│   ├── Phase1_comprehensive_results.md        # Complete results summary
-│   ├── Phase2A_abstract_discussion_rewrite.md # Manuscript draft
-│   ├── G1_conclusion_revision_2026-08-01.md   # Central argument revision
-│   ├── Supplementary/                          # S1-S4 supplementary tables
-│   └── figures/                                # Supplementary figures
-└── data/
-    └── raw/                           # Cached GWAS harmonised inputs
-```
-
-## Data Sources
-
-| Data | Source | Accession |
-|------|--------|-----------|
-| Insomnia GWAS | UK Biobank / IEU OpenGWAS | `ukb-b-3957` |
-| AD GWAS (Kunkle) | IGAP / IEU OpenGWAS | `ieu-b-2` |
-| AD GWAS (Bellenguez) | IEU OpenGWAS | `ebi-a-GCST90027158` |
-| Educational attainment | Lee 2018 / IEU OpenGWAS | `ieu-a-1239` |
-| EA education (EAS) | Chen/Kim/Lam 2024 / GWAS Catalog | `GCST90296498` |
-| EA AD (EAS) | GARD/NIAGADS | `NG00182` |
-| INTERVAL plasma proteins | IEU OpenGWAS | `prot-a-1..2200` |
-| Metabolites | IEU OpenGWAS | `met-d-*` |
-| UKB-PPP pQTL | Sun et al. 2023, *Nature* | Supp Tables 9–10; Synapse `syn51364943` |
-
-## Software Dependencies
-
-- **R 4.5.2** — main analysis environment (`TwoSampleMR`, `ieugwasr`, `MendelianRandomization`, `GenomicSEM`, `cause`, `coloc`)
-- **Python 3.13** — Steiger directionality fallback, figures, UKB-PPP extraction (`numpy`, `pandas`, `matplotlib`, `openpyxl`)
-- **LDSC** — LD score regression (standalone)
-- R package versions locked in `renv.lock`
-- Known ABI issue: R 4.5.2 running packages compiled for R 4.5.3 may cause transient SIGSEGV; Python pyreadr path available as fallback
-
-## Reproducibility
-
-- All random number generation uses `set.seed()` (R) or `np.random.default_rng(42)` (Python)
-- IEU OpenGWAS API calls are deterministic given the same server state; key API outputs are cached in `data/raw/c1_cache/`
-- Bootstrap CI for G2b was cross-computed in Python/numpy after R quantile write failure; both converge to the same asymptotic distribution
-- GWAS summary statistics from public repositories (IEU OpenGWAS, GWAS Catalog, NIAGADS, Nature supplementary tables)
+**Version**: v1.1.0 (English-only release)
 
 ## Citation
 
-If you use this code or data, please cite:
+Luo M, Ye W, Liu Q. A falsification framework for causal claims in polygenic epidemiology: the insomnia–Alzheimer's disease test case. Zenodo. doi:10.5281/zenodo.21858125
 
-```bibtex
-@article{insomniaAD2025,
-  title={A triangulation framework for causal verification of genetic comorbidity: 
-         recalibrating insomnia–Alzheimer's disease from a presumed causal 
-         upstream to APOE-locus-specific shared liability},
-  author={[Authors]},
-  journal={[Journal]},
-  year={2026},
-  doi={[DOI]}
-}
+## Summary of results
+
+- Six falsification gates: Association → Robustness → Genetic architecture → Direct effect → Biological mediation → Directional external validation.
+- Outcome: Grade C — evidence supports shared liability (APOE-locus-specific sharing) rather than insomnia as an independent upstream cause of AD.
+- Genome-wide genetic correlation rg ≈ 0 (LDSC); positive unclumped UVMR signal is a clumping artifact and flips to null after LD clumping.
+- Extension: 12 trait pairs × 4 disease domains × 43,200 simulations; 5 East Asian (EAS) cross-ancestry replications.
+
+## Repository structure
+
+```
+.
+├── CITATION.cff          # Citation metadata
+├── LICENSE               # MIT
+├── README.md             # This file
+├── renv.lock             # R package environment (renv::restore())
+├── code/
+│   ├── README.md         # Pipeline map (gate → script)
+│   ├── r_analysis/       # 25 R modules (00_config.R entry point)
+│   └── *.py              # Python: EAS liftover/instruments/MR, simulations, figures, ref audits
+├── data/
+│   ├── raw/c1_cache/     # Cached harmonised MR inputs (zero-API reproduction)
+│   ├── processed/        # EAS instruments & harmonised datasets
+│   └── ref/              # Liftover chain files (GRCh38 → GRCh37)
+└── results/              # Curated analysis outputs (CSV/reports)
 ```
 
-See `CITATION.cff` for complete metadata.
+## Reproduction workflow
+
+1. **Environment (R)**: restore the exact package versions:
+   ```r
+   install.packages("renv")
+   renv::restore()
+   ```
+   R ≥ 4.2 recommended; see `code/r_analysis/package_versions.md` for the frozen version list.
+
+2. **Python**: Python ≥ 3.9 with `numpy`, `pandas`, `scipy`, `matplotlib`, `pyreadr`, `statsmodels` (see `code/README.md` for per-script imports).
+
+3. **Entry points**:
+   - `code/r_analysis/00_config.R` — global configuration (paths, thresholds, LD reference).
+   - `code/r_analysis/01_bidirectional_mr_coloc.R` — bidirectional MR + coloc (Gate 2).
+   - `code/r_analysis/06c_ldsc_final.R` — LD score regression (Gate 3).
+   - `code/r_analysis/04_mvmr.R` — multivariable MR (Gate 4).
+   - `code/r_analysis/09_metabolite_mediation.R` — two-step mediation (Gate 5).
+   - `code/ea02_instruments.py` → `code/ea04_mr.py` — EAS replication (Gate 6).
+   - `code/sim_framework_operating_chars.py` — 43,200-replicate simulation.
+
+4. **Zero-API reproduction**: cached harmonised inputs in `data/raw/c1_cache/` allow re-running the core MR analyses offline. See `data/raw/c1_cache/MANIFEST.csv` for provenance of each cached file.
+
+5. **Caveats on external data**: some analyses require GWAS summary statistics from IEU OpenGWAS / GWAS Catalog / NIAGADS GARD. These are downloaded on demand by the fetch scripts; the cached inputs cover the primary mediation analyses.
+
+## Notes on this release
+
+- v1.1.0 is an English-only, cleaned release for journal submission reproducibility.
+- Chinese-language development documents (project design notes, session handoffs) are intentionally excluded from this archive; they are not required for reproduction.
+- All file names are ASCII; all comments and documentation are in English.
+- The `data/` directory (cached harmonised inputs, processed EAS datasets, liftover chains) is **not** included in this GitHub repository; it is archived in full in the Zenodo record (doi:10.5281/zenodo.21858125, `data/` subdirectory). To reproduce offline, download the Zenodo archive and place its `data/` alongside this repository, or run the fetch scripts to re-download inputs from public sources.
+- Manuscript text, figures and supplementary tables are hosted in the companion GitHub repository `ming13333/iad-falsification-framework` (main branch).
 
 ## License
 
-This project is licensed under the MIT License — see [LICENSE](LICENSE) file for details.
-
-## Contact
-
-[Author contact information]
+MIT. See LICENSE.

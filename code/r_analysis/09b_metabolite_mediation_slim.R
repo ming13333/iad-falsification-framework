@@ -1,15 +1,14 @@
-#!/usr/bin/env Rscript
+# !/usr/bin/env Rscript
 # ============================================================
 # 09b_metabolite_mediation_slim.R
-# C1 精简版: 10 个生物关键代谢物
-# 修订(审计#2/#5): 补 set.seed + Step1/Step2 仪器 F 统计量
+# #2/#5: set.seed + Step1/Step2 F
 # ============================================================
 suppressMessages(library(TwoSampleMR))
-set.seed(20260801)   # 审计#5: 保证可复现（稳健性，本脚本无随机抽样但统一约定）
+set.seed(20260801)   # #5: (, )
 BOOT_N <- 5000
 
-# 参数化乘积 bootstrap (ref: 02b_g2_enhanced.R bootstrap_mediation)
-# Step1(edu->metab) 与 Step2(metab->AD) 工具不同、无样本重叠 => b1,b2 独立
+# bootstrap ref: 02b_g2_enhanced.R bootstrap_mediation
+# Step1edu->metab Step2metab->AD , => b1,b2
 bootstrap_mediation <- function(b1, se1, b2, se2, n_boot=BOOT_N, seed=42) {
   set.seed(seed)
   boots <- numeric(n_boot)
@@ -26,12 +25,11 @@ bootstrap_mediation <- function(b1, se1, b2, se2, n_boot=BOOT_N, seed=42) {
 }
 EDU_ID <- "ieu-a-1239"
 AD_ID  <- "ieu-b-2"
-OUT    <- "C:/Temp/iad_g1/results/MetMediation"
+OUT    <- "./output/results/MetMediation"
 dir.create(OUT, showWarnings=FALSE, recursive=TRUE)
 
 cat("\n===== C1 SLIM: 10 key metabolites (with instrument F-stat) =====\n\n")
 
-# ---- 10 个 AD 生物关键代谢物 ----
 mets <- c(
   "met-d-Total_C", "met-d-LDL_C", "met-d-HDL_C", "met-d-Total_TG",
   "met-d-DHA", "met-d-Omega_3",
@@ -43,7 +41,6 @@ cat("=== Extract education instruments ===\n")
 edu <- extract_instruments(EDU_ID, p1=5e-8, r2=0.001, kb=10000)
 cat("edu SNPs:", nrow(edu), "\n\n")
 
-# 统一构造结果行的辅助函数（含 F 统计量与弱仪器标记）
 mk_df <- function(met_id, b1, se1, p1, n1, b2, se2, p2, n2,
                   indirect, se_ind, p_ind, f1_med, f2_med,
                   boot_ci_lower, boot_ci_upper, boot_p) {
@@ -73,7 +70,7 @@ run_one <- function(met_id) {
     ok <- is.finite(bx)&is.finite(by)&is.finite(so)&so>0
     if(sum(ok)<3) return(NULL)
     bx<-bx[ok];by<-by[ok];so<-so[ok]
-    # F 统计量(Step1 暴露=教育): F=(beta/se)^2
+    # F Step1 =: F=beta/se^2
     f1 <- (harm$beta.exposure[ok]/harm$se.exposure[ok])^2
     f1_med <- median(f1, na.rm=TRUE)
     w<-1/so^2;denom<-sum(w*bx^2)
@@ -112,7 +109,7 @@ run_one <- function(met_id) {
       return(mk_df(met_id,b1,se1,p1,n1,NA,NA,NA,sum(ok2),NA,NA,NA,f1_med,f2_med,NA,NA,NA))
     }
     bx2<-bx2[ok2];by2<-by2[ok2];so2<-so2[ok2]
-    # F 统计量(Step2 暴露=代谢物): F=(beta/se)^2
+    # F Step2 =: F=beta/se^2
     f2 <- (harm2$beta.exposure[ok2]/harm2$se.exposure[ok2])^2
     f2_med <- median(f2, na.rm=TRUE)
     w2<-1/so2^2;denom2<-sum(w2*bx2^2)
@@ -124,13 +121,12 @@ run_one <- function(met_id) {
     p2<-2*pnorm(-abs(b2/se2)); n2<-length(bx2)
     cat(sprintf("    metab->AD: b=%.4f p=%.2g n=%d Fmed=%.1f\n", b2, p2, n2, f2_med))
 
-    # Mediation
     ind <- b1*b2
     se_ind <- sqrt(b2^2*se1^2 + b1^2*se2^2)
     p_ind <- 2*pnorm(-abs(ind/se_ind))
     cat(sprintf("    indirect=%.4f p=%.2g\n", ind, p_ind))
 
-    # Bootstrap CI (ref: 02b_g2_enhanced.R bootstrap_mediation)
+    # Bootstrap CI ref: 02b_g2_enhanced.R bootstrap_mediation
     if (!is.na(b1) && !is.na(se1) && !is.na(b2) && !is.na(se2) &&
         is.finite(se1) && se1 > 0 && is.finite(se2) && se2 > 0) {
       bt <- tryCatch(
@@ -163,7 +159,6 @@ for(m in mets) {
 if(length(results)>0) {
   df <- do.call(rbind, results)
   df$q_ind <- p.adjust(df$p_ind, method="BH")
-  # 弱仪器标记
   df$weak_inst <- (df$n2 < 10 | (df$f2_med < 10 & !is.na(df$f2_med)))
   write.csv(df, file.path(OUT,"mediation_slim_10.csv"), row.names=FALSE)
   cat("\n===== RESULTS =====\n")

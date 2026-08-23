@@ -1,10 +1,9 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# !/usr/bin/env python3
 """Batch-verify all 79 reference DOIs against Crossref API."""
 import json, re, time, urllib.request, urllib.error
 
-REFS = json.load(open(r"C:/Temp/iad_g1/refs_dump.json", encoding='utf-8'))
-OUT = r"C:/Temp/iad_g1/crossref_results.json"
+REFS = json.load(open(r"./output/refs_dump.json", encoding='utf-8'))
+OUT = r"./output/crossref_results.json"
 
 def extract_doi(text):
     m = re.search(r'doi:\s*([^\s]+)', text)

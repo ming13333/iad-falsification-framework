@@ -1,21 +1,21 @@
 # =====================================================================
-# make_g2b_curated_fig.py -- G2b 靶向蛋白教育->蛋白->AD 两步 MR 中介可视化
+# make_g2b_curated_fig.py -- G2b ->->AD MR
 # ---------------------------------------------------------------------
-# 读 C:/Temp/iad_g1/results/G2b_curated_fdr.csv
-#   (02e_g2b_curated.R 产物 + g2b_fdr.py 加 q_ind)
-#   protein, target, iv_count, b1,se1,p1, b2,se2,p2, indirect,se_ind,p_ind,
-#   boot_mean, boot_ci_lower, boot_ci_upper, boot_p, q_ind
-# 产出 (C:/Temp/iad_g1/results/):
-#   G2b_curated_volcano.png  -- indirect effect vs -log10(q), q<0.05 标红
-#   G2b_curated_forest_top15.png -- |indirect| 最大 15 个蛋白森林图
-#   G2b_curated_summary.txt  -- 文本汇总 (供 §3.4.2 / Fig3C 使用)
-# 运行: python make_g2b_curated_fig.py
+# C:/Temp/iad_g1/results/G2b_curated_fdr.csv
+# 02e_g2b_curated.R + g2b_fdr.py q_ind
+# protein, target, iv_count, b1,se1,p1, b2,se2,p2, indirect,se_ind,p_ind
+# boot_mean, boot_ci_lower, boot_ci_upper, boot_p, q_ind
+# C:/Temp/iad_g1/results/
+# G2b_curated_volcano.png -- indirect effect vs -log10q, q<0.05
+# G2b_curated_forest_top15.png -- |indirect| 15
+# G2b_curated_summary.txt -- §3.4.2 / Fig3C
+# : python make_g2b_curated_fig.py
 # =====================================================================
 import os, sys, shutil
 import pandas as pd
 import numpy as np
 
-FIGS = r"C:\D\workbuddy\科研\共病分析\课题设计阶段\figures"
+FIGS = r"./figures"
 os.makedirs(FIGS, exist_ok=True)
 
 try:
@@ -27,8 +27,8 @@ except Exception as e:
     HAVE_MPL = False
     sys.stderr.write(f"[warn] matplotlib unavailable: {e}\n")
 
-IN  = "C:/Temp/iad_g1/results/G2b_curated_fdr.csv"
-OUT = "C:/Temp/iad_g1/results"
+IN  = "./output/results/G2b_curated_fdr.csv"
+OUT = "./output/results"
 os.makedirs(OUT, exist_ok=True)
 
 df = pd.read_csv(IN)
@@ -76,7 +76,7 @@ if not HAVE_MPL:
     print("[skip] figures not rendered (matplotlib missing)")
     sys.exit(0)
 
-# ---- Volcano: indirect vs -log10(q) ----
+# ---- Volcano: indirect vs -log10q
 fig, ax = plt.subplots(figsize=(10, 6))
 colors = np.where(df_eval["sig"], "#c0392b", "#3498db")
 ax.scatter(df_eval["indirect"], df_eval["logq"], c=colors, s=22, alpha=0.75, edgecolors="none")
@@ -112,7 +112,7 @@ shutil.copy(os.path.join(OUT, "G2b_curated_volcano.png"), os.path.join(FIGS, "Su
 shutil.copy(os.path.join(OUT, "G2b_curated_volcano.svg"), os.path.join(FIGS, "SuppFig3C_volcano.svg"))
 plt.close()
 
-# ---- Forest top 15 by |indirect| ----
+# ---- Forest top 15 by |indirect|
 top15 = df_eval.reindex(df_eval["indirect"].abs().sort_values(ascending=False).index).head(15).iloc[::-1]
 y = np.arange(len(top15))
 err = 1.96 * top15["se_ind"]

@@ -1,22 +1,21 @@
-# LDSC 完整版: 主分析 + 去 chr19 敏感性 (修复 capture.output 问题)
+# LDSC : + chr19 capture.output
 suppressMessages({ library(GenomicSEM); library(data.table) })
 
-LD_REF   <- "C:/Temp/iad_g1/ld_ref"
+LD_REF   <- "./output/ld_ref"
 LDSCORE  <- file.path(LD_REF, "LDscore")
 HM3      <- file.path(LD_REF, "hm3_with_alleles.txt")
-OUT_DIR  <- "C:/Temp/iad_g1/results/LDSC"
-WORK_DIR <- "C:/Temp/iad_g1/ldsc_work"
+OUT_DIR  <- "./output/results/LDSC"
+WORK_DIR <- "./output/ldsc_work"
 dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
 setwd(WORK_DIR)
 
 logmsg <- function(...) message("[LDSC] ", ..., " (", format(Sys.time(), "%H:%M:%S"), ")")
 
-## ---- Munged files already exist from previous run ----
+# ---- Munged files already exist from previous run
 ins_munged <- "insomnia.sumstats.gz"
 ad_munged  <- "ad_kunkle.sumstats.gz"
 if (!file.exists(ins_munged) || !file.exists(ad_munged)) stop("Munged files missing")
 
-## ---- Main LDSC ----
 logmsg("Running main LDSC (insomnia x AD)...")
 ldsc_out <- ldsc(
   traits = c(ins_munged, ad_munged),
@@ -26,8 +25,8 @@ ldsc_out <- ldsc(
   trait.names = c("insomnia", "ad"))
 
 rg <- as.numeric(ldsc_out$S[1, 2] / sqrt(ldsc_out$S[1, 1] * ldsc_out$S[2, 2]))
-## Delta method for rg SE (not sqrt(V[2,2]) which is gcov_se)
-## Var(rg) ≈ (1/(S11*S22))*V[2,2] + (rg²/(4*S11²))*V[1,1] + (rg²/(4*S22²))*V[3,3]
+# Delta method for rg SE not sqrtV[2,2] which is gcov_se
+# Varrg ≈ 1/S11*S22*V[2,2] + rg²/4*S11²*V[1,1] + rg²/4*S22²*V[3,3]
 S11 <- as.numeric(ldsc_out$S[1,1]); S22 <- as.numeric(ldsc_out$S[2,2])
 V11 <- as.numeric(ldsc_out$V[1,1]); V22 <- as.numeric(ldsc_out$V[2,2]); V33 <- as.numeric(ldsc_out$V[3,3])
 rg_var <- (1/(S11*S22))*V22 + (rg^2/(4*S11^2))*V11 + (rg^2/(4*S22^2))*V33
@@ -52,7 +51,7 @@ logmsg("=== Main Results ===")
 logmsg("rg = ", signif(rg, 4), " +/- ", signif(rg_se, 4), " (p = ", signif(rg_p, 4), ")")
 write.csv(results, file.path(OUT_DIR, "LDSC_insomnia_AD.csv"), row.names = FALSE)
 
-## ---- Sensitivity: remove chr19 (APOE) ----
+# ---- Sensitivity: remove chr19 APOE
 logmsg("Sensitivity: removing chr19 (APOE region)...")
 # Re-munge without chr19
 prep_no_chr19 <- function(file, trait_name) {
@@ -74,8 +73,8 @@ prep_no_chr19 <- function(file, trait_name) {
   list(path = out_path, n = n_total, prev = prev, name = paste0(trait_name, "_n19"))
 }
 
-INS_FILE <- "C:/Temp/iad_g1/data/raw/ukb-b-3957/ukb-b-3957.clean.tsv.gz"
-AD_FILE  <- "C:/Temp/iad_g1/data/raw/ieu-b-2/ieu-b-2.clean.tsv.gz"
+INS_FILE <- "./output/data/raw/ukb-b-3957/ukb-b-3957.clean.tsv.gz"
+AD_FILE  <- "./output/data/raw/ieu-b-2/ieu-b-2.clean.tsv.gz"
 
 ins_n19 <- prep_no_chr19(INS_FILE, "insomnia")
 ad_n19  <- prep_no_chr19(AD_FILE,  "ad_kunkle")
@@ -96,7 +95,7 @@ ldsc_n19 <- ldsc(
   trait.names = c(ins_n19$name, ad_n19$name))
 
 rg_n19 <- as.numeric(ldsc_n19$S[1, 2] / sqrt(ldsc_n19$S[1, 1] * ldsc_n19$S[2, 2]))
-## Delta method for rg SE
+# Delta method for rg SE
 S11n <- as.numeric(ldsc_n19$S[1,1]); S22n <- as.numeric(ldsc_n19$S[2,2])
 V11n <- as.numeric(ldsc_n19$V[1,1]); V22n <- as.numeric(ldsc_n19$V[2,2]); V33n <- as.numeric(ldsc_n19$V[3,3])
 rg_n19_var <- (1/(S11n*S22n))*V22n + (rg_n19^2/(4*S11n^2))*V11n + (rg_n19^2/(4*S22n^2))*V33n
@@ -117,7 +116,6 @@ logmsg("rg change: ", signif(rg, 4), " -> ", signif(rg_n19, 4))
 
 write.csv(results_n19, file.path(OUT_DIR, "LDSC_insomnia_AD_no_chr19.csv"), row.names = FALSE)
 
-## ---- Summary ----
 all_results <- rbind(results, results_n19)
 write.csv(all_results, file.path(OUT_DIR, "LDSC_summary.csv"), row.names = FALSE)
 

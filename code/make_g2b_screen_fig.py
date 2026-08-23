@@ -1,14 +1,13 @@
 # =====================================================================
-# make_g2b_screen_fig.py -- G2b 全蛋白质组筛选可视化 (post-02d)
+# make_g2b_screen_fig.py -- G2b post-02d
 # ---------------------------------------------------------------------
-# 读 C:/Temp/iad_g1/results/G2b_screen/G2_screen_mediation.csv
-#   (02d_g2b_screen.R 产物: protein, target, b1,b2, indirect, se_ind,
-#    p_ind, fdr, boot_ci_lower, boot_ci_upper, n1, n2, ...)
-# 产出:
-#   G2b_screen_volcano.png  -- indirect effect vs -log10(p), FDR<0.05 标红
-#   G2b_screen_forest_top15.png -- |indirect| 最大的 15 个蛋白森林图
-#   G2b_screen_summary.txt  -- 文本汇总 (供 §3.4.2 / Fig3C 使用)
-# 运行: python make_g2b_screen_fig.py
+# C:/Temp/iad_g1/results/G2b_screen/G2_screen_mediation.csv
+# 02d_g2b_screen.R : protein, target, b1,b2, indirect, se_ind
+# p_ind, fdr, boot_ci_lower, boot_ci_upper, n1, n2, ...
+# G2b_screen_volcano.png -- indirect effect vs -log10p, FDR<0.05
+# G2b_screen_forest_top15.png -- |indirect| 15
+# G2b_screen_summary.txt -- §3.4.2 / Fig3C
+# : python make_g2b_screen_fig.py
 # =====================================================================
 import os, sys
 import pandas as pd
@@ -23,8 +22,8 @@ except Exception as e:
     HAVE_MPL = False
     sys.stderr.write(f"[warn] matplotlib unavailable: {e}\n")
 
-IN  = "C:/Temp/iad_g1/results/G2b_screen/G2_screen_mediation.csv"
-OUT = "C:/Temp/iad_g1/results/G2b_screen"
+IN  = "./output/results/G2b_screen/G2_screen_mediation.csv"
+OUT = "./output/results/G2b_screen"
 os.makedirs(OUT, exist_ok=True)
 
 df = pd.read_csv(IN)
@@ -51,7 +50,7 @@ top = df.reindex(df["indirect"].abs().sort_values(ascending=False).index).head(5
 lines.append("Top 5 by |indirect|:")
 for _, r in top.iterrows():
     lines.append(f"  {r['protein']} {r['target']}: indirect={r['indirect']:.4g} p={r['p_ind']:.2g} fdr={r['fdr']:.3g}")
-# strongest by FDR (smallest fdr) even if >0.05
+# strongest by FDR smallest fdr even if >0.05
 lines.append("Most significant (smallest FDR):")
 for _, r in df.sort_values("fdr").head(5).iterrows():
     lines.append(f"  {r['protein']} {r['target']}: fdr={r['fdr']:.3g} indirect={r['indirect']:.4g} p={r['p_ind']:.2g}")
@@ -64,7 +63,6 @@ if not HAVE_MPL:
     print("[skip] figures not rendered (matplotlib missing)")
     sys.exit(0)
 
-# ---- Volcano ----
 fig, ax = plt.subplots(figsize=(8, 6))
 colors = np.where(df["sig"], "#c0392b", "#3498db")
 ax.scatter(df["indirect"], df["logp"], c=colors, s=18, alpha=0.7, edgecolors="none")
@@ -80,7 +78,7 @@ plt.tight_layout()
 plt.savefig(os.path.join(OUT, "G2b_screen_volcano.png"), dpi=150)
 plt.close()
 
-# ---- Forest top 15 by |indirect| ----
+# ---- Forest top 15 by |indirect|
 top15 = df.reindex(df["indirect"].abs().sort_values(ascending=False).index).head(15).iloc[::-1]
 y = np.arange(len(top15))
 err = 1.96 * top15["se_ind"]

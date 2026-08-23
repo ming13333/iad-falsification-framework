@@ -1,14 +1,14 @@
-#!/usr/bin/env python3
-"""补全 G2b bootstrap 95% CI（原 R 脚本 quantile 列写入丢失）。
+# !/usr/bin/env python3
+""" G2b bootstrap 95% CI( R  quantile ). 
 
-从已写入的 b1,se1,b2,se2 重算 5000 次 product-of-sums bootstrap 的
-2.5%/97.5% 分位数，回填 G2b_curated_fdr.csv 的 boot_ci_lower/upper。
-boot_mean/boot_p 已由 R 产出且有效，仅补 CI。
+ b1,se1,b2,se2  5000  product-of-sums bootstrap 
+2.5%/97.5% ,  G2b_curated_fdr.csv  boot_ci_lower/upper. 
+boot_mean/boot_p  R ,  CI. 
 """
 import csv, random
 import numpy as np
 
-CSV = "C:/Temp/iad_g1/results/G2b_curated_fdr.csv"
+CSV = "./output/results/G2b_curated_fdr.csv"
 
 def isnan(x):
     return x is None or x == "" or x.upper() == "NA"

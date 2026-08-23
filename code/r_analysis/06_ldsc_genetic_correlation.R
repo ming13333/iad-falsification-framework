@@ -1,27 +1,26 @@
 # =====================================================================
-# 06_ldsc_genetic_correlation.R  —  C: LDSC cross-trait genetic correlation
+# 06_ldsc_genetic_correlation.R - C: LDSC cross-trait genetic correlation
 # ---------------------------------------------------------------------
-# Quantify genome-wide genetic correlation (rg) between insomnia and AD.
+# Quantify genome-wide genetic correlation rg between insomnia and AD.
 # Uses local clean GWAS + GenomicSEM::munge/ldsc + 1000G EUR LD scores.
-# Expected: rg significant positive (APOE-driven), drops after removing chr19.
+# Expected: rg significant positive APOE-driven, drops after removing chr19.
 # =====================================================================
 suppressMessages({ library(GenomicSEM); library(data.table) })
 
-## ---- Config ----
-LD_REF   <- "C:/Temp/iad_g1/ld_ref"
+LD_REF   <- "./output/ld_ref"
 LDSCORE  <- file.path(LD_REF, "LDscore")       # per-chr l2.ldscore.gz
 HM3      <- file.path(LD_REF, "hm3_with_alleles.txt")
-INS_FILE <- "C:/Temp/iad_g1/data/raw/ukb-b-3957/ukb-b-3957.clean.tsv.gz"
-AD_FILE  <- "C:/Temp/iad_g1/data/raw/ieu-b-2/ieu-b-2.clean.tsv.gz"
-OUT_DIR  <- "C:/Temp/iad_g1/results/LDSC"
+INS_FILE <- "./output/data/raw/ukb-b-3957/ukb-b-3957.clean.tsv.gz"
+AD_FILE  <- "./output/data/raw/ieu-b-2/ieu-b-2.clean.tsv.gz"
+OUT_DIR  <- "./output/results/LDSC"
 dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
-WORK_DIR <- "C:/Temp/iad_g1/ldsc_work"
+WORK_DIR <- "./output/ldsc_work"
 dir.create(WORK_DIR, showWarnings = FALSE, recursive = TRUE)
 setwd(WORK_DIR)
 
 logmsg <- function(...) message("[LDSC] ", ..., " (", format(Sys.time(), "%H:%M:%S"), ")")
 
-## ---- Prepare GWAS for munge ----
+# ---- Prepare GWAS for munge
 prep_gwas <- function(file, trait_name) {
   logmsg("Reading: ", file)
   dt <- fread(file, select = c("SNP","CHR","BP","A1","A2","beta","se","p","n","ncase","ncontrol"))
@@ -57,7 +56,7 @@ prep_gwas <- function(file, trait_name) {
 ins <- prep_gwas(INS_FILE, "insomnia")
 ad  <- prep_gwas(AD_FILE,  "ad_kunkle")
 
-## ---- Munge summary stats (filter to HM3, format for LDSC) ----
+# ---- Munge summary stats filter to HM3, format for LDSC
 munge_trait <- function(info, hm3_file) {
   logmsg("Munging: ", info$name)
   invisible(capture.output(
@@ -72,7 +71,7 @@ munge_trait <- function(info, hm3_file) {
 ins_munged <- munge_trait(ins, HM3)
 ad_munged  <- munge_trait(ad,  HM3)
 
-## ---- Run cross-trait LDSC ----
+# ---- Run cross-trait LDSC
 logmsg("Running cross-trait LDSC (insomnia x AD)...")
 
 traits <- c(ins_munged, ad_munged)
@@ -91,7 +90,6 @@ invisible(capture.output(
   )
 ))
 
-## ---- Extract results ----
 rg <- as.numeric(ldsc_out$S[1, 2] / sqrt(ldsc_out$S[1, 1] * ldsc_out$S[2, 2]))
 rg_se <- sqrt(as.numeric(ldsc_out$V[2, 2]))
 rg_p <- 2 * pnorm(-abs(rg) / rg_se)
@@ -133,7 +131,7 @@ logmsg("intercept = ", signif(intercept, 4))
 
 write.csv(results, file.path(OUT_DIR, "LDSC_insomnia_AD.csv"), row.names = FALSE)
 
-## ---- Sensitivity: remove chr19 (APOE region) ----
+# ---- Sensitivity: remove chr19 APOE region
 logmsg("Sensitivity: removing chr19 (APOE region)...")
 prep_gwas_no_chr19 <- function(file, trait_name) {
   dt <- fread(file, select = c("SNP","CHR","BP","A1","A2","beta","se","p","n","ncase","ncontrol"))
@@ -190,7 +188,6 @@ logmsg("rg change: ", signif(rg, 4), " -> ", signif(rg_n19, 4), " (delta = ", si
 
 write.csv(results_n19, file.path(OUT_DIR, "LDSC_insomnia_AD_no_chr19.csv"), row.names = FALSE)
 
-## ---- Summary ----
 all_results <- rbind(results, results_n19)
 write.csv(all_results, file.path(OUT_DIR, "LDSC_summary.csv"), row.names = FALSE)
 
@@ -204,7 +201,7 @@ if (!is.na(rg) && !is.na(rg_n19) && rg > rg_n19) {
 }
 logmsg("Results saved to: ", OUT_DIR, "/LDSC_summary.csv")
 
-## ---- Cleanup temp files ----
+# ---- Cleanup temp files
 logmsg("Cleaning temporary munge files...")
 temp_files <- list.files(WORK_DIR, pattern = "\\.(tsv|sumstats\\.gz|munge\\.log|log)$", full.names = TRUE)
 file.remove(temp_files[file.exists(temp_files)])

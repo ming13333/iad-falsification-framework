@@ -1,8 +1,8 @@
-"""逐条引文→稿件段落映射 + 位置合理性审计"""
+"""-> + """
 import re, collections
 
-RIS = "C:/D/workbuddy/科研/共病分析/课题设计阶段/references.ris"
-MANUSCRIPT = "C:/D/workbuddy/科研/共病分析/课题设计阶段/Phase2A_abstract_discussion_rewrite.md"
+RIS = "./docs/historical/references.ris"
+MANUSCRIPT = "./docs/historical/Phase2A_abstract_discussion_rewrite.md"
 
 def parse_ris(path):
     entries = []
@@ -22,8 +22,7 @@ def parse_ris(path):
             else: current[tag] = val
     return entries
 
-# ── 分类规则 ──
-# Keywords → section mapping
+# Keywords -> section mapping
 SECTION_RULES = collections.OrderedDict([
     ("Methods / Statistics", [
         "mendelian randomi","instrumental variable","ivw","weighted median","egger regress",
@@ -45,7 +44,7 @@ SECTION_RULES = collections.OrderedDict([
         "causal infer","causal evidence","causal relationship",
         "review","meta.analysis","consensus","guideline","recommend",
     ]),
-    ("Results — GWAS / genetic architecture", [
+    ("Results - GWAS / genetic architecture", [
         "genome.wide association","gwas meta","meta.analysis","ld score",
         "genetic correlation","genetic architecture","rg","heritab",
         "loci","susceptibility loci","novel loci","risk loci",
@@ -53,7 +52,7 @@ SECTION_RULES = collections.OrderedDict([
         "parkinson","multiple sclerosis","neurodegener",
         "apoe","shared genetic","pleiotrop","genetic overlap",
     ]),
-    ("Results — MR / mediation", [
+    ("Results - MR / mediation", [
         "causal effect","mendelian randomi","mr estimate","causal associat",
         "mediation","indirect effect","indirect","mediator",
         "protein","proteom","pqtl","plasma","metabol","lipid","triglyceride",
@@ -115,7 +114,6 @@ for section in SECTION_RULES:
         print(f"  [{idx:2d}] {au} ({yr}) {jt:25s} | {ti:.65s}")
     print()
 
-# Unclassified
 uncl = [m for m in mapping if "Unclassified" in m[1] or m[1] not in SECTION_RULES]
 if uncl:
     print(f"## UNCLASSIFIED / NEEDS REVIEW ({len(uncl)} refs)")
@@ -127,6 +125,6 @@ print()
 print("=" * 80)
 print(f"SUMMARY: Methods {section_counts.get('Methods / Statistics',0)}, "
       f"Intro/Background {section_counts.get('Introduction / Background',0)}, "
-      f"GWAS Results {section_counts.get('Results — GWAS / genetic architecture',0)}, "
-      f"MR/Mediation {section_counts.get('Results — MR / mediation',0)}, "
+      f"GWAS Results {section_counts.get('Results - GWAS / genetic architecture',0)}, "
+      f"MR/Mediation {section_counts.get('Results - MR / mediation',0)}, "
       f"Discussion {section_counts.get('Discussion / implications',0)}")

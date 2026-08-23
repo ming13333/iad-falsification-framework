@@ -1,16 +1,12 @@
-#!/usr/bin/env Rscript
+# !/usr/bin/env Rscript
 # ============================================================
-# 01f_cause_clumped.R
-# C3: 用 LD-clumped 变异集重跑 CAUSE，验证"未 clump 伪迹"
+# C3: LD-clumped CAUSE, " clump "
 # ------------------------------------------------------------
-# 背景:
-#   原 01c (CAUSE) 对 p<1e-3 的 15564 个原始变异直接跑 cause(),
-#   前向(失眠→AD) 给出 causal_p=0.004 ("CAUSAL") —— 这是未 LD-clump
-#   导致的 LD 结构伪迹 (与 UVMR unclump +0.10 同理)。
-# 修复:
-#   先对 p<1e-3 变异做 LD-clump (r2=0.01, EUR 面板) 收敛到独立位点,
-#   再喂给 cause()。预期: clumped CAUSE 前向不再显著 → 伪迹确认。
-# 依赖: cause, loo, data.table, ieugwasr(仅 ld_clump 需联网)
+# ->AD causal_p=0.004 "CAUSAL" -- LD-clump
+# LD UVMR unclump +0.10 .
+# p<1e-3 LD-clump r2=0.01, EUR
+# cause. : clumped CAUSE -> .
+# : cause, loo, data.table, ieugwasr ld_clump
 # ============================================================
 
 set.seed(20240721)
@@ -23,7 +19,7 @@ suppressMessages({
   library(ieugwasr)
 })
 
-# ---- monkey-patch cause:::in_sample_elpd_loo (loo >= 2.6.0 兼容, 同 01c) ----
+# ---- monkey-patch cause:::in_sample_elpd_loo loo >= 2.6.0 , 01c
 patched_in_sample_elpd_loo <- function(X, fits, variants, nsamps = 500) {
     stopifnot(inherits(X, "cause_data"))
     if (!missing(variants)) {
@@ -88,10 +84,10 @@ patched_in_sample_elpd_loo <- function(X, fits, variants, nsamps = 500) {
 assignInNamespace("in_sample_elpd_loo", patched_in_sample_elpd_loo, ns = "cause")
 cat("cause:::in_sample_elpd_loo patched.\n\n")
 
-# ---- 路径 ----
-DIR_RAW  <- "C:/Temp/iad_g1/data/raw"
-DIR_RES  <- "C:/Temp/iad_g1/results"
-DIR_LD   <- "C:/Temp/iad_g1/ld_ref/LDscore"
+# ---- ----
+DIR_RAW  <- "./output/data/raw"
+DIR_RES  <- "./output/results"
+DIR_LD   <- "./output/ld_ref/LDscore"
 
 GWAS_FILES <- list(
   "ukb-b-3957"         = file.path(DIR_RAW, "ukb-b-3957/ukb-b-3957.clean.tsv.gz"),
@@ -105,7 +101,7 @@ COMBOS <- list(
   list(exp="ebi-a-GCST90027158", out="ukb-b-3957",          label="cause_rep_rev_clumped")
 )
 
-# ---- CHR+POS -> rsID 映射 (同 01b/01c) ----
+# ---- CHR+POS -> rsID 01b/01c
 rsid_map <- rbindlist(lapply(1:22, function(chr) {
   f <- file.path(DIR_LD, paste0(chr, ".l2.ldscore.gz"))
   if (!file.exists(f)) return(NULL)
@@ -134,8 +130,8 @@ load_gwas_for_overlap <- function(gwas_id) {
 
 run_cause_clumped <- function(exp_id, out_id, label) {
   cat("\n[", label, "] CAUSE (LD-clumped variants) exp=", exp_id, " out=", out_id, "\n")
-  e <- tryCatch(load_gwas_for_overlap(exp_id), error=function(err){cat("读暴露失败:",conditionMessage(err),"\n");NULL})
-  o <- tryCatch(load_gwas_for_overlap(out_id), error=function(err){cat("读结局失败:",conditionMessage(err),"\n");NULL})
+  e <- tryCatch(load_gwas_for_overlap(exp_id), error=function(err){cat(":",conditionMessage(err),"\n");NULL})
+  o <- tryCatch(load_gwas_for_overlap(out_id), error=function(err){cat(":",conditionMessage(err),"\n");NULL})
   if (is.null(e) || is.null(o)) return(NULL)
 
   e <- data.frame(snp=e$SNP, beta_hat=e$beta, se=e$se, A1=e$A1, A2=e$A2, stringsAsFactors=FALSE)
@@ -144,36 +140,35 @@ run_cause_clumped <- function(exp_id, out_id, label) {
   X <- tryCatch(cause::gwas_merge(e, o, snp_name_cols=c("snp","snp"),
             beta_hat_cols=c("beta_hat","beta_hat"), se_cols=c("se","se"),
             A1_cols=c("A1","A1"), A2_cols=c("A2","A2"), compute_pvals=TRUE),
-        error=function(err){cat("gwas_merge 失败:",conditionMessage(err),"\n");NULL})
+        error=function(err){cat("gwas_merge :",conditionMessage(err),"\n");NULL})
   if (is.null(X)) return(NULL)
   cat("  gwas_merge:", nrow(X), "SNPs\n")
 
-  # est_cause_params 用全部/大样本变异估计共享-特异方差混合 (同原 01c, 不 clump)
+  # est_cause_params /- 01c, clump
   varlist <- X$snp
   if (length(varlist) > 500000) varlist <- sample(varlist, 500000)
   params <- tryCatch(cause::est_cause_params(X, variants=varlist),
-        error=function(err){cat("est_cause_params 失败:",conditionMessage(err),"\n");NULL})
+        error=function(err){cat("est_cause_params :",conditionMessage(err),"\n");NULL})
   if (is.null(params)) return(NULL)
 
-  # ---- 关键修复: p<1e-3 候选变异 -> LD-clump 到独立位点 ----
   raw_vars <- X$snp[which(X$p1 < 1e-3)]
-  cat("  p<1e-3 候选变异 (暴露侧):", length(raw_vars), "\n")
+  cat("  p<1e-3  ():", length(raw_vars), "\n")
   clumped <- tryCatch(
     ieugwasr::ld_clump(dat = data.frame(rsid = raw_vars,
                         pval = X$p1[which(X$p1 < 1e-3)]),
                         clump_r2 = 0.01, clump_p = 1e-3, clump_kb = 500, pop = "EUR"),
-    error=function(err){cat("  ld_clump 失败 (退回原始候选):",conditionMessage(err),"\n");NULL})
+    error=function(err){cat("  ld_clump  ():",conditionMessage(err),"\n");NULL})
   if (!is.null(clumped) && nrow(clumped) > 0) {
     variants <- as.character(clumped$rsid)
-    cat("  LD-clump 后独立变异:", length(variants), " (压缩比 ",
+    cat("  LD-clump :", length(variants), " ( ",
         round(length(variants)/length(raw_vars),3), ")\n")
   } else {
     variants <- raw_vars
-    cat("  ld_clump 不可用, 退回原始候选 (", length(variants), ")\n")
+    cat("  ld_clump ,  (", length(variants), ")\n")
   }
 
   fit <- tryCatch(cause::cause(X=X, variants=variants, param_ests=params, force=TRUE),
-        error=function(err){cat("  cause() 失败:",conditionMessage(err),"\n");NULL})
+        error=function(err){cat("  cause() :",conditionMessage(err),"\n");NULL})
   if (is.null(fit)) return(NULL)
 
   summ <- tryCatch(summary(fit), error=function(err) NULL)
@@ -211,15 +206,14 @@ if (length(results) > 0) {
   df <- do.call(rbind, results)
   out_csv <- file.path(DIR_RES, "G1_cause_clumped.csv")
   write.csv(df, out_csv, row.names=FALSE)
-  cat("\n=== C3 CAUSE (clumped) 结果 ===\n")
+  cat("\n=== C3 CAUSE (clumped)  ===\n")
   print(df)
-  cat("\n保存:", out_csv, "\n")
+  cat("\n:", out_csv, "\n")
 
-  # 对比旧版 (未 clump)
   old_csv <- file.path(DIR_RES, "G1_cause.csv")
   if (file.exists(old_csv)) {
     old <- fread(old_csv)
-    cat("\n=== 对比: 旧版(未clump) vs 新版(clumped) ===\n")
+    cat("\n=== : (clump) vs (clumped) ===\n")
     cmp <- merge(
       old[, .(label, cause_causal_p, cause_decision, cause_n_variants)],
       df[, .(label=gsub("_clumped$","",label), cause_causal_p_clumped=cause_causal_p,

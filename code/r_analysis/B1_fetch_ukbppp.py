@@ -1,27 +1,26 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# !/usr/bin/env python3
 """
-B1_fetch_ukbppp.py — UKB-PPP 蛋白 pQTL 取数 (Synapse syn51364943)
+B1_fetch_ukbppp.py - UKB-PPP  pQTL  (Synapse syn51364943)
 ====================================================================
-依赖: managed venv  C:/Users/lm962/.workbuddy/binaries/python/envs/default
-      (已 pip install synapseclient==4.13.0)
+: managed venv  <python_venv>/envs/default
+      ( pip install synapseclient==4.13.0)
 
-用法:
-    set SYNAPSE_AUTH_TOKEN=xxxx        # Synapse 账号 auth token (推荐, 非交互)
-    C:/Users/lm962/.workbuddy/binaries/python/envs/default/Scripts/python.exe B1_fetch_ukbppp.py
+:
+    set SYNAPSE_AUTH_TOKEN=xxxx        # Synapse  auth token (, )
+    <python_venv>/envs/default/Scripts/python.exe B1_fetch_ukbppp.py
 
-说明:
-    - syn51364943 为中国区 GEO_RESTRICTED 受控数据。需先 (1) 注册 Synapse 账号
-      (2) 申请该数据集的数据访问 (Data Access Request 获批) (3) 生成 Personal Access Token。
-    - 本脚本递归遍历项目树, 仅下载 PRIORITY 关键词命中的蛋白摘要统计文件
-      (默认 GFAP / NEFL / CRP / IL6), 避免全量 ~2923 蛋白 (~10GB+) 的盲目下载。
-    - 下载后输出到 OUT_DIR, 并生成 manifest.json。
+:
+    - syn51364943  GEO_RESTRICTED .  (1)  Synapse 
+      (2)  (Data Access Request ) (3)  Personal Access Token. 
+    - ,  PRIORITY 
+      ( GFAP / NEFL / CRP / IL6),  ~2923  (~10GB+) . 
+    -  OUT_DIR,  manifest.json. 
 
-验证门 (落盘后由下游 B1_verify.py 执行):
-    - 每文件含列:  SNP/CHR/BP/A1/A2/BETA/SE/PVAL + 至少一个等位基因频率列
-      (AF / EAF / effect_allele_frequency), 用于 G2 coloc 方差与 eaf 重抽。
-    - 重点蛋白在册 (GFAP/NEFL/CRP/IL6 各自至少 1 个文件)。
-    - build = GRCh38 (UKB-PPP 2023 原生), 后续 B2 降 liftover 到 GRCh37。
+ ( B1_verify.py ):
+    - :  SNP/CHR/BP/A1/A2/BETA/SE/PVAL + 
+      (AF / EAF / effect_allele_frequency),  G2 coloc  eaf . 
+    -  (GFAP/NEFL/CRP/IL6  1 ). 
+    - build = GRCh38 (UKB-PPP 2023 ),  B2  liftover  GRCh37. 
 """
 import os
 import sys
@@ -32,18 +31,17 @@ from synapseclient import Synapse
 import synapseutils
 
 SYN_ID = "syn51364943"
-OUT_DIR = "C:/Temp/iad_g1/data/ukbppp"
-# 重点蛋白 (Olink target 关键词, 实际文件名以项目树为准)
+OUT_DIR = "./output/data/ukbppp"
 PRIORITY = ["GFAP", "NEFL", "CRP", "IL6"]
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--priority", nargs="*", default=PRIORITY,
-                    help="蛋白关键词列表 (默认 GFAP NEFL CRP IL6)")
+                    help=" ( GFAP NEFL CRP IL6)")
     ap.add_argument("--out", default=OUT_DIR)
     ap.add_argument("--all", action="store_true",
-                    help="下载项目内全部文件 (谨慎, ~10GB+)")
+                    help=" (, ~10GB+)")
     args = ap.parse_args()
 
     syn = Synapse()

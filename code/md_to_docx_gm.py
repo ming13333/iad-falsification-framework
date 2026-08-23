@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# !/usr/bin/env python3
 """Convert the Genome Medicine markdown manuscript to a submission-compliant .docx.
 
 Formatting enforced (BMC / Genome Medicine submission guidelines):
@@ -20,8 +19,8 @@ from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
-SRC = r"C:/D/workbuddy/科研/共病分析/课题设计阶段/manuscript_draft_with_23refs.md"
-OUT = r"C:/D/workbuddy/科研/共病分析/课题设计阶段/manuscript_GenomeMedicine_submission.docx"
+SRC = r"./docs/historical/manuscript_draft_with_23refs.md"
+OUT = r"./docs/historical/manuscript_GenomeMedicine_submission.docx"
 
 TOKEN_RE = re.compile(r'\*\*(.+?)\*\*|\*(.+?)\*|<sup>(.*?)</sup>')
 
@@ -74,11 +73,9 @@ def add_table(doc, header, rows):
     t = doc.add_table(rows=1, cols=ncol)
     t.style = 'Table Grid'
     t.alignment = WD_TABLE_ALIGNMENT.CENTER
-    # header
     hdr = t.rows[0].cells
     for i, h in enumerate(header):
         set_cell_text(hdr[i], h, bold=True, size=10)
-    # body
     for row in rows:
         cells = t.add_row().cells
         for i in range(ncol):
@@ -135,13 +132,12 @@ def main():
 
     doc = Document()
 
-    # --- base styles ---
     normal = doc.styles['Normal']
     normal.font.name = 'Times New Roman'
     normal.font.size = Pt(12)
     normal.paragraph_format.line_spacing_rule = WD_LINE_SPACING.DOUBLE
 
-    # --- section page setup ---
+    # --- section page setup
     sec = doc.sections[0]
     sec.top_margin = Inches(1); sec.bottom_margin = Inches(1)
     sec.left_margin = Inches(1); sec.right_margin = Inches(1)
@@ -156,12 +152,10 @@ def main():
         line = lines[i]
         stripped = line.strip()
 
-        # horizontal rule
         if stripped in ('---', '***', '___'):
             i += 1
             continue
 
-        # table
         if stripped.startswith('|') and i + 1 < n and is_sep(lines[i + 1]):
             header = split_row(lines[i])
             i += 2
@@ -172,7 +166,6 @@ def main():
             add_table(doc, header, rows)
             continue
 
-        # headings
         m = re.match(r'^(#{1,4})\s+(.*)$', line)
         if m:
             level = len(m.group(1))
@@ -188,7 +181,6 @@ def main():
             i += 1
             continue
 
-        # bullet list
         if re.match(r'^\s*-\s+', line):
             while i < n and re.match(r'^\s*-\s+', lines[i]):
                 content = re.sub(r'^\s*-\s+', '', lines[i])
@@ -197,7 +189,7 @@ def main():
                 i += 1
             continue
 
-        # ordered list (numbered "1. ") outside references -> List Number, strip number
+        # ordered list numbered "1. " outside references -> List Number, strip number
         if re.match(r'^\d+\.\s+', line) and not in_references:
             while i < n and re.match(r'^\d+\.\s+', lines[i]):
                 content = re.sub(r'^\d+\.\s+', '', lines[i])
@@ -206,7 +198,6 @@ def main():
                 i += 1
             continue
 
-        # blockquote note
         if stripped.startswith('>'):
             content = stripped.lstrip('>').strip()
             p = doc.add_paragraph()
@@ -216,12 +207,10 @@ def main():
             i += 1
             continue
 
-        # blank
         if stripped == '':
             i += 1
             continue
 
-        # normal paragraph
         p = doc.add_paragraph()
         if in_front_matter:
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -241,7 +230,6 @@ def main():
             add_runs(p, line)
         i += 1
 
-    # metadata
     cp = doc.core_properties
     cp.title = "A falsification framework for causal claims in polygenic epidemiology: the insomnia-Alzheimer's disease test case"
     cp.author = "Ming Luo, Wangyang Ye, Qin Liu"

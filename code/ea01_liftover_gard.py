@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 """
 ea01_liftover_gard.py
 Liftover GARD EA AD summary stats from GRCh38 (hg38) to GRCh37 (hg19).
@@ -8,8 +8,7 @@ Output: data/processed/gard_ea_ad_hg19.tsv.gz
 
 import gzip, sys, os, time
 
-# --- paths ---
-PROJ = r'c:/D/workbuddy/科研/共病分析'
+PROJ = r'.'
 INFILE = os.path.join(PROJ, 'data/GARD_NG00182/gard_ea_ad_hg38_poskey.tsv.gz')
 OUTDIR = os.path.join(PROJ, 'data/processed')
 CHAIN  = os.path.join(PROJ, 'data/ref/hg38ToHg19.over.chain.gz')
@@ -17,21 +16,18 @@ OUTFILE = os.path.join(OUTDIR, 'gard_ea_ad_hg19.tsv.gz')
 
 os.makedirs(OUTDIR, exist_ok=True)
 
-# --- init liftover ---
 from pyliftover import LiftOver
 print('Loading chain from', CHAIN)
 lo = LiftOver(CHAIN)
 print('Chain loaded.')
 
-# --- read header ---
 with gzip.open(INFILE, 'rt') as f:
     header = f.readline().rstrip('\n').split('\t')
 print('Input header:', header)
 # Expected: SNP, CHR, BP, A1, A2, beta, se, p, N, N_cases, N_controls
 
-# --- process ---
 n_total = 0; n_mapped = 0; n_failed = 0; n_multiple = 0
-# Build known chromosome map (autosomes + X + Y + MT)
+# Build known chromosome map autosomes + X + Y + MT
 known_chroms = set(str(i) for i in range(1,23)) | {'X','Y','MT','M'}
 count_on_chrom = {}  # per-chromosome stats
 
@@ -50,7 +46,7 @@ with gzip.open(INFILE, 'rt') as fin, gzip.open(OUTFILE, 'wt') as fout:
             print(f'  [{n_total/1e6:.1f}M] {n_total/1e6:.1f}M rows, '
                   f'{rate:.0f} rows/s, mapped={n_mapped} failures={n_failed} multi={n_multiple}')
         parts = line.rstrip('\n').split('\t')
-        # parts: SNP(chr:pos_hg38), CHR, BP, ...
+        # parts: SNPchr:pos_hg38, CHR, BP, ...
         chrom = parts[1]   # numeric chr
         bp_hg38 = int(parts[2])
         # prepare chr prefix for chain
@@ -67,7 +63,7 @@ with gzip.open(INFILE, 'rt') as fin, gzip.open(OUTFILE, 'wt') as fout:
 
         if len(res) > 1:
             n_multiple += 1
-        # take first mapping (primary assembly)
+        # take first mapping primary assembly
         _, bp_hg19, strand, _ = res[0]
         if strand != '+':
             # negative strand mapping is extremely rare for chain; discard

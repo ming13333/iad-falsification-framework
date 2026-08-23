@@ -1,88 +1,35 @@
 {
   "R": {
-    "Version": "4.5.2",
-    "Repositories": [
+    "Version": "4.5.2", "Repositories": [
       {
-        "Name": "CRAN",
-        "URL": "https://cloud.r-project.org"
+        "Name": "CRAN", "URL": "https://cloud.r-project.org"
       }
     ]
-  },
-  "Packages": {
+  }, "Packages": {
     "TwoSampleMR": {
-      "Package": "TwoSampleMR",
-      "Version": "0.7.9",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": ["ieugwasr", "MendelianRandomization", "dplyr", "data.table"]
-    },
-    "ieugwasr": {
-      "Package": "ieugwasr",
-      "Version": "1.1.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": ["httr", "data.table"]
-    },
-    "MendelianRandomization": {
-      "Package": "MendelianRandomization",
-      "Version": "0.10.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": ["meta", "rmeta"]
-    },
-    "GenomicSEM": {
-      "Package": "GenomicSEM",
-      "Version": "0.0.5",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": ["lavaan", "OpenMx"]
-    },
-    "cause": {
-      "Package": "cause",
-      "Version": "1.2.0.335",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": ["data.table", "Rsolnp"]
-    },
-    "loo": {
-      "Package": "loo",
-      "Version": "2.10.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": ["matrixStats", "rstantools"]
-    },
-    "dplyr": {
-      "Package": "dplyr",
-      "Version": "1.2.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": ["rlang", "tidyselect"]
-    },
-    "data.table": {
-      "Package": "data.table",
-      "Version": "1.18.4",
-      "Source": "Repository",
-      "Repository": "CRAN"
-    },
-    "pyreadr": {
-      "Package": "pyreadr",
-      "Version": "0.5.6",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": ["Rcpp"]
+      "Package": "TwoSampleMR", "Version": "0.7.9", "Source": "Repository", "Repository": "CRAN", "Requirements": ["ieugwasr", "MendelianRandomization", "dplyr", "data.table"]
+    }, "ieugwasr": {
+      "Package": "ieugwasr", "Version": "1.1.0", "Source": "Repository", "Repository": "CRAN", "Requirements": ["httr", "data.table"]
+    }, "MendelianRandomization": {
+      "Package": "MendelianRandomization", "Version": "0.10.0", "Source": "Repository", "Repository": "CRAN", "Requirements": ["meta", "rmeta"]
+    }, "GenomicSEM": {
+      "Package": "GenomicSEM", "Version": "0.0.5", "Source": "Repository", "Repository": "CRAN", "Requirements": ["lavaan", "OpenMx"]
+    }, "cause": {
+      "Package": "cause", "Version": "1.2.0.335", "Source": "Repository", "Repository": "CRAN", "Requirements": ["data.table", "Rsolnp"]
+    }, "loo": {
+      "Package": "loo", "Version": "2.10.0", "Source": "Repository", "Repository": "CRAN", "Requirements": ["matrixStats", "rstantools"]
+    }, "dplyr": {
+      "Package": "dplyr", "Version": "1.2.1", "Source": "Repository", "Repository": "CRAN", "Requirements": ["rlang", "tidyselect"]
+    }, "data.table": {
+      "Package": "data.table", "Version": "1.18.4", "Source": "Repository", "Repository": "CRAN"
+    }, "pyreadr": {
+      "Package": "pyreadr", "Version": "0.5.6", "Source": "Repository", "Repository": "CRAN", "Requirements": ["Rcpp"]
     }
-  },
-  "Python": {
-    "Version": "3.13.12 (managed)",
-    "Packages": {
-      "pyreadr": "0.5.6 (C implementation, avoids R namespace load)",
-      "matplotlib": "installed in managed venv (figures)",
-      "numpy": "installed in managed venv (figures)"
+  }, "Python": {
+    "Version": "3.13.12 (managed)", "Packages": {
+      "pyreadr": "0.5.6 (C implementation, avoids R namespace load)", "matplotlib": "installed in managed venv (figures)", "numpy": "installed in managed venv (figures)"
     }
-  },
-  "Notes": [
-    "本 renv.lock 因 R 环境 ABI 段错误（R 4.5.2 运行 R 4.5.3 编译的 TwoSampleMR/ieugwasr/data.table，library() 加载即崩）无法由 renv::snapshot() 自动生成，故依据 §四.3 的已记录 Session Info 手工重建。",
-    "投稿前须在可用 R 环境中以 renv::snapshot() 重新生成权威 lockfile，并附容器化环境（如 rocker/rstudio + 锁文件）声明以确保完全可复现。",
-    "Steiger 方向性检验与东亚复制改以纯 Python（C:/Users/lm962/.workbuddy/binaries/python/versions/3.13.12）复现，见 code/08h_steiger_py.py 与 code/ea0*.py，不依赖上述 R 包。"
+  }, "Notes": [
+ " renv.lock R ABI  (R 4.5.2 R 4.5.3 TwoSampleMR/ieugwasr/data.table, library() )  renv::snapshot(), §.3 Session Info . ", " R renv::snapshot() lockfile, ( rocker/rstudio + ) . ", "Steiger direction sensitivity: Python fallback (code/08h_steiger_py.py, code/ea0*.py) used when R crashes; see code/r_analysis/README."
   ]
 }

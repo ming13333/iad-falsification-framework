@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Supplementary Figure 3: two-step MR mediation via plasma proteins (CRP, IL-6).
 Left panel: insomnia -> protein -> AD (G2). Right panel: education -> protein -> AD (G2b).
 Both show null indirect effects, demonstrating that the inflammatory-protein pathway
@@ -10,7 +9,7 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 import numpy as np
 
-OUT = "C:/D/workbuddy/科研/共病分析/课题设计阶段/figures/Fig3_Supp_protein_mediation.png"
+OUT = "./docs/historical/figures/Fig3_Supp_protein_mediation.png"
 
 # Data: exposure, protein, step_label, b, se, n
 data = {
@@ -60,11 +59,9 @@ fig, axes = plt.subplots(1, 2, figsize=(12.5, 5.0), sharex=True)
 draw_panel(axes[0], "A. Insomnia -> protein -> AD", data["Insomnia"])
 draw_panel(axes[1], "B. Education -> protein -> AD", data["Education"])
 
-# shared x-limits
 for ax in axes:
     ax.set_xlim(-0.7, 0.7)
 
-# legend
 leg = [Line2D([0], [0], marker="o", color=colors["Step1"], lw=0, markersize=6, label="Step1 (exposure -> protein)"),
        Line2D([0], [0], marker="o", color=colors["Step2"], lw=0, markersize=6, label="Step2 (protein -> AD)"),
        Line2D([0], [0], marker="o", color=colors["Indirect"], lw=0, markersize=6, label="Indirect (product)")]
