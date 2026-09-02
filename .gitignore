@@ -15,3 +15,6 @@ raw/
 .DS_Store
 Thumbs.db
 ~$*
+
+# Simulation / pipeline run outputs (regenerable from frozen scripts)
+output/

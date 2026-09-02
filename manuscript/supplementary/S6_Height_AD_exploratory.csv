@@ -1,0 +1,4 @@
+﻿# Supplementary Table S6. Exploratory height-to-AD analysis
+# Height instruments (382 SNPs, F=78.4) tested against AD (Kunkle 2019). Directional pleiotropy; not used as formal negative control.
+exposure,outcome,n_snps,F,b_ivw,se_ivw,p_ivw,b_egger,se_egger,p_egger,b_wmed,se_wmed,p_wmed,Q,Q_p
+Height,AD (Kunkle 2019),382,78.4,-0.107,0.034,0.002,-0.071,0.092,0.44,-0.089,0.048,0.063,431,5e-05

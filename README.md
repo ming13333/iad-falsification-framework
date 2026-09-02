@@ -31,7 +31,8 @@ Luo M, Ye W, Liu Q. A falsification framework for causal claims in polygenic epi
 │   ├── raw/c1_cache/     # Cached harmonised MR inputs (zero-API reproduction)
 │   ├── processed/        # EAS instruments & harmonised datasets
 │   └── ref/              # Liftover chain files (GRCh38 → GRCh37)
-└── results/              # Curated analysis outputs (CSV/reports)
+├── results/              # Curated analysis outputs (CSV/reports)
+└── manuscript/           # Frontiers in Genetics submission (v1): docx + md source, figures/, supplementary/
 ```
 
 ## Reproduction workflow
@@ -64,7 +65,7 @@ Luo M, Ye W, Liu Q. A falsification framework for causal claims in polygenic epi
 - Chinese-language development documents (project design notes, session handoffs) are intentionally excluded from this archive; they are not required for reproduction.
 - All file names are ASCII; all comments and documentation are in English.
 - The `data/` directory (cached harmonised inputs, processed EAS datasets, liftover chains) is **not** included in this GitHub repository; it is archived in full in the Zenodo record (doi:10.5281/zenodo.21858125, `data/` subdirectory). To reproduce offline, download the Zenodo archive and place its `data/` alongside this repository, or run the fetch scripts to re-download inputs from public sources.
-- Manuscript text, figures and supplementary tables are hosted in the companion GitHub repository `ming13333/iad-falsification-framework` (main branch).
+- Manuscript text, figures and supplementary tables are provided in the `manuscript/` directory of this repository (Frontiers in Genetics submission, v1).
 
 ## License
 

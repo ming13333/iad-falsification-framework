@@ -201,17 +201,18 @@ if __name__ == "__main__":
     # causal replicates: FDR = Peffect==0 | grade in {A,B}.
     agg = []
     for (n_iv, ld, pleio, overlap), g in df.groupby(["n_iv", "ld", "pleio", "overlap"]):
-        tp = g[g["effect"] > 0]
         tn = g[g["effect"] == 0]
-        sens = np.mean(tp["grade"].isin(["A", "B"])) if len(tp) else np.nan
         spec = np.mean(tn["grade"] == "D") if len(tn) else np.nan
         ab = g[g["grade"].isin(["A", "B"])]
         fdr = np.mean(ab["effect"] == 0) if len(ab) else np.nan
         for eff in EFFECT:
             ge = g[g["effect"] == eff]
+            # sensitivity is effect-specific: (grade A or B) / replicates
+            # for THIS effect size (do not pool causal effects across betas)
+            sens = np.mean(ge["grade"].isin(["A", "B"])) if eff > 0 else np.nan
             agg.append({"n_iv": n_iv, "ld": ld, "pleio": pleio, "overlap": overlap,
                         "effect": eff,
-                        "sens": sens if eff > 0 else np.nan,
+                        "sens": sens,
                         "spec": spec if eff == 0 else np.nan,
                         "fdr": fdr,
                         "n_gradeA": int(np.sum(ge["grade"] == "A")),

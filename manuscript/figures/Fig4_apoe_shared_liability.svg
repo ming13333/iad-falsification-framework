@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="556.178125pt" height="273.6pt" viewBox="0 0 556.178125 273.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-02T07:35:12.396294</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 273.6 
+L 556.178125 273.6 
+L 556.178125 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 9.72 37.008 
+L 508.68 37.008 
+" clip-path="url(#pdc8d7c3116)" style="fill: none; stroke: #d8d8d8; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 9.72 209.376 
+L 508.68 209.376 
+" clip-path="url(#pdc8d7c3116)" style="fill: none; stroke: #d8d8d8; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="patch_2">
+    <path d="M 12.492 253.5696 
+L 505.908 253.5696 
+Q 508.932 253.5696 508.932 252.0144 
+L 508.932 218.5776 
+Q 508.932 217.0224 505.908 217.0224 
+L 12.492 217.0224 
+Q 9.468 217.0224 9.468 218.5776 
+L 9.468 252.0144 
+Q 9.468 253.5696 12.492 253.5696 
+z
+" clip-path="url(#pdc8d7c3116)" style="fill: #0f2a4d"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #272727; font: 700 9px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="9.72" y="19.89675" transform="rotate(-0 9.72 19.89675)">Triangulation of insomnia–AD comorbidity across five analytical dimensions</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #8f8f8f; font: italic 7px 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="9.72" y="29.757641" transform="rotate(-0 9.72 29.757641)">Five independent lines of evidence converge on the same conclusion.</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #272727; font: 700 8px 'Arial'; text-anchor: start" x="17.28" y="55.92975" transform="rotate(-0 17.28 55.92975)">L1</text>
+   </g>
+   <g id="text_4">
+    <text style="fill: #272727; font: 700 8px 'Arial'; text-anchor: start" x="62.64" y="55.87725" transform="rotate(-0 62.64 55.87725)">Phenomenological</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #4d4d4d; font: 7px 'Arial'; text-anchor: start" x="168.48" y="55.66725" transform="rotate(-0 168.48 55.66725)">Unclumped +0.10 → null after LD-clumping</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #b64342; font: 700 7px 'Arial'; text-anchor: start" x="455.76" y="55.66725" transform="rotate(-0 455.76 55.66725)">Gatekeeper triggered</text>
+   </g>
+   <g id="text_7">
+    <text style="fill: #272727; font: 700 8px 'Arial'; text-anchor: start" x="17.28" y="88.32975" transform="rotate(-0 17.28 88.32975)">L2</text>
+   </g>
+   <g id="text_8">
+    <text style="fill: #272727; font: 700 8px 'Arial'; text-anchor: start" x="62.64" y="88.32975" transform="rotate(-0 62.64 88.32975)">Genome-wide</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #4d4d4d; font: 7px 'Arial'; text-anchor: start" x="168.48" y="88.06725" transform="rotate(-0 168.48 88.06725)">r_g = -0.03 (P=0.57); unchanged after chr19 removal</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #8f8f8f; font: 700 7px 'Arial'; text-anchor: start" x="455.76" y="88.024594" transform="rotate(-0 455.76 88.024594)">No genome-wide arch</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #272727; font: 700 8px 'Arial'; text-anchor: start" x="17.28" y="120.72975" transform="rotate(-0 17.28 120.72975)">L3</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #272727; font: 700 8px 'Arial'; text-anchor: start" x="62.64" y="120.72975" transform="rotate(-0 62.64 120.72975)">Locus-level</text>
+   </g>
+   <g id="text_13">
+    <text style="fill: #4d4d4d; font: 7px 'Arial'; text-anchor: start" x="168.48" y="120.46725" transform="rotate(-0 168.48 120.46725)">Reverse colocalisation strong (18/32); forward weak (1/47)</text>
+   </g>
+   <g id="text_14">
+    <text style="fill: #8f8f8f; font: 700 7px 'Arial'; text-anchor: start" x="455.76" y="120.46725" transform="rotate(-0 455.76 120.46725)">Shared liability, not directed</text>
+   </g>
+   <g id="text_15">
+    <text style="fill: #272727; font: 700 8px 'Arial'; text-anchor: start" x="17.28" y="153.12975" transform="rotate(-0 17.28 153.12975)">L4</text>
+   </g>
+   <g id="text_16">
+    <text style="fill: #272727; font: 700 8px 'Arial'; text-anchor: start" x="62.64" y="153.12975" transform="rotate(-0 62.64 153.12975)">Mechanistic</text>
+   </g>
+   <g id="text_17">
+    <text style="fill: #4d4d4d; font: 7px 'Arial'; text-anchor: start" x="168.48" y="152.86725" transform="rotate(-0 168.48 152.86725)">TG partly mediates education→AD; CRP/IL-6 null (FDR &gt; 0.9)</text>
+   </g>
+   <g id="text_18">
+    <text style="fill: #8f8f8f; font: 700 7px 'Arial'; text-anchor: start" x="455.76" y="152.913187" transform="rotate(-0 455.76 152.913187)">Lipid, not inflammation</text>
+   </g>
+   <g id="text_19">
+    <text style="fill: #272727; font: 700 8px 'Arial'; text-anchor: start" x="17.28" y="185.52975" transform="rotate(-0 17.28 185.52975)">L5</text>
+   </g>
+   <g id="text_20">
+    <text style="fill: #272727; font: 700 8px 'Arial'; text-anchor: start" x="62.64" y="185.52975" transform="rotate(-0 62.64 185.52975)">Protective factor</text>
+   </g>
+   <g id="text_21">
+    <text style="fill: #4d4d4d; font: 7px 'Arial'; text-anchor: start" x="168.48" y="185.26725" transform="rotate(-0 168.48 185.26725)">Education protects AD and PD (PheWAS); EAS consistent</text>
+   </g>
+   <g id="text_22">
+    <text style="fill: #2e7d5b; font: 700 7px 'Arial'; text-anchor: start" x="455.76" y="185.270531" transform="rotate(-0 455.76 185.270531)">Independent protective axis</text>
+   </g>
+   <g id="text_23">
+    <text style="fill: #ffffff; font: 700 8px 'Arial'; text-anchor: start" x="19.8" y="230.88975" transform="rotate(-0 19.8 230.88975)">SYNTHESIS</text>
+   </g>
+   <g id="text_24">
+    <text style="fill: #ffffff; font: 7.5px 'Arial'; text-anchor: start" x="19.8" y="243.718969" transform="rotate(-0 19.8 243.718969)">Insomnia–AD comorbidity  =  shared APOE-locus liability, with no independent causal upstream of AD.</text>
+   </g>
+   <g id="text_25">
+    <text style="fill: #a8b6cc; font: italic 7px 'Arial'; text-anchor: end" x="501.12" y="237.105609" transform="rotate(-0 501.12 237.105609)">Quadrant III</text>
+   </g>
+   <g id="text_26">
+    <text style="fill: #a8b6cc; font: italic 6px 'Arial'; text-anchor: end" x="501.12" y="249.780844" transform="rotate(-0 501.12 249.780844)">6-layer triangulation</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 440.64 58.0032 
+C 442.778598 58.0032 444.829892 57.566225 446.342109 56.788513 
+C 447.854326 56.010802 448.704 54.95585 448.704 53.856 
+C 448.704 52.75615 447.854326 51.701198 446.342109 50.923487 
+C 444.829892 50.145775 442.778598 49.7088 440.64 49.7088 
+C 438.501402 49.7088 436.450108 50.145775 434.937891 50.923487 
+C 433.425674 51.701198 432.576 52.75615 432.576 53.856 
+C 432.576 54.95585 433.425674 56.010802 434.937891 56.788513 
+C 436.450108 57.566225 438.501402 58.0032 440.64 58.0032 
+z
+" clip-path="url(#pdc8d7c3116)" style="fill: #b64342; stroke: #ffffff; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 440.64 90.4032 
+C 442.778598 90.4032 444.829892 89.966225 446.342109 89.188513 
+C 447.854326 88.410802 448.704 87.35585 448.704 86.256 
+C 448.704 85.15615 447.854326 84.101198 446.342109 83.323487 
+C 444.829892 82.545775 442.778598 82.1088 440.64 82.1088 
+C 438.501402 82.1088 436.450108 82.545775 434.937891 83.323487 
+C 433.425674 84.101198 432.576 85.15615 432.576 86.256 
+C 432.576 87.35585 433.425674 88.410802 434.937891 89.188513 
+C 436.450108 89.966225 438.501402 90.4032 440.64 90.4032 
+z
+" clip-path="url(#pdc8d7c3116)" style="fill: #8f8f8f; stroke: #ffffff; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 440.64 122.8032 
+C 442.778598 122.8032 444.829892 122.366225 446.342109 121.588513 
+C 447.854326 120.810802 448.704 119.75585 448.704 118.656 
+C 448.704 117.55615 447.854326 116.501198 446.342109 115.723487 
+C 444.829892 114.945775 442.778598 114.5088 440.64 114.5088 
+C 438.501402 114.5088 436.450108 114.945775 434.937891 115.723487 
+C 433.425674 116.501198 432.576 117.55615 432.576 118.656 
+C 432.576 119.75585 433.425674 120.810802 434.937891 121.588513 
+C 436.450108 122.366225 438.501402 122.8032 440.64 122.8032 
+z
+" clip-path="url(#pdc8d7c3116)" style="fill: #8f8f8f; stroke: #ffffff; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 440.64 155.2032 
+C 442.778598 155.2032 444.829892 154.766225 446.342109 153.988513 
+C 447.854326 153.210802 448.704 152.15585 448.704 151.056 
+C 448.704 149.95615 447.854326 148.901198 446.342109 148.123487 
+C 444.829892 147.345775 442.778598 146.9088 440.64 146.9088 
+C 438.501402 146.9088 436.450108 147.345775 434.937891 148.123487 
+C 433.425674 148.901198 432.576 149.95615 432.576 151.056 
+C 432.576 152.15585 433.425674 153.210802 434.937891 153.988513 
+C 436.450108 154.766225 438.501402 155.2032 440.64 155.2032 
+z
+" clip-path="url(#pdc8d7c3116)" style="fill: #8f8f8f; stroke: #ffffff; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 440.64 187.6032 
+C 442.778598 187.6032 444.829892 187.166225 446.342109 186.388513 
+C 447.854326 185.610802 448.704 184.55585 448.704 183.456 
+C 448.704 182.35615 447.854326 181.301198 446.342109 180.523487 
+C 444.829892 179.745775 442.778598 179.3088 440.64 179.3088 
+C 438.501402 179.3088 436.450108 179.745775 434.937891 180.523487 
+C 433.425674 181.301198 432.576 182.35615 432.576 183.456 
+C 432.576 184.55585 433.425674 185.610802 434.937891 186.388513 
+C 436.450108 187.166225 438.501402 187.6032 440.64 187.6032 
+z
+" clip-path="url(#pdc8d7c3116)" style="fill: #2e7d5b; stroke: #ffffff; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pdc8d7c3116">
+   <rect x="7.2" y="7.2" width="504" height="259.2"/>
+  </clipPath>
+ </defs>
+</svg>
