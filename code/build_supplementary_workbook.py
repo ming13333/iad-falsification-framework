@@ -19,8 +19,13 @@ import re
 import sys
 
 from openpyxl import Workbook, load_workbook
-from openpyxl.styles import Alignment, Font
+from openpyxl.styles import Alignment, Border, Font, Side
 from openpyxl.utils import get_column_letter
+
+# Three-line (booktabs) rules, matching the manuscript tables: one rule above
+# the header, one below it, one below the last row, and no vertical rules.
+RULE_THICK = Side(style="medium")
+RULE_THIN = Side(style="thin")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SUPP = os.path.join(ROOT, os.environ.get("IAD_SUPP_DIR", "manuscript/supplementary"))
@@ -65,7 +70,14 @@ def coerce(value):
         return value
 
 
-def build():
+def build(rules=False):
+    """Write the workbook.
+
+    ``rules`` adds three-line borders. It is off by default because the
+    deposited v1.2.1 workbook has none, and a deposited artefact should not
+    change without a new version; pass --rules when preparing a file for
+    submission, where the three-line convention applies.
+    """
     wb = Workbook()
     wb.remove(wb.active)
     for fname, sheet in TABLES:
@@ -79,9 +91,14 @@ def build():
                 if r_i == 1:
                     cell.font = Font(bold=True)
                     cell.alignment = Alignment(vertical="top", wrap_text=True)
+                    if rules:
+                        cell.border = Border(top=RULE_THICK, bottom=RULE_THIN)
                 else:
                     cell.alignment = Alignment(vertical="top")
                 widths[c_i] = max(widths.get(c_i, 8), min(len(str(value)) + 2, 48))
+        if rules and len(rows) > 1:
+            for c_i in range(1, len(rows[-1]) + 1):
+                ws.cell(row=len(rows), column=c_i).border = Border(bottom=RULE_THICK)
         for c_i, w in widths.items():
             ws.column_dimensions[get_column_letter(c_i)].width = w
         ws.freeze_panes = "A2"
@@ -113,8 +130,12 @@ def check():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
+    ap.add_argument("--rules", action="store_true",
+                    help="add three-line borders (submission copy; not the deposit)")
     args = ap.parse_args()
-    return check() if args.check else build()
+    if args.check:
+        return check()
+    return build(rules=args.rules)
 
 
 if __name__ == "__main__":
