@@ -20,21 +20,25 @@ import argparse
 import csv
 import hashlib
 import os
+import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MANIFEST = os.path.join(ROOT, "MANIFEST_sha256.csv")
 
 # Files and directories that make up the release payload, relative to ROOT.
+# The payload is the whole archived tree: anything tracked and shipped has a
+# hash here, so a reader can verify the deposit without trusting the archive.
 PAYLOAD = [
+    ".gitignore",
     ".zenodo.json",
     "CITATION.cff",
     "LICENSE",
     "README.md",
     "renv.lock",
     "code",
-    "manuscript/figures",
-    "manuscript/supplementary",
+    "docs",
+    "manuscript",
     "results",
 ]
 
@@ -43,8 +47,8 @@ SKIP_DIRS = {"__pycache__", ".ipynb_checkpoints", ".git"}
 SKIP_FILES = {"MANIFEST_sha256.csv", ".DS_Store", "Thumbs.db"}
 
 
-def walk():
-    """Yield every payload file path, relative to ROOT, in stable order."""
+def _walk_fs():
+    """Filesystem fallback: every payload file, relative to ROOT, in stable order."""
     for entry in PAYLOAD:
         full = os.path.join(ROOT, entry)
         if os.path.isfile(full):
@@ -58,6 +62,28 @@ def walk():
                 yield os.path.relpath(os.path.join(dirpath, name), ROOT).replace("\\", "/")
 
 
+def _tracked():
+    """Tracked paths, so the manifest matches what `git archive` actually ships."""
+    out = subprocess.run(["git", "-C", ROOT, "ls-files", "-z"],
+                         capture_output=True, check=True).stdout
+    return [p for p in out.decode("utf-8", "replace").split("\0") if p]
+
+
+def walk():
+    try:
+        files = sorted(_tracked())
+    except (OSError, subprocess.CalledProcessError):
+        yield from _walk_fs()
+        return
+    for rel in files:
+        if rel in SKIP_FILES or os.path.basename(rel) in SKIP_FILES:
+            continue
+        if not any(rel == e or rel.startswith(e.rstrip("/") + "/") for e in PAYLOAD):
+            continue
+        if os.path.exists(os.path.join(ROOT, rel)):
+            yield rel
+
+
 def sha256(path):
     h = hashlib.sha256()
     with open(path, "rb") as fh:
@@ -66,11 +92,33 @@ def sha256(path):
     return h.hexdigest()
 
 
+def sha256_blob(rel):
+    """SHA-256 and size of the git blob, which is what the archive contains.
+
+    Hashing the working file instead would encode the local line-ending
+    conversion: with core.autocrlf the checkout has CRLF while the blob and the
+    zip have LF, so 125 of 159 files mismatched in the first v1.2.0 manifest.
+    """
+    blob = subprocess.run(["git", "-C", ROOT, "cat-file", "blob", ":" + rel],
+                          capture_output=True, check=True).stdout
+    return hashlib.sha256(blob).hexdigest(), len(blob)
+
+
 def build():
     rows = []
+    try:
+        subprocess.run(["git", "-C", ROOT, "rev-parse", "--git-dir"],
+                       capture_output=True, check=True)
+        use_git = True
+    except (OSError, subprocess.CalledProcessError):
+        use_git = False
     for rel in walk():
         full = os.path.join(ROOT, rel)
-        rows.append({"path": rel, "bytes": os.path.getsize(full), "sha256": sha256(full)})
+        if use_git:
+            digest, size = sha256_blob(rel)
+        else:
+            digest, size = sha256(full), os.path.getsize(full)
+        rows.append({"path": rel, "bytes": size, "sha256": digest})
     return rows
 
 

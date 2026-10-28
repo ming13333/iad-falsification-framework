@@ -2,11 +2,11 @@
 
 Analysis pipeline and frozen results for a six-gate falsification framework for Mendelian randomization (MR)-based causal claims, applied to insomnia–Alzheimer's disease (AD) comorbidity as a worked example.
 
-**Version**: v1.2.0
+**Version**: v1.2.1
 
 ## Citation
 
-Luo M, Ye W, Liu Q. A six-gate falsification framework for diagnosing locus-driven confounding in Mendelian randomization: analysis code, simulation benchmark and frozen results (v1.2.0). Zenodo. doi:<DOI-TODO>
+Luo M, Ye W, Liu Q. A six-gate falsification framework for diagnosing locus-driven confounding in Mendelian randomization: analysis code, simulation benchmark and frozen results (v1.2.1). Zenodo. doi:<DOI-TODO>
 
 Cite the version DOI above, not the concept DOI, when referring to specific numerical results: the benchmark values changed between v1.0.0 and v1.2.0 (see *Release history*).
 
@@ -85,6 +85,7 @@ Cite the version DOI above, not the concept DOI, when referring to specific nume
 
 | Version | Change |
 |---|---|
+| v1.2.1 | Corrects the file manifest only. `MANIFEST_sha256.csv` in v1.2.0 hashed the author's CRLF checkout rather than the archived bytes, so 125 of 159 entries failed verification on any other machine; entry sizes are now the blob sizes for the same reason. Archived content is otherwise identical to v1.2.0. |
 | v1.2.0 | Simulation now applies the decisive-failure cap (4,363 of 43,200 replicates regrade B → C; sensitivity at β = 0.15 falls 0.973 → 0.878 without pleiotropy; specificity unchanged). Adds Supplementary Tables S10–S12, `threshold_robustness.py`, `build_manifest.py`, frozen outputs under `results/simulation/` including `_precap/` copies, and a deterministic reproduction check. |
 | v1.1.0 | English-only cleaned release. |
 | v1.0.0 | First deposit (DOI 10.5281/zenodo.21858125). Its simulation script did not apply the decisive-failure cap; do not use it to reproduce the current Table 2. |
