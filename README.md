@@ -6,9 +6,9 @@ Analysis pipeline and frozen results for a six-gate falsification framework for 
 
 ## Citation
 
-Luo M, Ye W, Liu Q. A six-gate falsification framework for diagnosing locus-driven confounding in Mendelian randomization: analysis code, simulation benchmark and frozen results (v1.2.1). Zenodo. doi:<DOI-TODO>
+Luo M, Ye W, Liu Q. A six-gate falsification framework for diagnosing locus-driven confounding in Mendelian randomization: analysis code, simulation benchmark and frozen results (v1.2.1). Zenodo. doi:10.5281/zenodo.23733172
 
-Cite the version DOI above, not the concept DOI, when referring to specific numerical results: the benchmark values changed between v1.0.0 and v1.2.0 (see *Release history*).
+Cite the version DOI above rather than the concept DOI (10.5281/zenodo.23732880) when referring to specific numerical results, because the benchmark values changed between v1.0.0 and v1.2.0. The older deposits under DOI 10.5281/zenodo.21858125 (v1.0.0 and v1.1.0) were made under an earlier repository link and are not versions of the record above; they are superseded.
 
 ## Summary of results
 

@@ -12,6 +12,7 @@ authors:
     given-names: "Qin"
 repository-code: "https://github.com/ming13333/iad-falsification-framework"
 url: "https://github.com/ming13333/iad-falsification-framework"
+doi: 10.5281/zenodo.23733172
 keywords:
   - "Mendelian randomization"
   - "Alzheimer's disease"
