@@ -1,5 +1,17 @@
 # !/usr/bin/env python3
 """
+DEPRECATED - retained only to reproduce the numbers reported in the first
+submission. Superseded by code/scoring_reproducibility.py, which (i) re-derives
+both scoring passes under rubric v3, (ii) corrects G1 to a binary gate and G6
+to an evidence-based binary gate, and (iii) reports the statistic as scoring
+reproducibility rather than inter-rater reliability, because no independent
+second rater exists in the project archive.
+
+The two score arrays below are hard-coded author-assigned values; the file name
+and the original docstring (which described "Rater 2" as an independent blinded
+reviewer) overstated what was actually done.
+
+--- original docstring follows ---
 Inter-rater reliability analysis for the six-level falsification framework.
 Computes Cohen's κ (unweighted and quadratically weighted) for 12-case grading
 between Rater 1 (authors) and Rater 2 (independent blinded reviewer).

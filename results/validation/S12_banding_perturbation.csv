@@ -1,0 +1,15 @@
+knob,perturbation,params,n_cases_changed,n_polarity_flips,changes
+A_cut,A>=9,"a=9,b=7,c=4,cap=6",1,0,Education→T2D B->A
+A_cut,A>=10,"a=10,b=7,c=4,cap=6",0,0,none
+A_cut,A>=11,"a=11,b=7,c=4,cap=6",3,0,LDL→CAD A->B; Education→AD A->B; BMI→T2D A->B
+B_cut,B>=5,"a=10,b=5,c=4,cap=6",3,3,BMI→Stroke C->B; HDL→CAD C->B; Depression→AD C->B
+B_cut,B>=6,"a=10,b=6,c=4,cap=6",0,0,none
+B_cut,B>=7,"a=10,b=7,c=4,cap=6",0,0,none
+B_cut,B>=8,"a=10,b=8,c=4,cap=6",0,0,none
+C_cut,C>=3,"a=10,b=7,c=3,cap=6",0,0,none
+C_cut,C>=4,"a=10,b=7,c=4,cap=6",0,0,none
+C_cut,C>=5,"a=10,b=7,c=5,cap=6",1,0,Insomnia→AD C->D
+G2_cap,cap=4,"a=10,b=7,c=4,cap=4",0,0,none
+G2_cap,cap=6,"a=10,b=7,c=4,cap=6",0,0,none
+G2_cap,cap=8,"a=10,b=7,c=4,cap=8",0,0,none
+G2_cap,no cap,"a=10,b=7,c=4,cap=None",0,0,none

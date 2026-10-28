@@ -1,0 +1,13 @@
+case,score,g2_failed,binds_at_cap4,binds_at_cap6,binds_at_cap8
+LDL→CAD,10,False,False,False,False
+Education→AD,10,False,False,False,False
+BMI→T2D,10,False,False,False,False
+Height→CAD,8,False,False,False,False
+Insomnia→AD,4,True,False,False,False
+BMI→Stroke,5,False,False,False,False
+HDL→CAD,5,False,False,False,False
+CRP→CAD,0,False,False,False,False
+BMI→AD,0,False,False,False,False
+Education→T2D,9,False,False,False,False
+Depression→AD,5,False,False,False,False
+T2D→AD,0,False,False,False,False

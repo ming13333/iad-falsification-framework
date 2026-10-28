@@ -18,3 +18,7 @@ Thumbs.db
 
 # Simulation / pipeline run outputs (regenerable from frozen scripts)
 output/
+
+# Python bytecode
+__pycache__/
+*.pyc

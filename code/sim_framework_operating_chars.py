@@ -7,10 +7,21 @@ specificity, and FDR of the framework grade assignment across scenarios.
 
 Design principles (aligned with the manuscript's framework):
   - L1 fails (no association) -> cascade: grade D (disjunctive falsification).
+  - L2 fails (robustness) -> decisive failure: the additive total is capped at 6,
+    the upper bound of Grade C. A claim that does not survive clumping, overlap
+    correction and pleiotropy diagnostics is falsified on robustness grounds and
+    cannot be promoted to Grade A by the remaining gates (rubric v3, Table 1).
   - Mediation signal (L5) exists ONLY when a true causal pathway is present.
   - L4 approximates a conditional/direct-effect estimate (MVMR proxy).
   - L6 checks directional consistency in an independent second sample.
   - Instrument strength calibrated to realistic GWAS (mean F ~ 20-30).
+
+Note: earlier archived runs applied the plain additive total without the
+decisive-failure cap, which made the reported operating characteristics
+inconsistent with the published scoring rule. The cap is applied below; the
+pre-cap replicate table is kept at
+output/results/Simulation/_archive/sim_replicates_pre_cap_20261028.csv
+and the before/after comparison in Supplementary Table S12.5.
 
 Scenario grid:
   - LD concentration:  low / medium / high  (n LD blocks 40 / 12 / 5)
@@ -128,6 +139,7 @@ def grade_framework(d):
     if s["L1"] == 0:
         # cascade: no signal -> grade D, remaining gates uninformative
         return dict(L1=0, L2=0, L3=0, L4=0, L5=0, L6=0, score=0, grade="D",
+                    decisive_failure=False,
                     L1_p=p1, L2_p=np.nan, egg_int_p=np.nan, n_iv_clumped=0,
                     ivw_b=b1, ivw_p=p1)
 
@@ -167,8 +179,15 @@ def grade_framework(d):
     s["L6"] = 2 if (p6 < 0.05 and consistent) else 0
 
     total = sum(s.values())
+    # decisive failure: a failed robustness gate caps the total at the upper bound
+    # of Grade C (rubric v3, Table 1). Applies to the published rule, so the
+    # benchmark must apply it too.
+    capped = False
+    if s["L2"] == 0 and total > 6:
+        total = 6
+        capped = True
     grade = "A" if total >= 10 else ("B" if total >= 7 else ("C" if total >= 4 else "D"))
-    return {**s, "score": total, "grade": grade,
+    return {**s, "score": total, "grade": grade, "decisive_failure": capped,
             "L1_p": p1, "L2_p": p2, "egg_int_p": p_int, "n_iv_clumped": n_eff,
             "ivw_b": b1, "ivw_p": p1}
 

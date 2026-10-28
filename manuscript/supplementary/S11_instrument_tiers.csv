@@ -1,0 +1,4 @@
+﻿Instrument tier,Clumping,n IV,beta,SE,P,SE inflation vs unclumped,Direction,Gate G2
+Unclumped,None (genome-wide significant only),2462,0.10350537229019,0.0312605671920775,0.000929458418928,1.0,positive,Pass
+Loose,"r2 < 0.1, 10,000 kb",54,-0.129818476365548,0.203107314367136,0.522717552679675,6.5,negative,Fail
+Tight,"r2 < 0.001, 10,000 kb",37,-0.111438396871132,0.235624708667905,0.636249787555728,7.54,negative,Fail

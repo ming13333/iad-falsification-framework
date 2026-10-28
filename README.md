@@ -1,71 +1,100 @@
 # iad-falsification-framework
 
-Analysis pipeline for a six-level falsification framework for Mendelian randomization (MR)-based causal claims, applied to the insomnia–Alzheimer's disease (AD) comorbidity as a test case.
+Analysis pipeline and frozen results for a six-gate falsification framework for Mendelian randomization (MR)-based causal claims, applied to insomnia–Alzheimer's disease (AD) comorbidity as a worked example.
 
-**Version**: v1.1.0 (English-only release)
+**Version**: v1.2.0
 
 ## Citation
 
-Luo M, Ye W, Liu Q. A falsification framework for causal claims in polygenic epidemiology: the insomnia–Alzheimer's disease test case. Zenodo. doi:10.5281/zenodo.21858125
+Luo M, Ye W, Liu Q. A six-gate falsification framework for diagnosing locus-driven confounding in Mendelian randomization: analysis code, simulation benchmark and frozen results (v1.2.0). Zenodo. doi:<DOI-TODO>
+
+Cite the version DOI above, not the concept DOI, when referring to specific numerical results: the benchmark values changed between v1.0.0 and v1.2.0 (see *Release history*).
 
 ## Summary of results
 
-- Six falsification gates: Association → Robustness → Genetic architecture → Direct effect → Biological mediation → Directional external validation.
-- Outcome: Grade C — evidence supports shared liability (APOE-locus-specific sharing) rather than insomnia as an independent upstream cause of AD.
-- Genome-wide genetic correlation rg ≈ 0 (LDSC); positive unclumped UVMR signal is a clumping artifact and flips to null after LD clumping.
-- Extension: 12 trait pairs × 4 disease domains × 43,200 simulations; 5 East Asian (EAS) cross-ancestry replications.
+- Six falsification gates: Association → Robustness → Genetic architecture → Direct effect → Biological mediation → Directional external validation. Each gate contributes 0–2 points; the total maps to Grade A (10–12), B (7–9), C (4–6) or D (0–3). Failure at the robustness gate caps the total at 6.
+- Primary case: insomnia → AD is **Grade C** — shared liability confined to the *APOE* locus, not an independent upstream cause. The unclumped positive estimate (β = +0.10) reverses and becomes null after LD clumping (β = −0.13, P = 0.52); genome-wide r_g ≈ 0 (P = 0.57); colocalization is consistent with reverse-direction sharing; no protein mediator survives correction.
+- Control case: education → AD remains inverse (β = −0.33, P = 1.1 × 10⁻⁵) and is Grade A, so the framework is not simply returning nulls.
+- Benchmark: 43,200 simulated replicates over effect size, clumping granularity, pleiotropy regime, sample overlap and instrument count. With the decisive-failure cap applied, sensitivity at β = 0.15 is 0.878 / 0.724 / 0.691 and marginal FDR is 0.100 / 0.151 for none / balanced / directional pleiotropy; specificity under the C/D convention is 1.00 / 0.88 / 0.81.
+- Twelve-case validation cohort (A3 / B2 / C4 / D3), plus five East Asian cross-ancestry directional screens.
 
 ## Repository structure
 
 ```
 .
-├── CITATION.cff          # Citation metadata
-├── LICENSE               # MIT
-├── README.md             # This file
-├── renv.lock             # R package environment (renv::restore())
+├── CITATION.cff            # Citation metadata
+├── LICENSE                 # MIT
+├── MANIFEST_sha256.csv     # SHA-256 of every deposited file (code/build_manifest.py)
+├── README.md               # This file
+├── renv.lock               # R environment (renv::restore())
+├── .zenodo.json            # Deposit metadata
 ├── code/
-│   ├── README.md         # Pipeline map (gate → script)
-│   ├── r_analysis/       # 25 R modules (00_config.R entry point)
-│   └── *.py              # Python: EAS liftover/instruments/MR, simulations, figures, ref audits
-├── data/
-│   ├── raw/c1_cache/     # Cached harmonised MR inputs (zero-API reproduction)
-│   ├── processed/        # EAS instruments & harmonised datasets
-│   └── ref/              # Liftover chain files (GRCh38 → GRCh37)
-├── results/              # Curated analysis outputs (CSV/reports)
-└── manuscript/           # Frontiers in Genetics submission (v1): docx + md source, figures/, supplementary/
+│   ├── README.md           # Pipeline map (gate → script)
+│   ├── requirements.txt    # Python environment
+│   ├── r_analysis/         # 25 R modules (00_config.R entry point)
+│   └── *.py                # simulation, threshold robustness, figures, EAS replication, ref audits
+├── results/
+│   ├── simulation/         # frozen benchmark outputs, incl. _precap/ (pre-cap comparison)
+│   ├── ea_mr/              # East Asian replication outputs
+│   ├── G2b_edu/            # protein-mediation outputs
+│   └── MetMediation_local/ # metabolite mediation outputs
+└── manuscript/
+    ├── figures/            # Fig 1–5 (PNG + SVG)
+    └── supplementary/      # Supplementary Tables S1–S12 and Supplementary Notes
 ```
 
 ## Reproduction workflow
 
-1. **Environment (R)**: restore the exact package versions:
+1. **R environment** — restore the exact package versions:
    ```r
    install.packages("renv")
    renv::restore()
    ```
-   R ≥ 4.2 recommended; see `code/r_analysis/package_versions.md` for the frozen version list.
+   R 4.5.2 was used; see `renv.lock`.
 
-2. **Python**: Python ≥ 3.9 with `numpy`, `pandas`, `scipy`, `matplotlib`, `pyreadr`, `statsmodels` (see `code/README.md` for per-script imports).
+2. **Python environment** — Python 3.13.14 with the pinned versions:
+   ```bash
+   pip install -r code/requirements.txt
+   ```
 
-3. **Entry points**:
-   - `code/r_analysis/00_config.R` — global configuration (paths, thresholds, LD reference).
-   - `code/r_analysis/01_bidirectional_mr_coloc.R` — bidirectional MR + coloc (Gate 2).
-   - `code/r_analysis/06c_ldsc_final.R` — LD score regression (Gate 3).
-   - `code/r_analysis/04_mvmr.R` — multivariable MR (Gate 4).
-   - `code/r_analysis/09_metabolite_mediation.R` — two-step mediation (Gate 5).
-   - `code/ea02_instruments.py` → `code/ea04_mr.py` — EAS replication (Gate 6).
-   - `code/sim_framework_operating_chars.py` — 43,200-replicate simulation.
+3. **Simulation benchmark (fully self-contained, no external data)**:
+   ```bash
+   python code/sim_framework_operating_chars.py    # 43,200 replicates, seed 20260804, ~25 s
+   python code/sim_marginal_fdr.py                 # marginal FDR with Wilson intervals
+   python code/make_table2_uncertainty.py          # Table 2 point estimates + CIs
+   python code/threshold_robustness.py             # Supplementary Table S12
+   ```
+   Outputs are written to `output/results/Simulation/`. They should match `results/simulation/` byte for byte; `MANIFEST_sha256.csv` lists the expected hashes.
 
-4. **Zero-API reproduction**: cached harmonised inputs in `data/raw/c1_cache/` allow re-running the core MR analyses offline. See `data/raw/c1_cache/MANIFEST.csv` for provenance of each cached file.
+4. **Empirical pipeline** — entry points, one per gate:
+   - `code/r_analysis/00_config.R` — global configuration (paths, thresholds, LD reference)
+   - `code/r_analysis/01_bidirectional_mr_coloc.R` — bidirectional MR + colocalization (G1, G2)
+   - `code/r_analysis/06c_ldsc_final.R` — LD score regression (G3)
+   - `code/r_analysis/04_mvmr.R` — multivariable MR (G4)
+   - `code/r_analysis/09_metabolite_mediation.R` — two-step mediation (G5)
+   - `code/ea02_instruments.py` → `code/ea04_mr.py` → `code/ea05_transethnic_insomnia_ad.py` — cross-ancestry screens (G6)
 
-5. **Caveats on external data**: some analyses require GWAS summary statistics from IEU OpenGWAS / GWAS Catalog / NIAGADS GARD. These are downloaded on demand by the fetch scripts; the cached inputs cover the primary mediation analyses.
+5. **Integrity check**:
+   ```bash
+   python code/build_manifest.py --check
+   ```
+
+6. **External data** — the empirical gates use GWAS summary statistics from IEU OpenGWAS, GWAS Catalog and NIAGADS GARD, downloaded on demand by the fetch scripts under `code/`. **Raw and harmonised summary statistics are not deposited** (size and data-use terms); the empirical gate scores can be audited against the cited sources but not recomputed from this deposit alone.
+
+## Release history
+
+| Version | Change |
+|---|---|
+| v1.2.0 | Simulation now applies the decisive-failure cap (4,363 of 43,200 replicates regrade B → C; sensitivity at β = 0.15 falls 0.973 → 0.878 without pleiotropy; specificity unchanged). Adds Supplementary Tables S10–S12, `threshold_robustness.py`, `build_manifest.py`, frozen outputs under `results/simulation/` including `_precap/` copies, and a deterministic reproduction check. |
+| v1.1.0 | English-only cleaned release. |
+| v1.0.0 | First deposit (DOI 10.5281/zenodo.21858125). Its simulation script did not apply the decisive-failure cap; do not use it to reproduce the current Table 2. |
 
 ## Notes on this release
 
-- v1.1.0 is an English-only, cleaned release for journal submission reproducibility.
-- Chinese-language development documents (project design notes, session handoffs) are intentionally excluded from this archive; they are not required for reproduction.
-- All file names are ASCII; all comments and documentation are in English.
-- The `data/` directory (cached harmonised inputs, processed EAS datasets, liftover chains) is **not** included in this GitHub repository; it is archived in full in the Zenodo record (doi:10.5281/zenodo.21858125, `data/` subdirectory). To reproduce offline, download the Zenodo archive and place its `data/` alongside this repository, or run the fetch scripts to re-download inputs from public sources.
-- Manuscript text, figures and supplementary tables are provided in the `manuscript/` directory of this repository (Frontiers in Genetics submission, v1).
+- Chinese-language development documents (project design notes, session handoffs, reviewer correspondence) are intentionally excluded; they are not required for reproduction.
+- File names are ASCII; code comments and documentation are in English.
+- The `data/` directory (raw and harmonised inputs, liftover chains) is excluded from this repository and from the tagged archive by `.gitignore`.
+- The manuscript text, figures and supplementary tables are in `manuscript/`. The typeset version is published separately; this deposit is the code and results archive cited by it.
 
 ## License
 

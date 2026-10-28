@@ -1,0 +1,54 @@
+[
+  {
+    "regime": "pooled",
+    "youden_cut": 5,
+    "youden_J": 0.6679,
+    "fpr_at_youden": 0.1584,
+    "cut_for_fpr_le_005": 10,
+    "tpr_at_fpr005": 0.5321,
+    "cut_for_fpr_le_010": 8,
+    "tpr_at_fpr010": 0.5487,
+    "rubric_A_cut": 10,
+    "rubric_B_cut": 7,
+    "rubric_C_cut": 4
+  },
+  {
+    "regime": "none",
+    "youden_cut": 1,
+    "youden_J": 0.8995,
+    "fpr_at_youden": 0.0,
+    "cut_for_fpr_le_005": 1,
+    "tpr_at_fpr005": 0.8995,
+    "cut_for_fpr_le_010": 1,
+    "tpr_at_fpr010": 0.8995,
+    "rubric_A_cut": 10,
+    "rubric_B_cut": 7,
+    "rubric_C_cut": 4
+  },
+  {
+    "regime": "balanced",
+    "youden_cut": 5,
+    "youden_J": 0.6165,
+    "fpr_at_youden": 0.1804,
+    "cut_for_fpr_le_005": 11,
+    "tpr_at_fpr005": 0.5129,
+    "cut_for_fpr_le_010": 8,
+    "tpr_at_fpr010": 0.5498,
+    "rubric_A_cut": 10,
+    "rubric_B_cut": 7,
+    "rubric_C_cut": 4
+  },
+  {
+    "regime": "directional",
+    "youden_cut": 11,
+    "youden_J": 0.5019,
+    "fpr_at_youden": 0.0,
+    "cut_for_fpr_le_005": 10,
+    "tpr_at_fpr005": 0.517,
+    "cut_for_fpr_le_010": 10,
+    "tpr_at_fpr010": 0.517,
+    "rubric_A_cut": 10,
+    "rubric_B_cut": 7,
+    "rubric_C_cut": 4
+  }
+]

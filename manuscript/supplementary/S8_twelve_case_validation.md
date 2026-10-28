@@ -1,18 +1,36 @@
-# Supplementary Table S7. Twelve-case validation cohort with full per-level scoring
+# Supplementary Table S8. Twelve-case validation cohort with full per-gate scoring (rubric v3)
 
-Twelve trait pairs spanning four disease domains (Lipid, Neuro, Metabolic, Inflammatory/General) were scored across all six levels of the falsification framework (0–2 per level, 0–12 cumulative). Grade A: 10–12 (high confidence); B: 7–9 (moderate); C: 4–6 (weak / shared liability); D: 0–3 (not supported). Inter-rater reliability: grade-level Cohen's κ = 0.76 (substantial), quadratic-weighted κ = 0.94 (almost perfect); per-level κ (72 items) = 0.89. Two one-grade-adjacent disagreements (Height→CAD, Education→T2D); no case differed by more than one grade.
+Twelve trait pairs spanning four disease domains (lipid, neuro, metabolic, inflammatory/general) were scored across all six gates of the falsification framework (0–2 per gate, 0–12 cumulative). Grade A: 10–12 (high confidence); B: 7–9 (moderate); C: 4–6 (weak or shared liability); D: 0–3 (not supported).
 
-| Case | Domain | L1 | L2 | L3 | L4 | L5 | L6 | Score | Grade | F | IVW_beta | IVW_SE | IVW_P | WM_P | Egger_P | Notes |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| LDL→CAD | Lipid | 2 | 2 | 2 | 2 | 2 | 2 | 12 | A | 182 | 0.388 | 0.042 | 2.0e-20 | 2.4e-13 | 4.1e-09 | Textbook positive; statin RCT + MR concordance |
-| Education→AD | Neuro | 2 | 2 | 2 | 2 | 2 | 2 | 12 | A | ~40 | -0.33 | 0.075 | 1.1e-05 | — | — | TG mediation q=5.7e-04; EA consistency |
-| BMI→T2D | Metabolic | 2 | 2 | 2 | 2 | 2 | 2 | 12 | A | 66 | 0.581 | 0.181 | 1.4e-03 | <1e-3 | 0.136 | Classic obesity→diabetes |
-| Height→CAD | General | 2 | 2 | 2 | 1 | 1 | 2 | 10 | A | 79 | -0.135 | 0.025 | 6.1e-08 | <1e-3 | 0.046 | Genuine protective; framework correctly accepts |
-| Insomnia→AD | Neuro | 2 | 0 | 1 | 1 | 0 | 0 | 4 | C | 38 | -0.128 | 0.203 | 0.52 | — | — | LD false positive; reclassified |
-| BMI→Stroke | Neuro | 2 | 1 | 1 | 1 | 0 | 0 | 5 | C | 66 | 0.140 | 0.059 | 0.018 | 0.30 | 0.505 | IVW sig but WM null; pleiotropy |
-| HDL→CAD | Lipid | 2 | 1 | 1 | 1 | 0 | 1 | 6 | C | 151 | -0.177 | 0.053 | 8.9e-04 | 0.003 | 0.891 | IVW sig but Egger null; MR corrective |
-| CRP→CAD | Inflammatory | 1 | 0 | 0 | 0 | 0 | 0 | 1 | D | 176 | -0.046 | 0.059 | 0.44 | 0.30 | 0.009 | Clean null at extreme power F=176 |
-| BMI→AD | Metabolic | 1 | 0 | 0 | 0 | 0 | 0 | 1 | D | 66 | -0.092 | 0.092 | 0.32 | 0.22 | 0.567 | Contested; framework correctly rejects |
-| Education→T2D | Metabolic | 2 | 1 | 2 | 1 | 1 | 2 | 9 | B | 50 | -0.634 | 0.0596 | 2.1e-26 | 5.5e-18 | 0.036 | Strong protective; Egger int p=0.036 + high hetero -> B; EAS rep IVW -0.145 (p=0.012) |
-| Depression→AD | Neuro | 2 | 1 | 1 | 1 | 0 | 0 | 5 | C | 37.9 | -0.254 | 0.103 | 0.0135 | 0.0594 | 0.119 | Protective borderline; WM p=0.059 not sig -> robustness partial |
-| T2D→AD | Metabolic | 1 | 0 | 0 | 0 | 0 | 0 | 1 | D | 77.8 | -0.010 | 0.0277 | 0.714 | 0.891 | 0.268 | Clean null at high power F=78; contested -> correctly rejected |
+**Scoring reproducibility.** The rubric was applied to the same published evidence summaries in two blinded passes: a primary pass and a deliberately stricter pass covering the architecture (G3), mediation (G5) and external-validation (G6) gates. The two passes agreed on 11/12 grade assignments (grade-level Cohen's κ = 0.89, bootstrap 95% CI 0.64–1.00; quadratic-weighted κ = 0.97; per-gate κ across 72 items = 0.91). The single disagreement was Education→T2D (9 points, Grade B in the primary pass; 10 points, Grade A in the stricter pass, because the East Asian replication was read as supporting a direct effect). These statistics quantify the reproducibility of the scoring rule, not the validity of the underlying causal inference.
+
+| Case | Domain | G1 | G2 | G3 | G4 | G5 | G6 | Score | Grade | IVW beta | IVW SE | IVW P | Weighted-median P | MR-Egger P | Egger P semantics | n instruments | G6 evidence |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| LDL→CAD | Lipid | 2 | 2 | 2 | 2 | 2 | 0 | 10 | A | 0.388 | 0.042 | 2.0e-20 | 2.4e-13 | 4.1e-09 | slope (assumed) | n.r. | none: no independent-ancestry record |
+| Education→AD | Neuro | 2 | 2 | 2 | 2 | 2 | 0 | 10 | A | −0.33 | 0.075 | 1.1e-05 | — | — | n.r. | 40 | EAS GARD beta = −0.029, P = 0.85 at power ≥ 84%: null replication, scores 0 |
+| BMI→T2D | Metabolic | 2 | 2 | 2 | 2 | 2 | 0 | 10 | A | 0.581 | 0.181 | 1.4e-03 | <1e-3 | 0.136 | slope (assumed) | n.r. | none: no independent-ancestry record |
+| Height→CAD | General | 2 | 2 | 2 | 1 | 1 | 0 | 8 | B | −0.135 | 0.025 | 6.1e-08 | <1e-3 | 0.046 | slope (assumed) | n.r. | none: no independent-ancestry record |
+| Insomnia→AD | Neuro | 2 | 0 | 1 | 1 | 0 | 0 | 4 | C | −0.128 | 0.203 | 0.52 | — | — | n.r. | 54 clumped (2,462 unclumped) | trans-ethnic 30 IV, power < 6%: screening only |
+| BMI→Stroke | Neuro | 2 | 1 | 1 | 1 | 0 | 0 | 5 | C | 0.140 | 0.059 | 0.018 | 0.30 | 0.505 | slope (assumed) | n.r. | not assessed |
+| HDL→CAD | Lipid | 2 | 1 | 1 | 1 | 0 | 0 | 5 | C | −0.177 | 0.053 | 8.9e-04 | 0.003 | 0.891 | MR-Egger causal estimate, not intercept | n.r. | none: no independent-ancestry record |
+| CRP→CAD | Inflammatory | 0 | 0 | 0 | 0 | 0 | 0 | 0 | D | −0.046 | 0.059 | 0.44 | 0.30 | 0.009 | intercept | n.r. | not assessed |
+| BMI→AD | Metabolic | 0 | 0 | 0 | 0 | 0 | 0 | 0 | D | −0.092 | 0.092 | 0.32 | 0.22 | 0.567 | slope (assumed) | n.r. | not assessed |
+| Education→T2D | Metabolic | 2 | 1 | 2 | 1 | 1 | 2 | 9 | B | −0.634 | 0.0596 | 2.1e-26 | 5.5e-18 | 0.036 | intercept | n.r. | EAS BioBank Japan beta = −0.145, P = 0.012 |
+| Depression→AD | Neuro | 2 | 1 | 1 | 1 | 0 | 0 | 5 | C | −0.254 | 0.103 | 0.0135 | 0.0594 | 0.119 | slope (assumed) | n.r. | EAS 26 IV, underpowered |
+| T2D→AD | Metabolic | 0 | 0 | 0 | 0 | 0 | 0 | 0 | D | −0.010 | 0.0277 | 0.714 | 0.891 | 0.268 | slope (assumed) | n.r. | EAS GARD beta = +0.006, P = 0.93 (null concordant) |
+
+**Footnotes.**
+
+1. *Gate definitions.* G1 association screening (binary: unclumped IVW P < 0.05 in the claimed direction); G2 robustness (clumped IVW significant with MR-Egger intercept and Cochran Q both P ≥ 0.05); G3 genetic architecture (direction-consistent r_g with locus-level colocalization); G4 direct effect (MVMR conditional F > 10 with a significant direct effect); G5 biological mediation (FDR-corrected indirect effect); G6 external validation (binary: independent-ancestry replication at achieved power ≥ 80%). Full decision rules, including the partial-credit tier and the not-evaluable rule, are given in Table 1 and in `rubric_spec_v3.csv` in the archive.
+
+2. *G1 cascade.* Where G1 = 0 (no association signal), gates G2–G6 are uninformative and the case scores 0 (Grade D). This rule is implemented in the scoring engine and is applied explicitly here; it affects CRP→CAD, BMI→AD and T2D→AD, whose subsequent gates were already 0.
+
+3. *Egger P semantics.* The MR-Egger P value in the published table pooled two different quantities across cases. The MR-Egger **slope** tests the pleiotropy-corrected causal estimate; the MR-Egger **intercept** tests for directional pleiotropy. The column records which quantity is shown; where the source did not document it, the entry is `n.r.`. Values marked `intercept` (CRP→CAD, Education→T2D) must not be read as an Egger causal test.
+
+4. *n instruments.* Instrument counts were not uniformly re-archived for this re-scoring: most of the twelve cases are re-scorings of published summary statistics rather than analyses rerun in this study. `n.r.` indicates that the count is not recorded in the project archive and should be taken from the cited source; it does not indicate that no instruments were used.
+
+5. *G6 points.* G6 awards 2 points only where a documented independent-ancestry replication exists at achieved power ≥ 80% **and the replication is not null**. Direction concordance alone is not validation: where the cross-ancestry step had adequate power and still returned a null estimate, the step failed to replicate. Under this rule, Education→AD is scored 0 despite direction concordance, because the East Asian estimate was β = −0.029 with P = 0.85 at power ≥ 84% — a null result at a power designed to detect the claimed effect. Underpowered replications (trans-ethnic insomnia→AD, East Asian depression→AD) and null replications (T2D→AD) likewise score 0. For LDL→CAD, BMI→T2D and Height→CAD no independent-ancestry record exists in the archive; these cells previously carried 2 points and are now scored 0. This correction moves Height→CAD from Grade A (10 points) to Grade B (8 points) and is the only grade change relative to the submitted version; Education→AD falls from 12 to 10 points but remains Grade A.
+
+6. *Decisive failure.* A failed G2 is treated as decisive: if the claim does not survive clumping, overlap correction and pleiotropy diagnostics, it is falsified on robustness grounds and the total is capped at 6 (the upper bound of Grade C), so no case that fails G2 can reach Grade A on the strength of the other gates. Only Insomnia→AD triggers this rule (G2 = 0, additive total 4, already Grade C), so the cap changes no grade in this cohort; it exists to close the logical gap by which an additive total could otherwise promote a robustness failure to Grade A.
+
+7. *Differences from the submitted version.* Compared with the originally submitted table: G1 is now binary, so three cases that previously received 1 point with P > 0.05 are scored 0; G6 is now evidence-based and requires a non-null replication, so five cells are scored 0; HDL→CAD G6 drops from 1 to 0 because binary scoring admits no partial tier. Net effect: Grade A 4→3, Grade B 1→2, Grade C 4, Grade D 3. Eight cells change score; one case changes grade. All three Grade A cases now sit at the lower bound of Grade A (10 points), so a one-point raise of the A threshold would reclassify all three as Grade B; this is stated in the Limitations.

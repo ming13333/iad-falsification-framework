@@ -1,0 +1,10 @@
+﻿pleio,pi_null,P_call_given_null,P_call_given_nonnull,FDR,exceeds_0.20
+none,0.3333,0.0,0.547,0.0,False
+none,0.5,0.0,0.547,0.0,False
+none,0.6667,0.0,0.547,0.0,False
+balanced,0.3333,0.1179,0.5498,0.0969,False
+balanced,0.5,0.1179,0.5498,0.1766,False
+balanced,0.6667,0.1179,0.5498,0.3002,True
+directional,0.3333,0.1906,0.5497,0.1478,False
+directional,0.5,0.1906,0.5497,0.2575,True
+directional,0.6667,0.1906,0.5497,0.4095,True

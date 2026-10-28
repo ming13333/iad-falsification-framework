@@ -1,0 +1,13 @@
+﻿case,domain,L1,L2,L3,L4,L5,L6,score,grade,decisive_failure,score_v1,grade_v1,delta,grade_changed,IVW_beta,IVW_SE,IVW_P,WM_P,Egger_P,Egger_P_semantics,n_IV,G6_evidence,notes
+LDL→CAD,Lipid,2,2,2,2,2,0,10,A,none,12,A,-2,False,0.388,0.042,2e-20,2.4e-13,4.1e-09,slope (assumed),n.r.,none: no cross-ancestry or independent-cohort record in archive,Textbook positive; statin RCT + MR concordance
+Education→AD,Neuro,2,2,2,2,2,0,10,A,none,12,A,-2,False,-0.33,0.075,1.1e-05,—,—,n.r.,40,"EAS GARD: beta=-0.029, P=0.85; direction concordant but null at >=84% power -> not a replication, scores 0",TG mediation q=5.7e-04; EA consistency
+BMI→T2D,Metabolic,2,2,2,2,2,0,10,A,none,12,A,-2,False,0.581,0.181,0.0014,<1e-3,0.136,slope (assumed),n.r.,none: no cross-ancestry or independent-cohort record in archive,Classic obesity→diabetes
+Height→CAD,General,2,2,2,1,1,0,8,B,none,10,A,-2,True,-0.135,0.025,6.1e-08,<1e-3,0.046,slope (assumed),n.r.,none: no cross-ancestry or independent-cohort record in archive,Genuine protective; framework correctly accepts
+Insomnia→AD,Neuro,2,0,1,1,0,0,4,C,G2=0 (falsified on robustness),4,C,0,False,-0.128,0.203,0.52,—,—,n.r.,"54 clumped (2,462 unclumped)","trans-ethnic 30 IV; power <6% -> screening only, no points",LD false positive; reclassified
+BMI→Stroke,Neuro,2,1,1,1,0,0,5,C,none,5,C,0,False,0.14,0.059,0.018,0.30,0.505,slope (assumed),n.r.,not assessed,IVW sig but WM null; pleiotropy
+HDL→CAD,Lipid,2,1,1,1,0,0,5,C,none,6,C,-1,False,-0.177,0.053,0.00089,0.003,0.891,"MR-Egger causal estimate, not intercept",n.r.,not assessed,IVW sig but Egger null; MR corrective
+CRP→CAD,Inflammatory,0,0,0,0,0,0,0,D,none,1,D,-1,False,-0.046,0.059,0.44,0.30,0.009,intercept,n.r.,not assessed,Clean null at extreme power F=176
+BMI→AD,Metabolic,0,0,0,0,0,0,0,D,none,1,D,-1,False,-0.092,0.092,0.32,0.22,0.567,slope (assumed),n.r.,not assessed,Contested; framework correctly rejects
+Education→T2D,Metabolic,2,1,2,1,1,2,9,B,none,9,B,0,False,-0.634,0.0596,2.1e-26,5.5e-18,0.036,intercept,n.r.,"EAS BioBank Japan: beta=-0.145, P=0.012, F=35.5, WM concordant",Strong protective; Egger int p=0.036 + high hetero -> B; EAS rep IVW -0.145 (p=0.012)
+Depression→AD,Neuro,2,1,1,1,0,0,5,C,none,5,C,0,False,-0.254,0.103,0.0135,0.0594,0.119,slope (assumed),n.r.,EAS 26 IV; underpowered -> no points,Protective borderline; WM p=0.059 not sig -> robustness partial
+T2D→AD,Metabolic,0,0,0,0,0,0,0,D,none,1,D,-1,False,-0.01,0.0277,0.714,0.891,0.268,slope (assumed),n.r.,"EAS GARD: beta=+0.006, P=0.93 (null concordant) -> no points",Clean null at high power F=78; contested -> correctly rejected
