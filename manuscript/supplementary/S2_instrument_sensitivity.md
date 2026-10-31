@@ -2,6 +2,8 @@
 
 Unclumped G1 analysis reports full multi-method MR (IVW / MR-Egger / weighted median / weighted mode) plus Cochran's Q and MR-Egger intercept. UVMR rows from MVMR instrument-set sensitivity report IVW only for unclumped/clumped-loose/clumped-tight sets; Egger/WMed/WMode were not run for clumped subsets (NA).
 
+**Two rows report the same analysis.** `G1 Insomnia -> AD (unclumped)` and `UVMR Insomnia -> AD (unclump2654)` use the same 2,462 variants and return the same coefficient (0.104). They differ only in the variance convention: the G1 row gives the multiplicative random-effects standard error (0.0381, P = 0.0066) and the UVMR row the fixed-effect standard error (0.0313, P = 9.3e-4). The ratio between them is exactly √(Q/df) = 1.220 (Q = 3,660 on 2,461 df), so the difference is a convention for handling heterogeneity, not a discrepancy between fits. Heterogeneity is extreme (Q P = 1.3e-50), which makes the random-effects value the more defensible of the two; the main text reports the fixed-effect value for the unclumped reference and the standard-error inflation ratios are computed on that convention, with the random-effects alternative given in Supplementary Table S11, note 4.
+
 | analysis | n_snps | F_mean | F_min | b_ivw | se_ivw | p_ivw | b_egger | p_egger | b_wmed | p_wmed | b_wmode | p_wmode | Q_ivw | Q_p_ivw | egger_intercept | egger_intercept_p | se_egger | se_wmed | se_wmode |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | G1 Insomnia -> AD (unclumped) | 2462 | 38.5 | 29.7 | 0.104 | 0.0381 | 0.00663 | 2.15 | 1.73e-25 | 0.117 | 0.0148 | -0.138 | 0.667 | 3.66e+03 | 1.25e-50 | NA | NA | 0.2036037708 | 0.0481377550 | 0.3201596454 |

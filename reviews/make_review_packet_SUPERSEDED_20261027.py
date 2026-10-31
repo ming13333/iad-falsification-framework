@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Render the reviewer-response handoff packet + prompt from disk.
+"""SUPERSEDED 2026-10-27 -- do not run this file.
+
+The authoritative builder is code/make_review_packet.py (31 KB, 2026-10-30).
+This earlier copy (13 KB) predates the data-card sections, the S8/S9/S10/S11
+anchors and the --check verifier, so running it silently produces a stale
+packet. Kept only for history.
+
+Original docstring follows.
+
+Render the reviewer-response handoff packet + prompt from disk.
 
 Inputs (all read live, nothing hand-copied):
   - 审稿人意见.docx                      -> reviewer text, split into numbered items

@@ -512,3 +512,26 @@ python code/md_to_docx_response.py --in reviews/Response_to_Reviewers_Frontiers.
 ```
 
 改完后回信字数会上升约 120–150 词（W5 的降级句 + M7 的 G3 从句 + D2 的补充），`audit_response_letter.py` 的字数统计会随之变化，属预期。
+
+---
+
+# 第二批：全文通读审计（2026-10-31 21:00）
+
+前 17 条来自四份**外部**核账；这 12 条来自对正文 307 行 / 12,331 词与回信 333 行 / 9,339 词的**逐字通读**（非抽样），并与 S1–S12、两条 Note、Table 2 数据链逐项复算。全部已处置。
+
+| # | 级别 | 问题 | 处置 |
+|---|---|---|---|
+| 1 | 🔴 | S8 `n_IV` 把 Education→AD 记 40，S4 同一分析记 312（β=−0.3276 同源），Methods 的「37–312」区间正靠此二数 | S8 改 **312**（40 是 EAS 复制工具数，属 G6 栏）；脚注 4 补「有数即为进主分析的变异数」 |
+| 2 | 🔴 | S2 同一分析两行 SE 不同（0.0381 / 0.0313），正文 6.5× 只能由后者得出，口径从未披露 | 实测比值恰为 √(Q/df)=1.220（Q=3,660/2,461 df）。S2 加段说明两行同源、仅方差口径不同；S11 新增注 4 给出替代值 **5.33×/6.18×** 并声明两口径下均 >5 倍、均不过 G2；正文 L118 与回信 R3-2 同步加括注 |
+| 3 | 🔴 | 正文与回信均写「S1–S11」，但正文 3 处引 S12，工作簿 12 sheet 实为 S1–S11（S9 占两页） | 声明改 **S1–S12**；回信 R3-12 明确「12 sheet 覆盖 S1–S11，S12 为含 5 面板的散文表，单独供文件」——S12 不入工作簿是脚本文档串写明的设计，非遗漏 |
+| 4 | 🔴 | S3 / S5 / S6 全稿零引用 | S3 挂 G4（全部 MVMR/UVMR 模型）、S5 挂 Discussion 报告规范段（并补 Skrivankova 引文）、S6 挂 Methods G2（多效性检查） |
+| 5 | 🟡 | 摘要「specificity ≈0.80」未标口径 | 改为 **0.80（D-only）/ 0.88（C/D）**，与 Results 的双口径叙述一致 |
+| 6 | 🟡 | 回信「Four cases … all four lose 2 points」实为五格（四格 −2、HDL −1）；R1-9 漏 HDL | 改为「四例各失 2 分，第五例 HDL 失 1 分」；R1-9 补 HDL 句并把「three」改「three further two-point scores and one single-point score」 |
+| 7 | 🟡 | 回信与 S8 脚注 7 称「已在 Limitations 说明三个 A 级处于 10 分下界」，正文无此句 | Limitations 第五点补写该句（含「升级一分即全降 B」） |
+| 8 | 🟡 | 回信开篇「two new supplementary tables」实为三张 | 改 **three (S10–S12)**；同时把「one previously awarded point was withdrawn」改为「the external-validation points awarded without supporting evidence were withdrawn」（实为 8 格变动） |
+| 9 | 🟡 | R1-6 以「54 变异去掉 APOE 区就太少」拒绝同口径比较，算术上站不住 | **改为可核事实**：S7 的 44 个注释变异中仅 1 个在 19 号染色体（rs56330606，37.18 Mb），**区内 0 个**——同口径比较是退化而非样本不足。正文 G3 与回信同步改写 |
+| 10 | 🟡 | S11 注 1 把 37 变异说成「harmonisation 与 5,000-kb 窗口」的结果，与正文（10,000 kb）相反 | 改为 10,000 kb，并注明 5,000 kb 得同一 37 变异与同一估计 |
+| 11 | 🟡 | S8 Insomnia→AD `IVW_beta`=−0.128，S11=−0.1298，正文 −0.130 | S8 改 **−0.130** |
+| 12 | 🟡 | rubric_spec_v2 的 G1 一分档为 0.05≤P<0.20，无法解释 v1 给 P=0.44/0.32/0.71 各 1 分；回信与脚注写作「P > 0.05」 | 脚注 7 改为点名三例及其实测 P，并明写「这三格无法由归档规则复现，属提交版评分的缺陷，不是口径变更」 |
+
+**未处理的编辑项**（不在本轮授权范围，留待决定）：Table 5 后的内部备注「Display items: 5 figures + 5 tables = 10」；Figure 2 面板 (b) 只画 D-only 特异度。

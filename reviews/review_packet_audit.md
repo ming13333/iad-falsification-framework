@@ -3,7 +3,7 @@
 > **用途**：交给一个**有文件读取工具**的模型，复核本次 Frontiers 大修的答复是否站得住。
 > **不是**改写任务：不要重写回信、不要润色正文、不要提新的论证思路。
 > **生成**：`code/make_review_packet.py` 从磁盘实时渲染，行区间与字数每次重算。改动任一方后请重跑。
-> **版本**：audit-2026-10-30 ｜ 回信 333 行 / 8,722 词（≈12k tok）｜ 正文 307 行 / 11,236 词（≈15k tok）
+> **版本**：audit-2026-10-30 ｜ 回信 333 行 / 8,976 词（≈12k tok）｜ 正文 307 行 / 11,444 词（≈16k tok）
 
 ---
 
@@ -28,14 +28,14 @@
 | 文件（相对工作区根） | 体量 | 估 token | 第 1 轮 | 第 2 轮 |
 |---|---|---|---|---|
 | `reviews/review_packet_audit.md`（本包） | 19.5 KB | ≈6k | **只读这个** | 不再读 |
-| `reviews/Response_to_Reviewers_Frontiers.md` | 59 KB | ≈12k | 禁读 | **整份** |
-| `课题设计阶段/manuscript_Frontiers_Methods_v2_humanized.md` | 84 KB | ≈15k | 禁读 | 按 §8 行区间 |
+| `reviews/Response_to_Reviewers_Frontiers.md` | 60 KB | ≈12k | 禁读 | **整份** |
+| `课题设计阶段/manuscript_Frontiers_Methods_v2_humanized.md` | 85 KB | ≈16k | 禁读 | 按 §8 行区间 |
 | `manuscript/supplementary/S8_twelve_case_validation.csv` | 2.6 KB | ≈2k | 禁读 | **必读** |
 | `manuscript/supplementary/S9_simulation_operating_marginal.csv` / `S11` / `S12` | 7.7 KB | ≈3k | 禁读 | 按需 |
 | `results/simulation/S14_table2_cap_audit.csv` | 0.6 KB | ≈0.5k | 禁读 | 按需 |
 | `.docx` / 图 / references 段 | — | — | 不要 | 不要 |
 
-**总成本**：第 1 轮 ≈6k，第 2 轮 ≈22k。**单次交付优于多轮**，不要分批发。
+**总成本**：第 1 轮 ≈6k，第 2 轮 ≈23k。**单次交付优于多轮**，不要分批发。
 
 ---
 

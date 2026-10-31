@@ -2,7 +2,7 @@
 body paragraph,para 0,"edited, sentence level (sim 0.83)",partial,200,"A six-gate falsification framework for diagnosing locus-driven confounding in Mendelian randomization: architecture, a 43,200-replicate benc"
 body paragraph,para 2,edited (sim 1.00),partial,12,"1 Department of Neurosurgery, The Fifth Affiliated Hospital of Wenzhou Medical University (Lishui Central Hospital), Lishui, Zhejiang 323000"
 body paragraph,para 4,edited (sim 0.99),partial,15,"Correspondence: Ming Luo, lm962272@gmail.com"
-body paragraph,para 6,"edited, sentence level (sim 0.81)",partial,1293,"Mendelian randomization (MR) uses germline variants as instrumental variables to estimate causal relationships, relying on relevance, indepe"
+body paragraph,para 6,"edited, sentence level (sim 0.79)",partial,1386,"Mendelian randomization (MR) uses germline variants as instrumental variables to estimate causal relationships, relying on relevance, indepe"
 body paragraph,para 7,edited (sim 0.94),partial,116,We evaluated the framework on the association between insomnia and AD as an empirical benchmark. A previously reported unclumped positive as
 body paragraph,para 10,edited (sim 0.94),partial,115,Mendelian randomization uses germline genetic variants as instruments to estimate the causal effect of an exposure on an outcome under three
 body paragraph,para 12,edited (sim 0.95),partial,93,"Addressing this problem requires a structured decision procedure rather than ad hoc sensitivity analyses. Specifically, causal evaluation be"
@@ -21,10 +21,10 @@ body paragraph,para 30,edited (sim 0.98),partial,25,"Archived framework. Simulat
 body paragraph,para 33,new paragraph,all,717,"Terminology. Three terms are used consistently throughout. A causal claim is the hypothesis under test — for instance, that liability to ins"
 body paragraph,para 34,edited (sim 0.93),partial,89,The framework converts a directional Mendelian randomization (MR) claim into a graded verdict with a calibrated numerical basis. Methodologi
 body paragraph,para 37,"edited, sentence level (sim 0.85)",partial,177,"Gate G1 (association, screening). An unclumped inverse-variance weighted (IVW) estimate tests for initial signal presence. Because unclumped"
-body paragraph,para 38,"edited, sentence level (sim 0.75)",partial,1227,"Gate G2 (robustness). The primary signal must survive three distinct corrections: (i) linkage disequilibrium (LD) clumping (r2 < 0.1, 10,000"
+body paragraph,para 38,"edited, sentence level (sim 0.69)",partial,1452,"Gate G2 (robustness). The primary signal must survive three distinct corrections: (i) linkage disequilibrium (LD) clumping (r2 < 0.1, 10,000"
 body paragraph,para 39,new paragraph,all,841,"What each correction operates on. Only LD clumping changes the instrument set. MR-Egger, Cochran's Q, the weighted median and the mode-based"
 body paragraph,para 40,edited (sim 0.88),partial,173,"Gate G3 (genetic architecture). LDSC tests genome-wide genetic correlation (rg; Bulik-Sullivan et al., 2015a), interpreted against the cross"
-body paragraph,para 41,rewritten (sim 0.34),all,1948,"Gate G4 (direct effect). Multivariable MR (Burgess and Thompson, 2015; Sanderson et al., 2019) estimates the direct effect of the exposure c"
+body paragraph,para 41,rewritten (sim 0.31),all,2117,"Gate G4 (direct effect). Multivariable MR (Burgess and Thompson, 2015; Sanderson et al., 2019) estimates the direct effect of the exposure c"
 body paragraph,para 42,"edited, sentence level (sim 0.80)",partial,286,"Gate G5 (biological mediation). Two-step MR (Sanderson, 2021a) tests genetically proxied mediators along the exposure→mediator→outcome path,"
 body paragraph,para 43,"edited, sentence level (sim 0.60)",partial,562,"Gate G6 (external validation). Directional consistency is evaluated in an independent ancestry cohort and, where feasible, a multi-domain va"
 body paragraph,para 44,new paragraph,all,1011,Trans-ethnic re-clumping. The step proceeds as follows: lead variants from the discovery-ancestry analysis are extracted from the target-anc
@@ -41,8 +41,8 @@ body paragraph,para 58,"edited, sentence level (sim 0.83)",partial,649,The full 
 body paragraph,para 60,edited (sim 0.88),partial,12,"Operating characteristics of the scoring rule (43,200-simulation benchmark)"
 body paragraph,para 61,"edited, sentence level (sim 0.58)",partial,2932,"At the null (β = 0), the scoring rule assigned Grade D to every replicate and returned a zero false discovery rate (FDR = 0) in the absence "
 body paragraph,para 66,"edited, sentence level (sim 0.84)",partial,2490,"G2: robustness. LD clumping (r2 < 0.1, 10,000 kb window) reduced the instrument set to 54 variants and attenuated the estimate to the null ("
-body paragraph,para 67,new paragraph,all,1339,"What LD correction changes: precision, not only direction. The three instrument tiers make the effect of clumping explicit (Supplementary Ta"
-body paragraph,para 68,rewritten (sim 0.42),all,1700,"G3: genetic architecture. Cross-trait LD Score regression (LDSC) yielded rg = -0.028 (SE = 0.050, P = 0.57), which is not significantly diff"
+body paragraph,para 67,new paragraph,all,1517,"What LD correction changes: precision, not only direction. The three instrument tiers make the effect of clumping explicit (Supplementary Ta"
+body paragraph,para 68,rewritten (sim 0.36),all,2067,"G3: genetic architecture. Cross-trait LD Score regression (LDSC) yielded rg = -0.028 (SE = 0.050, P = 0.57), which is not significantly diff"
 body paragraph,para 69,"edited, sentence level (sim 0.63)",partial,887,"G4: direct effect. Multivariable MR (MVMR) incorporating insomnia, education, depression, and LDL cholesterol revealed a protective direct e"
 body paragraph,para 70,rewritten (sim 0.52),all,1296,"G5: biological mediation. Protein mediation was absent along the insomnia → protein → AD pathway, as CRP and IL-6 indirect effects were null"
 body paragraph,para 71,"edited, sentence level (sim 0.62)",partial,1731,G6: external validation. Directional consistency was maintained across East Asian cohorts for established directions. Education associated i
@@ -56,14 +56,14 @@ body paragraph,para 80,split from a merged paragraph,partial,2,4.  Conditional F
 body paragraph,para 81,split from a merged paragraph,partial,2,5.  Cross-ancestry inflation driven by LD mismatch: Re-clump summary statistics using an ancestry-matched reference panel.
 body paragraph,para 83,"edited, sentence level (sim 0.85)",partial,541,The insomnia–AD findings demonstrate how a replicated Mendelian randomization (MR) signal can arise as an artifact of locus-driven confoundi
 body paragraph,para 84,"edited, sentence level (sim 0.83)",partial,585,"The APOE result reflects a broader pattern in complex-trait genetics: when a single locus dominates genetic variance, genome-wide genetic co"
-body paragraph,para 85,"edited, sentence level (sim 0.76)",partial,342,"Complementarity with reporting standards. While STROBE-MR defines reporting requirements, this framework evaluates whether reported evidence"
+body paragraph,para 85,"edited, sentence level (sim 0.70)",partial,420,"Complementarity with reporting standards. While STROBE-MR defines reporting requirements (Skrivankova et al., 2021; the completed checklist "
 body paragraph,para 86,"edited, sentence level (sim 0.84)",partial,703,"Generalizability of the template. Although insomnia–AD was chosen as a case study due to the extreme locus concentration at APOE, the framew"
 body paragraph,para 87,rewritten (sim 0.44),all,1851,Implications for drug-target prioritization. Distinguishing directed causation from locus-driven shared liability directly informs translati
-body paragraph,para 88,rewritten (sim 0.39),all,4508,"Limitations. Several methodological boundaries apply. First, the framework was evaluated on 12 trait pairs enriched for borderline grades, r"
+body paragraph,para 88,rewritten (sim 0.38),all,4793,"Limitations. Several methodological boundaries apply. First, the framework was evaluated on 12 trait pairs enriched for borderline grades, r"
 body paragraph,para 89,edited (sim 0.91),partial,73,"Conclusions. A six-gate falsification framework, whose scoring rule has been quantified under a 43,200-replicate benchmark, reclassifies loc"
 body paragraph,para 91,edited (sim 0.99),partial,25,Data availability statement. All GWAS summary statistics used in this study are publicly available via IEU OpenGWAS under the accessions lis
 body paragraph,para 96,rewritten (sim 0.48),all,672,"Use of AI. Large language models (GLM and DeepSeek, accessed through the WorkBuddy agent environment) were used for language editing and dra"
-body paragraph,para 97,edited (sim 0.99),partial,6,"Supplementary material. The Supplementary Material for this article comprises Supplementary Tables S1–S11 and Supplementary Notes 1–2, submi"
+body paragraph,para 97,edited (sim 0.99),partial,6,"Supplementary material. The Supplementary Material for this article comprises Supplementary Tables S1–S12 and Supplementary Notes 1–2, submi"
 body paragraph,para 143,rewritten (sim 0.30),all,899,"Figure 2. Simulation operating characteristics across 43,200 replicates, scored with the published rule including the decisive-failure cap. "
 body paragraph,para 146,rewritten (sim 0.32),all,326,"Figure 5. Validation cohort under the revised scoring: per-gate points (G1–G6), total score and grade for each of the twelve trait pairs (Gr"
 body paragraph,para 148,rewritten (sim 0.47),all,239,"Table 1. Two-layer gate specification: the pre-specified empirical criterion applied to real data (0, 1 or 2 points) and the proxy implement"

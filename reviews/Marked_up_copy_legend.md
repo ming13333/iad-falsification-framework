@@ -1,6 +1,6 @@
 # Marked-up copy — reading guide
 
-**File** `课题设计阶段/manuscript_Frontiers_Methods_v2_marked.docx` — regenerated 2026-10-31 19:44, after all 17 audit items in `reviews/ACTION_ITEMS_2026-10-30.md` were applied (16 from the first three reports, 1 from the fourth)
+**File** `课题设计阶段/manuscript_Frontiers_Methods_v2_marked.docx` — regenerated 2026-10-31 21:55, after all 17 audit items in `reviews/ACTION_ITEMS_2026-10-30.md` and the 12 findings of the full-text audit were applied
 **Baseline** `课题设计阶段/manuscript Frontiers 0902.docx` — the version received by Frontiers on 02 Sep 2026
 **Prepared** 2026-10-28; **regenerated** 2026-10-31
 **Manuscript** 1986036, *Frontiers in Genetics* (Computational Genomics / Methods)
@@ -39,11 +39,11 @@ Nothing was deleted from the submitted text: every submitted paragraph is still 
 The five rows above sum to 71 by change type; `mark_changes.py` prints the same set as the coarser split "52 word-level / 19 whole" (52 = 23 + 18 + 11; 19 = 12 + 7). Both describe the same marks at different granularity.
 | Table cells carrying a mark | **56** (Table 1: 29, Table 2: 26, Table 4: 1) |
 | Tables unchanged | Table 3, Table 5 |
-| Characters highlighted, body text | yellow 22.3%, green 33.8% |
+| Characters highlighted, body text | yellow 25.0%, green 34.5% |
 
-Both percentages are recomputed on each regeneration; the denominator is the body paragraphs only, excluding table cells (counting table cells gives yellow 23.4%, green 31.7%, because table cells carry marks too and are a larger share of the whole). The earlier figures in this file (20.7% / 31.2%) could not be reproduced from any build and have been replaced.
+Both percentages are recomputed on each regeneration; the denominator is the body paragraphs only, excluding table cells (counting table cells gives yellow 23.5%, green 32.3%, because table cells carry marks too and are a larger share of the whole). The earlier figures in this file (20.7% / 31.2%) could not be reproduced from any build and have been replaced.
 
-Word count went from 6,845 (submitted) to 11,235 (revision, body paragraphs), so roughly a third of the document is genuinely new prose. That is why the green proportion is high: this is a major revision, not a set of local corrections.
+Word count went from 6,845 (submitted) to 11,450 (revision, body paragraphs), so roughly a third of the document is genuinely new prose. That is why the green proportion is high: this is a major revision, not a set of local corrections.
 
 ---
 
@@ -84,6 +84,23 @@ The 17 audit items changed nine places in the body and one table cell. All are v
 
 The response letter carries the matching counterpart text; both files were re-exported from their Markdown sources at the same time, so the letter and the manuscript cite the same numbers.
 
+### 2.2 Added by the full-text audit of 2026-10-31
+
+A line-by-line read of the whole manuscript and letter (not a sampled check) produced 12 findings. Eight of them change body text and are visible as marks; the other four are corrected in the supplementary tables, which the marked copy does not contain.
+
+| Location | What changed |
+|---|---|
+| Abstract | Specificity now given under both conventions — 0.80 counting Grade D alone, 0.88 counting both falsified grades — because the framework's own negative call is C/D (#5) |
+| Methods, Gate G2 | Supplementary Table S6 cited for the exploratory height→AD check on whether a protective trait is flagged as directional pleiotropy (#4) |
+| Methods, Gate G4 | Supplementary Table S3 cited for every multivariable and univariable model fitted, with conditional F where computable (#4) |
+| Discussion, reporting standards | STROBE-MR now carries its citation and points to the completed checklist in Supplementary Table S5 (#4) |
+| Results, G3 | New region-occupancy check: the annotated clumped set has no variant inside chr19:45.06–45.82 Mb — its only chromosome-19 variant, rs56330606, lies 7.9 Mb away — so a region-excluded clumped estimate would remove nothing (#9) |
+| Results, precision passage | 6.5- to 7.5-fold labelled as the fixed-effect convention, with the 5.3- to 6.2-fold random-effects alternative stated (#2) |
+| Limitations, threshold point | States that all three Grade A cases sit at the 10-point lower bound, so a one-point rise of the A boundary would reclassify all three (#7) |
+| Declarations | Supplementary Tables S1–S11 → S1–S12 (#3) |
+
+Corrected outside the manuscript: S8 `n_IV` for Education→AD 40 → 312 and its `IVW_beta` −0.128 → −0.130, with footnotes 4 and 7 rewritten (#1, #11, #12); S2 gains a paragraph distinguishing the fixed-effect and multiplicative random-effects rows (#2); S11 note 1 corrected to a 10,000-kb window and note 4 added (#2, #10); the supplementary workbook rebuilt from the corrected CSVs.
+
 ---
 
 ## 4. Companion files
@@ -103,8 +120,8 @@ Four files in `课题设计阶段/` carry nearly the same name. Only one of them
 
 | File | Role |
 |---|---|
-| `manuscript_Frontiers_Methods_v2_humanized.md` | **Source of record.** 12,258 words; the file the submission `.docx` is rendered from |
-| `manuscript_Frontiers_Methods_v2.docx` | **The file to upload.** 162 paragraphs / 5 tables / 11,162 words, rendered from the line above |
+| `manuscript_Frontiers_Methods_v2_humanized.md` | **Source of record.** 12,546 words; the file the submission `.docx` is rendered from |
+| `manuscript_Frontiers_Methods_v2.docx` | **The file to upload.** 162 paragraphs / 5 tables / 11,450 words, rendered from the line above |
 | `manuscript_Frontiers_Methods_v2.md` | Internal draft (`**Status:** v2 draft for internal review` in its header), 7,305 words, no author block, predates the revision edits. Not for submission |
 | `manuscript_Frontiers_Methods_v2_humanized_SUPERSEDED_20260902.docx` | Intermediate export done before the 02 Sep submission (6,794 words, old title). Renamed on 2026-10-31 because its name was one substring away from the live file |
 
