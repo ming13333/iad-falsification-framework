@@ -35,11 +35,15 @@ Nothing was deleted from the submitted text: every submitted paragraph is still 
 | — rewritten paragraphs | 12 |
 | — list items split out of a merged paragraph | 11 |
 | — new paragraphs | 7 |
+
+The five rows above sum to 71 by change type; `mark_changes.py` prints the same set as the coarser split "52 word-level / 19 whole" (52 = 23 + 18 + 11; 19 = 12 + 7). Both describe the same marks at different granularity.
 | Table cells carrying a mark | **56** (Table 1: 29, Table 2: 26, Table 4: 1) |
 | Tables unchanged | Table 3, Table 5 |
-| Characters highlighted, body text | yellow 20.7%, green 31.2% |
+| Characters highlighted, body text | yellow 22.3%, green 33.8% |
 
-Word count went from 6,845 (submitted) to 11,162 (revision, body paragraphs), so roughly a third of the document is genuinely new prose. That is why the green proportion is high: this is a major revision, not a set of local corrections.
+Both percentages are recomputed on each regeneration; the denominator is the body paragraphs only, excluding table cells (counting table cells gives yellow 23.4%, green 31.7%, because table cells carry marks too and are a larger share of the whole). The earlier figures in this file (20.7% / 31.2%) could not be reproduced from any build and have been replaced.
+
+Word count went from 6,845 (submitted) to 11,235 (revision, body paragraphs), so roughly a third of the document is genuinely new prose. That is why the green proportion is high: this is a major revision, not a set of local corrections.
 
 ---
 
@@ -62,7 +66,7 @@ Word count went from 6,845 (submitted) to 11,162 (revision, body paragraphs), so
 
 ### 2.1 Added by the 2026-10-31 regeneration
 
-The 16 audit items changed eight places in the body and one table cell. All are visible as marks in this copy.
+The 17 audit items changed nine places in the body and one table cell. All are visible as marks in this copy.
 
 | Location | What changed |
 |---|---|
@@ -72,10 +76,11 @@ The 16 audit items changed eight places in the body and one table cell. All are 
 | Results, chromosome-19 exclusion | Conclusion removed; the paragraph now reports only that attenuation is not attributable to chromosome 19 alone and defers to G3 (M3) |
 | Results, precision passage | "restores the sampling variance" replaced by the narrower claim that clumping changed both the instrument set and the reported SE (W1) |
 | Results, insufficient-evidence passage | "low power attenuates towards zero and cannot reverse the sign" replaced by the resolution claim (W2) |
-| Results, trans-ethnic screen | Sign-exemption guarantee removed; the step is now explicitly an underpowered directional screen receiving no points; the 40 → 30 instrument attrition is stated (W3, D3) |
+| Results, trans-ethnic screen | Sign-exemption guarantee removed; the step is now explicitly an underpowered directional screen receiving no points; the 40 → 30 instrument attrition is stated in both the G2 narrative and the G6 result paragraph (W3, D3) |
 | Methods, effect grid | The {0, 0.08, 0.15} grid is now described as lying below the 0.226 threshold rather than bracketing it (W4) |
 | Discussion, drug targets | "passes all six gates" and "warrant target investment" replaced by the rubric grade and a hypothesis-prioritisation claim (M6) |
-| Results, Table 2 narrative | Specificity 0.80 labelled as the D-only convention; Wilson intervals scoped to sensitivity and the two specificity columns (D2, D4) |
+| Results, Table 2 narrative | Specificity 0.80 labelled as the D-only convention; Wilson intervals scoped to sensitivity and the two specificity columns, with the reason each of P(Grade A) and FDR is not given an interval now stated (D2, D4, W6) |
+| Methods, Gate G4 and Table 2 footnote | "its collapse indicates collinearity rather than weak instruments" replaced by the narrower claim that the collapse identifies conditional weak instruments whose origin is collinearity, not a failure of unconditional instrument relevance (W6) |
 
 The response letter carries the matching counterpart text; both files were re-exported from their Markdown sources at the same time, so the letter and the manuscript cite the same numbers.
 

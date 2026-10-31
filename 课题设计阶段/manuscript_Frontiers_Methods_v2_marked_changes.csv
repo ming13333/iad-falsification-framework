@@ -45,7 +45,7 @@ body paragraph,para 67,new paragraph,all,1339,"What LD correction changes: preci
 body paragraph,para 68,rewritten (sim 0.42),all,1700,"G3: genetic architecture. Cross-trait LD Score regression (LDSC) yielded rg = -0.028 (SE = 0.050, P = 0.57), which is not significantly diff"
 body paragraph,para 69,"edited, sentence level (sim 0.63)",partial,887,"G4: direct effect. Multivariable MR (MVMR) incorporating insomnia, education, depression, and LDL cholesterol revealed a protective direct e"
 body paragraph,para 70,rewritten (sim 0.52),all,1296,"G5: biological mediation. Protein mediation was absent along the insomnia → protein → AD pathway, as CRP and IL-6 indirect effects were null"
-body paragraph,para 71,"edited, sentence level (sim 0.62)",partial,1495,G6: external validation. Directional consistency was maintained across East Asian cohorts for established directions. Education associated i
+body paragraph,para 71,"edited, sentence level (sim 0.62)",partial,1731,G6: external validation. Directional consistency was maintained across East Asian cohorts for established directions. Education associated i
 body paragraph,para 74,edited (sim 0.95),partial,13,The benchmarked operating characteristics above define the precision of the scoring rule. Limits of detection depend on statistical power. A
 body paragraph,para 75,new paragraph,all,1382,"Insufficient evidence versus evidence against. The framework separates the two by direction and by convergence across gates, not by the P va"
 body paragraph,para 76,new paragraph,all,41,Principal operational challenges include:
@@ -69,7 +69,7 @@ body paragraph,para 146,rewritten (sim 0.32),all,326,"Figure 5. Validation cohor
 body paragraph,para 148,rewritten (sim 0.47),all,239,"Table 1. Two-layer gate specification: the pre-specified empirical criterion applied to real data (0, 1 or 2 points) and the proxy implement"
 body paragraph,para 150,rewritten (sim 0.47),all,1328,"All gates apply fixed a priori thresholds and contribute 0, 1 or 2 points (maximum 12). G1 and G6 are binary, because a screening test and a"
 body paragraph,para 151,"edited, sentence level (sim 0.82)",partial,134,"Table 2. Simulation operating characteristics of the six-gate scoring rule under proxy gate implementations (43,200 replicates; seed 2026080"
-body paragraph,para 153,rewritten (sim 0.45),all,1747,"Values are marginal across clumping-block count (5/12/40), sample overlap (0%/30%), and instrument count (20/60); 400 replicates per paramet"
+body paragraph,para 153,rewritten (sim 0.38),all,2131,"Values are marginal across clumping-block count (5/12/40), sample overlap (0%/30%), and instrument count (20/60); 400 replicates per paramet"
 table 1,r1c3,new column,all,19,Empirical: 2 points
 table 1,r1c4,new column,all,18,Empirical: 1 point
 table 1,r1c5,new column,all,19,Empirical: 0 points

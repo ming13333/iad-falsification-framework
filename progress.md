@@ -555,3 +555,59 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 ### 待办
 
 **4 个本地 commit 未推送**（`8dddcf4` `d9ac84f` `47a5bf2` `bdb4e9e`）：代理连续 `CONNECT tunnel failed, response 502`，三次重试失败。本地库已完整，网络恢复后 `git push origin main` 一条即可。
+
+## 2026-10-31 20:20 · 元审计：修掉一条统计理由错误 + 6 项文档卫生
+
+用户要求"回顾整个返修过程，找出错误和不严谨处"。采用**元审计**（审过程而非审内容），发现 6 类问题，按批准顺序处置。
+
+### #1 回信 L108 的统计理由是错的（本轮最重要）
+
+原句 `P(Grade A) is reported as a point estimate and empirical FDR as the range ... because neither is a frequency over the pooled set`。
+
+**P(Grade A) 恰恰就是 pooled 频率**——正文 Table 2 脚注自证：12 格 × 400 重复等权，未加权均值 = pooled 比例；它与 sensitivity 同批 4,800 次重复、同性质（A 占 0.667 / A∪B 占 0.691）。给 sensitivity 算 Wilson 却说 P(Grade A)"不是频率"，理由不成立。
+
+**FDR 那半句是对的**：12 格"比值的均值"、各格阳性呼叫数不同，不可池化成单一二项比例——这才是给范围的正确理由。
+
+成因：D2 修"every proportion has Wilson"的过度声称时，把 FDR 的理由错套到 P(Grade A) 上。
+
+已改（两载体同步）：P(Grade A) 不给区间的理由是"它是描述性等级分布，不是本框架要控制的操作特性"；FDR 保留"分母不等不可池化"；并补一句 Wilson 是在 pooled 4,800 上算、把 12 格视为 exchangeable 的前提。正文脚注（L263）同步。
+
+### #2 正文 L126 补 40→30
+
+L126 原只说 `40 LD-independent European instruments`，S8 写 `trans-ethnic 30 IV`。解释只在 L116，审稿人读 G6 结果段不会回翻。已改为 `40 ... (30 retained after harmonisation)`。
+
+上一轮我判第四份核账这条"纯属误判、不必改"——数字判断没错，但"不必改"下得太绝对。
+
+### #3/#4 legend 自相矛盾（我上一轮造成的）
+
+L3 已改 17 条，但 §2.1 仍写"16 audit items changed eight places"，且缺 W6 行。已补 W6 行、改"nine places"、trans-ethnic 行注明"两处都写了"。
+
+同时发现两个**不可复现的旧数字**：
+- 词数 11,162 → 实测 **11,235**（body paragraphs）
+- 字符比例 yellow 20.7% / green 31.2% → 实测 **22.3% / 33.8%**（body only；含表格则 23.4% / 31.7%）。旧值任何一次构建都复现不出来，已替换并写明口径
+
+另核实：§2 的五类细分（23/18/12/11/7 = 71）与脚本 stdout 的"52 word-level / 19 whole"**完全自洽**（52=23+18+11，19=12+7），只是粒度不同，无需修正。
+
+### #5 ACTION_ITEMS 条数账目
+
+"16 条全部改完"与"定稿 15（撤回 1 条）"并存且 D1 是撤回非改完。已加一张账目表：口述 13 → 落盘 16 → 撤回 1（D1）→ 有效 15 → 追加 W6 → **当前 17（16 改 + 1 撤）**；标题同步改为"口头 13 → 落盘 16 → 有效 15 → 追加后 17"。
+
+### #6 脚本卫生
+
+`reviews/make_review_packet.py`（13 KB / 10-27 旧版）与 `code/make_review_packet.py`（31 KB / 权威）并存，误跑旧版会静默产出过期包。已 `git mv` 为 `..._SUPERSEDED_20261027.py`（保留历史）并在文件头写明"do not run"。
+
+### 重建与校验
+
+正文 docx → 高亮稿 → 回信 docx → 投喂包，全链条重跑。
+
+| 项 | 结果 |
+|---|---|
+| 新表述三处进 docx | L126 `30 retained`、脚注 `descriptive grade distribution`、`unequal denominators` 全部 OK |
+| 回信 docx | `does not pool into a single binomial proportion` OK；旧理由 grep 计数 **0**（md 两文件均 0） |
+| 高亮稿 | 71 段 / 56 格 / 0 删除（改的两段本就在标记集内，计数不变） |
+| 投喂包 | 回信 8,722 词 / 正文 11,236 词；`--check` 三件全 ok |
+| `audit_response_letter.py` | OK，22/22 |
+
+### 仍待
+
+推送（网络 502）。另：本次元审计是**定点+抽样**，未逐字通读 333 行回信与 307 行正文，References/S1–S12 交叉引用、R1-8/R1-9/R3-5/R3-8/R3-10/R3-11/R3-12 七条未逐句核——若要"确保零遗漏"需再补一轮全文通读。
