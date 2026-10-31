@@ -1,8 +1,8 @@
 # Marked-up copy — reading guide
 
-**File** `课题设计阶段/manuscript_Frontiers_Methods_v2_marked.docx` — regenerated 2026-10-28 20:20 with the revised title (D3)
+**File** `课题设计阶段/manuscript_Frontiers_Methods_v2_marked.docx` — regenerated 2026-10-31 16:33, after the 16 audit items in `reviews/ACTION_ITEMS_2026-10-30.md` were applied
 **Baseline** `课题设计阶段/manuscript Frontiers 0902.docx` — the version received by Frontiers on 02 Sep 2026
-**Prepared** 2026-10-28
+**Prepared** 2026-10-28; **regenerated** 2026-10-31
 **Manuscript** 1986036, *Frontiers in Genetics* (Computational Genomics / Methods)
 
 ---
@@ -28,18 +28,18 @@ Nothing was deleted from the submitted text: every submitted paragraph is still 
 
 | | Count |
 |---|---|
-| Body paragraphs in the revision | 157 |
+| Body paragraphs in the revision | 162 |
 | Body paragraphs carrying a mark | **71** |
-| — word-level edits | 25 |
-| — sentence-level edits | 16 (includes the title) |
+| — word-level edits | 23 |
+| — sentence-level edits | 18 (includes the title) |
 | — rewritten paragraphs | 12 |
-| — list items split out of a merged paragraph | 12 |
-| — new paragraphs | 6 |
-| Table cells carrying a mark | **55** (Table 1: 29, Table 2: 26) |
-| Tables unchanged | Table 3, Table 4, Table 5 |
-| Characters highlighted, body text | yellow 18.5%, green 32.9% |
+| — list items split out of a merged paragraph | 11 |
+| — new paragraphs | 7 |
+| Table cells carrying a mark | **56** (Table 1: 29, Table 2: 26, Table 4: 1) |
+| Tables unchanged | Table 3, Table 5 |
+| Characters highlighted, body text | yellow 20.7%, green 31.2% |
 
-Word count went from 6,845 (submitted) to 10,987 (revision, body text), so roughly a third of the document is genuinely new prose. That is why the green proportion is high: this is a major revision, not a set of local corrections.
+Word count went from 6,845 (submitted) to 11,162 (revision, body paragraphs), so roughly a third of the document is genuinely new prose. That is why the green proportion is high: this is a major revision, not a set of local corrections.
 
 ---
 
@@ -60,16 +60,37 @@ Word count went from 6,845 (submitted) to 10,987 (revision, body text), so rough
 | Declarations | Use-of-AI statement rewritten to name the models actually used |
 | Tables | Table 1 rebuilt as a two-layer specification (4 columns → 6); Table 2 gains the specificity (C/D) column and recomputed values |
 
+### 2.1 Added by the 2026-10-31 regeneration
+
+The 16 audit items changed eight places in the body and one table cell. All are visible as marks in this copy.
+
+| Location | What changed |
+|---|---|
+| Methods, Gate G2 (§clumping) | Primary threshold declared as `r² < 0.1`, with `r² < 0.001` reported as a stricter tier — the submitted Methods had named the wrong threshold for the results it reported (M0) |
+| Methods, steps 3 and the protocol table | Same correction in the procedure text and in Table 4 row 3 (M0) |
+| Results, G2 narrative | 54 variants reattributed from `r² < 0.001` to `r² < 0.1` in both the opening sentence and the instrument-count chain; the tighter tier now reports 37 harmonised variants (M1, M2) |
+| Results, chromosome-19 exclusion | Conclusion removed; the paragraph now reports only that attenuation is not attributable to chromosome 19 alone and defers to G3 (M3) |
+| Results, precision passage | "restores the sampling variance" replaced by the narrower claim that clumping changed both the instrument set and the reported SE (W1) |
+| Results, insufficient-evidence passage | "low power attenuates towards zero and cannot reverse the sign" replaced by the resolution claim (W2) |
+| Results, trans-ethnic screen | Sign-exemption guarantee removed; the step is now explicitly an underpowered directional screen receiving no points; the 40 → 30 instrument attrition is stated (W3, D3) |
+| Methods, effect grid | The {0, 0.08, 0.15} grid is now described as lying below the 0.226 threshold rather than bracketing it (W4) |
+| Discussion, drug targets | "passes all six gates" and "warrant target investment" replaced by the rubric grade and a hypothesis-prioritisation claim (M6) |
+| Results, Table 2 narrative | Specificity 0.80 labelled as the D-only convention; Wilson intervals scoped to sensitivity and the two specificity columns (D2, D4) |
+
+The response letter carries the matching counterpart text; both files were re-exported from their Markdown sources at the same time, so the letter and the manuscript cite the same numbers.
+
 ---
 
 ## 4. Companion files
 
 | File | Contents |
 |---|---|
-| `reviews/marked_changes.csv` | One row per marked paragraph or cell: location, change type, highlighted character count, text preview |
-| `reviews/marked_deletions.md` | Text present in the submission but absent from the revision (currently none) |
+| `课题设计阶段/manuscript_Frontiers_Methods_v2_marked_changes.csv` | One row per marked paragraph or cell: location, change type, highlighted character count, text preview (127 rows: 71 body + 56 cells) |
+| `课题设计阶段/manuscript_Frontiers_Methods_v2_marked_deletions.md` | Text present in the submission but absent from the revision (currently none) |
 | `课题设计阶段/manuscript_Frontiers_Methods_v2.docx` | Clean copy, same text, no marks — this is the file to upload as the main manuscript |
 | `code/mark_changes.py` | Regenerates the marked copy from the clean one and the baseline |
+
+> An earlier generation wrote the CSV and deletions file into `reviews/`. Those stale copies were removed on 2026-10-31 so that only one pair exists — two files with the same name and different numbers is how the wrong one gets shipped.
 
 Regenerate after any further edit to the manuscript:
 
@@ -78,8 +99,8 @@ python code/mark_changes.py \
   --baseline "课题设计阶段/manuscript Frontiers 0902.docx" \
   --target   "课题设计阶段/manuscript_Frontiers_Methods_v2.docx" \
   --out      "课题设计阶段/manuscript_Frontiers_Methods_v2_marked.docx" \
-  --csv      "reviews/marked_changes.csv" \
-  --deletions "reviews/marked_deletions.md"
+  --csv      "课题设计阶段/manuscript_Frontiers_Methods_v2_marked_changes.csv" \
+  --deletions "课题设计阶段/manuscript_Frontiers_Methods_v2_marked_deletions.md"
 ```
 
 If the output file is open in a viewer, the save fails with `PermissionError`. Close the preview and rerun; do not write to a second filename, because two marked copies differing only in suffix is how the wrong file gets uploaded.
