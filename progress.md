@@ -441,4 +441,38 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 - **P1 全清**：W1（restores the sampling variance→clumping 同时改了工具集与 SE，比值不能识别抽样方差）、W2（低效能向零偏倚→降分辨率、单次符号反转证据弱）、W3（删"不影响 null 符号"保证，改为可影响符号故仅作方向筛查不计分，正文×2+回信）、W4（网格全在 0.226 之下→every grid point lies below that boundary，采样的是低效能区）、W5（R1-2 (iv) 拆两层：无 LD 协方差成立／相关残差确实生成并给出代码公式；"correct in every particular"收紧；正文 L101 补层间区分）。
 - **P2 全清**：D2（Wilson 范围限定 sensitivity+两种 specificity，说明 P(A) 点值与 FDR 范围）、D3（补 40 提取→30 位置匹配入模）、D4（L106 的 0.80 标 D-only）。
 - **校验（附录 B 全绿）**：6 组"期望无输出"全部无输出；`r²<0.1` 出现 2 次（同在 L116，`grep -c` 按行计数显示 1）；harm.tsv 31 行；审计器 22/22、20 full + 2 in part、5,379 词；正文 docx 162 段/5 表、15 处关键句全命中；回信 docx 149 段/2 表/8,422 词、7 处全命中。
-- **下一步**：①建议先 `git add` 正文与回信 md（仍未跟踪，无回滚能力）；②高亮标注稿 `_marked.docx` 需按新改动重做；③正文/回信定稿后重跑 `make_review_packet.py --check` 更新外审投喂包。
+- **下一步**：①~~`git add` 正文与回信 md~~ ✅ 已完成（见下）；②~~高亮标注稿重做~~ ✅ 已完成（见下）；③正文/回信定稿后重跑 `make_review_packet.py --check` 更新外审投喂包。
+
+## 2026-10-31 · 版本控制 + 高亮稿重建（16:40）
+
+### ① 纳入 git（commit `0cdb7c7`，46 文件 / 0.45 MB）
+
+此前 `课题设计阶段/` 与 `reviews/` **整目录从未 git add**（非 ignore 所致），16 条修订零回滚能力。已补：
+
+- **纳管**：正文源 `manuscript_Frontiers_Methods_v2_humanized.md`（12,258 词）+ 投稿 docx；`reviews/` 全量；4 个新脚本（audit_response_letter / md_to_docx_response / make_review_packet / extract_bib_docx）；`progress.md`、`RULES.md`、`requirements.txt`、manuscript 下 scope/贡献声明
+- **`.gitignore` 新增排除段**（防一次 `git add .` 拖入 418 MB）：`课题设计阶段/code/`（MRlap 源码副本含 124 MB .git pack）、`figures/`、`figures_final/`、`备份figure/`、`_archive/`、`GM_reference/`、`Supplementary*/`、`*.pdf`、`*.json`、3 个期刊版大 docx（3.4–4.0 MB）、`.workbuddy/`
+- 校验：5 个待纳管文件 `check-ignore` 全 NOT IGNORED；5 类大件全部 IGNORED
+
+### ② 高亮稿重建（commit `a399002`）
+
+旧 `_marked.docx` 停在 10-28 的 D3 批次，与 16 条修订后正文对不上。以同一 baseline（`manuscript Frontiers 0902.docx`，02 Sep 投稿版）重跑 `mark_changes.py`：
+
+| 项 | 旧（10-28） | 新（10-31） |
+|---|---|---|
+| 正文标记段 | 68 / 157 | **71 / 162** |
+| 明细 | 词级 23 / 句级 15 / 重写 12 / 拆分 12 / 新增 6 | 词级 23 / 句级 18 / 重写 12 / 拆分 11 / 新增 7 |
+| 表格格 | 55（T1 29 / T2 26） | **56（T1 29 / T2 26 / T4 1）** |
+| 高亮占比 | 黄 18.5% / 绿 32.9% | 黄 **20.7%** / 绿 **31.2%** |
+| 删除段 | 0 | 0 |
+
+- **T4 那 1 格 = M0 阈值更正**（`r2<0.1 … repeat at the stricter r2<0.001 tier`），旧版"T3–T5 未动"是当时实况，非回归
+- **一致性校验全绿**：与 clean docx 文本逐字一致 **82,353 字符**；段 162 / 表 5 相同；A4、2.54cm 边距、`lnNumType×1`、页脚 PAGE 域、5 表三线边框全部相同；斜体 **2,312 字符**、上标 **71 字符**与 clean 版完全相同（run 数 +4 仅为涂色拆分，无视觉影响）
+- **16 条改动覆盖抽查**：M0/M1/M3/M6/W1/W2/W3/W4/D3/D4 共 10 个锚点，全部落在高亮区内
+- **同时清理**：`reviews/marked_changes.csv`（旧数据 127 行 vs 权威 128 行）与 `reviews/marked_deletions.md` 已移除，避免"两套同名文件数字不同"——上次补充表就栽在这上面。权威三件套统一在 `课题设计阶段/`
+- `reviews/Marked_up_copy_legend.md` 已重写统计并新增 §2.1 逐条列出本轮 8 处正文 + 1 格表格改动
+
+### ③ 推送
+
+`d07214c..a399002 main -> main` 已同步；`size-pack 13.69 MiB`。
+
+- **剩余**：③重跑 `make_review_packet.py --check` 更新外审投喂包（正文已动，行号区间与字数需刷新）
