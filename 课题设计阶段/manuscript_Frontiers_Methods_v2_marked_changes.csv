@@ -24,7 +24,7 @@ body paragraph,para 37,"edited, sentence level (sim 0.85)",partial,177,"Gate G1 
 body paragraph,para 38,"edited, sentence level (sim 0.75)",partial,1227,"Gate G2 (robustness). The primary signal must survive three distinct corrections: (i) linkage disequilibrium (LD) clumping (r2 < 0.1, 10,000"
 body paragraph,para 39,new paragraph,all,841,"What each correction operates on. Only LD clumping changes the instrument set. MR-Egger, Cochran's Q, the weighted median and the mode-based"
 body paragraph,para 40,edited (sim 0.88),partial,173,"Gate G3 (genetic architecture). LDSC tests genome-wide genetic correlation (rg; Bulik-Sullivan et al., 2015a), interpreted against the cross"
-body paragraph,para 41,rewritten (sim 0.35),all,1878,"Gate G4 (direct effect). Multivariable MR (Burgess and Thompson, 2015; Sanderson et al., 2019) estimates the direct effect of the exposure c"
+body paragraph,para 41,rewritten (sim 0.34),all,1948,"Gate G4 (direct effect). Multivariable MR (Burgess and Thompson, 2015; Sanderson et al., 2019) estimates the direct effect of the exposure c"
 body paragraph,para 42,"edited, sentence level (sim 0.80)",partial,286,"Gate G5 (biological mediation). Two-step MR (Sanderson, 2021a) tests genetically proxied mediators along the exposure→mediator→outcome path,"
 body paragraph,para 43,"edited, sentence level (sim 0.60)",partial,562,"Gate G6 (external validation). Directional consistency is evaluated in an independent ancestry cohort and, where feasible, a multi-domain va"
 body paragraph,para 44,new paragraph,all,1011,Trans-ethnic re-clumping. The step proceeds as follows: lead variants from the discovery-ancestry analysis are extracted from the target-anc
