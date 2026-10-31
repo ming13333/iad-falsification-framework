@@ -523,3 +523,35 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 
 `git commit 7a3ea8c`（4 文件，+17/−17）+ `2fc9b95`（本文件）。首次 push 报 `Recv failure: Connection was aborted`（github:443 瞬时不可达），**重试即通**：`49ef7e2..2fc9b95 main -> main` 已同步。
 （同批出现的 `git-credential-manager.exe: No such file or directory` 是无害警告，凭据已缓存，不影响推送结果。）
+
+## 2026-10-31 19:50 · 三份 docx 重建（commit `d9ac84f` / `47a5bf2` / `bdb4e9e`）
+
+### 发现的问题（严重，差一步就投出去）
+
+`.md` 源在 **16:41** 改完，但三份 **docx 分别停在 16:01 / 16:33 / 16:01**，都还是 16 条修改之前的状态——**投稿件里仍带着 "collinearity rather than weak instruments" 这句旧话**，而这句正是本轮声称已修正的。若直接投出，等于把"说要改却没改"的证据亲手附上。
+
+### 重建顺序（依赖链）
+
+1. `code/md_to_docx_frontiers.py --in <humanized.md> --out manuscript_Frontiers_Methods_v2.docx`（162 段 / 5 表）
+2. `code/mark_changes.py --baseline "manuscript Frontiers 0902.docx" --target <新docx> --out <_marked.docx> --csv ... --deletions ...`（71 段标记 / 56 表格单元 / 0 删除，与上一版数量一致）
+3. `code/md_to_docx_response.py --in <回信.md> --out Response_to_Reviewers_Frontiers.docx`（149 段 / 2 表 / 8,432 词）
+
+### 校验
+
+| 项 | 结果 |
+|---|---|
+| 新句 `origin is collinearity` | 三份 docx **全在** |
+| 旧句 `rather than weak instruments` | 三份 docx **全无** |
+| 13 点关键句探测（含 12 条前轮修改） | **13/13 命中**，重建未丢前轮成果 |
+| LaTeX 残留 | `$` 0 个、反斜杠命令 0 个 |
+| 高亮清单变化 | 仅 G4 段（para 41）1 行，1,878→1,948 字符（+70），与单句替换吻合 |
+| `audit_response_letter.py` | OK；22/22；5,389 答复词 |
+
+### 同步更新
+
+- `reviews/ACTION_ITEMS_2026-10-30.md`：汇总表加 **W6**，正文标注"总计 17 条全部 ✅"，收尾校验表补"三份 docx 与 md 同步"一行、回信 docx 词数 8,422→8,432
+- `reviews/Marked_up_copy_legend.md`：时间 16:33→19:44，条数 16→17（71/56/127 数字经复核未变）
+
+### 待办
+
+**4 个本地 commit 未推送**（`8dddcf4` `d9ac84f` `47a5bf2` `bdb4e9e`）：代理连续 `CONNECT tunnel failed, response 502`，三次重试失败。本地库已完整，网络恢复后 `git push origin main` 一条即可。
