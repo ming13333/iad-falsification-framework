@@ -475,7 +475,7 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 
 `d07214c..a399002 main -> main` 已同步；`size-pack 13.69 MiB`。
 
-- **剩余**：③重跑 `make_review_packet.py --check` 更新外审投喂包（正文已动，行号区间与字数需刷新）
+- ~~**剩余**：③重跑 `make_review_packet.py --check`~~ → **已于 16:45 完成**，见下节
 
 ### ④ 顺手修掉的引用错误（commit `568d3df`）
 
@@ -488,3 +488,37 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 - `.gitignore` 增加 `*.bak_*`、`*.bak`（编辑前备份不入库，git 已有历史）
 
 > 口径澄清：审计器输出的 `total response words 5,379` 是**答复正文**总词数，不是稿件正文词数（稿件正文段落 11,162 词 / 源 md 12,258 词）。此前口语里称"正文 5,379 词"易被误读，后续按此三分口径报数。
+
+## 2026-10-31 16:45 · 第 17 条（条件 F 表述）+ 投喂包刷新（commit `7a3ea8c`）
+
+### ① 第四份外审核账的净结论
+
+外部又投喂一份核账（表 A 逐条 22 条 / 表 B 只说未改 6 条 / 表 C 修订新引入错误 8 条 = 36 条判定）。逐条实测后：
+**35 条已落地或属误判，净新增真问题 1 条**。它核的是改稿前快照——表 A 的 4 个 MISMATCH（R1-4 Wilson / R1-6 APOE / R1-7 above / R3-2 sampling variance）正是上一轮 M0–M7 改掉的那几条。
+
+- **它的价值**：表 C 单设「修订新引入的错误」维度，是前三份都没做的视角；且识别出 SE 倍率与方差倍率的概念混淆（6.5–7.5× vs 42–56×），是真功底
+- **它判错 2 条**：①表 C 第 8 条「30 vs 40 IV」是误判——40 = 提取数、30 = 协调后进拟合数，正文 L116 已明写链条，S8 写 30 正确，**不应统一为单一数值**（统一反而丢信息）；②表 C 第 7 条方向猜反——它假设「代码可能未生成残差相关」，实际代码是 `e_y = overlap*e_x + sqrt(1-overlap²)*e_y`，残差相关确实生成，回信 L78 已正面驳回该半句
+- **结构瑕疵**：表 A 判 R1-1 PASS 而表 B 同时列 R1-1「改动幅度小于承诺」，同一编号两个判定未交叉消解
+
+### ② 唯一真问题（已改，两处载体）
+
+`manuscript_..._humanized.md:L73` 与 `Response_to_Reviewers_Frontiers.md:L260` 原写
+`its collapse indicates collinearity rather than weak instruments` —— 把共线性与弱工具对立，统计上不成立：**条件 F 低本身就是条件弱工具识别，共线性是其成因而非替代解释**。
+
+已改为 `identifies conditional weak instruments whose origin is collinearity, not a failure of unconditional instrument relevance`。旧表述全稿残留 **0**。
+
+### ③ 投喂包刷新（`code/make_review_packet.py`）
+
+注意存在新旧两份脚本：`code/`（31 KB，2026-10-30，权威）vs `reviews/`（13 KB，10-27，旧）。**用 `code/` 的**。
+
+| 产物 | 变化 |
+|------|------|
+| `review_packet_audit.md` | 回信 331→333 行 / 8,358→8,670 词；正文 10,993→11,172 词；§8 十个区间整体 +2 行 |
+| `handoff_prompt_round2.md` | 行区间同步 |
+| `handoff_prompt_round1.md` | 未变（内容未受影响） |
+
+**校验**：`--check` 三件全 `ok`；抽样验证 `## R3-4`=L234、`## R3-6`=L254、`## R3-12`=L304、`## R3-10`=L288 与 packet 声明逐条精确吻合；正文 `## Results`=102 / `### Operating`=104 / `### Example`=110 / `### Precision`=130 / `## Discussion`=143 / `## Declarations`=159 / `## References`=177 全部命中；数据卡 54/−0.130/0.203/6.50 与 37/−0.111/0.236/7.54 与 S11 一致。
+
+### ④ 推送
+
+`git commit 7a3ea8c`（4 文件，+17/−17）。**push 失败**：`Recv failure: Connection was aborted`（github:443 瞬时不可达，与此前同类），待网络恢复重推。
