@@ -2,7 +2,7 @@
 
 回信（整份，审计对象）：
 C:/D/workbuddy/科研/共病分析/reviews/Response_to_Reviewers_Frontiers.md
-第 1 行至第 331 行
+第 1 行至第 333 行
 
 正文（只读这些行区间）：
 C:/D/workbuddy/科研/共病分析/课题设计阶段/manuscript_Frontiers_Methods_v2_humanized.md

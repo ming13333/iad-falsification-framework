@@ -3,7 +3,7 @@
 > **用途**：交给一个**有文件读取工具**的模型，复核本次 Frontiers 大修的答复是否站得住。
 > **不是**改写任务：不要重写回信、不要润色正文、不要提新的论证思路。
 > **生成**：`code/make_review_packet.py` 从磁盘实时渲染，行区间与字数每次重算。改动任一方后请重跑。
-> **版本**：audit-2026-10-30 ｜ 回信 331 行 / 8,358 词（≈12k tok）｜ 正文 307 行 / 10,993 词（≈15k tok）
+> **版本**：audit-2026-10-30 ｜ 回信 333 行 / 8,670 词（≈12k tok）｜ 正文 307 行 / 11,172 词（≈15k tok）
 
 ---
 
@@ -28,8 +28,8 @@
 | 文件（相对工作区根） | 体量 | 估 token | 第 1 轮 | 第 2 轮 |
 |---|---|---|---|---|
 | `reviews/review_packet_audit.md`（本包） | 19.5 KB | ≈6k | **只读这个** | 不再读 |
-| `reviews/Response_to_Reviewers_Frontiers.md` | 56 KB | ≈12k | 禁读 | **整份** |
-| `课题设计阶段/manuscript_Frontiers_Methods_v2_humanized.md` | 82 KB | ≈15k | 禁读 | 按 §8 行区间 |
+| `reviews/Response_to_Reviewers_Frontiers.md` | 58 KB | ≈12k | 禁读 | **整份** |
+| `课题设计阶段/manuscript_Frontiers_Methods_v2_humanized.md` | 84 KB | ≈15k | 禁读 | 按 §8 行区间 |
 | `manuscript/supplementary/S8_twelve_case_validation.csv` | 2.6 KB | ≈2k | 禁读 | **必读** |
 | `manuscript/supplementary/S9_simulation_operating_marginal.csv` / `S11` / `S12` | 7.7 KB | ≈3k | 禁读 | 按需 |
 | `results/simulation/S14_table2_cap_audit.csv` | 0.6 KB | ≈0.5k | 禁读 | 按需 |
@@ -108,16 +108,16 @@
 | R3-1 | L208-L215 | terminology for directional and causal claims |
 | R3-2 | L216-L223 | what 'precise' means |
 | R3-3 | L224-L233 | European LD panel on East Asian data |
-| R3-4 | L234-L243 | rationale for r2 < 0.001 with a 10,000-kb window |
-| R3-5 | L244-L251 | do corrections feed into clumped IVW |
-| R3-6 | L252-L261 | confounder choice; why F > 10 sits at G4 |
-| R3-7 | L262-L269 | power comparability across ancestries |
-| R3-8 | L270-L277 | where Egger, Q, MRlap and CAUSE sit |
-| R3-9 | L278-L285 | choice of simulation parameter values |
-| R3-10 | L286-L293 | what trans-ethnic re-clumping is |
-| R3-11 | L294-L301 | do not say r_g 'remained unchanged' |
-| R3-12 | L302-L311 | three-line tables without vertical rules |
-| Note | L312-L332 | supplementary material inventory |
+| R3-4 | L234-L245 | rationale for r2 < 0.001 with a 10,000-kb window |
+| R3-5 | L246-L253 | do corrections feed into clumped IVW |
+| R3-6 | L254-L263 | confounder choice; why F > 10 sits at G4 |
+| R3-7 | L264-L271 | power comparability across ancestries |
+| R3-8 | L272-L279 | where Egger, Q, MRlap and CAUSE sit |
+| R3-9 | L280-L287 | choice of simulation parameter values |
+| R3-10 | L288-L295 | what trans-ethnic re-clumping is |
+| R3-11 | L296-L303 | do not say r_g 'remained unchanged' |
+| R3-12 | L304-L313 | three-line tables without vertical rules |
+| Note | L314-L334 | supplementary material inventory |
 
 注意：`Summary`（L9–L18）与 `Table R1`（L19–L49）都在 R1-1 之前，是总览；
 `Note`（L312–末）是补充材料清单。这三段不属于 22 条中的任何一条。
@@ -291,7 +291,7 @@ DOI 在快照之后才铸造，属「先打包后铸造」的固有代价；回�
 
 | 要核什么 | 读哪里 |
 |---|---|
-| 22 条答复全文 | `reviews/Response_to_Reviewers_Frontiers.md` L1–L331（整份） |
+| 22 条答复全文 | `reviews/Response_to_Reviewers_Frontiers.md` L1–L333（整份） |
 | 评分规则与门的定义 | `课题设计阶段/manuscript_Frontiers_Methods_v2_humanized.md` Methods「The six gates」「Grading rubric」 |
 | Table 1 两层表 + 封顶脚注 | `课题设计阶段/manuscript_Frontiers_Methods_v2_humanized.md` Tables 段 |
 | Table 2 + 脚注（四信号声明） | `课题设计阶段/manuscript_Frontiers_Methods_v2_humanized.md` Tables 段 |
