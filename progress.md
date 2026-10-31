@@ -521,4 +521,5 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 
 ### ④ 推送
 
-`git commit 7a3ea8c`（4 文件，+17/−17）。**push 失败**：`Recv failure: Connection was aborted`（github:443 瞬时不可达，与此前同类），待网络恢复重推。
+`git commit 7a3ea8c`（4 文件，+17/−17）+ `2fc9b95`（本文件）。首次 push 报 `Recv failure: Connection was aborted`（github:443 瞬时不可达），**重试即通**：`49ef7e2..2fc9b95 main -> main` 已同步。
+（同批出现的 `git-credential-manager.exe: No such file or directory` 是无害警告，凭据已缓存，不影响推送结果。）
