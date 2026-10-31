@@ -476,3 +476,15 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 `d07214c..a399002 main -> main` 已同步；`size-pack 13.69 MiB`。
 
 - **剩余**：③重跑 `make_review_packet.py --check` 更新外审投喂包（正文已动，行号区间与字数需刷新）
+
+### ④ 顺手修掉的引用错误（commit `568d3df`）
+
+`code/audit_response_letter.py:26` 的 `MS` 指向 `manuscript_Frontiers_Methods_v2.md`，而那是**内部审阅草稿**（表头自述 `**Status:** v2 draft for internal review`，7,305 词，无作者块，未收到任何一轮修订），真正的投稿源是 `..._v2_humanized.md`（12,258 词）。
+
+- **影响范围有限**：正文在该脚本里只被读一处——提取 Zenodo DOI 做比对（L158），不做引文核对；两文件 DOI 均为 `10.5281/zenodo.23733172`，**故今晨的审计结论不受影响**（重跑后 22/22、20 full + 2 in part、5,379 答复词均不变）
+- 仍已改为指向 humanized 版，并加注释说明两者 307 行骨架相同但内容分叉，防止将来扩展校验时静默跑在草稿上
+- 同时把 `manuscript_Frontiers_Methods_v2_humanized.docx`（Sep 2，6,794 词，旧标题 `correcting`）改名加 `_SUPERSEDED_20260902`——它与投稿文件只差一个词，误投风险最高
+- `reviews/Marked_up_copy_legend.md` 新增「Which manuscript file is the manuscript」表，一次讲清四个近乎同名文件分别是**源文件 / 上传件 / 内部草稿 / 被取代导出件**
+- `.gitignore` 增加 `*.bak_*`、`*.bak`（编辑前备份不入库，git 已有历史）
+
+> 口径澄清：审计器输出的 `total response words 5,379` 是**答复正文**总词数，不是稿件正文词数（稿件正文段落 11,162 词 / 源 md 12,258 词）。此前口语里称"正文 5,379 词"易被误读，后续按此三分口径报数。
