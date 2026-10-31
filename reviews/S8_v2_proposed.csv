@@ -1,0 +1,13 @@
+﻿Case,Domain,L1,L2,L3,L4,L5,L6,Score,Grade,n_IV,IVW_beta,IVW_SE,IVW_P,WM_P,Egger_slope_P,Egger_intercept_P,Cochran_Q_P,G2_basis,Notes
+LDL→CAD,Lipid,2,2,2,2,2,2,12,A,not reported in source,0.388,0.042,2.0e-20,2.4e-13,4.1e-09,not reported in source,not reported in source,IVW sig; weighted median supportive,Textbook positive; statin RCT + MR concordance
+Education→AD,Neuro,2,2,2,2,2,2,12,A,312,-0.33,0.075,1.1e-05,0.00019,0.1409,0.6911,0.4268,IVW sig; weighted median supportive,TG mediation q=5.7e-04; EA consistency
+BMI→T2D,Metabolic,2,2,2,2,2,2,12,A,not reported in source,0.581,0.181,1.4e-03,<1e-3,0.136,not reported in source,not reported in source,IVW sig; weighted median supportive,Classic obesity→diabetes
+Height→CAD,General,2,2,2,1,1,2,10,A,not reported in source,-0.135,0.025,6.1e-08,<1e-3,0.046,not reported in source,not reported in source,IVW sig; weighted median supportive,Genuine protective; framework correctly accepts
+Insomnia→AD,Neuro,2,0,1,1,0,0,4,C,31,-0.128,0.203,0.52,0.3649,0.7293,0.7939,0.1597,IVW not significant,LD false positive; reclassified
+BMI→Stroke,Neuro,2,1,1,1,0,0,5,C,not reported in source,0.140,0.059,0.018,0.30,0.505,not reported in source,not reported in source,IVW sig; weighted median p=0.30,IVW sig but WM null; pleiotropy
+HDL→CAD,Lipid,2,1,1,1,0,1,6,C,not reported in source,-0.177,0.053,8.9e-04,0.003,0.891,not reported in source,not reported in source,IVW sig; Egger estimate null (slope p=0.891),IVW sig but Egger null; MR corrective
+CRP→CAD,Inflammatory,1,0,0,0,0,0,1,D,not reported in source,-0.046,0.059,0.44,0.30,0.009,not reported in source,not reported in source,IVW not significant,Clean null at extreme power F=176
+BMI→AD,Metabolic,1,0,0,0,0,0,1,D,not reported in source,-0.092,0.092,0.32,0.22,0.567,not reported in source,not reported in source,IVW not significant,Contested; framework correctly rejects
+Education→T2D,Metabolic,2,1,2,1,1,2,9,B,not reported in source,-0.634,0.0596,2.1e-26,5.5e-18,0.036,not reported in source,not reported in source,IVW sig; Egger intercept p=0.036 + heterogeneity reported,Strong protective; Egger int p=0.036 + high hetero -> B; EAS rep IVW -0.145 (p=0.012)
+Depression→AD,Neuro,2,1,1,1,0,0,5,C,not reported in source,-0.254,0.103,0.0135,0.0594,0.119,not reported in source,not reported in source,IVW sig; weighted median p=0.059,Protective borderline; WM p=0.059 not sig -> robustness partial
+T2D→AD,Metabolic,1,0,0,0,0,0,1,D,not reported in source,-0.010,0.0277,0.714,0.891,0.268,not reported in source,not reported in source,IVW not significant,Clean null at high power F=78; contested -> correctly rejected

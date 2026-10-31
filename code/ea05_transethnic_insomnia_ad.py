@@ -152,7 +152,7 @@ power_eur_obs = power_for_beta(-0.13, se_ivw)      # power to detect EUR clumped
 
 lines = []
 lines.append('=== Trans-ethnic Insomnia -> AD MR (EUR instruments -> EAS outcome) ===\n')
-lines.append(f'Exposure: Insomnia ukb-b-3957 (UK Biobank, EUR, n={n_exp:,}); {len(ivs)} LD-independent instruments at r2<0.001, 10 Mb (current 1000G EUR reference; primary EUR analysis reported n=54 under the same thresholds with the July 2026 reference)')
+lines.append(f'Exposure: Insomnia ukb-b-3957 (UK Biobank, EUR, n={n_exp:,}); {len(ivs)} LD-independent instruments at r2<0.001, 10 Mb (current 1000G EUR reference). NB the primary EUR analysis used r2<0.1 and reported n=54 with the July 2026 reference, so the two counts differ in both threshold and reference panel; they are not directly comparable')
 lines.append(f'Outcome:  GARD/NIAGADS NG00182 East Asian AD (n={n_out:,}, cases={n_cases:,}, controls={n_ctrl:,}, lifted hg38->hg19)')
 lines.append(f'Harmonized: {k}/{len(ivs)} instruments matched positionally; strand-aligned; {sum(1 for d in harm if d["by"]!=0 and (d["ea"]==d["ea"]))} retained')
 lines.append(f'\n--- Primary Results ---')

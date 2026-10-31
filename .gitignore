@@ -22,3 +22,29 @@ output/
 # Python bytecode
 __pycache__/
 *.pyc
+
+# ===== 课题设计阶段：只纳管 Frontiers 改稿链，其余大件本地保留（2026-10-31）=====
+# 目录总 418 MB，若不设白名单式排除，一次 `git add .` 就会把大件拖进仓库。
+# 附带的 MRlap 源码副本（含 124 MB .git pack，与本研究代码无关）
+课题设计阶段/code/
+# 图件本体（已随 Zenodo v1.2.1 归档；tiff/jpg 体积大）
+课题设计阶段/figures/
+课题设计阶段/figures_final/
+备份figure/
+# 历史快照与投稿历史（Zenodo / manuscript/ 已有权威副本）
+课题设计阶段/_archive/
+课题设计阶段/GM_reference/
+# 已由 manuscript/supplementary/ 取代的旧制补充材料（保留在本地作历史追溯）
+课题设计阶段/Supplementary/
+课题设计阶段/Supplementary_final/
+# 大体积二进制：PDF 全文、期刊版大 docx、WoS 导出
+课题设计阶段/*.pdf
+课题设计阶段/*.json
+PLOS_*.pdf
+课题设计阶段/manuscript_BMCMedicalGenomics_revision_v1.docx
+课题设计阶段/manuscript_draft_natcomm_0805.docx
+课题设计阶段/manuscript_HumanGenomics_submission.docx
+课题设计阶段/manuscript_HumanGenomics_submission.preembed.docx
+
+# 项目数据目录（含会话记忆与工作日志，不入公开仓库；勿删）
+.workbuddy/
