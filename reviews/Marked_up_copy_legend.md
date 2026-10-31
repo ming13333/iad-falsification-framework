@@ -92,6 +92,19 @@ The response letter carries the matching counterpart text; both files were re-ex
 
 > An earlier generation wrote the CSV and deletions file into `reviews/`. Those stale copies were removed on 2026-10-31 so that only one pair exists — two files with the same name and different numbers is how the wrong one gets shipped.
 
+### Which manuscript file is the manuscript
+
+Four files in `课题设计阶段/` carry nearly the same name. Only one of them is the manuscript.
+
+| File | Role |
+|---|---|
+| `manuscript_Frontiers_Methods_v2_humanized.md` | **Source of record.** 12,258 words; the file the submission `.docx` is rendered from |
+| `manuscript_Frontiers_Methods_v2.docx` | **The file to upload.** 162 paragraphs / 5 tables / 11,162 words, rendered from the line above |
+| `manuscript_Frontiers_Methods_v2.md` | Internal draft (`**Status:** v2 draft for internal review` in its header), 7,305 words, no author block, predates the revision edits. Not for submission |
+| `manuscript_Frontiers_Methods_v2_humanized_SUPERSEDED_20260902.docx` | Intermediate export done before the 02 Sep submission (6,794 words, old title). Renamed on 2026-10-31 because its name was one substring away from the live file |
+
+`manuscript Frontiers 0902.docx` is the version Frontiers received and is used **only** as this diff's baseline.
+
 Regenerate after any further edit to the manuscript:
 
 ```bash

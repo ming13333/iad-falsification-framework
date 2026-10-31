@@ -48,3 +48,7 @@ PLOS_*.pdf
 
 # 项目数据目录（含会话记忆与工作日志，不入公开仓库；勿删）
 .workbuddy/
+
+# 编辑前自动备份（.bak_preedit / .bak_reorder / .bak_tabcheck），git 已提供历史
+*.bak_*
+*.bak

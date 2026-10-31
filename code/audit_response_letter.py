@@ -23,7 +23,10 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LETTER = os.path.join(ROOT, "reviews", "Response_to_Reviewers_Frontiers.md")
 RAW = os.path.join(ROOT, "reviews", "reviewer_comments_raw.md")
-MS = os.path.join(ROOT, "课题设计阶段", "manuscript_Frontiers_Methods_v2.md")
+# Must be the file the manuscript is rendered from. `manuscript_Frontiers_Methods_v2.md`
+# shares the same 307-paragraph skeleton but predates the humanisation pass and never
+# received the revision edits; pointing here keeps the DOI check on the live source.
+MS = os.path.join(ROOT, "课题设计阶段", "manuscript_Frontiers_Methods_v2_humanized.md")
 
 MIN_WORDS = 40      # a substantive answer; below this it is a placeholder
 BRIEF_WORDS = 120   # reported for review but not treated as a defect
