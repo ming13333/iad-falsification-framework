@@ -1,6 +1,6 @@
 # Marked-up copy — reading guide
 
-**File** `课题设计阶段/manuscript_Frontiers_Methods_v2_marked.docx` — regenerated 2026-10-31 16:33, after the 16 audit items in `reviews/ACTION_ITEMS_2026-10-30.md` were applied
+**File** `课题设计阶段/manuscript_Frontiers_Methods_v2_marked.docx` — regenerated 2026-10-31 19:44, after all 17 audit items in `reviews/ACTION_ITEMS_2026-10-30.md` were applied (16 from the first three reports, 1 from the fourth)
 **Baseline** `课题设计阶段/manuscript Frontiers 0902.docx` — the version received by Frontiers on 02 Sep 2026
 **Prepared** 2026-10-28; **regenerated** 2026-10-31
 **Manuscript** 1986036, *Frontiers in Genetics* (Computational Genomics / Methods)
