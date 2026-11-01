@@ -10,7 +10,7 @@
 
 | 图 | 权威路径 | 字节 | sha256[:16] | 生成方式 |
 |---|---|---|---|---|
-| Fig2 | `manuscript/figures/Fig2_simulation_operating.{png,svg}` | 301,944 / 124,849 | `eddc461317e65630` / `2cdc7cbe966c1709` | `code/make_fig2_simulation.py`（2026-11-01 10:22 重跑） |
+| Fig2 | `manuscript/figures/Fig2_simulation_operating.{png,svg}` | 289,607 / 123,741 | `6b4dff57582a7fe2` / `0d554127788432b8` | `code/make_fig2_simulation.py`（**2026-11-01 12:36 按印制尺寸 7.5 in 重排**；10:22 宽幅版已留档 `备份figure/Fig2_wide_canvas_20261101/`） |
 | Fig5 | `manuscript/figures/Fig5_validation_grading.{png,svg,pdf}` | 577,386 / 126,774 / 38,493 | `32dafee60a6aa90a` / `e72130425176b37d` / `5ba45e88183eb268` | 2026-10-27/28 重制版 |
 
 `课题设计阶段/figures/` 下的同名 Fig2(png/svg)、Fig5(png/svg/pdf) 与上述**逐字节一致**（Fig5 的 svg 例外，见 §5 脚注 1），可视为同一份。
@@ -64,6 +64,6 @@
 
 ## 5. 遗留待办
 
-1. ~~**`figures_final/` 现缺 Fig2、Fig5 的 TIFF**，须用现版 PNG 重导 TIFF 并重打 zip。~~ ✅ **2026-11-01 12:26 已完成**：脚本 `code/export_submission_tiff.py --figs Fig2,Fig5`，得 Fig2 485 dpi / 19.04×6.55 cm、Fig5 704 dpi / 19.05×10.02 cm（LZW/RGB/8bit，像素与源 PNG 全等），`figures_final/Frontiers_Figures_upload.zip` 重建为 2.95 MB / 5 TIFF，哈希见同目录 `TIFF_manifest.csv`。**旧 zip 已封顶，不可再用。**
+1. ~~**`figures_final/` 现缺 Fig2、Fig5 的 TIFF**~~ ✅ **2026-11-01 12:37 已完成**：脚本 `code/export_submission_tiff.py`。5 张 TIFF 版面统一到 19.03–19.06 cm（Fig1 800 / Fig2 400 / Fig3 871 / Fig4 618 / Fig5 704 dpi），LZW/RGB/8bit，像素与源 PNG 全等；`Frontiers_Figures_upload.zip` 重建为 2.92 MB / 5 TIFF。**旧 zip 已封顶，不可再用。** 另：Fig2 已于 12:36 按印制尺寸重排，印出最小字号 6.5 pt（原宽幅版压缩后仅 ≈5.6 pt）。
 2. `figures_final/` 这个目录名本身有误导性（历史命名，不等于最新）。是否改名为 `figures_submission_20260902/` 或直接退役，待定。
 3. 脚注 1：`课题设计阶段/figures/Fig5_validation_grading.svg` 与 `manuscript/figures/Fig5_validation_grading.svg` 字节数同为 126,774 但 sha256 不同（`f74b33f8…` vs `e7213042…`），推测为重新导出时的元数据/时间戳差异；**投稿一律以 `manuscript/figures/` 为准**，此项未深究。

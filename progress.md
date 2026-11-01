@@ -75,7 +75,7 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 ### D. 图表（投稿就绪）
 
 - `课题设计阶段/figures_final/`：**5 主图 × TIFF(LZW/RGB)**（11-01 12:26 重建：Fig2/Fig5 由现版 PNG 重导，Fig1/3/4 沿用 09-02 导出，像素均与 `manuscript/figures/` 全等）+ `Frontiers_Figures_upload.zip` + `TIFF_manifest.csv`。Fig2/Fig5 的旧 PNG/SVG/TIFF 与旧 5-TIFF 包已于 11-01 10:30 封顶迁至 `课题设计阶段/_SUPERSEDED_figures_20260902/`；目录名里的 *final* 只是 09-02 首投的历史命名，见该目录 `README_CURRENT.md`。
-- 物理宽度 18.97–19.62 cm（Fig1 800 / Fig2 **485** / Fig3 875 / Fig4 600 / Fig5 **704** dpi；Fig2/Fig5 于 11-01 12:26 重导，dpi 由 19.05 cm 版面反算）。
+- 物理宽度 **19.03–19.06 cm**（Fig1 800 / Fig2 **400** / Fig3 **871** / Fig4 **618** / Fig5 **704** dpi；11-01 12:37 全部由 19.05 cm 版面反算，Fig2 另按印制尺寸 7.5 in 重排）。
 - Fig2（模拟操作特征）与 Fig4（APOE 共享负债）于 09-02 按 nature-figure 契约**重画**（NMI pastel 冷色系、hero callout、状态圆点替代大色块）。
 - Fig1 为 a/b 双面板（六门框架 + 传统管线对比），SVG 由 6000×6317 组合图 clipPath 裁切上半得到。
 
@@ -730,23 +730,23 @@ S2 同一分析两行：`G1` se=0.0381/P=0.0066、`UVMR` se=0.0313/P=9.3e-4，β
 | `课题设计阶段/figures/Fig5*.jpg`、`figures_final/Fig5*.{png,svg,tiff}` | 09-02 | ✅ **同批封顶**（发现与 Fig2 同类：早于 10-27/28 重制）；**TIFF 已重导**（704 dpi, 19.05 cm） |
 | `课题设计阶段/figures_final/Frontiers_Figures_upload.zip` | 09-02 | ✅ 旧包封顶 → 11-01 12:26 **重建**（2.95 MB，5 TIFF，deflate） |
 
-**重导上传包（11-01 12:26，脚本 `code/export_submission_tiff.py`）**
+**重导上传包（11-01 12:37 定版，脚本 `code/export_submission_tiff.py`）**
 
-| 图 | 来源 PNG sha256 | TIFF sha256 | dpi | 版面 cm | LZW/RGB/unit |
+| 图 | 源 PNG sha256 | TIFF sha256 | dpi | 版面 cm | 备注 |
 |---|---|---|---|---|---|
-| Fig1 | `709f288b`（沿用 09-02 TIFF，未重导） | `3c0c27b314fd` | 800 | 19.05×11.82 | ✓ |
-| Fig2 | `eddc461317e65630` | `453aeb35a075` | 485 | 19.04×6.55 | ✓ |
-| Fig3 | `0e682b4f`（沿用） | `7a32ea1d8cb2` | 875 | 18.97×7.81 | ✓ |
-| Fig4 | `bec73b50`（沿用） | `d413f4b2f52c` | 600 | 19.62×9.65 | ✓ |
-| Fig5 | `32dafee60a6aa90a` | `796b9abe5bbe` | 704 | 19.05×10.02 | ✓ |
+| Fig1 | `709f288b` | `3c0c27b314fd` | 800 | 19.05×11.82 | 沿用 09-02 TIFF（像素已与现 PNG 全等） |
+| Fig2 | `6b4dff57582a7fe2` | `521dab644edb01f9` | 400 | 19.03×8.09 | **12:36 按印制尺寸重排后重导** |
+| Fig3 | `0e682b4f` | `4dda8fa85ad2d65a` | 871 | 19.06×7.85 | 12:37 仅归一版面（像素未变） |
+| Fig4 | `bec73b50` | `34fa79519b96740b` | 618 | 19.05×9.37 | 12:37 仅归一版面（像素未变） |
+| Fig5 | `32dafee60a6aa90a` | `796b9abe5bbe1144` | 704 | 19.05×10.02 | 12:25 重导 |
 
-- 规格：LZW(5)/RGB(photo 2)/8-8-8/ResolutionUnit=2(inch)；像素与源 PNG `ImageChops` 全等（alpha 压白底）；`TIFF_manifest.csv` 随包记录源→产物哈希。
-- **物理宽度改由脚本按 19.05 cm 反算 dpi**，不再沿用 PNG 自带 dpi（新 Fig2/Fig5 PNG 元数据是 300/400 dpi，直接转 TIFF 会得到 30.8/33.5 cm，超版面）。
-- 已知遗留：19.05 cm 版面下 Fig2 最小字号约 5.6 pt（设计幅面 12.1 in，缩放 0.66×），低于常见 ≥6 pt 建议；如需重排须改 `figsize` 与字号，非本次范围。
+- 规格：LZW(5)/RGB(photo 2)/8-8-8/ResolutionUnit=2(inch)；5 张均 `ImageChops` 像素全等（alpha 压白底）；zip 2.92 MB / 5 TIFF，与本地逐一哈希一致；`TIFF_manifest.csv` 记录源→产物哈希。
+- **物理宽度由脚本按 19.05 cm 反算 dpi**，不沿用 PNG 自带 dpi（Fig2/Fig5 新 PNG 元数据 300/400 dpi，直接转会得到 30.8/33.5 cm）。版面现全部落在 **19.03–19.06 cm**。
+- **Fig2 字号问题已解决**：`code/make_fig2_simulation.py` 改为按印制尺寸绘制（`PRINT_WIDTH_IN = 7.5`，即 19.05 cm），字号即印出字号 —— 最小 6.5 pt（脚注行）、数值 6.8、刻度 7.2–7.5、面板标题 8.5（原宽幅 11.4 in 压缩后最小仅 ≈5.6 pt）。配套：panel b ylim 1.46 + 显式刻度止于 1.00、panel c 图例改 2 列、总标题拆两行。**图形数值未变**（D-only 1.00/0.80/0.68、C/D 1.00/0.88/0.81、FDR 0.00/0.10/0.15）。旧宽幅版留档 `备份figure/Fig2_wide_canvas_20261101/`（`eddc4613`/`2cdc7cbe`）。
 - 归档目录：`课题设计阶段/_SUPERSEDED_figures_20260902/`（10 文件 / 8,309,568 B；`README.md` + `SHA256SUMS.txt`（10/10 校验 OK）+ `PROVENANCE.csv`）
 - 独立备份（先备份后移动，逐文件哈希校验）：`备份figure/_SUPERSEDED_backup_20261101/`
 - 两个原目录各加 `README_CURRENT.md` 说明现状与现版路径
-- 未做（待批）：`figures_final/` 缺 Fig2/Fig5 的 TIFF，若走 Frontiers 5-TIFF 上传需用现版 PNG 重导；`figures_final/` 目录名本身是否改名/退役待定
+- 遗留：`figures_final/` 目录名本身是否改名/退役待定；`TIFF_manifest.csv` 因预览窗格占用，构建时留下 `TIFF_manifest.csv.tmp`（内容为最新），关掉预览后 `mv` 覆盖即可
 
 ### ④ 校验
 

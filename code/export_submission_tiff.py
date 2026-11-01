@@ -150,12 +150,21 @@ def main():
         )
     man = os.path.join(OUT, "TIFF_manifest.csv")
     fields = list(rows[0].keys())
-    with open(man, "w", encoding="utf-8-sig", newline="") as fh:
+    tmp = man + ".tmp"
+    with open(tmp, "w", encoding="utf-8-sig", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=fields)
         w.writeheader()
         for k, _ in FIGURES:
             w.writerow(all_rows[k])
-    print("manifest:", os.path.relpath(man, HERE))
+    # the manifest is often open in a preview pane, which on Windows blocks the
+    # destination path; keep the build green and leave the bytes in the .tmp
+    try:
+        os.replace(tmp, man)
+        print("manifest:", os.path.relpath(man, HERE))
+    except PermissionError:
+        print(f"WARNING: {os.path.basename(man)} is locked by another process "
+              f"(preview pane?). Fresh copy left at "
+              f"{os.path.relpath(tmp, HERE)}; close the file and rerun, or rename it.")
 
 
 if __name__ == "__main__":
