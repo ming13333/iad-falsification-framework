@@ -691,3 +691,45 @@ S2 同一分析两行：`G1` se=0.0381/P=0.0066、`UVMR` se=0.0313/P=9.3e-4，β
 ### 待决（用户未授权）
 
 ①Table 5 后的内部备注「Display items: 5 figures + 5 tables = 10（Frontiers limit of 15）」是否删；②Figure 2 面板 (b) 是否补画 C/D 口径特异度。
+
+## 2026-11-01 10:30 · Table 5 后备注删除 + Figure 2 重画（commit `3ab721c`）
+
+### ① 删掉投稿遗留的内部备注
+
+`manuscript_Frontiers_Methods_v2_humanized.md` 中 `*Display items: 5 figures + 5 tables = 10 (within the Frontiers Methods limit of 15).*` 已删。
+
+查得该行**在提交版里就有**（`manuscript/Frontiers_insomnia_AD_v1.md:293`）——是作者的清单条目误随正文提交。所以这是"清理投稿遗留"，不是内容改动，回信无需说明。
+
+**副作用**：`mark_changes.py` 因此报 `deleted paragraphs: 1`，`..._marked_deletions.md` 从"none"变成记录这一段。`Marked_up_copy_legend.md` 里"Nothing was deleted from the submitted text"的断言已改写为"唯一一处删除"，并同步 161 段 / 11,462 词 / 黄 25.0% 绿 34.6%（含表 23.4%/32.5%）。
+
+### ② Figure 2 panel (b) 改为双口径
+
+| 层级 | 是否已披露 |
+|---|---|
+| 提交版（09-02，未封顶）→ 现版（封顶）：敏感度 0.9727/0.8473/0.804 → 0.8781/0.724/0.6915；FDR 0.00/0.0828/0.1275 → 0.1001/0.1512 | ✅ R1-4 *Recomputation note* + S12.5 |
+| 本次：panel (b) 加 C/D 一组柱 | ❌ → 已在 R1-4 补写 |
+
+**不涉及任何数字变化**：C/D 值（1.000/0.8821/0.8094）早列于 Table 2 与 S12.5；脚本改为从 `n_gradeA..D` 计数生成两口径，D-only 四个小数位复现原 `spec` 列 → 属"显示扩展"而非"重算"。
+
+改动四处：
+1. `code/make_fig2_simulation.py` panel b 三柱 + 等值合并标签；同时修掉脚本尾部遗留的 `spec` 变量名（`NameError`，savefig 在其之前故图仍写出）
+2. 正文图注 (b) 分句写双口径并注明 C/D 才是操作特性主张的口径；Results 那句改指 `(Table 2, Figure 2b)`
+3. 回信 R1-4 新增一段 `Panel (b) of Figure 2 now displays both…`
+4. 回信 `Changes:` 行拆成两层理由（封顶重算改了数 / 加口径没改数）
+
+**为什么不单列 figure changelog**：会引出"其他图是否也被悄悄改过"，而实际只动了一个面板；且图无 tracked changes，回信就是唯一披露载体。
+
+### ③ 图副本漂移（未处置，待定）
+
+| 路径 | 时间 | 状态 |
+|---|---|---|
+| `manuscript/figures/Fig2*.{png,svg}` | 11-01 10:22 | ✅ 现行（脚本 OUTDIRS） |
+| `课题设计阶段/figures/Fig2*.{png,svg}` | 11-01 10:23 | ✅ 已同步（同哈希 5b80330d） |
+| `课题设计阶段/figures/Fig2*.{jpg,pdf}` | 09-02 | 🔴 未封顶旧图 |
+| `课题设计阶段/figures_final/Fig2*.{png,svg,tiff}` | 09-02 | 🔴 未封顶旧图（= 提交版，可作历史留证但目录名误导） |
+
+### ④ 校验
+
+正文 docx 161 段/5 表/11,462 词，LaTeX 残留 0；回信 docx 149 段/8,870 词；投喂包三件 `--check` 全 ok；`audit_response_letter.py` 通过。新表述探测全中。
+
+> 注：投喂包（`reviews/review_packet_audit.md` 等）按用户说明仅为外审投喂用，非投稿必做项，已顺手刷新但不再作为交付门槛。
