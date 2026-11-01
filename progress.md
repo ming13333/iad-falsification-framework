@@ -286,7 +286,7 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 
 **投稿三件套（终态）**
 - `课题设计阶段/manuscript Frontiers 0902.docx` ← 投稿正文（**唯一终稿**）
-- `课题设计阶段/figures_final/Frontiers_Figures_upload.zip` ← 5 TIFF 批量上传包（**11-01 12:26 重建**，2.95 MB；旧包已封顶至 `_SUPERSEDED_figures_20260902/`）
+- `课题设计阶段/figures_final/Frontiers_Figures_upload.zip` ← 5 TIFF 批量上传包（**11-01 13:38 重建**，2.03 MB / 5×400 dpi / 18.0 cm；旧包已封顶至 `_SUPERSEDED_figures_20260902/`）
 - `课题设计阶段/Supplementary_final/` ← S1–S9 + Note 1/2 + STROBE-MR
 
 **稿件源与历史**
@@ -724,6 +724,8 @@ S2 同一分析两行：`G1` se=0.0381/P=0.0066、`UVMR` se=0.0313/P=9.3e-4，β
 
 ### ③ 图副本漂移（**2026-11-01 已封顶 + 已重导上传包**）
 
+> ⚠️ **本节记录的是 11-01 12:37 的状态，其 19.03–19.06 cm 版面数字已被下文「15:25 全图 180 mm 归一」作废，仅作历史。**
+
 | 路径 | 时间 | 状态 |
 |---|---|---|
 | `manuscript/figures/Fig2*.{png,svg}` | 11-01 10:22 | ✅ 现行（权威） |
@@ -760,7 +762,7 @@ S2 同一分析两行：`G1` se=0.0381/P=0.0066、`UVMR` se=0.0313/P=9.3e-4，β
 
 ---
 
-## 2026-11-01 14:xx · 全图 180 mm 归一 + 稿件源纠错（**覆盖上文 12:37 的 19.05 cm 表**）
+## 2026-11-01 15:25 · 全图 180 mm 归一 + 稿件源纠错 + 旧图全封顶（**覆盖上文 12:37 的 19.05 cm 表**）
 
 > 上表的 19.03–19.06 cm 是当时按 19.05 cm 反算的结果，**已被本轮作废**。Frontiers 规定图宽只能是 85 mm 或 180 mm，19.05 cm 超版心 10.6 mm。
 
@@ -795,7 +797,26 @@ S2 同一分析两行：`G1` se=0.0381/P=0.0066、`UVMR` se=0.0313/P=9.3e-4，β
 - 正文 `Figure 2b` → `Figure 2B`；`Figure 4` → `Figure 4A–C`。
 - 删除投稿版遗留的 "Display items: 5 figures + 5 tables = 10 (within the Frontiers Methods limit of 15)"——该句既在文末、又引错限制（15 是 Registered Report 的上限），已由首页计数取代。
 
-### ⑤ 未决
+### ⑤ Fig1/Fig3/Fig4 旧件封顶（15:22，第二批）
 
-- **摘要 370 词**（≥Frontiers 惯例 350）：待用户决定删哪 ~20 词。
-- `figures_final/TIFF_manifest.csv` 被预览占用，新数据在 `TIFF_manifest.csv.tmp`；关闭预览后 `python code/export_submission_tiff.py` 即自动并入（脚本已加就地写入回退）。
+审图时发现 `figures_final/` 里还留着一批 09-02 的同名位图/矢量，**与 `manuscript/figures/` 现版逐字节不同**（Fig1 `709f288b` vs `97bb06b9`；Fig3 `0e682b4f` vs `1690f739`；Fig4 `bec73b50` vs `cc78674f`），且全是 19.05 cm 版面。已核验无任何脚本/文档引用后封顶：
+
+| 封顶文件 | 字节 | sha256[:12] | 问题 |
+|---|---|---|---|
+| `Fig1_six_gate_framework.{jpg,png,svg}` | 1,295,309 / 818,575 / 109,498 | `e5576341a45d` / `709f288be96b` / `110a1ebbe21f` | 19.05 cm；clipPath 裁切，不可复现 |
+| `Fig3_case_study_MR.{png,svg}` | 520,007 / 158,624 | `0e682b4fa850` / `e136319d76cf` | 19.05 cm；Inkscape 手工合并 |
+| `Fig4_apoe_shared_liability.{png,svg}` | 411,542 / 10,857 | `bec73b505a81` / `59dc194876f1` | **内容即错图**（五维三角验证汇总） |
+
+- 去向 `_SUPERSEDED_figures_20260902/from_figures_final/`，带 `__SUPERSEDED_20260902` 后缀；移动前后逐个 sha256 比对一致。
+- 归档目录现 **17 文件 / 11,633,980 B**；`PROVENANCE.csv` 补 7 行；`SHA256SUMS.txt` 重建后 **17/17 校验 OK**；`README.md` 重写（§1 现版五图、§2 两批封顶理由、§3 清单、§4 备份、§5 遗留）。
+- `figures_final/` 现只剩 5 TIFF + zip + manifest + README_CURRENT，**整包可直接投出**。
+
+### ⑥ 门禁全绿（15:24）
+
+- `python code/check_submission_figures.py` → **PASS**：五图 18.0 cm / 400 dpi / RGB / LZW，无 <8 pt 字、无 <2 pt 线、分面 `(A)(B)(C)`，zip 与 manifest 一致。
+- `TIFF_manifest.csv.tmp` 已 `os.replace` 并入正式清单（5 行全部 18.0 cm）。
+
+### ⑦ 未决
+
+- **摘要 370 词**（raw split；去数学式后 356）≥Frontiers 惯例 350：待用户决定删哪 ~20 词，不擅自改措辞。
+- `figures_final/` 目录名是否改名/退役仍待定（内容已是权威，只是名字误导）。
