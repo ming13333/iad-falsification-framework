@@ -30,6 +30,9 @@ __pycache__/
 # 图件本体（已随 Zenodo v1.2.1 归档；tiff/jpg 体积大）
 课题设计阶段/figures/
 课题设计阶段/figures_final/
+# 封顶归档：只版本化 README/校验清单/来源表，图件本体留本地（2026-11-01 封顶 Fig2/Fig5 旧版）
+课题设计阶段/_SUPERSEDED_figures_20260902/from_figures/
+课题设计阶段/_SUPERSEDED_figures_20260902/from_figures_final/
 备份figure/
 # 历史快照与投稿历史（Zenodo / manuscript/ 已有权威副本）
 课题设计阶段/_archive/

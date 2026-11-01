@@ -74,7 +74,7 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 
 ### D. 图表（投稿就绪）
 
-- `课题设计阶段/figures_final/`：5 主图 × **PNG + SVG + JPG + TIFF(LZW/RGB)** + `Frontiers_Figures_upload.zip`（3.1MB，5 TIFF）。
+- `课题设计阶段/figures_final/`：**2026-11-01 起只剩 Fig1/Fig3/Fig4**（各 PNG + SVG + TIFF(LZW/RGB)，另 Fig1 有 JPG），均核验与 `manuscript/figures/` 逐字节一致。**Fig2/Fig5 旧版与 5-TIFF 上传包已于 11-01 封顶迁出至 `课题设计阶段/_SUPERSEDED_figures_20260902/`**；目录名里的 *final* 只是 09-02 首投的历史命名，见该目录 `README_CURRENT.md`。
 - 物理宽度全部合规（19.0–19.6 cm；dpi 元数据已修：Fig1 800 / Fig2 600 / Fig3 875 / Fig4 600 / Fig5 800）。
 - Fig2（模拟操作特征）与 Fig4（APOE 共享负债）于 09-02 按 nature-figure 契约**重画**（NMI pastel 冷色系、hero callout、状态圆点替代大色块）。
 - Fig1 为 a/b 双面板（六门框架 + 传统管线对比），SVG 由 6000×6317 组合图 clipPath 裁切上半得到。
@@ -283,7 +283,7 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 
 **投稿三件套（终态）**
 - `课题设计阶段/manuscript Frontiers 0902.docx` ← 投稿正文（**唯一终稿**）
-- `课题设计阶段/figures_final/Frontiers_Figures_upload.zip` ← 5 TIFF 批量上传包
+- ~~`课题设计阶段/figures_final/Frontiers_Figures_upload.zip` ← 5 TIFF 批量上传包~~ 🔴 **已封顶（11-01）**：内含旧版 Fig2/Fig5，现位于 `课题设计阶段/_SUPERSEDED_figures_20260902/from_figures_final/Frontiers_Figures_upload__SUPERSEDED_20260902.zip`。若需上传包，须用现版 PNG 重导 TIFF 重打。
 - `课题设计阶段/Supplementary_final/` ← S1–S9 + Note 1/2 + STROBE-MR
 
 **稿件源与历史**
@@ -719,14 +719,21 @@ S2 同一分析两行：`G1` se=0.0381/P=0.0066、`UVMR` se=0.0313/P=9.3e-4，β
 
 **为什么不单列 figure changelog**：会引出"其他图是否也被悄悄改过"，而实际只动了一个面板；且图无 tracked changes，回信就是唯一披露载体。
 
-### ③ 图副本漂移（未处置，待定）
+### ③ 图副本漂移（**2026-11-01 已封顶处置完毕**）
 
 | 路径 | 时间 | 状态 |
 |---|---|---|
-| `manuscript/figures/Fig2*.{png,svg}` | 11-01 10:22 | ✅ 现行（脚本 OUTDIRS） |
-| `课题设计阶段/figures/Fig2*.{png,svg}` | 11-01 10:23 | ✅ 已同步（同哈希 5b80330d） |
-| `课题设计阶段/figures/Fig2*.{jpg,pdf}` | 09-02 | 🔴 未封顶旧图 |
-| `课题设计阶段/figures_final/Fig2*.{png,svg,tiff}` | 09-02 | 🔴 未封顶旧图（= 提交版，可作历史留证但目录名误导） |
+| `manuscript/figures/Fig2*.{png,svg}` | 11-01 10:22 | ✅ 现行（权威） |
+| `课题设计阶段/figures/Fig2*.{png,svg}` | 11-01 10:23 | ✅ 已同步（与上同哈希） |
+| `课题设计阶段/figures/Fig2*.{jpg,pdf}` | 09-02 | ✅ **已封顶** → `_SUPERSEDED_figures_20260902/from_figures/` |
+| `课题设计阶段/figures_final/Fig2*.{png,svg,tiff}` | 09-02 | ✅ **已封顶** → `_SUPERSEDED_figures_20260902/from_figures_final/` |
+| `课题设计阶段/figures/Fig5*.jpg`、`figures_final/Fig5*.{png,svg,tiff}` | 09-02 | ✅ **同批封顶**（发现与 Fig2 同类：早于 10-27/28 重制） |
+| `课题设计阶段/figures_final/Frontiers_Figures_upload.zip` | 09-02 | ✅ **整包封顶**（内含旧 Fig2/Fig5 TIFF） |
+
+- 归档目录：`课题设计阶段/_SUPERSEDED_figures_20260902/`（10 文件 / 8,309,568 B；`README.md` + `SHA256SUMS.txt`（10/10 校验 OK）+ `PROVENANCE.csv`）
+- 独立备份（先备份后移动，逐文件哈希校验）：`备份figure/_SUPERSEDED_backup_20261101/`
+- 两个原目录各加 `README_CURRENT.md` 说明现状与现版路径
+- 未做（待批）：`figures_final/` 缺 Fig2/Fig5 的 TIFF，若走 Frontiers 5-TIFF 上传需用现版 PNG 重导；`figures_final/` 目录名本身是否改名/退役待定
 
 ### ④ 校验
 
