@@ -46,6 +46,7 @@ NOTE_SIZE = 9
 # 2.54 cm margins.
 FIXED_WIDTHS = {
     1: [1.05, 2.15, 3.45, 3.05, 3.15, 3.05],   # Table 1, six gates
+    2: [2.15, 1.95, 2.55, 2.75, 2.70, 1.75, 2.05],  # Table 2, seven columns
     4: [0.95, 2.25, 8.60, 2.20, 1.90],          # Table 4, protocol steps
 }
 
@@ -534,8 +535,14 @@ def build(in_path, out_path):
             add_runs(p, s, size=11)
             continue
         if "Correspondence" in s:
-            p = para(doc, "", space_after=14, line=WD_LINE_SPACING.SINGLE)
+            p = para(doc, "", space_after=8, line=WD_LINE_SPACING.SINGLE)
             add_runs(p, s.replace("\\*", "*"), size=11)
+            continue
+        if s.startswith("**Word count:**") or s.startswith("**Article type:**"):
+            # Frontiers Methods: the first page must state the word, figure and
+            # table counts, so these two lines belong on the title page.
+            p = para(doc, "", space_after=4, line=WD_LINE_SPACING.SINGLE)
+            add_runs(p, s, size=10, italic=False)
             continue
 
     # ---- body ------------------------------------------------------------

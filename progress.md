@@ -1,6 +1,6 @@
 # progress.md · 失眠↔AD 六门证伪框架
 
-> 覆盖式更新 · **2026-10-30 21:20**（应答稿 22 条 + Table 2 重算 + 投稿 docx + 高亮版 + D3 标题 + Zenodo v1.2.1 + **第三方复核投喂包**；两处数值不一致已自查修掉）
+> 覆盖式更新 · **2026-11-01 14:10**（五图全按 180 mm 重画重导 + 投稿门禁 + **稿件源错位已纠正**：真源是 `humanized.md` 而非 `v1.md`；首页计数与分面 (A)(B)(C) 已同步；摘要 370 词待定）
 > 续接口令：读 `RULES.md` + 本文件，接着干。详细历史见 `.workbuddy/memory/YYYY-MM-DD.md`。
 
 ---
@@ -65,19 +65,22 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 
 ### C. 稿件（Frontiers Methods 路线，终态）
 
-- **主稿**：`课题设计阶段/manuscript_Frontiers_Methods_v2_humanized.md`（55,953 字符，≈5,900 词含参考文献）
-- **投稿 docx**：`课题设计阶段/manuscript Frontiers 0902.docx`（md5 `97378c3b…`，Table 1 已压成 7×4 紧凑版）
-- **PDF 预览**：`课题设计阶段/manuscript Frontiers 0902.pdf`
-- 规格合规：Abstract **305 词** ≤350；5 图 + 5 表 = 10 ≤15；A-type Methods ≤12,000 词；章节序 Declarations → References → Figure legends → Tables（Frontiers 规范）；参考文献 **42 条，全含 DOI**（孤儿引用问题已通过"裁到正文实际引用"解决）。
-- 已做：去 AI 痕迹（em-dash 清零、句长收敛、AI 高频词清零）、数值 multiset 跨文件零差异、`$` 残留 0、作者上标保留。
+- **主稿（唯一真源）**：`课题设计阶段/manuscript_Frontiers_Methods_v2_humanized.md`。**注意**：`manuscript/Frontiers_insomnia_AD_v1.md` 是 **09-02 投稿版文本**，Table 2 仍是旧数（sens 0.506/0.973…），**不可再作为构建源**；11-01 曾误以它为源构建并被自查拦下，已回滚。
+- **修订 docx（clean）**：`课题设计阶段/manuscript_Frontiers_Methods_v2.docx`（11-01 14:0x 重建，含首页计数、正文 8,261 词、5 图 5 表）
+- **高亮修订版**：`课题设计阶段/manuscript_Frontiers_Methods_v2_marked.docx` + `_marked_changes.csv` + `_marked_deletions.md`（vs `manuscript Frontiers 0902.docx`：76 段、56 单元格、1 段删除）
+- **投稿基线**：`课题设计阶段/manuscript Frontiers 0902.docx`（md5 `97378c3b…`，Table 1 = 7×4），**冻结不动**，仅供 diff。
+- 规格合规：Methods ≤12,000 词（正文 **8,261**）；首页已按指南标注 word / figure / table 计数；章节序 Declarations → References → Figure legends → Tables；参考文献 42 条全含 DOI。
+- ⚠️ **未决**：摘要 **370 词**（progress 旧记录"305 词"已过期）。Frontiers 惯例上限 350，需删 ~20 词，等用户定夺。
 - **AI 声明**：已按用户指定填 "GLM and DeepSeek, accessed through the WorkBuddy agent environment"（不写版本号，避免编造）。
 
-### D. 图表（投稿就绪）
+### D. 图表（投稿就绪，180 mm 规格）
 
-- `课题设计阶段/figures_final/`：**5 主图 × TIFF(LZW/RGB)**（11-01 12:26 重建：Fig2/Fig5 由现版 PNG 重导，Fig1/3/4 沿用 09-02 导出，像素均与 `manuscript/figures/` 全等）+ `Frontiers_Figures_upload.zip` + `TIFF_manifest.csv`。Fig2/Fig5 的旧 PNG/SVG/TIFF 与旧 5-TIFF 包已于 11-01 10:30 封顶迁至 `课题设计阶段/_SUPERSEDED_figures_20260902/`；目录名里的 *final* 只是 09-02 首投的历史命名，见该目录 `README_CURRENT.md`。
-- 物理宽度 **19.03–19.06 cm**（Fig1 800 / Fig2 **400** / Fig3 **871** / Fig4 **618** / Fig5 **704** dpi；11-01 12:37 全部由 19.05 cm 版面反算，Fig2 另按印制尺寸 7.5 in 重排）。
-- Fig2（模拟操作特征）与 Fig4（APOE 共享负债）于 09-02 按 nature-figure 契约**重画**（NMI pastel 冷色系、hero callout、状态圆点替代大色块）。
-- Fig1 为 a/b 双面板（六门框架 + 传统管线对比），SVG 由 6000×6317 组合图 clipPath 裁切上半得到。
+- `课题设计阶段/figures_final/`：**5 主图 × TIFF(LZW/RGB)** + `Frontiers_Figures_upload.zip`（2.03 MB）+ `TIFF_manifest.csv`。
+- **物理宽度统一 18.00 cm（180 mm 双栏）**，400 dpi（Fig1 18.0×18.16 / Fig2 18.0×9.27 / Fig3 18.0×8.76 / Fig4 18.0×8.26 / Fig5 18.0×14.86 cm）。09-02 那套 19.05 cm 超版心 10.6 mm，已全部重排重导。
+- 排版硬指标：最小字号 **≥8 pt**、线宽 **≥2 pt**、分面统一 **(A)/(B)/(C)** 且落在绘图区外——由 `code/check_submission_figures.py` 静态+几何双重门禁把关。
+- 五图**全部有可复现脚本**：`make_fig1_six_gate.py`（替换原 Inkscape 手工合并 SVG）、`make_fig2_simulation.py`、`make_fig3_case_study.py`（替换原 Inkscape 森林图）、`make_fig4_apoe_liability.py`、`make_fig5_validation.py`。
+- Fig4 曾长期挂错图（实为五维三角验证汇总，与图注/正文 L120 不符），已按 APOE 位点共享负债重画，并对 `S1_coloc_loci.csv` 做计数断言（47/32 检测、1/18 强共享、16 在 APOE、2 在 chr11p11.2、0 其他）防漂移。
+- 旧图封顶于 `课题设计阶段/_SUPERSEDED_figures_20260902/`，见该目录 `README_CURRENT.md`。
 
 ### E. 补充材料
 
@@ -754,3 +757,45 @@ S2 同一分析两行：`G1` se=0.0381/P=0.0066、`UVMR` se=0.0313/P=9.3e-4，β
 正文 docx 161 段/5 表/11,462 词，LaTeX 残留 0；回信 docx 149 段/8,870 词；投喂包三件 `--check` 全 ok；`audit_response_letter.py` 通过。新表述探测全中。
 
 > 注：投喂包（`reviews/review_packet_audit.md` 等）按用户说明仅为外审投喂用，非投稿必做项，已顺手刷新但不再作为交付门槛。
+
+---
+
+## 2026-11-01 14:xx · 全图 180 mm 归一 + 稿件源纠错（**覆盖上文 12:37 的 19.05 cm 表**）
+
+> 上表的 19.03–19.06 cm 是当时按 19.05 cm 反算的结果，**已被本轮作废**。Frontiers 规定图宽只能是 85 mm 或 180 mm，19.05 cm 超版心 10.6 mm。
+
+### ① 五图全部按 180 mm 重画重导
+
+| 图 | 生成脚本（新/旧） | 像素 | dpi | 版面 cm |
+|---|---|---|---|---|
+| Fig1 | `code/make_fig1_six_gate.py`（**新增，替换 Inkscape 手工合并**） | 2834×2860 | 400 | 18.00×18.16 |
+| Fig2 | `code/make_fig2_simulation.py`（`PRINT_WIDTH_IN = 180/25.4`） | 2834×1460 | 400 | 18.00×9.27 |
+| Fig3 | `code/make_fig3_case_study.py`（**新增，替换 Inkscape 森林图**） | 2834×1380 | 400 | 18.00×8.76 |
+| Fig4 | `code/make_fig4_apoe_liability.py`（**新增，替换错图**） | 2834×1300 | 400 | 18.00×8.26 |
+| Fig5 | `code/make_fig5_validation.py`（表格式版面重排） | 2834×2340 | 400 | 18.00×14.86 |
+
+- 排版常量统一：`MIN_FONT = 8`、`LINE_W/RULE_W = 2.0`；panel 字母统一 `(A)(B)(C)` 且置于绘图区外。
+- **`bbox_inches="tight"` 是隐形杀手**：它会把画布裁到内容大小，dpi 仍固定 → 物理宽度漂移（曾得到 18.67 cm）。已从 Fig2 删除并加注释。
+- 上传包：`Frontiers_Figures_upload.zip` 2.03 MB / 5 TIFF，与磁盘逐一哈希一致。
+
+### ② 新增投稿门禁 `code/check_submission_figures.py`
+
+五类硬检查：①TIFF 几何（宽 18.0±0.05 cm、dpi≥300、RGB、LZW、ResolutionUnit=2、像素与 PN​G 全等）；②脚本静态排版（任何 `fontsize<8` / `lw<2` 即失败；画轴图必须设 `axes.linewidth` 与 tick 宽度，`axis("off")` 的示意图豁免）；③图注分面（多面板必须 `(**A**)` 且无小写残留）；④首页计数；⑤zip 成员与 manifest 一致性。
+
+### ③ ⚠️ 揪出稿件源错位（本轮最重要）
+
+- 全文一直在被修改的 `manuscript/Frontiers_insomnia_AD_v1.md` **是 09-02 投稿版文本**，其 Table 2 是旧仿真结果（sens 0.506/0.973/0.847、FDR 0.042–0.125），与 `results/simulation/sim_marginal.csv` **不符**。
+- 真源 = `课题设计阶段/manuscript_Frontiers_Methods_v2_humanized.md`，数值与 CSV 逐格吻合（0.216/0.878/0.376/0.724/0.408/0.691），且 DOI 已更到 `10.5281/zenodo.23733172`。
+- 处置：`git checkout` 回滚 v1 md、从基线恢复 v1 docx（二者均为投稿冻结件）；本轮全部改动改写到 humanized 源并重建 docx。**教训：构建前先确认源文件是不是"当前稿"，不要按文件名猜。**
+
+### ④ 稿件改动（humanized 源）
+
+- 首页加 `**Word count:** 8,261 … **Figures:** 5. **Tables:** 5.` 与 `**Article type:** Methods.`（Frontiers 明确要求首页标注）。
+- 图注 Fig2 `(a)(b)(c)` → `(**A**)(**B**)(**C**)`；Fig3 补 CI 说明并加粗；Fig4 补 A/B/C 三面板描述；Fig1/3/4 图注末端补生成脚本名（与 Fig2/Fig5 一致）。
+- 正文 `Figure 2b` → `Figure 2B`；`Figure 4` → `Figure 4A–C`。
+- 删除投稿版遗留的 "Display items: 5 figures + 5 tables = 10 (within the Frontiers Methods limit of 15)"——该句既在文末、又引错限制（15 是 Registered Report 的上限），已由首页计数取代。
+
+### ⑤ 未决
+
+- **摘要 370 词**（≥Frontiers 惯例 350）：待用户决定删哪 ~20 词。
+- `figures_final/TIFF_manifest.csv` 被预览占用，新数据在 `TIFF_manifest.csv.tmp`；关闭预览后 `python code/export_submission_tiff.py` 即自动并入（脚本已加就地写入回退）。

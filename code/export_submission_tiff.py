@@ -44,7 +44,10 @@ SRC = os.path.join(HERE, "manuscript", "figures")
 OUT = os.path.join(HERE, "课题设计阶段", "figures_final")
 ZIP_NAME = "Frontiers_Figures_upload.zip"
 
-TARGET_WIDTH_CM = 19.05          # 7.5 in, the width used by the original set
+TARGET_WIDTH_CM = 18.0           # 180 mm, the two-column width Frontiers specifies.
+                                 # The September set was 19.05 cm (7.5 in), which is
+                                 # 10.6 mm wider than the journal allows; every figure
+                                 # is now drawn at 180 mm and exported at 180 mm.
 MIN_DPI = 300
 
 FIGURES = [
@@ -157,14 +160,21 @@ def main():
         for k, _ in FIGURES:
             w.writerow(all_rows[k])
     # the manifest is often open in a preview pane, which on Windows blocks the
-    # destination path; keep the build green and leave the bytes in the .tmp
+    # destination path; os.replace needs delete access, so fall back to an
+    # in-place rewrite (works when the holder only denies delete), then warn
     try:
         os.replace(tmp, man)
         print("manifest:", os.path.relpath(man, HERE))
     except PermissionError:
-        print(f"WARNING: {os.path.basename(man)} is locked by another process "
-              f"(preview pane?). Fresh copy left at "
-              f"{os.path.relpath(tmp, HERE)}; close the file and rerun, or rename it.")
+        try:
+            with open(tmp, "rb") as src, open(man, "wb") as dst:
+                dst.write(src.read())
+            os.remove(tmp)
+            print("manifest (in place):", os.path.relpath(man, HERE))
+        except PermissionError:
+            print(f"WARNING: {os.path.basename(man)} is locked by another process "
+                  f"(preview pane?). Fresh copy left at "
+                  f"{os.path.relpath(tmp, HERE)}; close the file and rerun, or rename it.")
 
 
 if __name__ == "__main__":
