@@ -1,0 +1,23 @@
+﻿comment_id,topic,n_locations,chars_highlighted,locations
+R1-1,"Scoring rules inconsistent across text, Table 1 and S8; G2 failure could still reach Grade A",35,5337,para 39; para 42; para 48; para 99; para 150; para 152; table 1 r1c3; table 1 r1c4; table 1 r1c5; table 1 r1c6; table 1 r2c3; table 1 r2c4; table 1 r2c5; table 1 r2c6; table 1 r3c2; table 1 r3c3; table 1 r3c4; table 1 r3c5; table 1 r3c6; table 1 r4c3; table 1 r4c4; table 1 r4c5; table 1 r4c6; table 1 r5c3; table 1 r5c4; table 1 r5c5; table 1 r5c6; table 1 r6c3; table 1 r6c4; table 1 r6c5; table 1 r6c6; table 1 r7c3; table 1 r7c4; table 1 r7c5; table 1 r7c6
+R1-2,Archived simulation code differs from the described workflow,35,20891,para 0; para 8; para 9; para 14; para 15; para 16; para 19; para 32; para 36; para 59; para 60; para 62; para 63; para 76; para 85; para 86; para 90; para 91; para 93; para 145; para 152; para 153; para 155; table 2 r3c3; table 2 r4c3; table 2 r5c7; table 2 r6c3; table 2 r6c7; table 2 r7c3; table 2 r7c7; table 2 r8c7; table 2 r9c3; table 2 r9c7; table 2 r10c3; table 2 r10c7
+R1-3,What the framework adds beyond routine LD handling,3,2975,para 40; para 69; para 99
+R1-4,Sensitivity/specificity definitions; Grade C; uncertainty; the 0.20 threshold; effect mix,22,12388,para 9; para 14; para 63; para 86; para 90; para 145; para 153; para 155; table 2 r1c4; table 2 r1c5; table 2 r2c4; table 2 r2c5; table 2 r3c5; table 2 r4c5; table 2 r5c4; table 2 r5c5; table 2 r6c5; table 2 r7c5; table 2 r8c4; table 2 r8c5; table 2 r9c5; table 2 r10c5
+R1-5,Insufficient evidence is not evidence against,2,6175,para 77; para 90
+R1-6,Chromosome 19 is not the APOE region; region definition; how 32 and 47 were selected,1,2070,para 70
+R1-7,'Three null results' contradicts a negative direct effect; CAUSE inputs,3,4659,para 41; para 68; para 152
+R1-8,Conditional instrument strength; confounder handling; mediation details,5,9379,para 43; para 44; para 71; para 72; para 90
+R1-9,Evidence behind the external-validation scores; kappa is not causal accuracy,4,8538,para 40; para 45; para 73; para 90
+R1-10,From risk factors to drug targets,1,1851,para 89
+R3-1,Harmonise terminology for directional and causal claims,4,2307,para 8; para 12; para 35; para 36
+R3-2,What 'precise' means,3,3018,para 8; para 12; para 69
+R3-3,European LD reference panel applied to East Asian data,4,8097,para 45; para 46; para 73; para 90
+R3-4,"Rationale for r2 < 0.001 with a 10,000-kb window (Methods corrected)",5,6091,para 40; para 53; para 68; para 69; table 4 r4c3
+R3-5,Do the three corrections act in sequence on the variant set,2,3331,para 41; para 68
+R3-6,How confounders were chosen; why F > 10 sits at G4,1,2117,para 43
+R3-7,Power comparability across ancestries; cross-ancestry bias,4,8097,para 45; para 46; para 73; para 90
+R3-8,"Where MR-Egger, Cochran's Q, MRlap and CAUSE sit in the framework",2,2169,para 41; para 152
+R3-9,Justification of the simulation parameter grid,2,4154,para 59; para 60
+R3-10,Definition and algorithm of trans-ethnic re-clumping,1,1011,para 46
+R3-11,Do not describe a null r_g as 'unchanged',1,2070,para 70
+R3-12,Three-line tables without vertical rules,5,0,Table 1; Table 2; Table 3; Table 4; Table 5
