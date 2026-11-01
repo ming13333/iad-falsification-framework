@@ -15,9 +15,15 @@ Two rules govern the map:
          cross-reference added. Nothing asked for it. This is the category to
          look at if the revision is to be narrowed to reviewer-driven changes
          only, because each entry can be reverted without losing an answer.
+         No entry currently uses it: the two Discussion paragraphs that were
+         filed here (the run-in headings for reporting-standard complementarity
+         and template generalizability) are answers to R1-3 and R1-2 and are
+         filed under REV, so the body text of the revision carries no change
+         that cannot be traced to a comment.
   NOISE  the difference is an artefact of the markdown -> docx conversion
-         (list numbering, bullet glyphs, escaped markup, superscript flattened
-         to plain digits, double hyphen to en dash) or of block alignment.
+         (list numbering, bullet glyphs, escaped markup, a Unicode superscript
+         rewritten as a formatted superscript run, double hyphen to en dash) or
+         of block alignment.
          Nothing to answer, nothing to show.
 
 Keys are paragraph indices in `manuscript_Frontiers_Methods_v2.docx`. Each
@@ -76,7 +82,7 @@ MAP = {
     23:  ("NOISE", None, "bullet glyph inserted by the markdown converter", "\u2022"),
     24:  ("NOISE", None, "bullet glyph inserted by the markdown converter", "\u2022"),
     25:  ("NOISE", None, "bullet glyph inserted by the markdown converter", "\u2022"),
-    26:  ("NOISE", None, "bullet glyph inserted; underscore dropped", "\u2022"),
+    26:  ("NOISE", None, "bullet glyph inserted; $r_g$ rendered as r plus a subscript g, which is the same text in a different encoding", "\u2022"),
     27:  ("NOISE", None, "bullet glyph inserted by the markdown converter", "\u2022"),
     28:  ("NOISE", None, "bullet glyph inserted by the markdown converter", "\u2022"),
     32:  ("REV", ("R1-2",), "Archived framework: version DOI 10.5281/zenodo.21858125 -> 23733172 (v1.2.1)", "Archived framework."),
@@ -91,7 +97,7 @@ MAP = {
     45:  ("REV", ("R1-9", "R3-3", "R3-7"), "Gate G6: direction concordance alone is not validation; no ancestry-matched panel; power not comparable", "Gate G6"),
     46:  ("REV", ("R3-3", "R3-7", "R3-10"), "New paragraph: trans-ethnic re-clumping algorithm and what happens without an ancestry-matched panel", "Trans-ethnic re-clumping."),
     48:  ("REV", ("R1-1",), "Grading rubric: single 0/1/2 scheme, binary G1/G6, decisive-failure cap, not-evaluable scores 0", "Cumulative scores range"),
-    51:  ("NOISE", None, "list number and superscript flattened by the converter", "1."),
+    51:  ("NOISE", None, "list number inserted; the Unicode superscript 10-8 rewritten as a formatted superscript run", "1."),
     52:  ("NOISE", None, "list item reflow after the numbering was added", "2."),
     53:  ("REV", ("R3-4",), "Protocol step 3: clumping threshold corrected from r2 < 0.001 to r2 < 0.1", "3."),
     54:  ("NOISE", None, "list item reflow after the numbering was added", "4."),
@@ -117,14 +123,14 @@ MAP = {
     82:  ("NOISE", None, "list number inserted by the converter", "4."),
     83:  ("NOISE", None, "list number inserted by the converter", "5."),
     85:  ("REV", ("R1-2",), "Discussion: 'operating characteristics derived from' -> 'of its scoring rule'", "The insomnia\u2013AD findings"),
-    86:  ("REV", ("R1-2", "R1-4"), "Discussion: scoring rule rather than framework; FDR figures updated after the cap was applied", "The APOE result"),
-    87:  ("ED", None, "section heading split out and a STROBE-MR cross-reference added; neither reviewer asked for it", "Complementarity with reporting standards."),
-    88:  ("ED", None, "section heading split out and the wording tightened; neither reviewer asked for it", "Generalizability of the template."),
+    86:  ("REV", ("R1-2", "R1-4", "R1-6"), "Discussion: scoring rule rather than framework; FDR figures updated after the cap was applied; APOE-region definition, the reason no MR exclusion isolates it, and the withdrawal of any APOE-specific effect estimate restated at Discussion level so that R1-6 is answered in both Results and Discussion", "The APOE result"),
+    87:  ("REV", ("R1-3",), "R1-3 asks what the full framework adds beyond routine practice and robustness checks. This paragraph is where that answer sits: the framework is complementary to a reporting standard rather than a duplicate of it, because STROBE-MR fixes what must be reported while the gates grade whether the reported evidence carries a causal claim. The revision made the answer findable (run-in heading naming the claim) and added the citation and the pointer to the completed checklist in Supplementary Table S5, neither of which the submitted version carried. No claim was weakened: the paragraph states the same two challenges in shorter wording", "Complementarity with reporting standards."),
+    88:  ("REV", ("R1-2", "R1-3"), "R1-2 asked which code version the results came from; the archived-release DOI cited here is moved from the superseded 10.5281/zenodo.21858125 to the deposited 10.5281/zenodo.23733172 that reproduces Table 2, and the environment is stated as pinned through renv.lock. The run-in heading labels the second half of the answer to R1-3 (the template is not tied to this locus or trait pair), so the sentence a reader needs in order to judge whether the addition generalizes is no longer buried mid-paragraph", "Generalizability of the template."),
     89:  ("REV", ("R1-10",), "Discussion: trait-level claim -> target requires cis-pQTL, tissue, direction of modulation, safety", "Implications for drug-target prioritization."),
     90:  ("REV", ("R1-2", "R1-4", "R1-5", "R1-8", "R1-9", "R3-3", "R3-7"), "Limitations: proxy implementation, FDR vs null fraction, insufficient vs against, conditional F gap, G6 evidence, LD mismatch, power", "Limitations."),
     91:  ("REV", ("R1-2",), "Conclusions: claim narrowed to the scoring rule under proxy gates", "Conclusions."),
     93:  ("REV", ("R1-2",), "Data availability: version DOI 10.5281/zenodo.21858125 -> 23733172", "Data availability statement."),
-    98:  ("FMT", None, "AI-use declaration: tool names and version removed per the journal policy; not requested by either reviewer", "Use of AI."),
+    98:  ("FMT", None, "AI-use declaration: the version number was dropped, and the statement was widened from 'language editing only, no AI used to analyse data or generate results' to disclose that the models also re-executed and cross-checked computations and rebuilt the S8 scoring table. That widening corrects a claim which had become untrue rather than answering a comment, so it is filed here under the disclosure policy and is NOT highlighted - but it is a substantive correction, not a style edit", "Use of AI."),
     99:  ("REV", ("R1-1", "R1-3"), "Supplementary material: new tables S10-S12 listed", "Supplementary material."),
     144: ("FMT", None, "Figure 1 legend: note on the 180 mm width and the generator script; journal figure specification, not a reviewer request", "Figure 1."),
     145: ("REV", ("R1-4", "R1-2"), "Figure 2 legend: both specificity conventions, recomputed under the decisive-failure cap", "Figure 2."),
@@ -160,15 +166,22 @@ TABLE_COL_MAP = {
 # are not lost between sessions. These are observations about the pair of
 # documents, not attributions.
 NOTES = [
-    "R1-6 is answered in the Results G3 paragraph only. The response letter's "
-    "Changes line also claims a Discussion change, but the Discussion contains no "
-    "sentence withdrawing the APOE-specific reading - either add one or correct "
-    "the letter.",
+    "R1-6 is now answered in two places. The Results G3 paragraph carries the "
+    "region definition and the withdrawal of the chromosome-19 exclusion; the "
+    "Discussion paragraph 'The APOE result' restates the region boundary, why no "
+    "MR exclusion isolates it, and that no APOE-specific effect estimate is drawn, "
+    "so the Changes line in the response letter ('Results, G3 paragraph; "
+    "Discussion') is now true of the manuscript.",
 
-    "The markdown converter flattens typography the submitted .docx had right: "
-    "r2 for r-squared, rg for r_g, 10-8 for 10^-8, and -- for an en dash. These "
-    "are not revisions and are therefore not highlighted, but they read as "
-    "regressions in a resubmission and should be repaired in the source.",
+    "The earlier note that the converter flattened superscripts was wrong, and the "
+    "error came from reading paragraph.text, which concatenates run text without "
+    "formatting. The built .docx carries 45 superscript and 12 subscript runs in "
+    "the same places as the source ($r^2$, $r_g$, $10^{-8}$ and so on); the "
+    "flattened appearance is a limitation of plain-text preview, not of the file. "
+    "Any future audit of typography has to inspect font.superscript in the runs or "
+    "w:vertAlign in document.xml, never the concatenated string. The one place the "
+    "source still uses a Unicode superscript (5x10-8 in the Introduction) is "
+    "unchanged from the submitted version and was deliberately left alone.",
 
     "Table 1 (4 to 6 columns) and Table 2 (6 to 7 columns) are attributed to the "
     "comments that asked for the restructure, R1-1 and R1-4. In Table 2 the value "
@@ -178,4 +191,24 @@ NOTES = [
     "R3-12 leaves no highlighted text: it is satisfied by the three-line cell "
     "borders that md_to_docx_frontiers.py already draws, which this build checks "
     "on all five tables rather than re-applies.",
+
+    "The two Discussion paragraphs now headed 'Complementarity with reporting "
+    "standards' and 'Generalizability of the template' were previously filed as "
+    "editorial (ED) because the run-in headings were not requested verbatim by "
+    "any reviewer. They are now filed under REV, and the reasoning is worth "
+    "stating rather than burying. R1-3 asks what the full framework adds beyond "
+    "routine practice; the answer the manuscript gives is exactly the content of "
+    "these two paragraphs - that the framework complements a reporting standard "
+    "instead of duplicating it, and that the template is not tied to this locus "
+    "or trait pair - so leaving them unlabelled buried the answer to a question "
+    "the reviewer had asked. The revision did not only add labels: the "
+    "generalizability paragraph now carries the deposited release DOI that R1-2 "
+    "forced (10.5281/zenodo.23733172 in place of the superseded 21858125) and "
+    "states the renv.lock pinning, and the reporting-standard paragraph now "
+    "cites STROBE-MR and points at the completed checklist in Supplementary "
+    "Table S5, which the submitted version did not signpost at all. Both Changes "
+    "lines in the response letter were corrected to name these locations. A "
+    "reader who still regards the headings themselves as cosmetic can revert the "
+    "two bolded lead-ins without touching any answer, because the sentences "
+    "beneath them are unchanged in substance.",
 ]

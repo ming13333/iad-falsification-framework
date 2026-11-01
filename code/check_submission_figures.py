@@ -26,6 +26,7 @@ Run
 """
 
 import csv
+import importlib.util
 import os
 import re
 import sys
@@ -37,6 +38,7 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(HERE, "manuscript", "figures")
 FINAL = os.path.join(HERE, "课题设计阶段", "figures_final")
 MD = os.path.join(HERE, "课题设计阶段", "manuscript_Frontiers_Methods_v2_humanized.md")
+DOCX = os.path.join(HERE, "课题设计阶段", "manuscript_Frontiers_Methods_v2.docx")
 ZIP = os.path.join(FINAL, "Frontiers_Figures_upload.zip")
 
 TARGET_W_CM = 18.0
@@ -158,6 +160,78 @@ def check_legends():
         fail("first page lacks a table count")
 
 
+def _module(name, path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def check_front_page():
+    """The declared counts must describe the file they sit on.
+
+    Two failures motivated this check. The word count had drifted 158 words
+    from the text it claimed to describe, because nothing compared the two.
+    And the typography was twice judged by reading paragraph.text, which
+    concatenates runs without their formatting: a real superscript then looks
+    like a plain digit, which is what a preview pane shows too. The glyphs are
+    counted from the runs here, never from the string.
+    """
+    if not os.path.exists(DOCX):
+        fail("built .docx missing: run code/md_to_docx_frontiers.py")
+        return
+    cw = _module("cw", os.path.join(HERE, "code", "count_manuscript_words.py"))
+    cv = _module("cv", os.path.join(HERE, "code", "md_to_docx_frontiers.py"))
+    doc = cw.Document(DOCX)
+
+    m = cw.measure(DOCX)
+    wc, nfig, ntab = cw.declared(DOCX)
+    if wc is None:
+        fail("no word count on the first page")
+    elif wc != m["main"]:
+        fail(f"first page declares {wc:,} words, the text has {m['main']:,}")
+    paras = [(p.text or "").strip() for p in doc.paragraphs]
+    real_figs = sum(1 for t in paras if re.match(r"^Figure \d+\.", t))
+    real_tabs = sum(1 for t in paras if re.match(r"^Table \d+\.", t))
+    if nfig is not None and nfig != real_figs:
+        fail(f"first page declares {nfig} figures, the file has {real_figs} legends")
+    if ntab is not None and ntab != real_tabs:
+        fail(f"first page declares {ntab} tables, the file has {real_tabs} captions")
+
+    # every superscript and subscript in the markdown source must survive the
+    # conversion as a formatted run
+    src = open(MD, encoding="utf-8").read()
+    want = {"sup": 0, "sub": 0}
+    for chunk in re.findall(r"\$([^$]+)\$", src):
+        for _text, kind in cv.parse_math(chunk):
+            if kind in want:
+                want[kind] += 1
+    have = {"sup": 0, "sub": 0}
+    runs = [r for p in doc.paragraphs for r in p.runs]
+    for tbl in doc.tables:
+        for row in tbl.rows:
+            for cell in row.cells:
+                runs += [r for p in cell.paragraphs for r in p.runs]
+    for r in runs:
+        if r.font.superscript:
+            have["sup"] += 1
+        elif r.font.subscript:
+            have["sub"] += 1
+    for kind, label in (("sup", "superscript"), ("sub", "subscript")):
+        if have[kind] < want[kind]:
+            fail(f"{label} runs: {have[kind]} in the .docx, {want[kind]} required "
+                 f"by the markdown source; the converter dropped the formatting")
+    notes.append(f"typography: {have['sup']} superscript / {have['sub']} subscript runs "
+                 f"(source requires {want['sup']} / {want['sub']}; the excess is the "
+                 f"author affiliation marks)")
+
+    uni = len(re.findall(r"[\u2070\u00b9\u00b2\u00b3\u2074-\u2079\u207a-\u207f"
+                         r"\u2080-\u2089]", src))
+    if uni:
+        notes.append(f"{uni} Unicode super/subscript character(s) remain in the source; "
+                     f"they render correctly but are not Word-formatted runs")
+
+
 def check_zip():
     if not os.path.exists(ZIP):
         fail("upload bundle missing")
@@ -206,6 +280,7 @@ def main():
             print(f"{r['key']:7} {r['px']:>12} {r['dpi']:>5} "
                   f"{r['w']:>6}x{r['h']:<6}  width/dpi/colour/compression")
     check_legends()
+    check_front_page()
     check_zip()
     check_manifest(rows)
 

@@ -5,8 +5,8 @@ Revision: `manuscript_Frontiers_Methods_v2.docx`
 Marked copy: `manuscript_Frontiers_Methods_v2_marked.docx`
 
 - Differences detected: **71** body paragraphs and **56** table cells
-- Highlighted as answers to a reviewer comment: **45** paragraphs and **56** cells, 46,026 characters
-- Not highlighted: **26** differences (conversion artefact / alignment 17, journal/technical requirement 7, editorial, not requested by a reviewer 2)
+- Highlighted as answers to a reviewer comment: **47** paragraphs and **56** cells, 47,908 characters
+- Not highlighted: **24** differences (conversion artefact / alignment 17, journal/technical requirement 7)
 - Comments with a landing spot: **22/22**
 
 ## 1. Where each comment is answered
@@ -14,22 +14,22 @@ Marked copy: `manuscript_Frontiers_Methods_v2_marked.docx`
 | Comment | Topic | Passages | Characters | Where |
 |---|---|---|---|---|
 | R1-1 | Scoring rules inconsistent across text, Table 1 and S8; G2 failure could still reach Grade A | 35 | 5,337 | para 39, para 42, para 48, para 99, para 150, para 152 +29 |
-| R1-2 | Archived simulation code differs from the described workflow | 35 | 20,891 | para 0, para 8, para 9, para 14, para 15, para 16 +29 |
-| R1-3 | What the framework adds beyond routine LD handling | 3 | 2,975 | para 40, para 69, para 99 |
-| R1-4 | Sensitivity/specificity definitions; Grade C; uncertainty; the 0.20 threshold; effect mix | 22 | 12,388 | para 9, para 14, para 63, para 86, para 90, para 145 +16 |
-| R1-5 | Insufficient evidence is not evidence against | 2 | 6,175 | para 77, para 90 |
-| R1-6 | Chromosome 19 is not the APOE region; region definition; how 32 and 47 were selected | 1 | 2,070 | para 70 |
+| R1-2 | Archived simulation code differs from the described workflow | 36 | 22,353 | para 0, para 8, para 9, para 14, para 15, para 16 +30 |
+| R1-3 | What the framework adds beyond routine LD handling | 5 | 4,098 | para 40, para 69, para 87, para 88, para 99 |
+| R1-4 | Sensitivity/specificity definitions; Grade C; uncertainty; the 0.20 threshold; effect mix | 22 | 13,147 | para 9, para 14, para 63, para 86, para 90, para 145 +16 |
+| R1-5 | Insufficient evidence is not evidence against | 2 | 6,350 | para 77, para 90 |
+| R1-6 | Chromosome 19 is not the APOE region; region definition; how 32 and 47 were selected | 2 | 3,239 | para 70, para 86 |
 | R1-7 | 'Three null results' contradicts a negative direct effect; CAUSE inputs | 3 | 4,659 | para 41, para 68, para 152 |
-| R1-8 | Conditional instrument strength; confounder handling; mediation details | 5 | 9,379 | para 43, para 44, para 71, para 72, para 90 |
-| R1-9 | Evidence behind the external-validation scores; kappa is not causal accuracy | 4 | 8,538 | para 40, para 45, para 73, para 90 |
+| R1-8 | Conditional instrument strength; confounder handling; mediation details | 5 | 9,554 | para 43, para 44, para 71, para 72, para 90 |
+| R1-9 | Evidence behind the external-validation scores; kappa is not causal accuracy | 4 | 8,713 | para 40, para 45, para 73, para 90 |
 | R1-10 | From risk factors to drug targets | 1 | 1,851 | para 89 |
 | R3-1 | Harmonise terminology for directional and causal claims | 4 | 2,307 | para 8, para 12, para 35, para 36 |
 | R3-2 | What 'precise' means | 3 | 3,018 | para 8, para 12, para 69 |
-| R3-3 | European LD reference panel applied to East Asian data | 4 | 8,097 | para 45, para 46, para 73, para 90 |
+| R3-3 | European LD reference panel applied to East Asian data | 4 | 8,272 | para 45, para 46, para 73, para 90 |
 | R3-4 | Rationale for r2 < 0.001 with a 10,000-kb window (Methods corrected) | 5 | 6,091 | para 40, para 53, para 68, para 69, table 4 r4c3 |
 | R3-5 | Do the three corrections act in sequence on the variant set | 2 | 3,331 | para 41, para 68 |
 | R3-6 | How confounders were chosen; why F > 10 sits at G4 | 1 | 2,117 | para 43 |
-| R3-7 | Power comparability across ancestries; cross-ancestry bias | 4 | 8,097 | para 45, para 46, para 73, para 90 |
+| R3-7 | Power comparability across ancestries; cross-ancestry bias | 4 | 8,272 | para 45, para 46, para 73, para 90 |
 | R3-8 | Where MR-Egger, Cochran's Q, MRlap and CAUSE sit in the framework | 2 | 2,169 | para 41, para 152 |
 | R3-9 | Justification of the simulation parameter grid | 2 | 4,154 | para 59, para 60 |
 | R3-10 | Definition and algorithm of trans-ethnic re-clumping | 1 | 1,011 | para 46 |
@@ -74,9 +74,11 @@ Marked copy: `manuscript_Frontiers_Methods_v2_marked.docx`
 | para 76 | R1-2 | The benchmarked operating characteristics above… | edited (sim 0.95) | 13 | 'framework' -> 'scoring rule' in the precision sentence |
 | para 77 | R1-5 | Insufficient evidence versus evidence against. The… | new paragraph | 1382 | New Results subsection: insufficient evidence versus evidence against |
 | para 85 | R1-2 | The insomnia–AD findings demonstrate how a… | edited, sentence level (sim 0.79) | 541 | Discussion: 'operating characteristics derived from' -> 'of its scoring rule' |
-| para 86 | R1-2;R1-4 | The APOE result reflects a broader pattern in… | edited, sentence level (sim 0.81) | 585 | Discussion: scoring rule rather than framework; FDR figures updated after the cap was… |
+| para 86 | R1-2;R1-4;R1-6 | The APOE result reflects a broader pattern in… | edited, sentence level (sim 0.61) | 1169 | Discussion: scoring rule rather than framework; FDR figures updated after the cap was… |
+| para 87 | R1-3 | Complementarity with reporting standards. While… | edited, sentence level (sim 0.56) | 420 | R1-3 asks what the full framework adds beyond routine practice and robustness checks.… |
+| para 88 | R1-2;R1-3 | Generalizability of the template. Although… | edited, sentence level (sim 0.72) | 703 | R1-2 asked which code version the results came from; the archived-release DOI cited here… |
 | para 89 | R1-10 | Implications for drug-target prioritization.… | rewritten (sim 0.35) | 1851 | Discussion: trait-level claim -> target requires cis-pQTL, tissue, direction of… |
-| para 90 | R1-2;R1-4;R1-5;R1-8;R1-9;R3-3;R3-7 | Limitations. Several methodological boundaries… | rewritten (sim 0.34) | 4793 | Limitations: proxy implementation, FDR vs null fraction, insufficient vs against,… |
+| para 90 | R1-2;R1-4;R1-5;R1-8;R1-9;R3-3;R3-7 | Limitations. Several methodological boundaries… | rewritten (sim 0.32) | 4968 | Limitations: proxy implementation, FDR vs null fraction, insufficient vs against,… |
 | para 91 | R1-2 | Conclusions. A six-gate falsification framework,… | edited, sentence level (sim 0.85) | 178 | Conclusions: claim narrowed to the scoring rule under proxy gates |
 | para 93 | R1-2 | Data availability statement. All GWAS summary… | edited (sim 0.98) | 25 | Data availability: version DOI 10.5281/zenodo.21858125 -> 23733172 |
 | para 99 | R1-1;R1-3 | Supplementary material. The Supplementary Material… | edited (sim 0.96) | 6 | Supplementary material: new tables S10-S12 listed |
@@ -148,26 +150,24 @@ Marked copy: `manuscript_Frontiers_Methods_v2_marked.docx`
 |---|---|---|---|---|
 | conversion artefact / alignment | para 2 | 12 | 1 Department of Neurosurgery, The Fifth Affiliated Hospital of… | affiliation line: one whitespace character |
 | conversion artefact / alignment | para 4 | 44 | Correspondence: Ming Luo, lm962272@gmail.com | correspondence line: escaped asterisk lost in conversion |
-| journal/technical requirement | para 5 | 176 | Word count: 8,261 (main body of the text, footnotes and in-text… | first-page word/figure/table count required by the Frontiers author guidelines |
+| journal/technical requirement | para 5 | 216 | Word count: 8,372 (Introduction through Conclusions, including… | first-page word/figure/table count required by the Frontiers author guidelines |
 | journal/technical requirement | para 6 | 22 | Article type: Methods. | article type declaration required by the submission system |
 | conversion artefact / alignment | para 21 | 1 | •  TwoSampleMR v0.7.9 (Hemani et al., 2018): instrument extraction,… | bullet glyph inserted by the markdown converter |
 | conversion artefact / alignment | para 22 | 1 | •  MendelianRandomization v0.10.0: multivariable MR (MVMR) with… | bullet glyph inserted by the markdown converter |
 | conversion artefact / alignment | para 23 | 1 | •  MRlap (Mounier and Kutalik, 2023): sample-overlap correction using… | bullet glyph inserted by the markdown converter |
 | conversion artefact / alignment | para 24 | 1 | •  CAUSE v1.2.0 (Morrison et al., 2020): correlated-pleiotropy model… | bullet glyph inserted by the markdown converter |
 | conversion artefact / alignment | para 25 | 1 | •  coloc (Giambartolomei et al., 2014): Bayesian colocalization… | bullet glyph inserted by the markdown converter |
-| conversion artefact / alignment | para 26 | 1 | •  GenomicSEM v0.0.5 (Grotzinger et al., 2019) and LDSC… | bullet glyph inserted; underscore dropped |
+| conversion artefact / alignment | para 26 | 1 | •  GenomicSEM v0.0.5 (Grotzinger et al., 2019) and LDSC… | bullet glyph inserted; $r_g$ rendered as r plus a subscript g, which is the same text in a different encoding |
 | conversion artefact / alignment | para 27 | 1 | •  ieugwasr v1.1.0: LD clumping against the 1000 Genomes European… | bullet glyph inserted by the markdown converter |
 | conversion artefact / alignment | para 28 | 1 | •  Additional data manipulation and Bayesian diagnostic utilities:… | bullet glyph inserted by the markdown converter |
-| conversion artefact / alignment | para 51 | 2 | 1.  Harmonization (≈ 1.5 h). Extract instruments at P < 5 × 10-8;… | list number and superscript flattened by the converter |
+| conversion artefact / alignment | para 51 | 2 | 1.  Harmonization (≈ 1.5 h). Extract instruments at P < 5 × 10-8;… | list number inserted; the Unicode superscript 10-8 rewritten as a formatted superscript run |
 | conversion artefact / alignment | para 78 | 41 | Principal operational challenges include: | lead-in sentence split out of the preceding paragraph by the converter |
 | conversion artefact / alignment | para 79 | 2 | 1.  MRlap covariance non-positive-definiteness under substantial… | list number inserted by the converter |
 | conversion artefact / alignment | para 80 | 2 | 2.  CAUSE non-convergence with sparse variant panels: Relax… | list number inserted by the converter |
 | conversion artefact / alignment | para 81 | 2 | 3.  Colocalization power loss from incomplete regional coverage:… | list number inserted by the converter |
 | conversion artefact / alignment | para 82 | 2 | 4.  Conditional F-statistics < 10 in MVMR due to collinearity:… | list number inserted by the converter |
 | conversion artefact / alignment | para 83 | 2 | 5.  Cross-ancestry inflation driven by LD mismatch: Re-clump summary… | list number inserted by the converter |
-| editorial, not requested by a reviewer | para 87 | 420 | Complementarity with reporting standards. While STROBE-MR defines… | section heading split out and a STROBE-MR cross-reference added; neither reviewer asked for it |
-| editorial, not requested by a reviewer | para 88 | 703 | Generalizability of the template. Although insomnia–AD was chosen as… | section heading split out and the wording tightened; neither reviewer asked for it |
-| journal/technical requirement | para 98 | 672 | Use of AI. Large language models (GLM and DeepSeek, accessed through… | AI-use declaration: tool names and version removed per the journal policy; not requested by either reviewer |
+| journal/technical requirement | para 98 | 672 | Use of AI. Large language models (GLM and DeepSeek, accessed through… | AI-use declaration: the version number was dropped, and the statement was widened from 'language editing only, no AI used to analyse data or generate results' to disclose that the models also re-executed and cross-checked computations and rebuilt the S8 scoring table. That widening corrects a claim which had become untrue rather than answering a comment, so it is filed here under the disclosure policy and is NOT highlighted - but it is a substantive correction, not a style edit |
 | journal/technical requirement | para 144 | 115 | Figure 1. The six-gate falsification framework. (A) Six falsification… | Figure 1 legend: note on the 180 mm width and the generator script; journal figure specification, not a reviewer request |
 | journal/technical requirement | para 146 | 497 | Figure 3. Case study MR results (insomnia–AD). (A) Key MR estimates… | Figure 3 legend: expanded panel description after the figure was redrawn for the 180 mm specification |
 | journal/technical requirement | para 147 | 573 | Figure 4. APOE-locus shared liability. (A) Cross-trait LDSC genetic… | Figure 4 legend: expanded panel description after the figure was redrawn for the 180 mm specification |
@@ -181,8 +181,9 @@ Journal/technical items are required by the Frontiers author guidelines or the s
 
 ## 5. Notes from building the map
 
-1. R1-6 is answered in the Results G3 paragraph only. The response letter's Changes line also claims a Discussion change, but the Discussion contains no sentence withdrawing the APOE-specific reading - either add one or correct the letter.
-2. The markdown converter flattens typography the submitted .docx had right: r2 for r-squared, rg for r_g, 10-8 for 10^-8, and -- for an en dash. These are not revisions and are therefore not highlighted, but they read as regressions in a resubmission and should be repaired in the source.
+1. R1-6 is now answered in two places. The Results G3 paragraph carries the region definition and the withdrawal of the chromosome-19 exclusion; the Discussion paragraph 'The APOE result' restates the region boundary, why no MR exclusion isolates it, and that no APOE-specific effect estimate is drawn, so the Changes line in the response letter ('Results, G3 paragraph; Discussion') is now true of the manuscript.
+2. The earlier note that the converter flattened superscripts was wrong, and the error came from reading paragraph.text, which concatenates run text without formatting. The built .docx carries 45 superscript and 12 subscript runs in the same places as the source ($r^2$, $r_g$, $10^{-8}$ and so on); the flattened appearance is a limitation of plain-text preview, not of the file. Any future audit of typography has to inspect font.superscript in the runs or w:vertAlign in document.xml, never the concatenated string. The one place the source still uses a Unicode superscript (5x10-8 in the Introduction) is unchanged from the submitted version and was deliberately left alone.
 3. Table 1 (4 to 6 columns) and Table 2 (6 to 7 columns) are attributed to the comments that asked for the restructure, R1-1 and R1-4. In Table 2 the value columns are attributed to R1-2 instead, because the numbers moved when the benchmark was re-scored with the decisive-failure rule.
 4. R3-12 leaves no highlighted text: it is satisfied by the three-line cell borders that md_to_docx_frontiers.py already draws, which this build checks on all five tables rather than re-applies.
+5. The two Discussion paragraphs now headed 'Complementarity with reporting standards' and 'Generalizability of the template' were previously filed as editorial (ED) because the run-in headings were not requested verbatim by any reviewer. They are now filed under REV, and the reasoning is worth stating rather than burying. R1-3 asks what the full framework adds beyond routine practice; the answer the manuscript gives is exactly the content of these two paragraphs - that the framework complements a reporting standard instead of duplicating it, and that the template is not tied to this locus or trait pair - so leaving them unlabelled buried the answer to a question the reviewer had asked. The revision did not only add labels: the generalizability paragraph now carries the deposited release DOI that R1-2 forced (10.5281/zenodo.23733172 in place of the superseded 21858125) and states the renv.lock pinning, and the reporting-standard paragraph now cites STROBE-MR and points at the completed checklist in Supplementary Table S5, which the submitted version did not signpost at all. Both Changes lines in the response letter were corrected to name these locations. A reader who still regards the headings themselves as cosmetic can revert the two bolded lead-ins without touching any answer, because the sentences beneath them are unchanged in substance.
 
