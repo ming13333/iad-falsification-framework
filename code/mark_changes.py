@@ -155,13 +155,32 @@ def _worth_marking(text, a, b):
     return len(span.strip()) >= 4
 
 
-def choose_mode(base: str, new: str, sim: float):
+def sim_ratio(a: str, b: str) -> float:
+    """Similarity on word tokens rather than characters.
+
+    A character ratio punishes long paragraphs for scattered edits: two
+    paragraphs that share 91% of their words still score 0.48, because the
+    edits are spread across the whole span. That lands in the "rewritten"
+    band and the paragraph is painted in full when only three phrases moved.
+    """
+    aw, bw = norm(a).split(), norm(b).split()
+    if not aw or not bw:
+        return 0.0
+    return difflib.SequenceMatcher(None, aw, bw, autojunk=False).ratio()
+
+
+def choose_mode(base: str, new: str, sim: float = None):
     """Return (mode, ranges, note).
 
     small edit   -> word level marks, only the words that moved
     re-ordered   -> sentence level marks, whole sentences
     rewritten    -> whole paragraph
+
+    `sim` is accepted so callers can pass a similarity they already computed,
+    but the band decision uses the word-level ratio; see sim_ratio().
     """
+    sim = sim_ratio(base, new)
+
     if sim < WHOLE_PARAGRAPH_SIM:
         return "all", [], f"rewritten (sim {sim:.2f})"
 
