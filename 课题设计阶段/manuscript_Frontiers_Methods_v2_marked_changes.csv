@@ -39,7 +39,7 @@ body paragraph,para 55,split from a merged paragraph,partial,2,7.  Gate G6 (1–
 body paragraph,para 57,rewritten (sim 0.41),all,3505,"Because the framework is prescriptive, the behaviour of its scoring rule requires quantitative evaluation prior to empirical deployment. We "
 body paragraph,para 58,"edited, sentence level (sim 0.83)",partial,649,The full data-generating process is defined in the archived code repository (Zenodo DOI: 10.5281/zenodo.23733172). Key features include inst
 body paragraph,para 60,edited (sim 0.88),partial,12,"Operating characteristics of the scoring rule (43,200-simulation benchmark)"
-body paragraph,para 61,"edited, sentence level (sim 0.58)",partial,2932,"At the null (β = 0), the scoring rule assigned Grade D to every replicate and returned a zero false discovery rate (FDR = 0) in the absence "
+body paragraph,para 61,"edited, sentence level (sim 0.58)",partial,2943,"At the null (β = 0), the scoring rule assigned Grade D to every replicate and returned a zero false discovery rate (FDR = 0) in the absence "
 body paragraph,para 66,"edited, sentence level (sim 0.84)",partial,2490,"G2: robustness. LD clumping (r2 < 0.1, 10,000 kb window) reduced the instrument set to 54 variants and attenuated the estimate to the null ("
 body paragraph,para 67,new paragraph,all,1517,"What LD correction changes: precision, not only direction. The three instrument tiers make the effect of clumping explicit (Supplementary Ta"
 body paragraph,para 68,rewritten (sim 0.36),all,2067,"G3: genetic architecture. Cross-trait LD Score regression (LDSC) yielded rg = -0.028 (SE = 0.050, P = 0.57), which is not significantly diff"
@@ -64,7 +64,7 @@ body paragraph,para 89,edited (sim 0.91),partial,73,"Conclusions. A six-gate fal
 body paragraph,para 91,edited (sim 0.99),partial,25,Data availability statement. All GWAS summary statistics used in this study are publicly available via IEU OpenGWAS under the accessions lis
 body paragraph,para 96,rewritten (sim 0.48),all,672,"Use of AI. Large language models (GLM and DeepSeek, accessed through the WorkBuddy agent environment) were used for language editing and dra"
 body paragraph,para 97,edited (sim 0.99),partial,6,"Supplementary material. The Supplementary Material for this article comprises Supplementary Tables S1–S12 and Supplementary Notes 1–2, submi"
-body paragraph,para 143,rewritten (sim 0.30),all,899,"Figure 2. Simulation operating characteristics across 43,200 replicates, scored with the published rule including the decisive-failure cap. "
+body paragraph,para 143,rewritten (sim 0.27),all,1041,"Figure 2. Simulation operating characteristics across 43,200 replicates, scored with the published rule including the decisive-failure cap. "
 body paragraph,para 146,rewritten (sim 0.32),all,326,"Figure 5. Validation cohort under the revised scoring: per-gate points (G1–G6), total score and grade for each of the twelve trait pairs (Gr"
 body paragraph,para 148,rewritten (sim 0.47),all,239,"Table 1. Two-layer gate specification: the pre-specified empirical criterion applied to real data (0, 1 or 2 points) and the proxy implement"
 body paragraph,para 150,rewritten (sim 0.47),all,1328,"All gates apply fixed a priori thresholds and contribute 0, 1 or 2 points (maximum 12). G1 and G6 are binary, because a screening test and a"

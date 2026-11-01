@@ -1,4 +1,7 @@
 # Text removed since the submitted version
 
 Baseline: `manuscript Frontiers 0902.docx`  
-**None.** Every paragraph of the submitted version is either unchanged or still recognisable in the revision; wording changes are marked in place with highlight.
+Paragraphs present in the submission but not in the revision: **1**
+
+- (para 153) Display items: 5 figures + 5 tables = 10 (within the Frontiers Methods limit of 15).
+

@@ -1,6 +1,6 @@
 # Marked-up copy — reading guide
 
-**File** `课题设计阶段/manuscript_Frontiers_Methods_v2_marked.docx` — regenerated 2026-10-31 21:55, after all 17 audit items in `reviews/ACTION_ITEMS_2026-10-30.md` and the 12 findings of the full-text audit were applied
+**File** `课题设计阶段/manuscript_Frontiers_Methods_v2_marked.docx` — regenerated 2026-11-01 10:25, after all 17 audit items in `reviews/ACTION_ITEMS_2026-10-30.md`, the 12 findings of the full-text audit, and the Figure 2 redraw were applied
 **Baseline** `课题设计阶段/manuscript Frontiers 0902.docx` — the version received by Frontiers on 02 Sep 2026
 **Prepared** 2026-10-28; **regenerated** 2026-10-31
 **Manuscript** 1986036, *Frontiers in Genetics* (Computational Genomics / Methods)
@@ -20,7 +20,7 @@ Two rules kept the marking honest rather than merely colourful:
 - A paragraph re-ordered by more than a few words is marked at **sentence** level, because a word-level diff on re-ordered prose scatters marks across half the sentence and reads as noise.
 - A paragraph that the revision merely **split out of a longer submitted paragraph** (the Methods step list, the operational-challenges list) marks only the list number that was added — the prose itself is unchanged.
 
-Nothing was deleted from the submitted text: every submitted paragraph is still present, either intact or in edited form. The companion file `..._marked_deletions.md` records this explicitly.
+One paragraph of the submitted text is now absent, and it is the only one: the internal checklist line that sat after Table 5 (`Display items: 5 figures + 5 tables = 10 …`). It carried no scientific content and should not have shipped. Everything else is present, either intact or in edited form; the companion file `..._marked_deletions.md` records the single removal verbatim.
 
 ---
 
@@ -28,7 +28,7 @@ Nothing was deleted from the submitted text: every submitted paragraph is still 
 
 | | Count |
 |---|---|
-| Body paragraphs in the revision | 162 |
+| Body paragraphs in the revision | 161 |
 | Body paragraphs carrying a mark | **71** |
 | — word-level edits | 23 |
 | — sentence-level edits | 18 (includes the title) |
@@ -39,11 +39,11 @@ Nothing was deleted from the submitted text: every submitted paragraph is still 
 The five rows above sum to 71 by change type; `mark_changes.py` prints the same set as the coarser split "52 word-level / 19 whole" (52 = 23 + 18 + 11; 19 = 12 + 7). Both describe the same marks at different granularity.
 | Table cells carrying a mark | **56** (Table 1: 29, Table 2: 26, Table 4: 1) |
 | Tables unchanged | Table 3, Table 5 |
-| Characters highlighted, body text | yellow 25.0%, green 34.5% |
+| Characters highlighted, body text | yellow 25.0%, green 34.6% |
 
-Both percentages are recomputed on each regeneration; the denominator is the body paragraphs only, excluding table cells (counting table cells gives yellow 23.5%, green 32.3%, because table cells carry marks too and are a larger share of the whole). The earlier figures in this file (20.7% / 31.2%) could not be reproduced from any build and have been replaced.
+Both percentages are recomputed on each regeneration; the denominator is the body paragraphs only, excluding table cells (counting table cells gives yellow 23.4%, green 32.5%, because table cells carry marks too and are a larger share of the whole). The earlier figures in this file (20.7% / 31.2%) could not be reproduced from any build and have been replaced.
 
-Word count went from 6,845 (submitted) to 11,450 (revision, body paragraphs), so roughly a third of the document is genuinely new prose. That is why the green proportion is high: this is a major revision, not a set of local corrections.
+Word count went from 6,845 (submitted) to 11,462 (revision, body paragraphs), so roughly a third of the document is genuinely new prose. That is why the green proportion is high: this is a major revision, not a set of local corrections.
 
 ---
 
@@ -101,6 +101,17 @@ A line-by-line read of the whole manuscript and letter (not a sampled check) pro
 
 Corrected outside the manuscript: S8 `n_IV` for Education→AD 40 → 312 and its `IVW_beta` −0.128 → −0.130, with footnotes 4 and 7 rewritten (#1, #11, #12); S2 gains a paragraph distinguishing the fixed-effect and multiplicative random-effects rows (#2); S11 note 1 corrected to a 10,000-kb window and note 4 added (#2, #10); the supplementary workbook rebuilt from the corrected CSVs.
 
+### 2.3 Added on 2026-11-01: Figure 2 panel (b) and one deleted line
+
+| Location | What changed |
+|---|---|
+| Figure 2, panel (b) | Now shows specificity under **both** conventions the paper reports — Grade D only, and Grade C or D. This is a change of display, not of values: the D-only bars carry the same numbers as before, and the C/D bars were already tabulated in Table 2 and Supplementary Table S12.5. `code/make_fig2_simulation.py` now forms both from the per-cell grade counts in Supplementary Table S9, so figure, table and supplement remain one dataset |
+| Figure 2 legend | The (b) clause names both conventions and says which one the framework's operating claim refers to |
+| Results, simulation paragraph | The C/D sentence now cites `(Table 2, Figure 2b)` rather than the table alone |
+| After Table 5 | The line `Display items: 5 figures + 5 tables = 10 (within the Frontiers Methods limit of 15).` was deleted. It was an author's checklist entry that had shipped in the submitted version |
+
+The figure change is disclosed in the response letter under R1-4, in the paragraph opening *Both conventions now reported*, and restated in that comment's `Changes:` line so the two grounds for regenerating the figure — recomputation under the cap, and the added convention — are not conflated. Figures carry no tracked changes, so the letter is the only vehicle for that disclosure.
+
 ---
 
 ## 4. Companion files
@@ -108,7 +119,7 @@ Corrected outside the manuscript: S8 `n_IV` for Education→AD 40 → 312 and it
 | File | Contents |
 |---|---|
 | `课题设计阶段/manuscript_Frontiers_Methods_v2_marked_changes.csv` | One row per marked paragraph or cell: location, change type, highlighted character count, text preview (127 rows: 71 body + 56 cells) |
-| `课题设计阶段/manuscript_Frontiers_Methods_v2_marked_deletions.md` | Text present in the submission but absent from the revision (currently none) |
+| `课题设计阶段/manuscript_Frontiers_Methods_v2_marked_deletions.md` | Text present in the submission but absent from the revision (currently one paragraph: the author's `Display items` note after Table 5) |
 | `课题设计阶段/manuscript_Frontiers_Methods_v2.docx` | Clean copy, same text, no marks — this is the file to upload as the main manuscript |
 | `code/mark_changes.py` | Regenerates the marked copy from the clean one and the baseline |
 
@@ -120,8 +131,8 @@ Four files in `课题设计阶段/` carry nearly the same name. Only one of them
 
 | File | Role |
 |---|---|
-| `manuscript_Frontiers_Methods_v2_humanized.md` | **Source of record.** 12,546 words; the file the submission `.docx` is rendered from |
-| `manuscript_Frontiers_Methods_v2.docx` | **The file to upload.** 162 paragraphs / 5 tables / 11,450 words, rendered from the line above |
+| `manuscript_Frontiers_Methods_v2_humanized.md` | **Source of record.** 12,558 words; the file the submission `.docx` is rendered from |
+| `manuscript_Frontiers_Methods_v2.docx` | **The file to upload.** 161 paragraphs / 5 tables / 11,462 words, rendered from the line above |
 | `manuscript_Frontiers_Methods_v2.md` | Internal draft (`**Status:** v2 draft for internal review` in its header), 7,305 words, no author block, predates the revision edits. Not for submission |
 | `manuscript_Frontiers_Methods_v2_humanized_SUPERSEDED_20260902.docx` | Intermediate export done before the 02 Sep submission (6,794 words, old title). Renamed on 2026-10-31 because its name was one substring away from the live file |
 

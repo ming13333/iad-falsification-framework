@@ -7,8 +7,15 @@ so that the figure, Table 2 and Supplementary Table S9 cannot drift apart.
 
 Panel a  sensitivity (P grade A/B | true effect) against true effect size,
          by pleiotropy regime, with the 0.80 power line.
-Panel b  specificity (P grade D | null) and empirical FDR (P null | grade A/B).
+Panel b  specificity under both conventions the paper reports (Grade D only,
+         and Grade C or D, which is the convention the operating claim refers
+         to) alongside the empirical FDR (P null | grade A/B).
 Panel c  grade distribution at the largest effect size (beta = 0.15).
+
+Panel b reads the per-cell grade counts rather than the stored `spec` column,
+because the C/D convention has to be formed from n_gradeC + n_gradeD. For the
+D-only bars this reproduces the stored column exactly (1.000 / 0.796 / 0.679),
+so the figure, Table 2 and Supplementary Table S9 remain one dataset.
 
 Run: python code/make_fig2_simulation.py
 """
@@ -86,31 +93,45 @@ def main():
     ax.set_title("Sensitivity rises with effect;\nweak effects are capped at Grade C",
                  loc="left", fontweight="bold")
 
-    # ---------------- panel b: specificity and FDR --------------------------
+    # ---------------- panel b: both specificity conventions + FDR -----------
     ax = axes[1]
     regs = ["none", "balanced", "directional"]
-    spec = []
-    fdr = []
+    spec_d, spec_cd, fdr = [], [], []
     for r in regs:
-        sub = cell[(cell["pleio"] == r) & (cell["effect"] == 0)]
-        spec.append(float(np.nanmean(sub["spec"])))
+        null = cell[(cell["pleio"] == r) & (cell["effect"] == 0)]
+        tot = null[["n_gradeA", "n_gradeB", "n_gradeC", "n_gradeD"]].sum(axis=1)
+        spec_d.append(float(np.mean(null["n_gradeD"] / tot)))
+        spec_cd.append(float(np.mean((null["n_gradeC"] + null["n_gradeD"]) / tot)))
         fdr.append(float(np.nanmean(cell[cell["pleio"] == r]["fdr"])))
     x = np.arange(len(regs))
-    w = 0.34
-    b1 = ax.bar(x - w / 2, spec, w, color=NAVY, label="Specificity  P(D | null)")
-    b2 = ax.bar(x + w / 2, fdr, w, color=SALMON, label="FDR  P(null | grade A/B)")
-    for bars in (b1, b2):
-        for rect in bars:
-            h = rect.get_height()
-            ax.annotate(f"{h:.2f}", (rect.get_x() + rect.get_width() / 2, h),
-                        xytext=(0, 2), textcoords="offset points",
-                        ha="center", va="bottom", fontsize=9)
+    w = 0.26
+    ax.bar(x - w, spec_d, w, color=NAVY, label="Specificity, D only")
+    ax.bar(x, spec_cd, w, color=LIGHT, label="Specificity, C/D (claimed)")
+    ax.bar(x + w, fdr, w, color=SALMON, label="FDR")
+    for i in range(len(regs)):
+        if abs(spec_d[i] - spec_cd[i]) < 5e-3:
+            # the two conventions coincide at the ideal null, so one centred
+            # label replaces two that would collide
+            ax.annotate(f"{spec_d[i]:.2f}", (x[i] - w / 2, spec_d[i]), xytext=(0, 2),
+                        textcoords="offset points", ha="center", va="bottom",
+                        fontsize=8.5)
+        else:
+            ax.annotate(f"{spec_d[i]:.2f}", (x[i] - w, spec_d[i]), xytext=(0, 2),
+                        textcoords="offset points", ha="center", va="bottom",
+                        fontsize=8.5)
+            ax.annotate(f"{spec_cd[i]:.2f}", (x[i], spec_cd[i]), xytext=(0, 2),
+                        textcoords="offset points", ha="center", va="bottom",
+                        fontsize=8.5)
+        ax.annotate(f"{fdr[i]:.2f}", (x[i] + w, fdr[i]), xytext=(0, 2),
+                    textcoords="offset points", ha="center", va="bottom",
+                    fontsize=8.5)
     ax.set_xticks(x)
     ax.set_xticklabels([REGIME_LABEL[r].replace(" ", "\n") for r in regs], fontsize=9.5)
-    ax.set_ylim(0, 1.12)
+    ax.set_ylim(0, 1.34)
     ax.set_ylabel("Rate")
-    ax.legend(frameon=False, loc="upper right", handlelength=1.2)
-    ax.set_title("At the null, specificity holds;\nFDR stays inside tolerance",
+    ax.legend(frameon=False, loc="upper right", handlelength=1.2,
+              borderaxespad=0.2, labelspacing=0.3)
+    ax.set_title("Both specificity conventions\nhold at the null; FDR in tolerance",
                  loc="left", fontweight="bold")
 
     # ---------------- panel c: grade distribution at beta = 0.15 -----------
@@ -154,7 +175,9 @@ def main():
         fig.savefig(os.path.join(d, "Fig2_simulation_operating.svg"),
                     bbox_inches="tight", facecolor="white")
     plt.close(fig)
-    print("spec:", [round(s, 4) for s in spec], "fdr:", [round(f, 4) for f in fdr])
+    print("spec D-only:", [round(s, 4) for s in spec_d])
+    print("spec C/D   :", [round(s, 4) for s in spec_cd])
+    print("fdr        :", [round(f, 4) for f in fdr])
     print("saved Fig2 to:", *OUTDIRS, sep="\n  ")
 
 
