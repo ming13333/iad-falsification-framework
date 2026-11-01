@@ -746,7 +746,8 @@ S2 同一分析两行：`G1` se=0.0381/P=0.0066、`UVMR` se=0.0313/P=9.3e-4，β
 - 归档目录：`课题设计阶段/_SUPERSEDED_figures_20260902/`（10 文件 / 8,309,568 B；`README.md` + `SHA256SUMS.txt`（10/10 校验 OK）+ `PROVENANCE.csv`）
 - 独立备份（先备份后移动，逐文件哈希校验）：`备份figure/_SUPERSEDED_backup_20261101/`
 - 两个原目录各加 `README_CURRENT.md` 说明现状与现版路径
-- 遗留：`figures_final/` 目录名本身是否改名/退役待定；`TIFF_manifest.csv` 因预览窗格占用，构建时留下 `TIFF_manifest.csv.tmp`（内容为最新），关掉预览后 `mv` 覆盖即可
+- ~~遗留：`TIFF_manifest.csv.tmp` 待覆盖~~ ✅ **11-01 12:52 已处置**：预览锁自行释放后 `os.replace` 成功，`.tmp` 已并入正式清单（sha256 `27a3b200…`，1548 B，五行已逐项与磁盘实测核对：TIFF/Png 哈希、dpi、像素、字节、版面全对）；旧 12:25 版留底 `C:/Temp/TIFF_manifest_20261101_1225_OLD.csv`
+- 遗留：`figures_final/` 目录名本身是否改名/退役待定
 
 ### ④ 校验
 
