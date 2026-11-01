@@ -138,8 +138,11 @@ def check_legends():
         legend = m.group(1)
         if panels >= 2:
             for letter in "ABC"[:panels]:
-                if f"(**{letter}**)" not in legend:
-                    fail(f"Figure {key[-1]}: legend lacks (**{letter}**)")
+                # bold the whole token, "(A)", not just the letter: bolding
+                # only "A" leaves the parentheses at body weight, and the
+                # label then reads as a typesetting accident
+                if f"**({letter})**" not in legend and f"(**{letter}**)" not in legend:
+                    fail(f"Figure {key[-1]}: legend lacks a bold ({letter})")
             if re.search(r"\((a|b|c)\)", legend):
                 fail(f"Figure {key[-1]}: legend still uses lower-case panel letters")
         else:
