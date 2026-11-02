@@ -55,3 +55,15 @@ PLOS_*.pdf
 # 编辑前自动备份（.bak_preedit / .bak_reorder / .bak_tabcheck），git 已提供历史
 *.bak_*
 *.bak
+
+# ===== 本地工作文件：非本研究产物 / 保密 / 个人流程件（2026-11-02 起不入公开仓库）=====
+# 注意：不带斜杠的模式在任意层级匹配，故下列文件名对 课题设计阶段/ 下的同名副本一并生效。
+# 审稿人意见原件 —— 同行评审保密材料，公开仓库不得收录
+审稿人意见.docx
+# 期刊 IF 清单：个人备选刊笔记，不随论文发布
+IF_lt2_bioinformatics_journals.md
+IF_lt3_biomedical_journals.md
+# PLOS 人体研究检查表：官网模板（非本研究原创）+ 已填版（含元数据）
+PLOS_*.docx
+# 会话交接单：个人工作流文件，跨 session 交接用，与论文无关
+对话交接单_SESSION-HANDOFF.md
