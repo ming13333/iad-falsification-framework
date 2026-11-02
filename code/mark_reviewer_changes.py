@@ -51,7 +51,7 @@ _spec2 = importlib.util.spec_from_file_location("am", os.path.join(HERE, "attrib
 am = importlib.util.module_from_spec(_spec2)
 _spec2.loader.exec_module(am)
 
-REV, FMT, ED, NOISE = "REV", "FMT", "ED", "NOISE"
+REV, FMT, ED, NOISE, FIX = "REV", "FMT", "ED", "NOISE", "FIX"
 AUTHOR = "Revision map"
 
 
@@ -341,6 +341,7 @@ def main():
         residue.append({
             "category": {"FMT": "journal/technical requirement",
                          "ED": "editorial, not requested by a reviewer",
+                         "FIX": "corrected during the reference audit; no reviewer asked",
                          "NOISE": "conversion artefact / alignment"}[cat],
             "location": f"para {idx}",
             "chars": row["chars"] if cat == FMT else row["chars"],

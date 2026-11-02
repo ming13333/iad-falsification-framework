@@ -20,6 +20,12 @@ Two rules govern the map:
          and template generalizability) are answers to R1-3 and R1-2 and are
          filed under REV, so the body text of the revision carries no change
          that cannot be traced to a comment.
+  FIX    the difference corrects a factual defect found by audit rather than by a
+         reviewer. Currently one entry: the Popper reference carried a DOI that
+         resolves to the 2005 Routledge reprint while the entry cites the 1959
+         Hutchinson edition (see 课题设计阶段/Reference_audit_CrossRef_2026-11-02.md).
+         Not highlighted - no comment asked for it - but listed, because a silent
+         bibliographic change is exactly what a reader should be able to spot.
   NOISE  the difference is an artefact of the markdown -> docx conversion
          (list numbering, bullet glyphs, escaped markup, a Unicode superscript
          rewritten as a formatted superscript run, double hyphen to en dash) or
@@ -72,6 +78,7 @@ MAP = {
     6:   ("FMT", None, "article type declaration required by the submission system", "Article type:"),
     8:   ("REV", ("R1-2", "R3-1", "R3-2"), "Abstract: claims narrowed to 'the scoring rule', 'precise' replaced, association/causal claim separated", "Mendelian randomization (MR) uses germline"),
     9:   ("REV", ("R1-2", "R1-4"), "Abstract: benchmark characterised as proxy gate implementations; operating-characteristic language aligned", "We evaluated the framework"),
+    132: ("FIX", None, "Popper (1959): DOI 10.4324/9780203994627 removed - it resolves to the 2005 Routledge reprint, not the 1959 Hutchinson edition that is cited", "Popper, K. (1959)."),
     12:  ("REV", ("R3-1", "R3-2"), "Introduction: 'precise' unpacked into statistical significance vs information; causal-claim terminology", "Mendelian randomization uses germline"),
     14:  ("REV", ("R1-2", "R1-4"), "Introduction: what is characterised is the scoring rule under proxy gates; specificity/sensitivity named as the operating characteristics", "Addressing this problem"),
     15:  ("REV", ("R1-2",), "Introduction: 'its operating characteristics' -> 'the operating characteristics of its scoring rule'", "Two structural properties"),

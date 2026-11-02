@@ -1,0 +1,14 @@
+entries: 42   OK 40   WARN 1   ERROR 0   NO_DOI 1   UNRESOLVED 0
+
+[WARN            ] 25  Lawlor, D. A., Tilling, K., and Davey Smith, G. (2016). Triangulation in aetiological epidemiol
+      warn   year: Crossref says 2017, Europe PMC says 2016 - entry follows Europe PMC
+
+[NO_DOI          ] 32  Popper, K. (1959). The Logic of Scientific Discovery. London: Hutchinson.
+      suggest 10.2307/2550489  The Logic of Scientific Discovery.
+
+duplicate DOIs: none
+out-of-order entries: none
+citation pairs found in body: 46
+cited but not listed: none
+listed but never cited: none
+cache: results\refs\crossref_cache.json (45 records)

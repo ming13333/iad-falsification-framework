@@ -4,9 +4,9 @@ Baseline: `manuscript Frontiers 0902.docx` (submitted)
 Revision: `manuscript_Frontiers_Methods_v2.docx`  
 Marked copy: `manuscript_Frontiers_Methods_v2_marked.docx`
 
-- Differences detected: **71** body paragraphs and **56** table cells
-- Highlighted as answers to a reviewer comment: **47** paragraphs and **56** cells, 47,908 characters
-- Not highlighted: **24** differences (conversion artefact / alignment 17, journal/technical requirement 7)
+- Differences detected: **72** body paragraphs and **56** table cells
+- Highlighted as answers to a reviewer comment: **47** paragraphs and **56** cells, 47,919 characters
+- Not highlighted: **25** differences (conversion artefact / alignment 17, journal/technical requirement 7, corrected during the reference audit; no reviewer asked 1)
 - Comments with a landing spot: **22/22**
 
 ## 1. Where each comment is answered
@@ -14,26 +14,26 @@ Marked copy: `manuscript_Frontiers_Methods_v2_marked.docx`
 | Comment | Topic | Passages | Characters | Where |
 |---|---|---|---|---|
 | R1-1 | Scoring rules inconsistent across text, Table 1 and S8; G2 failure could still reach Grade A | 35 | 5,337 | para 39, para 42, para 48, para 99, para 150, para 152 +29 |
-| R1-2 | Archived simulation code differs from the described workflow | 36 | 22,353 | para 0, para 8, para 9, para 14, para 15, para 16 +30 |
-| R1-3 | What the framework adds beyond routine LD handling | 5 | 4,098 | para 40, para 69, para 87, para 88, para 99 |
+| R1-2 | Archived simulation code differs from the described workflow | 36 | 22,362 | para 0, para 8, para 9, para 14, para 15, para 16 +30 |
+| R1-3 | What the framework adds beyond routine LD handling | 5 | 4,097 | para 40, para 69, para 87, para 88, para 99 |
 | R1-4 | Sensitivity/specificity definitions; Grade C; uncertainty; the 0.20 threshold; effect mix | 22 | 13,147 | para 9, para 14, para 63, para 86, para 90, para 145 +16 |
-| R1-5 | Insufficient evidence is not evidence against | 2 | 6,350 | para 77, para 90 |
-| R1-6 | Chromosome 19 is not the APOE region; region definition; how 32 and 47 were selected | 2 | 3,239 | para 70, para 86 |
+| R1-5 | Insufficient evidence is not evidence against | 2 | 6,349 | para 77, para 90 |
+| R1-6 | Chromosome 19 is not the APOE region; region definition; how 32 and 47 were selected | 2 | 3,244 | para 70, para 86 |
 | R1-7 | 'Three null results' contradicts a negative direct effect; CAUSE inputs | 3 | 4,659 | para 41, para 68, para 152 |
 | R1-8 | Conditional instrument strength; confounder handling; mediation details | 5 | 9,554 | para 43, para 44, para 71, para 72, para 90 |
-| R1-9 | Evidence behind the external-validation scores; kappa is not causal accuracy | 4 | 8,713 | para 40, para 45, para 73, para 90 |
+| R1-9 | Evidence behind the external-validation scores; kappa is not causal accuracy | 4 | 8,712 | para 40, para 45, para 73, para 90 |
 | R1-10 | From risk factors to drug targets | 1 | 1,851 | para 89 |
-| R3-1 | Harmonise terminology for directional and causal claims | 4 | 2,307 | para 8, para 12, para 35, para 36 |
+| R3-1 | Harmonise terminology for directional and causal claims | 4 | 2,306 | para 8, para 12, para 35, para 36 |
 | R3-2 | What 'precise' means | 3 | 3,018 | para 8, para 12, para 69 |
 | R3-3 | European LD reference panel applied to East Asian data | 4 | 8,272 | para 45, para 46, para 73, para 90 |
-| R3-4 | Rationale for r2 < 0.001 with a 10,000-kb window (Methods corrected) | 5 | 6,091 | para 40, para 53, para 68, para 69, table 4 r4c3 |
+| R3-4 | Rationale for r2 < 0.001 with a 10,000-kb window (Methods corrected) | 5 | 6,090 | para 40, para 53, para 68, para 69, table 4 r4c3 |
 | R3-5 | Do the three corrections act in sequence on the variant set | 2 | 3,331 | para 41, para 68 |
 | R3-6 | How confounders were chosen; why F > 10 sits at G4 | 1 | 2,117 | para 43 |
 | R3-7 | Power comparability across ancestries; cross-ancestry bias | 4 | 8,272 | para 45, para 46, para 73, para 90 |
 | R3-8 | Where MR-Egger, Cochran's Q, MRlap and CAUSE sit in the framework | 2 | 2,169 | para 41, para 152 |
-| R3-9 | Justification of the simulation parameter grid | 2 | 4,154 | para 59, para 60 |
+| R3-9 | Justification of the simulation parameter grid | 2 | 4,163 | para 59, para 60 |
 | R3-10 | Definition and algorithm of trans-ethnic re-clumping | 1 | 1,011 | para 46 |
-| R3-11 | Do not describe a null r_g as 'unchanged' | 1 | 2,070 | para 70 |
+| R3-11 | Do not describe a null r_g as 'unchanged' | 1 | 2,075 | para 70 |
 | R3-12 | Three-line tables without vertical rules | 5 | 0 | Table 1, Table 2, Table 3, Table 4, Table 5 |
 
 ## 2. Passage-by-passage index
@@ -49,10 +49,10 @@ Marked copy: `manuscript_Frontiers_Methods_v2_marked.docx`
 | para 16 | R1-2 | We benchmark the framework under controlled stress… | edited (sim 0.92) | 113 | Introduction: 'LD concentration' -> granularity of the clumping partition, which is what… |
 | para 19 | R1-2 | Software environment. Analyses run in a… | edited, sentence level (sim 0.80) | 343 | Software environment: pinned requirement set with versions, as asked under the… |
 | para 32 | R1-2 | Archived framework. Simulation outputs, executable… | edited (sim 0.96) | 25 | Archived framework: version DOI 10.5281/zenodo.21858125 -> 23733172 (v1.2.1) |
-| para 35 | R3-1 | Terminology. Three terms are used consistently… | new paragraph | 717 | New Methods paragraph defining causal claim / association / directed effect |
+| para 35 | R3-1 | Terminology. Three terms are used consistently… | new paragraph | 716 | New Methods paragraph defining causal claim / association / directed effect |
 | para 36 | R1-2;R3-1 | The framework converts a directional Mendelian… | edited (sim 0.91) | 89 | Framing: benchmark 'through proxy gate implementations', score-to-grade mapping,… |
 | para 39 | R1-1 | Gate G1 (association, screening). An unclumped… | edited, sentence level (sim 0.80) | 177 | Gate G1: stated as a binary screening gate with no partial credit |
-| para 40 | R3-4;R1-3;R1-9 | Gate G2 (robustness). The primary signal must… | edited, sentence level (sim 0.66) | 1452 | Gate G2: primary clumping tier corrected to r2 < 0.1 with the stricter tier as… |
+| para 40 | R3-4;R1-3;R1-9 | Gate G2 (robustness). The primary signal must… | edited, sentence level (sim 0.66) | 1451 | Gate G2: primary clumping tier corrected to r2 < 0.1 with the stricter tier as… |
 | para 41 | R1-7;R3-5;R3-8 | What each correction operates on. Only LD clumping… | new paragraph | 841 | New paragraph: only clumping changes the instrument set; Egger/Q/median/mode are… |
 | para 42 | R1-1 | Gate G3 (genetic architecture). LDSC tests… | edited, sentence level (sim 0.85) | 355 | Gate G3: scoring rule for the not-evaluable case (1 when rg is direction-consistent but… |
 | para 43 | R1-8;R3-6 | Gate G4 (direct effect). Multivariable MR (Burgess… | rewritten (sim 0.30) | 2117 | Gate G4: conditional vs unconditional F separated, confounder selection and the reporting… |
@@ -61,18 +61,18 @@ Marked copy: `manuscript_Frontiers_Methods_v2_marked.docx`
 | para 46 | R3-3;R3-7;R3-10 | Trans-ethnic re-clumping. The step proceeds as… | new paragraph | 1011 | New paragraph: trans-ethnic re-clumping algorithm and what happens without an… |
 | para 48 | R1-1 | Cumulative scores range from 0 to 12 points, with… | rewritten (sim 0.47) | 1566 | Grading rubric: single 0/1/2 scheme, binary G1/G6, decisive-failure cap, not-evaluable… |
 | para 53 | R3-4 | 3.  Gate G2 (2–4 h, includes CAUSE MCMC fitting).… | new paragraph | 381 | Protocol step 3: clumping threshold corrected from r2 < 0.001 to r2 < 0.1 |
-| para 59 | R1-2;R3-9 | Because the framework is prescriptive, the… | rewritten (sim 0.38) | 3505 | Simulation: actual data-generating process stated, G3/G4 degeneracy and absent methods… |
-| para 60 | R1-2;R3-9 | The full data-generating process is defined in the… | edited, sentence level (sim 0.78) | 649 | Simulation: archived-code pointer and parameter provenance |
+| para 59 | R1-2;R3-9 | Because the framework is prescriptive, the… | rewritten (sim 0.37) | 3515 | Simulation: actual data-generating process stated, G3/G4 degeneracy and absent methods… |
+| para 60 | R1-2;R3-9 | The full data-generating process is defined in the… | edited, sentence level (sim 0.79) | 648 | Simulation: archived-code pointer and parameter provenance |
 | para 62 | R1-2 | Operating characteristics of the scoring rule… | edited, sentence level (sim 0.80) | 75 | Results subheading: '43,200-simulation benchmark' -> 'the scoring rule' |
 | para 63 | R1-2;R1-4 | At the null (β = 0), the scoring rule assigned… | rewritten (sim 0.52) | 3326 | Operating characteristics: scoring rule rather than framework; D-only convention named |
 | para 68 | R1-7;R3-5;R3-4 | G2: robustness. LD clumping (r2 < 0.1, 10,000 kb… | edited, sentence level (sim 0.78) | 2490 | Results G2: three analyses separated instead of pooled as 'null'; CAUSE/MRlap inputs;… |
 | para 69 | R1-3;R3-2;R3-4 | What LD correction changes: precision, not only… | new paragraph | 1517 | New Results subsection: three instrument tiers, SE inflation, what LD correction changes |
-| para 70 | R1-6;R3-11 | G3: genetic architecture. Cross-trait LD Score… | rewritten (sim 0.30) | 2070 | Results G3: APOE region defined, chromosome-19 exclusion withdrawn as APOE-specific; r_g… |
+| para 70 | R1-6;R3-11 | G3: genetic architecture. Cross-trait LD Score… | rewritten (sim 0.30) | 2075 | Results G3: APOE region defined, chromosome-19 exclusion withdrawn as APOE-specific; r_g… |
 | para 71 | R1-8 | G4: direct effect. Multivariable MR (MVMR)… | edited, sentence level (sim 0.64) | 887 | Results G4: conditional F gap declared, first-stage statistics reported, mediation… |
 | para 72 | R1-8 | G5: biological mediation. Protein mediation was… | rewritten (sim 0.44) | 1296 | Results G5: 25 evaluable proteins, both path estimates, 9.5% mediation, scope of the null |
 | para 73 | R1-9;R3-3;R3-7 | G6: external validation. Directional consistency… | edited, sentence level (sim 0.57) | 1731 | Results G6: evidence per score, withdrawn points, European panel on East Asian data, power |
 | para 76 | R1-2 | The benchmarked operating characteristics above… | edited (sim 0.95) | 13 | 'framework' -> 'scoring rule' in the precision sentence |
-| para 77 | R1-5 | Insufficient evidence versus evidence against. The… | new paragraph | 1382 | New Results subsection: insufficient evidence versus evidence against |
+| para 77 | R1-5 | Insufficient evidence versus evidence against. The… | new paragraph | 1381 | New Results subsection: insufficient evidence versus evidence against |
 | para 85 | R1-2 | The insomnia–AD findings demonstrate how a… | edited, sentence level (sim 0.79) | 541 | Discussion: 'operating characteristics derived from' -> 'of its scoring rule' |
 | para 86 | R1-2;R1-4;R1-6 | The APOE result reflects a broader pattern in… | edited, sentence level (sim 0.61) | 1169 | Discussion: scoring rule rather than framework; FDR figures updated after the cap was… |
 | para 87 | R1-3 | Complementarity with reporting standards. While… | edited, sentence level (sim 0.56) | 420 | R1-3 asks what the full framework adds beyond routine practice and robustness checks.… |
@@ -150,7 +150,7 @@ Marked copy: `manuscript_Frontiers_Methods_v2_marked.docx`
 |---|---|---|---|---|
 | conversion artefact / alignment | para 2 | 12 | 1 Department of Neurosurgery, The Fifth Affiliated Hospital of… | affiliation line: one whitespace character |
 | conversion artefact / alignment | para 4 | 44 | Correspondence: Ming Luo, lm962272@gmail.com | correspondence line: escaped asterisk lost in conversion |
-| journal/technical requirement | para 5 | 216 | Word count: 8,372 (Introduction through Conclusions, including… | first-page word/figure/table count required by the Frontiers author guidelines |
+| journal/technical requirement | para 5 | 216 | Word count: 8,374 (Introduction through Conclusions, including… | first-page word/figure/table count required by the Frontiers author guidelines |
 | journal/technical requirement | para 6 | 22 | Article type: Methods. | article type declaration required by the submission system |
 | conversion artefact / alignment | para 21 | 1 | •  TwoSampleMR v0.7.9 (Hemani et al., 2018): instrument extraction,… | bullet glyph inserted by the markdown converter |
 | conversion artefact / alignment | para 22 | 1 | •  MendelianRandomization v0.10.0: multivariable MR (MVMR) with… | bullet glyph inserted by the markdown converter |
@@ -168,6 +168,7 @@ Marked copy: `manuscript_Frontiers_Methods_v2_marked.docx`
 | conversion artefact / alignment | para 82 | 2 | 4.  Conditional F-statistics < 10 in MVMR due to collinearity:… | list number inserted by the converter |
 | conversion artefact / alignment | para 83 | 2 | 5.  Cross-ancestry inflation driven by LD mismatch: Re-clump summary… | list number inserted by the converter |
 | journal/technical requirement | para 98 | 672 | Use of AI. Large language models (GLM and DeepSeek, accessed through… | AI-use declaration: the version number was dropped, and the statement was widened from 'language editing only, no AI used to analyse data or generate results' to disclose that the models also re-executed and cross-checked computations and rebuilt the S8 scoring table. That widening corrects a claim which had become untrue rather than answering a comment, so it is filed here under the disclosure policy and is NOT highlighted - but it is a substantive correction, not a style edit |
+| corrected during the reference audit; no reviewer asked | para 132 | 19 | Popper, K. (1959). The Logic of Scientific Discovery. London:… | Popper (1959): DOI 10.4324/9780203994627 removed - it resolves to the 2005 Routledge reprint, not the 1959 Hutchinson edition that is cited |
 | journal/technical requirement | para 144 | 115 | Figure 1. The six-gate falsification framework. (A) Six falsification… | Figure 1 legend: note on the 180 mm width and the generator script; journal figure specification, not a reviewer request |
 | journal/technical requirement | para 146 | 497 | Figure 3. Case study MR results (insomnia–AD). (A) Key MR estimates… | Figure 3 legend: expanded panel description after the figure was redrawn for the 180 mm specification |
 | journal/technical requirement | para 147 | 573 | Figure 4. APOE-locus shared liability. (A) Cross-trait LDSC genetic… | Figure 4 legend: expanded panel description after the figure was redrawn for the 180 mm specification |

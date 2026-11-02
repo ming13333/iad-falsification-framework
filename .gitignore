@@ -33,6 +33,8 @@ __pycache__/
 课题设计阶段/*
 !课题设计阶段/manuscript_Frontiers_Methods_v2*
 !课题设计阶段/Reviewer_traceability_report.md
+!课题设计阶段/Reference_audit_CrossRef_*.md
+!课题设计阶段/DeAI_pass_*.md
 !课题设计阶段/_SUPERSEDED_figures_20260902/
 # 上面的通配会顺带放行这两个作废/草稿件，单独压回
 课题设计阶段/manuscript_Frontiers_Methods_v2.md
@@ -87,3 +89,8 @@ PLOS_*.docx
 reviews/reviewer_comments_raw.md
 # 审稿应答投喂包：内嵌 22 条原意见全文（与原文 10-gram 重合 82%）外加内部应答策略
 reviews/审稿应答_review_packet.md
+
+# ===== Crossref 审计缓存（2026-11-02）=====
+# 原始 API 响应 2.0 MB，只用于离线复跑；结论与脚本都已入库，缓存不入库，
+# 需要时用 `python code/verify_refs_frontiers.py` 重新抓取。
+results/refs/crossref_cache.json
