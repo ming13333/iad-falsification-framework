@@ -905,3 +905,15 @@ S2 同一分析两行：`G1` se=0.0381/P=0.0066、`UVMR` se=0.0313/P=9.3e-4，β
 
 - **摘要 377 词**（脚本口径，含关键词行；纯摘要段 370）高于 Frontiers 惯例 350。用户此前明确"先不删数字"，故未动；要么砍 ~20 词，要么投出去赌编辑不计较。
 - 附带发现（未改）：`S5_Checklist_STROBE-MR.docx` 的表**一条线都没有**（`tblBorders` 与 `tcBorders` 均缺），与 R3-12 承诺的"无竖线"不冲突，但也谈不上三线；若要统一观感可加同一套三线框。
+
+### 2026-11-02 09:10 · S5 套三线框（承接上节"附带发现"）
+
+提交 `1cbee05`（已推 origin/main）。
+
+- **发现比"没画线"更糟**：`S5_Checklist_STROBE-MR.docx` 是 09-02 投稿包里那版，用的是 Word 内置 **Table Grid** 样式 → 渲染成**带竖线的满格**，正是 R3-12 要求去掉的版式；且列宽合计 **18.29 cm**，而该页正文宽度只有 **15.24 cm**。
+- 新增 `code/apply_three_line_rules.py`：对**任意已有 docx** 套同一套三线规则——清空 `tblBorders` 六边（阻断样式来线）、单元格级 top 12 / 表头 bottom 8 / 末行 bottom 12、改 **fixed 布局**并把 `tblW` 设为正文宽、列宽按原比例缩放到该宽、表头跨页重复、行不跨页断开；**写盘前断言一个字都没动**，校验不过就不落盘。
+- S5 结果：21×4 表，18.29 → **15.24 cm**，三线齐、表头重复；S12 与正文稿 `--check` 同样 PASS（未改动）。
+- 回信 R3-12 补一句实话：S5 投稿版用的是默认满格，现已重置为同一约定。
+- **顺带修了个更严重的**：`reviews/Response_to_Reviewers_Frontiers.docx` 停留在 11-01 10:23，**落后于 md 源的 R1-2/R1-3/R1-5/R1-6 四处改动**——即投稿用的 docx 与实际源不一致。已重建（149 段 / 2 表 / 9,031 词），三线检查与审计均 PASS。
+  - 教训：**md 是源、docx 是产物，改 md 必须重跑 `md_to_docx_response.py`**，否则投出去的 docx 会缺改。
+- 冻结件未动：`manuscript/Frontiers_insomnia_AD_v1.docx`、`manuscript/Supplementary_Notes.docx`（均 09-02 投稿版，仍是满格表，**不得改**）。
