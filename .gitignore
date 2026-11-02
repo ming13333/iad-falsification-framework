@@ -85,3 +85,5 @@ PLOS_*.docx
 # 审稿意见逐字全文：同行评审保密材料。2026-11-02 起撤出仓库
 # （原本已随 2026-10-31 的提交公开约 2 天；git rm --cached 只清 HEAD，旧 commit 仍在历史里）
 reviews/reviewer_comments_raw.md
+# 审稿应答投喂包：内嵌 22 条原意见全文（与原文 10-gram 重合 82%）外加内部应答策略
+reviews/审稿应答_review_packet.md
