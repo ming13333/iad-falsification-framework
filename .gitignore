@@ -23,6 +23,21 @@ output/
 __pycache__/
 *.pyc
 
+# ===== 课题设计阶段：默认全忽略，只放行当前投递链（2026-11-02）=====
+# 该目录有 115 个未跟踪文件（3.73 MB：60 md / 26 docx / 11 py / 8 csv / 4 ris），
+# 全是历史工作文档；仓库实际只跟踪 Frontiers 修订链的 11 件。过去靠"不 git add"
+# 维持，代价是 status 长期 100+ 行噪声，且一次 `git add .` 就会误收。改成白名单。
+#
+# 位置要紧：本块必须放在下面"目录级排除"之前，让那些更具体的规则后置生效
+# （例如 _SUPERSEDED_figures_20260902/from_figures/ 仍须被忽略）。
+课题设计阶段/*
+!课题设计阶段/manuscript_Frontiers_Methods_v2*
+!课题设计阶段/Reviewer_traceability_report.md
+!课题设计阶段/_SUPERSEDED_figures_20260902/
+# 上面的通配会顺带放行这两个作废/草稿件，单独压回
+课题设计阶段/manuscript_Frontiers_Methods_v2.md
+课题设计阶段/manuscript_Frontiers_Methods_v2_humanized_SUPERSEDED_20260902.docx
+
 # ===== 课题设计阶段：只纳管 Frontiers 改稿链，其余大件本地保留（2026-10-31）=====
 # 目录总 418 MB，若不设白名单式排除，一次 `git add .` 就会把大件拖进仓库。
 # 附带的 MRlap 源码副本（含 124 MB .git pack，与本研究代码无关）
