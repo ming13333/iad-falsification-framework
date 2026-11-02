@@ -91,10 +91,19 @@ def main():
     args = ap.parse_args()
 
     letter = open(LETTER, encoding="utf-8").read()
-    raw = open(RAW, encoding="utf-8").read()
     ms = open(MS, encoding="utf-8").read()
 
-    asked = ID.findall(raw)
+    # The reviewer reports are kept out of the public repository on purpose: they
+    # are peer-review material and the repository is world-readable. When the file
+    # is present the audit cross-checks the letter against what was actually asked.
+    # When it is absent - a fresh clone, or CI - fall back to the letter's own
+    # section list and say that the cross-check was skipped, rather than crash.
+    if os.path.exists(RAW):
+        asked = ID.findall(open(RAW, encoding="utf-8").read())
+        source = os.path.relpath(RAW, ROOT)
+    else:
+        asked = [m.group(1) for m in HEAD.finditer(letter)]
+        source = "absent - IDs taken from the letter, cross-check skipped"
     secs = {s["id"]: s for s in sections(letter)}
     parsed = {k: parse(v) for k, v in secs.items()}
 
@@ -129,6 +138,7 @@ def main():
         return 0
 
     print(f"letter      {os.path.relpath(LETTER, ROOT)}")
+    print(f"source      {source}")
     print(f"comments    {len(asked)} ({sum(1 for c in asked if c.startswith('R1'))} R1, "
           f"{sum(1 for c in asked if c.startswith('R3'))} R3)")
     print(f"sections    {len(secs)}")

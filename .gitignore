@@ -67,3 +67,6 @@ IF_lt3_biomedical_journals.md
 PLOS_*.docx
 # 会话交接单：个人工作流文件，跨 session 交接用，与论文无关
 对话交接单_SESSION-HANDOFF.md
+# 审稿意见逐字全文：同行评审保密材料。2026-11-02 起撤出仓库
+# （原本已随 2026-10-31 的提交公开约 2 天；git rm --cached 只清 HEAD，旧 commit 仍在历史里）
+reviews/reviewer_comments_raw.md
