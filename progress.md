@@ -1,6 +1,6 @@
 # progress.md · 失眠↔AD 六门证伪框架
 
-> 覆盖式更新 · **2026-11-03 16:45**（**回信定点精炼**：9,682→8,639 词 −10.8%；Summary 7 条→5 段 −44%，R1-1/R1-2 各 −16%，**数值零改动**；CrossRef 42 条核验 + 去 AI 已落地；摘要 377 词已定：不缩减，仅编辑要求时才改）
+> 覆盖式更新 · **2026-11-03 23:50**（**投稿包已成型**：`submissions/Frontiers_1986036_revision_20261103/` + 同名 zip（2.1 MB / 22 文件），CRC 与 SHA256 逐件复核通过；顺带修掉两份 Frontiers 表单字段的**过期内容**——题名动词仍 *correcting*、Zenodo 仍 `21858125`、敏感度仍 0.97；回信定点精炼 9,682→8,639 词 −10.8% 已落地；摘要 377 词已定：不缩减）
 > 续接口令：读 `RULES.md` + 本文件，接着干。详细历史见 `.workbuddy/memory/YYYY-MM-DD.md`。
 
 ---
@@ -330,6 +330,40 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 2. `课题设计阶段/Supplementary_final/S9*` 是封顶前（sens .847）→ 统一到封顶后（.724）
 3. `Supplementary_Tables.xlsx` 9-02 手搓件含旧 S8/S9、缺 S10–S12 → 新建 `code/build_supplementary_workbook.py` 重建 12 表
 4. 6 个脚本硬编码中文路径 → ASCII 默认 + `IAD_SUPP_DIR` 覆盖；重跑输出逐字节一致
+
+---
+
+## 📦 最终投稿包（2026-11-03 23:50 成型）
+
+**位置**：`submissions/Frontiers_1986036_revision_20261103/` + 同名 `.zip`（2.1 MB，22 文件）
+**上传顺序见包内 `README_UPLOAD.md`**（每个文件传到哪个槽位、为什么某个文件不在包里，都写在那里）
+
+| 组 | 文件 | 规格 |
+|---|---|---|
+| 01 | `01_Manuscript_clean.docx` | 163 段 / 5 表 / 11,735 词（正文声明 8,374） |
+| 02 | `02_Manuscript_marked.docx` | 同上，改动高亮；与 01 逐段文本全等 |
+| 03 | `03_Response_to_Reviewers.docx` | 148 段 / 2 表 / 8,036 词 / 22 条意见全覆盖 |
+| 04 | `Figure1–5.png`（+ 同名 `.svg` 矢量源） | 均 2834 px 宽 = 180 mm @ 400 dpi |
+| 05 | 工作簿 S1–S12 + S12 docx + S5 docx + **S8 带脚注 docx** + Note 1–2 | 6 件 |
+| 06 | `06_Form_fields/Frontiers_submission_form_fields.md` | 表单字段（题名/摘要/关键词/Contribution/Scope），脚本抽取非手抄 |
+
+**本包顺带修掉的两处"会随投稿一起发出去"的过期内容**（`manuscript/` 下 9-02 起未更新）：
+1. `Scope_statement.md`：`corrects`→`diagnoses`；"benchmarks operating characteristics" → "score-to-grade mapping of its scoring rule"；DOI `21858125`→`23733172`；补 Python 3.13.14 requirements.txt
+2. `Contribution_to_the_field.md`：删掉已作废的 "0.97 sensitivity / FDR 0.08"（改为 0.88 / ≈0.10，range 0.06–0.15）；"43,200 simulated scenarios"→"43,200-replicate benchmark of its scoring rule（proxy gate implementations）"；DOI 同上
+> 若照旧版发出，标题动词、存档 DOI、benchmark 三个数都会与修订稿正文冲突——编辑一比对就是硬伤。
+
+**新增脚本（可复用）**
+- `code/md_to_docx_note.py`：轻量 md→docx（标题/表/等宽代码块/`--landscape`/`--table-pt`），用于 Note 1–2 与 S8 带脚注版
+- `code/build_form_fields.py`：从正文 docx 抽题名/作者/摘要/关键词（上标 run 转 Unicode，粘网页不掉成 `10-4`）+ 两个 md 字段 → 表单文件
+- `code/verify_submission_package.py`：上传前门禁（见下）
+
+**门禁（每次上传前必须全绿）**
+```
+python code/verify_submission_package.py   → ALL CHECKS PASSED
+```
+校验项：包内每个 docx 都能开且无 markdown 残留（等宽代码块豁免）／正文含新题名动词+`23733172`+8,374、不含 `43,200-simulation validation` 与 `21858125`／回信 22 个意见编号齐全／五图 ≥300 dpi 且 ≥1700 px／工作簿 S1–S12 齐／无单文件 >100 MB／重写 `MANIFEST_sha256.csv`（21 条）。
+**zip 已解压实测**：CRC OK，21/21 sha256+字节数 **全对**。
+`submissions/` 已在 `.gitignore`（构建产物，内容全部来自已入库源件，入库会重复约 3.9 MB）。
 
 ---
 

@@ -97,3 +97,10 @@ results/refs/crossref_cache.json
 
 # 本地备份快照（精炼/重导前留存，不进版本库）
 reviews/_backup_*
+
+# ===== 投稿包（2026-11-03）=====
+# 构建产物：内容全部来自已入库的源文件（正文 docx / 回信 docx / manuscript/figures /
+# manuscript/supplementary），逐个复制而来。入库会与源文件重复约 3.9 MB。
+# 需要时用 code/verify_submission_package.py 重新生成（含 MANIFEST），
+# 上传顺序见包内 README_UPLOAD.md。
+submissions/
