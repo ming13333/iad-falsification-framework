@@ -28,11 +28,11 @@ EXPECTED = [
     "01_Manuscript_clean.docx",
     "02_Manuscript_marked.docx",
     "03_Response_to_Reviewers.docx",
-    "04_Figures/Figure1.png",
-    "04_Figures/Figure2.png",
-    "04_Figures/Figure3.png",
-    "04_Figures/Figure4.png",
-    "04_Figures/Figure5.png",
+    "04_Figures/Figure1.tiff",
+    "04_Figures/Figure2.tiff",
+    "04_Figures/Figure3.tiff",
+    "04_Figures/Figure4.tiff",
+    "04_Figures/Figure5.tiff",
     "04_Figures/Figure1.svg",
     "04_Figures/Figure2.svg",
     "04_Figures/Figure3.svg",
@@ -131,10 +131,14 @@ def main():
     for rel in EXPECTED:
         if not os.path.isfile(os.path.join(PKG, rel)):
             bad("MISSING: %s" % rel)
+    owner = [os.path.basename(p) for p in glob.glob(os.path.join(PKG, "**", "~$*"), recursive=True)]
+    if owner:
+        notes.append("Word owner files present and excluded from package: %s" % owner)
     found = sorted(os.path.relpath(p, PKG).replace("\\", "/")
                    for p in glob.glob(os.path.join(PKG, "**", "*"), recursive=True)
                    if os.path.isfile(p) and not p.endswith("README_UPLOAD.md")
-                   and not p.endswith("MANIFEST_sha256.csv"))
+                   and not p.endswith("MANIFEST_sha256.csv")
+                   and not os.path.basename(p).startswith("~$"))
     extra = [f for f in found if f not in EXPECTED]
     if extra:
         notes.append("unexpected extra files: %s" % extra)
@@ -147,6 +151,8 @@ def main():
     # every packaged docx is opened and residue-checked, not just the two with
     # required strings, so that no upload file goes unvalidated
     for p in sorted(glob.glob(os.path.join(PKG, "**", "*.docx"), recursive=True)):
+        if os.path.basename(p).startswith("~$"):
+            continue
         rel = os.path.relpath(p, PKG).replace("\\", "/")
         txt, npar, ntab, mono = doc_text(p)
         width = len(rel)
@@ -185,18 +191,24 @@ def main():
 
     # 3. figures ----------------------------------------------------------
     for n in range(1, 6):
-        p = os.path.join(PKG, "04_Figures", "Figure%d.png" % n)
+        p = os.path.join(PKG, "04_Figures", "Figure%d.tiff" % n)
         if not os.path.isfile(p):
             continue
         im = Image.open(p)
         dpi = im.info.get("dpi", (0, 0))
         w_mm = im.width / dpi[0] * 25.4 if dpi[0] else 0
         if dpi[0] < 299:
-            bad("Figure%d.png: %s dpi < 300" % (n, dpi[0]))
+            bad("Figure%d.tiff: %s dpi < 300" % (n, dpi[0]))
         if im.width < 1700:
-            bad("Figure%d.png: %d px wide < 1700" % (n, im.width))
-        notes.append("Figure%d.png %dx%d @ %.0f dpi = %.0f mm"
-                     % (n, im.width, im.height, dpi[0], w_mm))
+            bad("Figure%d.tiff: %d px wide < 1700" % (n, im.width))
+        if im.mode != "RGB":
+            bad("Figure%d.tiff: colour mode %s, expected RGB" % (n, im.mode))
+        if str(im.info.get("compression", "")).lower() not in ("tiff_lzw", "lzw"):
+            bad("Figure%d.tiff: compression %r, expected LZW"
+                % (n, im.info.get("compression")))
+        notes.append("Figure%d.tiff %dx%d @ %.0f dpi = %.0f mm, %s, %s"
+                     % (n, im.width, im.height, dpi[0], w_mm, im.mode,
+                        im.info.get("compression")))
 
     # 4. workbook ---------------------------------------------------------
     try:
@@ -222,10 +234,16 @@ def main():
             bad("manuscript: version DOI appears fewer than 3 times")
 
     # 6. manifest ---------------------------------------------------------
-    files = sorted(os.path.relpath(p, PKG).replace("\\", "/")
-                   for p in glob.glob(os.path.join(PKG, "**", "*"), recursive=True)
-                   if os.path.isfile(p)
-                   and not p.endswith("MANIFEST_sha256.csv"))
+    # the manifest covers exactly what the package is: the expected files plus
+    # this README. Anything else that happens to sit in the directory (files left
+    # there by hand, Word owner files) is reported above and deliberately not
+    # hashed, so that the manifest and the zip describe the same set.
+    files = [r for r in EXPECTED if os.path.isfile(os.path.join(PKG, r))]
+    files.append("README_UPLOAD.md")
+    files.sort()
+    missing_from_pkg = [r for r in EXPECTED if not os.path.isfile(os.path.join(PKG, r))]
+    if missing_from_pkg:
+        bad("manifest: expected files absent: %s" % missing_from_pkg)
     lines = ["sha256,bytes,path"]
     for rel in files:
         p = os.path.join(PKG, rel)
@@ -244,6 +262,26 @@ def main():
         print("\n%d problem(s)" % len(problems))
         return 1
     print("\nALL CHECKS PASSED")
+
+    # 7. optional: build the zip from exactly the hashed set, then re-read it
+    if "--zip" in sys.argv:
+        import zipfile
+        outer = os.path.dirname(PKG)
+        zpath = os.path.join(outer, os.path.basename(PKG) + ".zip")
+        members = files + ["MANIFEST_sha256.csv"]
+        if os.path.exists(zpath):
+            os.remove(zpath)
+        with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+            for rel in members:
+                z.write(os.path.join(PKG, rel),
+                        os.path.basename(PKG) + "/" + rel)
+        with zipfile.ZipFile(zpath) as z:
+            if z.testzip() is not None:
+                print("  FAIL zip CRC")
+                return 1
+            names = z.namelist()
+        print("  . zip: %d members, CRC ok, %.1f MB"
+              % (len(names), os.path.getsize(zpath) / 1e6))
     return 0
 
 

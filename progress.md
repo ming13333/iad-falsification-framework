@@ -365,6 +365,27 @@ python code/verify_submission_package.py   → ALL CHECKS PASSED
 **zip 已解压实测**：CRC OK，21/21 sha256+字节数 **全对**。
 `submissions/` 已在 `.gitignore`（构建产物，内容全部来自已入库源件，入库会重复约 3.9 MB）。
 
+### 2026-11-04 补丁：图件全换了，且投稿版 Figure 4 是错图
+
+**五张图全部在 2026-11-01 重画，与 9-02 投稿版不是同一批**，已整体换入包内（PNG → **TIFF**，LZW/RGB/400 dpi/18.00 cm，与 `figures_final/` 逐字节相同）。
+
+| 图 | 9-02 投稿版 | 现版 | 性质 |
+|---|---|---|---|
+| Fig1 | 19.05 cm，Inkscape 裁切，无脚本 | 18.00×18.16 cm，`make_fig1_six_gate.py` | 版面+可复现性；六级措辞逐面板核对未变 |
+| Fig2 | panel (b) 单口径 0.80 / FDR 0.08 | panel (b) 三柱双口径 0.80 / 0.88 / FDR 0.10 | **内容变更**，旧图与修订 Table 2 冲突 |
+| Fig3 | 19.05 cm，Inkscape 手工合并 | 18.00×8.76 cm，新增脚本 | 版面+可复现性（未逐点比对数值） |
+| Fig4 | **错图**：五维三角验证汇总 L1–L5 | `S1_coloc_loci.csv` 重画：LDSC rg / 1-47 vs 18-32 / 16-APOE 2-chr11 | **贴错图** |
+| Fig5 | 封顶前评分（Education 12、Height A/10、HDL 6） | 修订后（10/10/10、Height B/8、HDL 5、三例 0） | **内容变更**，旧图与 S8 冲突 |
+
+🔴 **Figure 4 是贴错图，不是图注改版**：查 `课题设计阶段/manuscript Frontiers 0902.docx` 原稿，图注写的是 "APOE-locus shared liability: genome-wide r_g, chromosome-19 removal, and locus-specific colocalization"，而配图实际是三角验证汇总。22 条意见无人提及（仅 R1-1 顺带提 Figure 1 评分规则）。
+**用户决定：回信不补说明，只在新稿里改。** 故此条仅记录在此，属已知未披露项——若编辑做版本比对会发现 Figure 4 整体换掉。
+
+**包内新增约束**
+- `verify_submission_package.py` 改造：图件校验改读 TIFF 并查 RGB/LZW；manifest 只覆盖"包内应有 21 件"（20 件 + README），目录里手动放入的文件与 Word `~$` 临时文件只报告不入清单；新增 `--zip` 从已哈希集合打包，杜绝把杂物带进 zip。
+- 目录内出现 4 个非包文件（11-04 11:41–11:54）：`01_Manuscript_clean.pdf`、`comments_to_Reviewers.docx`（114 段 / 6,659 词，回复信的另一种短标题排版，与正式版 148 段 / 8,036 词**不是同一份**）、两个 `comments_to_Reviewers(N).pdf`。**均不入 zip**。
+- `01_Manuscript_clean.docx` 11-04 11:54 被 Word 重存（78→105 KB）：逐段文本、5 表逐格、三线边框(12/8/12) 全部一致 → 重存非改稿。
+- 🟡 隐患未清：`课题设计阶段/figures/Fig5_validation_grading.png` 与 `manuscript/figures/` 同名但**像素差 4.83%**，误取即送错图；该目录待清理。
+
 ---
 
 ## ✉️ 逐条回复信（2026-10-28 22:30 完成）
