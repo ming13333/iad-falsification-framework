@@ -1,6 +1,7 @@
 # progress.md · 失眠↔AD 六门证伪框架
 
-> 覆盖式更新 · **2026-11-03 23:50**（**投稿包已成型**：`submissions/Frontiers_1986036_revision_20261103/` + 同名 zip（2.1 MB / 22 文件），CRC 与 SHA256 逐件复核通过；顺带修掉两份 Frontiers 表单字段的**过期内容**——题名动词仍 *correcting*、Zenodo 仍 `21858125`、敏感度仍 0.97；回信定点精炼 9,682→8,639 词 −10.8% 已落地；摘要 377 词已定：不缩减）
+> 覆盖式更新 · **2026-11-24 13:10**（**生产阶段补充材料已交卷，转等校样（proof）**：旧 6 件（站点记作 Table 1–6 / Supplementary Table）已删，六件重传完毕——Note 1、Note 2 选 `Supplementary File`，S5/S8/S12 + S1–S11 工作簿选 `Supplementary Table`；forum #448563 回信已发。补充件里 12 处本机路径 + 1 处中文目录 + 68 个字面反引号 + 标题主题蓝全部清掉，成品在 `submissions/Frontiers_1986036_production_20261124/`（6 件 + manifest + zip，6/6 哈希自校通过）；投稿包成型于 2026-11-03，回信 9,682→8,639 词 −10.8%，摘要 338 词（Frontiers Methods 上限 350））
+> **下一步只剩被动等待**：Frontiers 出 0 Proof Files → 收到校样后 48h 内核题名/作者/单位/图注/表号/DOI 与 `Zenodo 23733172`、正文 `Table Sx` 交叉引用是否随新编号对齐。
 > 续接口令：读 `RULES.md` + 本文件，接着干。详细历史见 `.workbuddy/memory/YYYY-MM-DD.md`。
 
 ---
@@ -17,10 +18,10 @@
 
 ### 一句话现状
 
-**稿件 2026-09-02 投出，2026-10-22/23 两位审稿人意见已返回（共 22 条）。**
+**已录用（2026-11 中旬），生产阶段补充材料已交卷（2026-11-24 13:08），等校样。**
 Manuscript ID **1986036**，Front. Genet. — Computational Genomics / Methods，编辑 Erika Salvi，Research Topic 73003。
-**当前状态 = 应答期**：R1 十条（方法学审计型，末句 "I recommend major revision"）+ R3 十二条（澄清/技术准确性型）。
-docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 → `reviews/`（投喂包 + 提示词 + 生成脚本）。
+2026-09-02 投出 → 2026-10-22/23 两位审稿人 22 条意见（R1 十条方法学审计 + R3 十二条澄清）→ 2026-11-03 修订稿投出 → **2026-11-15 R1 收尾表态 "basically addressed"** → 录用 → 2026-11-24 生产阶段六件补充材料重传 + forum 回复完成。
+**当前无在办事项**：只等 Frontiers 下发校样（站点 `0 Proof Files`）。
 
 ---
 
@@ -182,6 +183,15 @@ docx 内**无 Reviewer 2、无 Editor 决定信**。第一步产物已就绪 →
 ---
 
 ## ▶️ 下一步（按优先级；2026-10-27 21:30 刷新）
+
+> **2026-11-24 13:08 现状覆盖**：以下 1–5 条均为 10 月遗留，已全部闭环或作废。**当前唯一动作 = 等校样**。
+> 校样到手后按此单核对（48h 内回）：
+> 1. 题名动词为 `diagnosing`、`43,200-replicate benchmark of its scoring rule`（旧题名的 `correcting` / `validation` 不得再现）；
+> 2. 作者序 Qin Liu†, Wangyang Ye†, Ming Luo\*，单位温医大附五院/丽水市中心医院，`lm962272@gmail.com`；
+> 3. 数据/代码可用性声明指向 **DOI 10.5281/zenodo.23733172**（不得出现 21858125 / 22064685）；
+> 4. 补充材料编号：正文 `Table S5/S8/S12`、`Supplementary Note 1/2` 与站点新 Title 是否一致（旧版曾被记成 Table 1–6）；
+> 5. 五张图与 Figure 4 是否为新版（09-02 那版 Figure 4 是错图，11-01 已换）；
+> 6. 摘要 ≤350 词、Grade C 判定与六个 gate 分数未被打字改动。
 
 1. ~~**D3 标题**~~ → ✅ **已定稿（2026-10-28 20:15，用户选 A 双修）**：`correcting`→`diagnosing`（框架不校正混杂，只识别+改判），`43,200-simulation validation`→`a 43,200-replicate benchmark of its scoring rule`（基准只用 proxy 覆盖四信号，未验证任何基因组估计量）。已同步改：正文 md（humanized + v2）、回信 R1-2（改为"本次修订已改"并写明新旧标题与两条理由，Changes 行补 Title）、clean docx、高亮稿、`reviews/Marked_up_copy_legend.md`（新增 §6 记录两处改动理由）。**正文 body 10,982→10,987 词；表格 55 格未动；绿 32.9% 不变，黄 18.1%→18.4%。**
    - ✅ 文件锁已解（20:20）：旧件移入 `_archive/` 作对照，`_marked_v2.docx` 已改回原名 `manuscript_Frontiers_Methods_v2_marked.docx`（79,409 B，黄 13,915 / 绿 24,918 字符，标题已含 "diagnosing"），盘上不再有两份只差后缀的高亮稿。
@@ -385,6 +395,59 @@ python code/verify_submission_package.py   → ALL CHECKS PASSED
 - 目录内出现 4 个非包文件（11-04 11:41–11:54）：`01_Manuscript_clean.pdf`、`comments_to_Reviewers.docx`（114 段 / 6,659 词，回复信的另一种短标题排版，与正式版 148 段 / 8,036 词**不是同一份**）、两个 `comments_to_Reviewers(N).pdf`。**均不入 zip**。
 - `01_Manuscript_clean.docx` 11-04 11:54 被 Word 重存（78→105 KB）：逐段文本、5 表逐格、三线边框(12/8/12) 全部一致 → 重存非改稿。
 - 🟡 隐患未清：`课题设计阶段/figures/Fig5_validation_grading.png` 与 `manuscript/figures/` 同名但**像素差 4.83%**，误取即送错图；该目录待清理。
+
+---
+
+## ✅ 生产阶段补充材料（2026-11-24 13:08 **已交卷**）
+
+**✅ 交卷结果（2026-11-24 13:08 用户确认完成）**
+- 论坛 #448563 回信已发（用户自拟稿，经我校订五处后采用：删掉不存在的"Table S12 索引页"、把"仅格式改动"改为"格式 + Files 段措辞"、补"No further supplementary material exists."、六件逐一列名、注明是替换而非新增）。
+- 站点旧 6 件（`Table 1`–`Table 6`，类别全记为 `Supplementary Table`）**已删除重传**，新映射：
+
+| 上传件 | 站点 Title | Content type |
+|---|---|---|
+| `Supplementary_Note_1.docx` | Supplementary Note 1 | **Supplementary File** |
+| `Supplementary_Note_2.docx` | Supplementary Note 2 | **Supplementary File** |
+| `Supplementary_Table_S5_STROBE-MR_checklist.docx` | Supplementary Table S5 | Supplementary Table |
+| `Supplementary_Table_S8_scoring_with_footnotes.docx` | Supplementary Table S8 | Supplementary Table |
+| `Supplementary_Table_S12_threshold_robustness.docx` | Supplementary Table S12 | Supplementary Table |
+| `Supplementary_Tables_S1-S12.xlsx` | Supplementary Tables S1–S11（工作簿，文件名历史遗留） | Supplementary Table |
+
+- **未动的 7 件**：Manuscript PDF（402.3 KB）、Manuscript DOCX（106.5 KB）、Figure 1–5 TIFF。生产阶段无 Response to Reviewers 槽位，回信不进包。
+- 🟡 **两处待校样阶段核对**（当时无法定性，留校样时验）：① 站点 Manuscript DOCX 106.5 KiB vs 本地 100.9 KiB 差 5.6 KiB，可能平台重存；② 站点图件体积与本地 TIFF 只有 Figure 2/5 对得上，Figure 1/4 需像素比对确认是 11-01 新版（尤其 Figure 4 在 09-02 那版曾是错图）。
+
+**位置**：`submissions/Frontiers_1986036_production_20261124/`（6 件 + `MANIFEST_sha256.csv` + `README_UPLOAD_PRODUCTION.md`）+ 同名 zip（240 KB，7 成员）
+**触发**：生产编辑 Mandy Zhang 2026-11-24 10:16 forum #448563 —— ①已收到 Note 1/2、S5、S8、S12，问是否还有其他；②补充材料**不排版**，须 ready-to-publish（不得红字/高亮/修订痕迹）；③补充说明选 `Supplementary File` 类型；④问是否上传其余补充表。
+
+**她的问题 ← 我们的答案**
+
+| 问题 | 答案 |
+|---|---|
+| 还有别的补充材料吗？ | 有且仅有一件：`Supplementary_Tables_S1-S12.xlsx`（12 sheet，**实为 S1–S11**，S9 占两屏：主表 + marginal；**工作簿内无 S12 sheet**，S12 单独出 docx）。S1–S4/S6/S7/S10/S11 只存在工作簿内，无单独文件 |
+| 要不要上传其余表 | 要，一件而非一批；若她更想要逐表拆分可再拆 |
+| 能否直接出版 | 修完后可以（见下） |
+
+**11-03 版查出的四类缺陷（已全部修掉，原版封存于 `05_Supplementary/_backup_pre_prod_20261124/`）**
+
+| # | 缺陷 | 实测 | 处置 |
+|---|---|---|---|
+| 1 | 本机绝对路径 | Note 1 五处、Note 2 七处 `C:/Temp/iad_g1/...` | 改仓库相对路径（`code/`、`results/ea_mr/`、`data/processed/` 均实查有据）；未归档者明确写 "not deposited, available from the corresponding author" |
+| 2 | 中文目录名 | Note 2 一处 `课题设计阶段/Supplementary/…` | 改为 "Supplementary Note 1" |
+| 3 | 字面反引号 | Note 1 有 28 个、Note 2 有 40 个；md→docx 把 Markdown 反引号当普通字符留下 | 删字符、改 Consolas 等宽 run |
+| 4 | 标题主题蓝 | Heading 1 `#365F91`、Heading 2/3 `#4F81BD` | 四个标题样式刷为 `#000000` |
+
+**另删一条虚指**：Note 2 原写 `EAS LD reference: C:/Temp/iad_g1/ld_ref/EAS_bfile/`，实测该目录**为空**（0 文件，EAS 面板从未下载完成，与 phase-3 记录一致）；相关分析走位置匹配不需要 EAS 面板，整条删除。
+**另修一处交叉引用**：Note 2 正文 `SupplementaryNote_EAS_Depression_infeasible.md` → "Supplementary Note 1"；首句 "fully reproducible from the scripts and data listed below" → "reproducible from the archived scripts and the files listed below; files that are third-party or not deposited are marked as such"（原句在部分输入未归档时属不实陈述）。
+
+**未动**：任何数值、判定、分级、参考文献；S5/S8/S12 除反引号外**逐行 diff 零差异**（S5 文件从 38,990→29,789 字节是 python-docx 重打包的 deflate 级别差异，包内 styles.xml 解压后同为 367,945 字节，非内容丢失）。
+
+**脚本（可复现）**
+- `code/fix_supplementary_for_production.py`：刷黑标题 → 重写两份 Note 的 Files 段 → 删反引号转 Consolas。**注意须先从 `_backup_pre_prod_20261124/` 恢复再跑**，重复跑会二次重写 Files 段
+- `code/pack_production_supplementary.py`：拷 6 件 → 写 manifest → 打包 → **解压回读逐件比 sha256+字节数**，6/6 通过
+
+**md 源已同步**：`manuscript/supplementary/Supplementary_Note_1_EAS_depression_infeasible.md`、`..._Note_2_EAS_validation.md` 已改为同一表述，避免日后重建 docx 把旧路径带回来。
+
+**✅ 已完成**：论坛回信已发、六件已重传（见本节开头「交卷结果」）。回信采用用户自拟四段稿的校订版：清单 / 六件明细 / ready-to-publish 确认 + 主动交代路径与反引号清理 / 内容类型确认 + 拆表询问。
 
 ---
 
