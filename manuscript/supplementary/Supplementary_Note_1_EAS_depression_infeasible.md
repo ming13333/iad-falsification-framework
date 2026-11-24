@@ -49,9 +49,11 @@ GWAS (Meng et al. 2024, Nat Genet) and why a formal EAS replication is not curre
 
 ## Files
 
-- `C:/Temp/iad_g1/mdd2023_EAS_clinicalMD_Neff.csv` (781 MB)
-- `C:/Temp/iad_g1/mdd2023_AllAncestry_clinicalMD_Neff.csv` (2.8 GB)
-- `C:/Temp/iad_g1/mdd2023_ReadMe.txt`
-- `C:/Temp/iad_g1/extract_mdd_eas.py`, `pipeline_mdd_eas_dep_ad.py`, `mr_eas_dep_mdd.py`
-- `C:/Temp/iad_g1/mdd_eas_gwsig.tsv`, `mdd_allanc_gwsig.tsv`, `mdd_allanc_instruments.tsv`,
-  `mdd_eas_dep_ad_harm.tsv` (2 rows), `l6_ea_dep_mdd.txt`
+- `mdd2023_EAS_clinicalMD_Neff.csv` (781 MB) and `mdd2023_AllAncestry_clinicalMD_Neff.csv` (2.8 GB) — clinical MDD summary
+  statistics from the figshare deposit mdd2023diverse (doi 10.6084/m9.figshare.24799299), file ids 43621254 and 43621302.
+  Not deposited with this article; available from the corresponding author.
+- Scripts `extract_mdd_eas.py`, `pipeline_mdd_eas_dep_ad.py` and `mr_eas_dep_mdd.py`, with the intermediate files
+  `mdd_eas_gwsig.tsv`, `mdd_allanc_gwsig.tsv`, `mdd_allanc_instruments.tsv`, `mdd_eas_dep_ad_harm.tsv` (2 rows) and
+  `l6_ea_dep_mdd.txt` — not deposited; available from the corresponding author on request.
+- The ReadMe distributed with the figshare deposit documents the exclusion of the 23andMe, WHI and JHS cohorts from all
+  shared summary statistics.

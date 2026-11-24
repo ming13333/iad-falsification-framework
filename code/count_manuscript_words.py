@@ -11,7 +11,10 @@ Scope conventions
              included, because Frontiers counts the submitted file, not a
              cleaned subset. Abstract, Declarations, References, figure legends
              and table bodies are excluded.
-``abstract`` the paragraphs between the Abstract heading and the Introduction.
+``abstract`` the paragraphs between the Abstract heading and the Introduction,
+             stopping at the Keywords line: the journal's 350-word limit applies
+             to the abstract prose, and counting the keyword list with it
+             overstated the figure by 15 words.
 ``legends``  the Figure legends and Tables blocks.
 ``refs``     the reference list.
 
@@ -97,7 +100,15 @@ def measure(path):
             return 0
         return sum(count(t) for t in paras[a + 1:b + 1])
 
-    abstract = span(i_abs, i_intro - 1)
+    # The keyword list sits between the abstract prose and the Introduction
+    # heading. It is not part of the abstract as the journal counts it.
+    i_kw = -1
+    for i in range(i_abs + 1, i_intro):
+        if paras[i].strip().lower().startswith("keywords"):
+            i_kw = i
+            break
+    abstract = span(i_abs, (i_kw - 1) if i_kw > 0 else (i_intro - 1))
+    keywords = count(paras[i_kw]) if i_kw > 0 else 0
     main = sum(count(t) for t in paras[i_intro:i_end + 1])
     legends = sum(count(t) for t in paras[i_leg:i_tab - 1]) if i_leg > 0 and i_tab > i_leg else 0
     # the reference list runs to the next block heading, which is Figure
@@ -106,6 +117,7 @@ def measure(path):
     refs = sum(count(t) for t in paras[i_ref + 1:ref_stop]) if i_ref > 0 else 0
     return {
         "abstract": abstract,
+        "keywords": keywords,
         "main": main,
         "legends": legends,
         "references": refs,
@@ -133,6 +145,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--docx", required=True)
     ap.add_argument("--check", action="store_true")
+    ap.add_argument("--abstract-limit", type=int, default=0,
+                    help="fail when the abstract exceeds this many words "
+                         "(Frontiers Methods caps the abstract at 350)")
     args = ap.parse_args()
 
     if not os.path.exists(args.docx):
@@ -141,7 +156,10 @@ def main():
     wc, nfig, ntab = declared(args.docx)
 
     print(f"{os.path.basename(args.docx)}")
-    print(f"  abstract      {m['abstract']:>6}")
+    print(f"  abstract      {m['abstract']:>6}"
+          + ("" if not args.abstract_limit
+             else f"   (limit {args.abstract_limit})"))
+    print(f"  keywords      {m['keywords']:>6}   (not part of the abstract)")
     print(f"  main text     {m['main']:>6}   (paragraphs {m['main_range'][0]}-{m['main_range'][1]})")
     print(f"  figure legends{m['legends']:>6}")
     print(f"  references    {m['references']:>6}   ({m['reference_entries']} entries)")
@@ -150,6 +168,9 @@ def main():
         return 0
 
     bad = []
+    if args.abstract_limit and m["abstract"] > args.abstract_limit:
+        bad.append(f"abstract {m['abstract']} words exceeds the "
+                   f"{args.abstract_limit}-word limit")
     if wc is None:
         bad.append("no Word count declaration on the first page")
     elif wc != m["main"]:

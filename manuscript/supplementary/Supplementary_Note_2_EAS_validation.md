@@ -1,6 +1,7 @@
 # Supplementary Note 2: East Asian cross-ancestry validation (Level 6 reinforcement)
 
-**Date**: 2026-08-04. All analyses are fully reproducible from the scripts and data listed below.
+All analyses are reproducible from the archived scripts and the files listed below; files that are third-party or not
+deposited are marked as such.
 
 ## Purpose
 
@@ -87,7 +88,7 @@ Egger intercept p = 0.386
 
 **Interpretation**: Point estimate is positive (opposite to the EUR protective sign) but the standard error is extremely large (SE = 0.327; 95% CI ≈ [−0.38, +0.90]) because GARD EAS AD comprises only 2,919 cases. This check is **severely underpowered**: it can neither confirm nor refute cross-ancestry consistency of the depression→AD signal, and it is **not** used as evidence for or against the Depression→AD Grade C assignment.
 
-**Why a formal EAS replication is currently infeasible** (see also `SupplementaryNote_EAS_Depression_infeasible.md`): we obtained the largest multi-ancestry MDD summary statistics (Meng et al. 2024, Nat Genet; figshare mdd2023diverse, CC BY 4.0 / PGC terms). The EAS clinical-MD stratum (7,886 cases / 14,412 controls) contains **no genome-wide-significant variants** (min P = 1.9 × 10⁻⁷ across 8.08 M variants), so no EAS depression instruments can be constructed from the EAS-only analysis. The multi-ancestry clinical-MD analysis yields 108 GW-significant variants → 6 independent loci after 10 Mb distance clumping; only **2** (rs12129573, rs10759878) are present with harmonizable alleles in GARD EAS AD, and both point toward a positive (risk) AD direction in EAS (MDD logOR +0.038/+0.044 → AD β +0.043/+0.033) — opposite in sign to the EUR protective estimate but entirely within noise (n = 2 instruments; SE ≈ 0.04–0.05). This is reported as a power/data-coverage limitation, not a null result, and does not alter the EUR-based Grade C assignment.
+**Why a formal EAS replication is currently infeasible** (see also Supplementary Note 1): we obtained the largest multi-ancestry MDD summary statistics (Meng et al. 2024, Nat Genet; figshare mdd2023diverse, CC BY 4.0 / PGC terms). The EAS clinical-MD stratum (7,886 cases / 14,412 controls) contains **no genome-wide-significant variants** (min P = 1.9 × 10⁻⁷ across 8.08 M variants), so no EAS depression instruments can be constructed from the EAS-only analysis. The multi-ancestry clinical-MD analysis yields 108 GW-significant variants → 6 independent loci after 10 Mb distance clumping; only **2** (rs12129573, rs10759878) are present with harmonizable alleles in GARD EAS AD, and both point toward a positive (risk) AD direction in EAS (MDD logOR +0.038/+0.044 → AD β +0.043/+0.033) — opposite in sign to the EUR protective estimate but entirely within noise (n = 2 instruments; SE ≈ 0.04–0.05). This is reported as a power/data-coverage limitation, not a null result, and does not alter the EUR-based Grade C assignment.
 
 ## Summary
 
@@ -95,14 +96,16 @@ Across all five adequately powered cross-ancestry checks, **no framework-assigne
 
 ## Files
 
-- `C:/Temp/iad_g1/l6_ea_edu_t2d.txt` — Education→T2D BBJ results (R)
-- `C:/Temp/iad_g1/l6_ea_t2d_ad.py` + `l6_ea_t2d_ad.txt` — T2D→AD GARD position-matched results (Python)
-- `C:/Temp/iad_g1/l6_ea_edu_stroke.txt` — Education→Stroke BBJ results (R)
-- `C:/Temp/iad_g1/bbj_t2d_instruments.csv` — BBJ T2D clumped instruments (96)
-- `C:/Temp/iad_g1/mdd2023_EAS_clinicalMD_Neff.csv` + `mdd2023_AllAncestry_clinicalMD_Neff.csv` — Meng 2024 MDD sumstats (figshare mdd2023diverse)
-- `C:/Temp/iad_g1/pipeline_mdd_eas_dep_ad.py`, `mdd_allanc_instruments.tsv`, `mdd_eas_dep_ad_harm.tsv` — EAS depression→AD attempt
-- `code/ea05_transethnic_insomnia_ad.py` — trans-ethnic insomnia→AD (EUR instruments → GARD)
-- `results/ea_mr/ea_transethnic_insomnia_ad_results.csv` + `_report.txt` + `_harm.tsv` — trans-ethnic insomnia→AD outputs (2026-08-08)
-- `课题设计阶段/Supplementary/SupplementaryNote_EAS_Depression_infeasible.md` — full data-access outcome
-- Existing EA pipeline: `code/ea01–ea04.py`, `data/processed/gard_ea_ad_hg19.tsv.gz`
-- EAS LD reference: `C:/Temp/iad_g1/ld_ref/EAS_bfile/`, `EAS_ldscores/`
+- `code/ea01_liftover_gard.py`, `code/ea02_instruments.py`, `code/ea03_harmonize.py` and `code/ea04_mr.py` — East Asian
+  AD pipeline; deposited in the archived code release.
+- `code/ea05_transethnic_insomnia_ad.py` — trans-ethnic insomnia→AD, European instruments transferred into GARD; deposited.
+- `results/ea_mr/ea_mr_results.csv` and `results/ea_mr/ea_mr_report.txt` — East Asian education→AD replication; deposited.
+- `results/ea_mr/ea_transethnic_insomnia_ad_results.csv`, `_report.txt` and `_harm.tsv` — trans-ethnic insomnia→AD outputs;
+  deposited.
+- `data/processed/gard_ea_ad_hg19.tsv.gz` — GARD East Asian AD summary statistics after lift-over; third-party data, not
+  deposited, available from the corresponding author.
+- Scripts and intermediate files for the education→T2D, T2D→AD, education→stroke and depression→AD checks:
+  `l6_ea_edu_t2d.txt`, `l6_ea_t2d_ad.py`, `l6_ea_edu_stroke.txt`, `bbj_t2d_instruments.csv`,
+  `pipeline_mdd_eas_dep_ad.py`, `mdd_allanc_instruments.tsv` and `mdd_eas_dep_ad_harm.tsv`; not deposited, available from
+  the corresponding author on request.
+- Data-access outcome for the depression→AD attempt: Supplementary Note 1.
